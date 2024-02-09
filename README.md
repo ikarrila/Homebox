@@ -37,7 +37,7 @@ TODO
 | Role | Name |  
 | ------ | ------ |  
 | Project manager  | Iivari Karrila  |  
-| Test manager  |  |  
+| Test manager  | Kaisa Kauhanen |  
 |Test manager |     |
 |Developer |        |
 |Developer |        |
