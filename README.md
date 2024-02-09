@@ -40,7 +40,7 @@ TODO
 | Test manager  | Kaisa Kauhanen |  
 |Test manager |     |
 |Developer |        |
-|Developer |        |
+|Developer | Johanna Meskanen |
 |UI/UX designer |   |
 |Tester  |          |
 ...etc
