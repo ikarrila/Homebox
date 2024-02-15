@@ -39,7 +39,7 @@ TODO
 | Project manager  | Iivari Karrila  |  
 | Test manager  | Kaisa Kauhanen |  
 |Test manager |     |
-|Developer |        |
+|Developer | Inka Ratia |
 |Developer | Johanna Meskanen |
 |UI/UX designer |   |
 |Tester  |          |
