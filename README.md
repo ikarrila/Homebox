@@ -41,6 +41,7 @@ TODO
 |Test manager |     |
 |Developer | Inka Ratia |
 |Developer | Johanna Meskanen |
+|Developer | Saana Hänninen |
 |UI/UX designer |   |
 |Tester  |          |
 ...etc
