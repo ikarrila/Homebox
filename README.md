@@ -38,7 +38,7 @@ TODO
 | ------ | ------ |  
 | Project manager  | Iivari Karrila  |  
 | Test manager  | Kaisa Kauhanen |  
-|Test manager |     |
+|Developer | Lotte Karlsson |
 |Developer | Inka Ratia |
 |Developer | Johanna Meskanen |
 |Developer | Saana Hänninen |
