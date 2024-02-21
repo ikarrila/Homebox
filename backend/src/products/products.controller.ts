@@ -1,32 +1,56 @@
-import { Controller, Get, Post, Param, Body, Put, Delete } from '@nestjs/common';
-import { CreateProductDto} from './dto/create-product.dto';
-import { UpdateProductDto } from './dto/update-product.dto';
+import {
+  Controller,
+  Get,
+  Post,
+  Param,
+  Body,
+  Put,
+  Delete,
+  Patch,
+  ParseIntPipe,
+} from '@nestjs/common';
+import { ProductDto as ProductDto } from './dto/product.dto';
+
+import { ProductService } from './products.service';
+import { Product } from './interfaces/product.interface';
 
 //File made to test out basic api functionality, TO BE MODIFIED IN THE FUTURE
 @Controller('products')
 export class ProductsController {
+  constructor(private readonly productService: ProductService) {}
+
   @Get()
-  getAllProducts() {
-    return 'Products';
+  async findAll(): Promise<Product[]> {
+    return this.productService.findAll();
   }
 
   @Get(':id')
-  getProduct(@Param('id') id: string) {
-    return `Single product ${id}`;
+  findOne(@Param('id', ParseIntPipe) id: number) {
+    return this.productService.findOne(id);
   }
 
   @Post()
-  async createProduct(@Body() createProductDto: CreateProductDto) {
-    return 'Product created';
-  }
- 
-  @Put(':id')
-  updateProduct(@Param('id') id: string, @Body() updateProductDto: UpdateProductDto) {
-    return `Product ${id} updated`;
+  create(@Body() createProductDto: ProductDto) {
+    this.productService.create(createProductDto);
+    return createProductDto;
   }
 
-  @Delete(':id')
-  deleteProduct(@Param('id') id: string) {
+  @Post(':id')
+  async createSingleProduct(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() createProductDto: ProductDto,
+  ) {
+    this.productService.create(createProductDto);
+    return createProductDto;
+  }
+
+  @Patch(':id')
+  updateProduct(@Param('id', ParseIntPipe) id: number, @Body() updateProduct: ProductDto) {
+    return this.productService.update(id, updateProduct);
+  }
+
+  @Patch(':id')
+  deleteProduct(@Param('id', ParseIntPipe) id: number) {
     return `Product ${id} deleted`;
   }
 }
