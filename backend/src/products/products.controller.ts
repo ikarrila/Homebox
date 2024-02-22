@@ -4,7 +4,6 @@ import {
   Post,
   Param,
   Body,
-  Put,
   Delete,
   Patch,
   ParseIntPipe,
@@ -35,22 +34,13 @@ export class ProductsController {
     return createProductDto;
   }
 
-  @Post(':id')
-  async createSingleProduct(
-    @Param('id', ParseIntPipe) id: number,
-    @Body() createProductDto: ProductDto,
-  ) {
-    this.productService.create(createProductDto);
-    return createProductDto;
-  }
-
   @Patch(':id')
-  updateProduct(@Param('id', ParseIntPipe) id: number, @Body() updateProduct: ProductDto) {
+  update(@Param('id', ParseIntPipe) id: number, @Body() updateProduct: ProductDto) {
     return this.productService.update(id, updateProduct);
   }
 
-  @Patch(':id')
-  deleteProduct(@Param('id', ParseIntPipe) id: number) {
-    return `Product ${id} deleted`;
+  @Delete(':id')
+  delete(@Param('id', ParseIntPipe) id: number) {
+    return this.productService.delete(id);
   }
 }
