@@ -8,10 +8,9 @@ import {
   Patch,
   ParseIntPipe,
 } from '@nestjs/common';
-import { ProductDto as ProductDto } from './dto/product.dto';
 
 import { ProductService } from './products.service';
-import { Product } from './interfaces/product.interface';
+import { I_Product } from './schema/product.schema';
 
 //File made to test out basic api functionality, TO BE MODIFIED IN THE FUTURE
 @Controller('products')
@@ -19,7 +18,7 @@ export class ProductsController {
   constructor(private readonly productService: ProductService) {}
 
   @Get()
-  async findAll(): Promise<Product[]> {
+  async findAll(): Promise<I_Product[]> {
     return this.productService.findAll();
   }
 
@@ -29,13 +28,16 @@ export class ProductsController {
   }
 
   @Post()
-  create(@Body() createProductDto: ProductDto) {
+  create(@Body() createProductDto: I_Product) {
     this.productService.create(createProductDto);
     return createProductDto;
   }
 
   @Patch(':id')
-  update(@Param('id', ParseIntPipe) id: number, @Body() updateProduct: ProductDto) {
+  update(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() updateProduct: I_Product ,
+  ) {
     return this.productService.update(id, updateProduct);
   }
 

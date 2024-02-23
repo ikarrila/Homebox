@@ -1,8 +1,15 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { Product } from './interfaces/product.interface';
+import { Product } from './schema/product.schema';
+import { InjectModel } from '@nestjs/mongoose';
+import * as mongoose from 'mongoose';
 
 @Injectable()
 export class ProductService {
+  constructor(
+    @InjectModel(Product.name)
+    private readonly productModel: mongoose.Model<Product>,
+  ) {}
+
   private products: Product[] = [{ id: 1, name: 'name', price: 1 }];
 
   create(product: Product) {
@@ -12,7 +19,7 @@ export class ProductService {
       return product;
     }
     const productWithHighest = [...this.products].sort((a, b) => b.id - a.id);
-    const newProduct = { ...product, id: productWithHighest[0].id + 1 }; 
+    const newProduct = { ...product, id: productWithHighest[0].id + 1 };
     this.products.push(newProduct);
     return newProduct;
   }
@@ -24,7 +31,9 @@ export class ProductService {
     return this.products.find((product) => product.id === +id);
   }
   update(id: number, product: Product) {
-    const productIndex = this.products.findIndex((product) => product.id === id);
+    const productIndex = this.products.findIndex(
+      (product) => product.id === id,
+    );
     if (productIndex !== -1) {
       this.products[productIndex] = product;
       return product;
@@ -33,12 +42,14 @@ export class ProductService {
     }
   }
   delete(id: number) {
-    const productIndex = this.products.findIndex((product) => product.id === id);
+    const productIndex = this.products.findIndex(
+      (product) => product.id === id,
+    );
     if (productIndex !== -1) {
       this.products.splice(productIndex, 1);
       return `Deleted product with id: ${id}`;
     } else {
       throw new NotFoundException(`Product with id: ${id} not found`);
     }
-}
+  }
 }
