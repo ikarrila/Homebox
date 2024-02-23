@@ -1,55 +1,29 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { Product } from './schema/product.schema';
 import { InjectModel } from '@nestjs/mongoose';
-import * as mongoose from 'mongoose';
+import { Model } from 'mongoose';
+import { ProductSchema, Product } from './schema/product.schema';
 
 @Injectable()
 export class ProductService {
   constructor(
-    @InjectModel(Product.name)
-    private readonly productModel: mongoose.Model<Product>,
+    @InjectModel(Product.name) private productModel: Model<Product>,
   ) {}
 
-  private products: Product[] = [{ id: 1, name: 'name', price: 1 }];
-
-  create(product: Product) {
-    if (this.products.length === 0) {
-      product.id = 1;
-      this.products.push(product);
-      return product;
-    }
-    const productWithHighest = [...this.products].sort((a, b) => b.id - a.id);
-    const newProduct = { ...product, id: productWithHighest[0].id + 1 };
-    this.products.push(newProduct);
-    return newProduct;
+  async create( product: Product): Promise<Product> {
+    const newProduct = new this.productModel(product);
+    return newProduct.save();
   }
 
-  findAll(): Product[] {
-    return this.products;
+  async findAll(): Promise<Product[]> {
+    return this.productModel.find().exec();
   }
-  findOne(id: number): Product {
-    return this.products.find((product) => product.id === +id);
+  findOne() {
+    return 'This is a test';
   }
-  update(id: number, product: Product) {
-    const productIndex = this.products.findIndex(
-      (product) => product.id === id,
-    );
-    if (productIndex !== -1) {
-      this.products[productIndex] = product;
-      return product;
-    } else {
-      throw new NotFoundException(`Product with id: ${id} not found`);
-    }
+  update() {
+    return "This is a test"
   }
-  delete(id: number) {
-    const productIndex = this.products.findIndex(
-      (product) => product.id === id,
-    );
-    if (productIndex !== -1) {
-      this.products.splice(productIndex, 1);
-      return `Deleted product with id: ${id}`;
-    } else {
-      throw new NotFoundException(`Product with id: ${id} not found`);
-    }
+  delete() {
+    return "This is a test"
   }
 }
