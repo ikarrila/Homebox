@@ -1,32 +1,46 @@
-import { Controller, Get, Post, Param, Body, Put, Delete } from '@nestjs/common';
-import { CreateProductDto} from './dto/create-product.dto';
-import { UpdateProductDto } from './dto/update-product.dto';
+import {
+  Controller,
+  Get,
+  Post,
+  Param,
+  Body,
+  Delete,
+  Patch,
+  ParseIntPipe,
+} from '@nestjs/common';
+import { ProductDto as ProductDto } from './dto/product.dto';
+
+import { ProductService } from './products.service';
+import { Product } from './interfaces/product.interface';
 
 //File made to test out basic api functionality, TO BE MODIFIED IN THE FUTURE
 @Controller('products')
 export class ProductsController {
+  constructor(private readonly productService: ProductService) {}
+
   @Get()
-  getAllProducts() {
-    return 'Products';
+  async findAll(): Promise<Product[]> {
+    return this.productService.findAll();
   }
 
   @Get(':id')
-  getProduct(@Param('id') id: string) {
-    return `Single product ${id}`;
+  findOne(@Param('id', ParseIntPipe) id: number) {
+    return this.productService.findOne(id);
   }
 
   @Post()
-  async createProduct(@Body() createProductDto: CreateProductDto) {
-    return 'Product created';
+  create(@Body() createProductDto: ProductDto) {
+    this.productService.create(createProductDto);
+    return createProductDto;
   }
- 
-  @Put(':id')
-  updateProduct(@Param('id') id: string, @Body() updateProductDto: UpdateProductDto) {
-    return `Product ${id} updated`;
+
+  @Patch(':id')
+  update(@Param('id', ParseIntPipe) id: number, @Body() updateProduct: ProductDto) {
+    return this.productService.update(id, updateProduct);
   }
 
   @Delete(':id')
-  deleteProduct(@Param('id') id: string) {
-    return `Product ${id} deleted`;
+  delete(@Param('id', ParseIntPipe) id: number) {
+    return this.productService.delete(id);
   }
 }
