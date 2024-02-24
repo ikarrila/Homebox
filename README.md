@@ -43,6 +43,5 @@ TODO
 |Developer | Johanna Meskanen |
 |Developer | Saana Hänninen |
 |UI/UX designer | Kuura Ahola |
-|Tester  |          |
-...etc
+
 
