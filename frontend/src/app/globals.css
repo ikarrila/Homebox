@@ -17,17 +17,22 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: black;
+  background-color: white;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: lightgray;
+  padding: 1rem;
+  margin-top: auto;
+  /* Add what is needed */
 }
