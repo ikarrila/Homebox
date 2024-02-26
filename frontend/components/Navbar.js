@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -6,12 +7,12 @@ export default function Navbar() {
     <nav style={{ display: "flex", justifyContent: "space-between", padding: "1rem", backgroundColor: "lightgrey" }}>
       <div style={{ display: "flex", gap: "1rem" }}>
         <div style={{ width: "50px", height: "50px", borderRadius: "50%", backgroundColor: "grey" }}></div>
-        <a href="#">Home</a>
+        <Link href="/">Home</Link>
         <div className="dropdown">
           <a href="#">Our Services</a>
           <div className="dropdown-content">
             <a href="#">Furnishing</a>
-            <a href="#">FAAS</a>
+            <Link href="/FAAS/rental_services/">FAAS</Link>
             <a href="#">For Businesses</a>
           </div>
         </div>
