@@ -14,6 +14,11 @@ export default function Rental() {
             Long Term Rental
           </button>
       </Link>
+      <Link href="/FAAS/cost_calculator">
+          <button className="button">
+            Instant Quote
+          </button>
+      </Link>
     </div>
   );
 }
