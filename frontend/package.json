@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "set PORT=3200 && next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "react-scripts start",
     "lint": "next lint"
   },
   "dependencies": {
