@@ -1,6 +1,9 @@
 import Image from "next/image";
+import Description from '../../components/Description';
 
 export default function Home() {
-  return (<h1>Homepage</h1>
+  return (
+    <div>
+    </div>
   );
 }
