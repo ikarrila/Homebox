@@ -13,7 +13,7 @@ export default function Description() {
           </div>
         </div>
         <div style={{ marginLeft: '20px' }}>
-          <img src="../pictures/website.png" alt="Kuva" className='image-container'/>
+          <img src="../../pictures/website.jpg" alt="Kuva" className='image-container'/>
         </div>
       </div>
     );
