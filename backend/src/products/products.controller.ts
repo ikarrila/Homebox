@@ -12,7 +12,7 @@ import {
 import { ProductService } from './products.service';
 import { Product} from './schema/product.schema';
 
-//File made to test out basic api functionality, TO BE MODIFIED IN THE FUTURE
+//controlleri määrittää retit, ja kun niihin tehdään teitty kutsu niin se kutsuu servicen funktiota
 @Controller('products')
 export class ProductsController {
   constructor(private readonly productService: ProductService) {}

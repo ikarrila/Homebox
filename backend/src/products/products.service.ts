@@ -1,8 +1,10 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { ProductSchema, Product } from './schema/product.schema';
+import { Product } from './schema/product.schema';
 
+
+//servicessä toteutetaan toiminnot jotka tapahtuvat kun reittiä kutsutaan
 @Injectable()
 export class ProductService {
   constructor(
