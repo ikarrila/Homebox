@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import Description from '../../components/Description';
+import WhyUsDescription from "../../components/WhyUsDescription";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
         <Navbar /> {/* use Navbar component */}
         {children}
         <Description/>
+        <WhyUsDescription/>
         <Footer /> {/* use Footer component */}
       </body>
     </html>
