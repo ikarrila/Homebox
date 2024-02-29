@@ -18,8 +18,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Navbar /> {/* use Navbar component */}
         {children}
-        <Description/>
-        <WhyUsDescription/>
+        <WhyUsDescription />
         <Footer /> {/* use Footer component */}
       </body>
     </html>
