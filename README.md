@@ -8,7 +8,7 @@ Wiki pages for documentation and this ReadMe file for direct project-related inf
 
 ## Setup instructions 
 
-TODO  
+Instructions for launching Next.js and NestJS within /frontend and /backend.  
 
 ## Tests
 
@@ -25,11 +25,11 @@ TODO
 
 ## Navigation diagram
 
-TODO  
+![Initial navigation draft](navgraphs/NavDraft.drawio.png)
 
 ## Wireframe illustrations
 
-TODO  
+[The first wireframes](navgraphs/Wireframes.pdf) 
 
 ## People
 
