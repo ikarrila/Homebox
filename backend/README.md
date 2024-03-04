@@ -58,6 +58,43 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## MONGON KÄYTTÖ -- Lotten kirjoittama
+
+Mongodbn käyttönotto
+
+Lataa koneelle uusin mongodb
+
+Katso jokin video-ohje, esimerkiksi (huom, lataussivu näyttää eriltä)
+
+[webdevsimplifiedin tutoriaali](https://www.youtube.com/watch?v=wcx3f0eUiAw)
+
+osoite: https://www.mongodb.com/docs/manual/administration/install-community/
+
+avatusta mongodb-yhteydestä saat localhost-osoitteen
+
+määritä .env-muuttuja DB_URI = localhost-osoite/database
+
+(/database) on oman databasen nimi joka sisältää collectioneja, jotka sisältävät varsinaiset tiedot
+
+Jos ei määritä jotain databasea niin kaikki tiedot menevät test-databaseen joka luodaan automaattisesti
+
+//Yritin parhaani näiden ohjeiden kanssa, mutta viestitkää minulle tarvittaessa - Lotte
+
+## backendin käyttö
+
+MONGODBN:n käyttöönoton jälkeen
+Api-kutsuja (GET, POST) voi tehdä seuraavaan placeholder testirouteen:
+
+esimerkki-post-pyynnön bodyn sisällöstä (ID luodaan automaattisesti)
+{
+"name": "Toinen", "price": 300
+}
+
+Kutsuja voidaan tehdä esim Postman-sovelluksen/extension avulla (suosittelen vscode-extensiota)
+
+(toistaiseksi defaultportti on ollut 4000, määritelty backend/src/main.ts -tiedostossa)
+http://localhost:4000/products
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).

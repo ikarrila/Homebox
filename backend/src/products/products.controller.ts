@@ -10,7 +10,7 @@ import {
 } from '@nestjs/common';
 
 import { ProductService } from './products.service';
-import { Product} from './schema/product.schema';
+import { Product } from './schema/product.schema';
 
 //controlleri määrittää retit, ja kun niihin tehdään teitty kutsu niin se kutsuu servicen funktiota
 @Controller('products')
@@ -21,7 +21,7 @@ export class ProductsController {
   async findAll(): Promise<Product[]> {
     return this.productService.findAll();
   }
-/*
+  /*
   @Get(':id')
   findOne(@Param('id', ParseIntPipe) id: number) {
     return this.productService.findOne(id);
@@ -31,7 +31,7 @@ export class ProductsController {
   create(@Body() createProductDto: Product) {
     return this.productService.create(createProductDto);
   }
-/*
+  /*
   @Patch(':id')
   update(
     @Param('id', ParseIntPipe) id: number,
