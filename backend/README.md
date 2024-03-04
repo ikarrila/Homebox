@@ -63,13 +63,19 @@ $ npm run test:cov
 Mongodbn käyttönotto
 
 Lataa koneelle uusin mongodb
+
 Katso jokin video-ohje, esimerkiksi (huom, lataussivu näyttää eriltä)
+
 [webdevsimplifiedin tutoriaali](https://www.youtube.com/watch?v=wcx3f0eUiAw)
+
 osoite: https://www.mongodb.com/docs/manual/administration/install-community/
 
 avatusta mongodb-yhteydestä saat localhost-osoitteen
+
 määritä .env-muuttuja DB_URI = localhost-osoite/database
+
 (/database) on oman databasen nimi joka sisältää collectioneja, jotka sisältävät varsinaiset tiedot
+
 Jos ei määritä jotain databasea niin kaikki tiedot menevät test-databaseen joka luodaan automaattisesti
 
 //Yritin parhaani näiden ohjeiden kanssa, mutta viestitkää minulle tarvittaessa - Lotte
