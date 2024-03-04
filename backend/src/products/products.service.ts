@@ -3,7 +3,6 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Product } from './schema/product.schema';
 
-
 //servicessä toteutetaan toiminnot jotka tapahtuvat kun reittiä kutsutaan
 @Injectable()
 export class ProductService {
@@ -11,7 +10,7 @@ export class ProductService {
     @InjectModel(Product.name) private productModel: Model<Product>,
   ) {}
 
-  async create( product: Product): Promise<Product> {
+  async create(product: Product): Promise<Product> {
     const newProduct = new this.productModel(product);
     return newProduct.save();
   }
@@ -23,9 +22,9 @@ export class ProductService {
     return 'This is a test';
   }
   update() {
-    return "This is a test"
+    return 'This is a test';
   }
   delete() {
-    return "This is a test"
+    return 'This is a test';
   }
 }
