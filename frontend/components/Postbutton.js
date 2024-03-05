@@ -12,7 +12,6 @@ export default function Postbutton() {
     return (
         <div >
             <button class='button' onClick={() => consolelognewproduct()}>console.logs the content</button>
-            <button class='button' onClick={() => postprod()}>posting test</button>
             <div>
                 test div, button above console.logs stuff
             </div>
