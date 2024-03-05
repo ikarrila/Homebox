@@ -1,5 +1,6 @@
 import React from 'react';
 import '/styles/styles.css';
+import Postbutton from './Postbutton';
 
 const roomStyle = {
     marginLeft: '20px',
@@ -215,9 +216,7 @@ export default function CostCalculatorForm() {
                         <input type="text" id="email" name="email" />
                     </div>
                 </div>
-                <button className="button">
-                    Submit
-                </button>
+                <Postbutton />
             </div>
         </div>
     );
