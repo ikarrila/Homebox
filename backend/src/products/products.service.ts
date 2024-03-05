@@ -18,13 +18,13 @@ export class ProductService {
   async findAll(): Promise<Product[]> {
     return this.productModel.find().exec();
   }
-  findOne() {
-    return 'This is a test';
+  findOne(id) {
+    return this.productModel.findById(id);
   }
-  update() {
-    return 'This is a test';
+  update(id, content) {
+    return this.productModel.findByIdAndUpdate(id, content, { new: true });
   }
-  delete() {
-    return 'This is a test';
+  delete(id) {
+    return this.productModel.findByIdAndDelete(id);
   }
 }
