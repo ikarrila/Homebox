@@ -1,4 +1,9 @@
+import ShortTermForm from '../../../../../components/ShortTermForm';
+
 export default function shortTerm() {
-  return (<h1>Short-term</h1>
+  return (
+    <div>
+      <ShortTermForm />
+    </div>
   );
 }
