@@ -10,8 +10,9 @@ const labelStyle = {
 };
 
 import '../../../../styles/styles.css';
+import Postbutton from '../../../../components/Postbutton';
 
-export default function costCalculator() {
+export default async function costCalculator() {
   return (
 
     <div>
@@ -184,9 +185,7 @@ export default function costCalculator() {
             <input type="text" id="email" name="email" />
           </div>
         </div>
-        <button className="button">
-          Submit
-        </button>
+        <Postbutton />
       </div>
     </div>
   );
