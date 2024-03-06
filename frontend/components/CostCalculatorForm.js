@@ -25,6 +25,11 @@ const stepStyle = {
 };
 
 export default function CostCalculatorForm() {
+    const [showLivingRoomSize, setShowLivingRoomSize] = useState(false);
+    const [showDiningRoomSize, setShowDiningRoomSize] = useState(false);
+    const [showKitchenSize, setShowKitchenSize] = useState(false);
+    const [showMainBedroomSize, setShowMainBedroomSize] = useState(false);
+
     return (
 
 
@@ -66,45 +71,42 @@ export default function CostCalculatorForm() {
                 </div>
                 <hr />
                 <div style={stepStyle}>Step 2: Select your rooms to furnish & room size </div>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <label htmlFor="livingRoom">Living Room  </label>
+                    <input type="checkbox" id="livingRoom" name="livingRoom" style={{ marginLeft: '10px' }} onChange={() => setShowLivingRoomSize(!showLivingRoomSize)} />                </div>
+                {showLivingRoomSize && (
+                    <div style={labelStyle}>
+                        <div>
+                            <input type="radio" id="small" name="livingRoomSize" value="small" />
+                            <label for="small">Small</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="medium" name="livingRoomSize" value="medium" />
+                            <label for="medium">Medium</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="large" name="livingRoomSize" value="large" />
+                            <label for="large">Large</label>
+                        </div>
+                    </div>)}
                 <div>
-                    <label style={{ display: 'flex', alignItems: 'center' }}>
-                        <span style={{ marginRight: '10px' }}>Living room</span>
-                        <input type="checkbox" id="checkbox" />
-                    </label>                </div>
-                <div style={labelStyle}>
-                    <div>
-                        <input type="radio" id="small" name="livingRoomSize" value="small" />
-                        <label for="small">Small</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="medium" name="livingRoomSize" value="medium" />
-                        <label for="medium">Medium</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="large" name="livingRoomSize" value="large" />
-                        <label for="large">Large</label>
-                    </div>
-                </div>
-                <div>
-                    <label style={{ display: 'flex', alignItems: 'center' }}>
-                        <span style={{ marginRight: '10px' }}>Dining room</span>
-                        <input type="checkbox" id="checkbox" />
-                    </label>
-                </div>
-                <div style={labelStyle}>
-                    <div>
-                        <input type="radio" id="small" name="diningRoomSize" value="small" />
-                        <label for="small">Small</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="medium" name="diningRoomSize" value="medium" />
-                        <label for="medium">Medium</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="large" name="diningRoomSize" value="large" />
-                        <label for="large">Large</label>
-                    </div>
-                </div>
+                    <label htmlFor="diningRoom">Dining Room</label>
+                    <input type="checkbox" id="diningRoom" name="diningRoom" style={{ marginLeft: '10px' }} onChange={() => setShowDiningRoomSize(!showDiningRoomSize)} />
+                </div>{showDiningRoomSize && (
+                    <div style={labelStyle}>
+                        <div>
+                            <input type="radio" id="small" name="diningRoomSize" value="small" />
+                            <label for="small">Small</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="medium" name="diningRoomSize" value="medium" />
+                            <label for="medium">Medium</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="large" name="diningRoomSize" value="large" />
+                            <label for="large">Large</label>
+                        </div>
+                    </div>)}
                 <div>
                     <label style={{ display: 'flex', alignItems: 'center' }}>
                         <span style={{ marginRight: '10px' }}>Kitchen</span>
