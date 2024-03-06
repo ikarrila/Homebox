@@ -1,4 +1,6 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
 import '/styles/styles.css';
 import Postbutton from './Postbutton';
 
@@ -55,14 +57,11 @@ export default function CostCalculatorForm() {
                         </select>
                     </div>
                     <div>
-                        <div>
-                            <label style={{ margin: '10px' }}>Location:</label>
+
+                        <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '10px' }}>
+                            <label htmlFor="location">Location:</label>
+                            <input type="text" id="location" name="location" style={{ border: '1px solid grey' }} />
                         </div>
-                        <select style={{ margin: '10px' }}>
-                            <option value="" disabled selected>Select...</option>
-                            <option value="1">Location 1</option>
-                            <option value="2">Location 2</option>
-                        </select>
                     </div>
                 </div>
                 <hr />
@@ -209,11 +208,11 @@ export default function CostCalculatorForm() {
                 <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
                     <div style={{ marginRight: '20px' }}>
                         <label htmlFor="name">Name:   </label>
-                        <input type="text" id="name" name="name" />
+                        <input type="text" id="name" name="name" style={{ border: '1px solid grey' }} />
                     </div>
                     <div>
                         <label htmlFor="email">Email:   </label>
-                        <input type="text" id="email" name="email" />
+                        <input type="text" id="email" name="email" style={{ border: '1px solid grey' }} />
                     </div>
                 </div>
                 <Postbutton />
