@@ -1,4 +1,6 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
 import '/styles/styles.css';
 import Postbutton from './Postbutton';
 
@@ -23,6 +25,11 @@ const stepStyle = {
 };
 
 export default function CostCalculatorForm() {
+    const [showLivingRoomSize, setShowLivingRoomSize] = useState(false);
+    const [showDiningRoomSize, setShowDiningRoomSize] = useState(false);
+    const [showKitchenSize, setShowKitchenSize] = useState(false);
+    const [showMainBedroomSize, setShowMainBedroomSize] = useState(false);
+
     return (
 
 
@@ -55,57 +62,51 @@ export default function CostCalculatorForm() {
                         </select>
                     </div>
                     <div>
-                        <div>
-                            <label style={{ margin: '10px' }}>Location:</label>
+
+                        <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '10px' }}>
+                            <label htmlFor="location">Location:</label>
+                            <input type="text" id="location" name="location" style={{ border: '1px solid grey' }} />
                         </div>
-                        <select style={{ margin: '10px' }}>
-                            <option value="" disabled selected>Select...</option>
-                            <option value="1">Location 1</option>
-                            <option value="2">Location 2</option>
-                        </select>
                     </div>
                 </div>
                 <hr />
                 <div style={stepStyle}>Step 2: Select your rooms to furnish & room size </div>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <label htmlFor="livingRoom">Living Room  </label>
+                    <input type="checkbox" id="livingRoom" name="livingRoom" style={{ marginLeft: '10px' }} onChange={() => setShowLivingRoomSize(!showLivingRoomSize)} />                </div>
+                {showLivingRoomSize && (
+                    <div style={labelStyle}>
+                        <div>
+                            <input type="radio" id="small" name="livingRoomSize" value="small" />
+                            <label for="small">Small</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="medium" name="livingRoomSize" value="medium" />
+                            <label for="medium">Medium</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="large" name="livingRoomSize" value="large" />
+                            <label for="large">Large</label>
+                        </div>
+                    </div>)}
                 <div>
-                    <label style={{ display: 'flex', alignItems: 'center' }}>
-                        <span style={{ marginRight: '10px' }}>Living room</span>
-                        <input type="checkbox" id="checkbox" />
-                    </label>                </div>
-                <div style={labelStyle}>
-                    <div>
-                        <input type="radio" id="small" name="livingRoomSize" value="small" />
-                        <label for="small">Small</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="medium" name="livingRoomSize" value="medium" />
-                        <label for="medium">Medium</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="large" name="livingRoomSize" value="large" />
-                        <label for="large">Large</label>
-                    </div>
-                </div>
-                <div>
-                    <label style={{ display: 'flex', alignItems: 'center' }}>
-                        <span style={{ marginRight: '10px' }}>Dining room</span>
-                        <input type="checkbox" id="checkbox" />
-                    </label>
-                </div>
-                <div style={labelStyle}>
-                    <div>
-                        <input type="radio" id="small" name="diningRoomSize" value="small" />
-                        <label for="small">Small</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="medium" name="diningRoomSize" value="medium" />
-                        <label for="medium">Medium</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="large" name="diningRoomSize" value="large" />
-                        <label for="large">Large</label>
-                    </div>
-                </div>
+                    <label htmlFor="diningRoom">Dining Room</label>
+                    <input type="checkbox" id="diningRoom" name="diningRoom" style={{ marginLeft: '10px' }} onChange={() => setShowDiningRoomSize(!showDiningRoomSize)} />
+                </div>{showDiningRoomSize && (
+                    <div style={labelStyle}>
+                        <div>
+                            <input type="radio" id="small" name="diningRoomSize" value="small" />
+                            <label for="small">Small</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="medium" name="diningRoomSize" value="medium" />
+                            <label for="medium">Medium</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="large" name="diningRoomSize" value="large" />
+                            <label for="large">Large</label>
+                        </div>
+                    </div>)}
                 <div>
                     <label style={{ display: 'flex', alignItems: 'center' }}>
                         <span style={{ marginRight: '10px' }}>Kitchen</span>
@@ -209,11 +210,11 @@ export default function CostCalculatorForm() {
                 <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
                     <div style={{ marginRight: '20px' }}>
                         <label htmlFor="name">Name:   </label>
-                        <input type="text" id="name" name="name" />
+                        <input type="text" id="name" name="name" style={{ border: '1px solid grey' }} />
                     </div>
                     <div>
                         <label htmlFor="email">Email:   </label>
-                        <input type="text" id="email" name="email" />
+                        <input type="text" id="email" name="email" style={{ border: '1px solid grey' }} />
                     </div>
                 </div>
                 <Postbutton />
