@@ -25,7 +25,7 @@ export default function Navbar() {
         </div>
         <a href="#">Portfolio</a>
         <a href="#">Contact</a>
-        <a href="#">Blog</a>
+        <Link href="/blog">Blog</Link>
       </div>
       <div style={{ display: "flex", gap: "1rem" }}>
         <input type="search" placeholder="Search" />
