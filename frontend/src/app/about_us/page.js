@@ -1,4 +1,9 @@
+import WhyUsDescription from "../../../components/WhyUsDescription";
+
 export default function about_us() {
-    return (<h1>About us</h1>
+    return (
+        <div>
+            <h1>About us</h1>
+        </div>
     );
 }
