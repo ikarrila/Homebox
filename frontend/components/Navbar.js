@@ -19,8 +19,8 @@ export default function Navbar() {
         <div className="dropdown">
           <a href="#">How it works</a>
           <div className="dropdown-content">
-            <a href="#">How it works</a>
-            <a href="#">About us</a>
+            <Link href="/how_it_works">How it works</Link>
+            <Link href="/about_us">About us</Link>
           </div>
         </div>
         <a href="#">Portfolio</a>
