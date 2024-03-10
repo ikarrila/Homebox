@@ -13,7 +13,7 @@ export default function Navbar() {
           <div className="dropdown-content">
             <a href="#">Furnishing</a>
             <Link href="/FAAS/rental_services/">FAAS</Link>
-            <a href="#">For Businesses</a>
+            <Link href="/for_businesses">For Businesses</Link>
           </div>
         </div>
         <div className="dropdown">
