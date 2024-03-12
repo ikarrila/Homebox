@@ -24,11 +24,9 @@ const stepStyle = {
 
 export default function CostCalculatorForm() {
     return (
-
-
-        <div>
+        <div data-testid="cost-calculator-form">
             <header style={{ padding: '10px', backgroundColor: '#f5f5f5', marginBottom: '20px' }}>
-                <h1>Cost calculator</h1>
+                <h1 data-testid="cost-calculator-header">Cost calculator</h1>
             </header>
             <div style={roomStyle}>
                 <div style={stepStyle}>Step 1: Select your property type & location </div>
@@ -43,8 +41,8 @@ export default function CostCalculatorForm() {
                         <div>
                             <label style={{ margin: '10px' }}>Property:</label>
                         </div>
-                        <select style={{ margin: '10px' }}>
-                            <option value="" disabled selected>Select property type...</option>
+                        <select style={{ margin: '10px' }} defaultValue="">
+                            <option value="" disabled>Select property type...</option>
                             <option value="1">Studio Apartment</option>
                             <option value="2">One Bedroom</option>
                             <option value="3">Two Bedroom</option>
@@ -58,8 +56,8 @@ export default function CostCalculatorForm() {
                         <div>
                             <label style={{ margin: '10px' }}>Location:</label>
                         </div>
-                        <select style={{ margin: '10px' }}>
-                            <option value="" disabled selected>Select...</option>
+                        <select style={{ margin: '10px' }} defaultValue="">
+                            <option value="" disabled >Select...</option>
                             <option value="1">Location 1</option>
                             <option value="2">Location 2</option>
                         </select>
@@ -75,15 +73,15 @@ export default function CostCalculatorForm() {
                 <div style={labelStyle}>
                     <div>
                         <input type="radio" id="small" name="livingRoomSize" value="small" />
-                        <label for="small">Small</label>
+                        <label htmlFor="small">Small</label>
                     </div>
                     <div>
                         <input type="radio" id="medium" name="livingRoomSize" value="medium" />
-                        <label for="medium">Medium</label>
+                        <label htmlFor="medium">Medium</label>
                     </div>
                     <div>
                         <input type="radio" id="large" name="livingRoomSize" value="large" />
-                        <label for="large">Large</label>
+                        <label htmlFor="large">Large</label>
                     </div>
                 </div>
                 <div>
@@ -95,15 +93,15 @@ export default function CostCalculatorForm() {
                 <div style={labelStyle}>
                     <div>
                         <input type="radio" id="small" name="diningRoomSize" value="small" />
-                        <label for="small">Small</label>
+                        <label htmlFor="small">Small</label>
                     </div>
                     <div>
                         <input type="radio" id="medium" name="diningRoomSize" value="medium" />
-                        <label for="medium">Medium</label>
+                        <label htmlFor="medium">Medium</label>
                     </div>
                     <div>
                         <input type="radio" id="large" name="diningRoomSize" value="large" />
-                        <label for="large">Large</label>
+                        <label htmlFor="large">Large</label>
                     </div>
                 </div>
                 <div>
@@ -115,15 +113,15 @@ export default function CostCalculatorForm() {
                 <div style={labelStyle}>
                     <div>
                         <input type="radio" id="small" name="kitchenSize" value="small" />
-                        <label for="small">Small</label>
+                        <label htmlFor="small">Small</label>
                     </div>
                     <div>
                         <input type="radio" id="medium" name="kitchenSize" value="medium" />
-                        <label for="medium">Medium</label>
+                        <label htmlFor="medium">Medium</label>
                     </div>
                     <div>
                         <input type="radio" id="large" name="kitchenSize" value="large" />
-                        <label for="large">Large</label>
+                        <label htmlFor="large">Large</label>
                     </div>
                 </div>
                 <div>
@@ -135,15 +133,15 @@ export default function CostCalculatorForm() {
                 <div style={labelStyle}>
                     <div>
                         <input type="radio" id="small" name="bedroomSize" value="small" />
-                        <label for="small">Small</label>
+                        <label htmlFor="small">Small</label>
                     </div>
                     <div>
                         <input type="radio" id="medium" name="bedroomSize" value="medium" />
-                        <label for="medium">Medium</label>
+                        <label htmlFor="medium">Medium</label>
                     </div>
                     <div>
                         <input type="radio" id="large" name="bedroomSize" value="large" />
-                        <label for="large">Large</label>
+                        <label htmlFor="large">Large</label>
                     </div>
                 </div>
                 <div>
@@ -155,15 +153,15 @@ export default function CostCalculatorForm() {
                 <div style={labelStyle}>
                     <div>
                         <input type="radio" id="small" name="homeOfficeSize" value="small" />
-                        <label for="small">Small</label>
+                        <label htmlFor="small">Small</label>
                     </div>
                     <div>
                         <input type="radio" id="medium" name="homeOfficeSize" value="medium" />
-                        <label for="medium">Medium</label>
+                        <label htmlFor="medium">Medium</label>
                     </div>
                     <div>
                         <input type="radio" id="large" name="homeOfficeSize" value="large" />
-                        <label for="large">Large</label>
+                        <label htmlFor="large">Large</label>
                     </div>
                 </div>
                 <div>
@@ -175,15 +173,15 @@ export default function CostCalculatorForm() {
                 <div style={labelStyle}>
                     <div>
                         <input type="radio" id="small" name="outdoorSize" value="small" />
-                        <label for="small">Small</label>
+                        <label htmlFor="small">Small</label>
                     </div>
                     <div>
                         <input type="radio" id="medium" name="outdoorSize" value="medium" />
-                        <label for="medium">Medium</label>
+                        <label htmlFor="medium">Medium</label>
                     </div>
                     <div>
                         <input type="radio" id="large" name="outdoorSize" value="large" />
-                        <label for="large">Large</label>
+                        <label htmlFor="large">Large</label>
                     </div>
                 </div>
                 <div>
@@ -191,7 +189,7 @@ export default function CostCalculatorForm() {
 
                     <div style={stepStyle}>Step 3: Select your level of furnishing needs</div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '40px' }}>
-                        <select style={{ margin: '10px' }}>
+                        <select style={{ margin: '10px' }} defaultValue="">
                             <option value="" disabled selected>Select...</option>
                             <option value="1">Standard</option>
                             <option value="2">Premium</option>
@@ -209,11 +207,11 @@ export default function CostCalculatorForm() {
                 <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
                     <div style={{ marginRight: '20px' }}>
                         <label htmlFor="name">Name:   </label>
-                        <input type="text" id="name" name="name" />
+                        <input type="text" id="name" data-testid="name-input" name="name" />
                     </div>
                     <div>
                         <label htmlFor="email">Email:   </label>
-                        <input type="text" id="email" name="email" />
+                        <input type="text" id="email" data-testid="email-input" name="email" />
                     </div>
                 </div>
                 <Postbutton />
