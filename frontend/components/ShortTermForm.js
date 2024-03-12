@@ -39,8 +39,8 @@ export default function ShortTermForm() {
                 </div>
                     <div style={stepStyle}>Select your level of furnishing needs</div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '40px' }}>
-                        <select style={{ margin: '10px' }} data-testid="select">
-                            <option value="" disabled selected>Select...</option>
+                        <select style={{ margin: '10px' }} defaultValue="" data-testid="select">
+                            <option value="" disabled>Select...</option>
                             <option value="1">Standard</option>
                             <option value="2">Premium</option>
                         </select>
