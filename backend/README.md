@@ -82,19 +82,100 @@ Jos ei määritä jotain databasea niin kaikki tiedot menevät test-databaseen j
 
 ## backendin käyttö
 
-MONGODBN:n käyttöönoton jälkeen
-Api-kutsuja (GET, POST) voi tehdä seuraavaan placeholder testirouteen:
+# API Dokumentaatio
 
-esimerkki-post-pyynnön bodyn sisällöstä (ID luodaan automaattisesti)
+<details>
+  <summary>Emails</summary>
+  
+### Emails
+
+#### GET /emails
+
+Palauttaa listan email-entryistä tietokannassa.
+
+Request: ei mitään
+
+Response: tietokannan kaikki email-entryt
+
+```
+[
+    {
+        "_id": "65f2dcc313abfda4183a1ff5",
+        "source": "short-term rental",
+        "textField": "content",
+        "furnishingLevel": "Standard",
+        "roomChoices": {
+            "noDataSent": true
+        },
+        "name": "content",
+        "email": "content",
+        "createdAt": "2024-03-14T11:17:23.601Z",
+        "updatedAt": "2024-03-14T11:17:23.601Z"
+    },
+    {
+        "_id": "65f2dcda13abfda4183a1ff8",
+        "source": "short-term rental",
+        "textField": "content",
+        "furnishingLevel": "Standard",
+        "roomChoices": {
+            "bigRoom": true
+        },
+        "name": "content",
+        "email": "content",
+        "createdAt": "2024-03-14T11:17:46.421Z",
+        "updatedAt": "2024-03-14T11:17:46.421Z"
+    }
+]
+```
+
+#### DELETE /emails/id
+
+Poistaa tietyn email-entryn id:n perusteella
+
+Request: ei mitään
+
+Response (toistaiseksi): poistettu email-entry
+
+#### POST /emails/id
+
+Lisää email-entryn, lähetä siis tämäntyylinen objekti. roomChoicesissa voi
+olla kuinka monta avainta tahansa, bigRoom on vain esimerkki. Jos roomChoicesissa
+ei yhtään avainta, lisätään sinne avain ja arvo "noDataSent": true
+
+Request:
+
+```
 {
-"name": "Toinen", "price": 300
+  "source": "short-term rental",
+  "textField": "content",
+  "furnishingLevel": "Standard",
+  "roomChoices": {
+    "bigRoom": true
+  },
+  "name": "content",
+  "email": "content"
 }
+```
 
-Kutsuja voidaan tehdä esim Postman-sovelluksen/extension avulla (suosittelen vscode-extensiota)
+Response: Lisätyt timestampit ja automaattisesti luotu "\_id"
 
-(toistaiseksi defaultportti on ollut 4000, määritelty backend/src/main.ts -tiedostossa)
-http://localhost:4000/products
+```
+{
+    "source": "short-term rental",
+    "textField": "content",
+    "furnishingLevel": "Standard",
+    "roomChoices": {
+        "bigRoom": true
+    },
+    "name": "content",
+    "email": "content",
+    "_id": "65f2df7d26fc359115aa7512",
+    "createdAt": "2024-03-14T11:29:01.437Z",
+    "updatedAt": "2024-03-14T11:29:01.437Z"
+}
+```
 
+</details>
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
@@ -108,3 +189,7 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+```
+
+```
