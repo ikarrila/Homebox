@@ -2,27 +2,19 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: "lightgray", padding: "1rem", display: "flex", justifyContent: "space-between" }}>
+    <footer style={{ backgroundColor: "lightgray", padding: "1rem" }}>
+
       <div>
-        {/* Placeholder circle for company logo */}
-        <img src="/path/to/logo.png" alt="Company Logo" />
-        <div style={{ width: "50px", height: "50px", borderRadius: "50%", backgroundColor: "grey" }}></div>
-      </div>
-      <div>
-        <h3>Links</h3>
-        <ul>
-          <li><a href="#">Link 1</a></li>
-          <li><a href="#">Link 2</a></li>
-          <li><a href="#">Link 3</a></li>
+        <ul style={{ display: "flex", justifyContent: "space-around", listStyle: "none", padding: 0 }}>
+          <li><a href="#">Refund Policy</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Shopping Policy</a></li>
+          <li><a href="#">Contact Us</a></li>
         </ul>
       </div>
-      <div>
-        <h3>Partners</h3>
-        <ul>
-          <li><a href="#">Partner 1</a></li>
-          <li><a href="#">Partner 2</a></li>
-          <li><a href="#">Partner 3</a></li>
-        </ul>
+      <div style={{ textAlign: "center", marginTop: "1rem" }}>
+        <p>&copy; 2024</p>
       </div>
     </footer>
   );

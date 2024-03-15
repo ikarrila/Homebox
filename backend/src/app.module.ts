@@ -6,6 +6,7 @@ import { ProductsModule } from './products/products.module';
 import { ProductsController } from './products/products.controller';
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
+import { EmailsModule } from './emails/emails.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { MongooseModule } from '@nestjs/mongoose';
     MongooseModule.forRoot(process.env.DB_URI),
     //----- productsmodule on oma moduulinsa
     ProductsModule,
+    EmailsModule,
   ],
 })
 export class AppModule implements NestModule {

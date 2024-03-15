@@ -13,19 +13,19 @@ export default function Navbar() {
           <div className="dropdown-content">
             <a href="#">Furnishing</a>
             <Link href="/FAAS/rental_services/">FAAS</Link>
-            <a href="#">For Businesses</a>
+            <Link href="/for_businesses">For Businesses</Link>
           </div>
         </div>
         <div className="dropdown">
           <a href="#">How it works</a>
           <div className="dropdown-content">
-            <a href="#">How it works</a>
-            <a href="#">About us</a>
+            <Link href="/how_it_works">How it works</Link>
+            <Link href="/about_us">About us</Link>
           </div>
         </div>
         <a href="#">Portfolio</a>
         <a href="#">Contact</a>
-        <a href="#">Blog</a>
+        <Link href="/blog">Blog</Link>
       </div>
       <div style={{ display: "flex", gap: "1rem" }}>
         <input type="search" placeholder="Search" />
