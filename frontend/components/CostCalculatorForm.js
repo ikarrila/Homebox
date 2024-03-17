@@ -29,6 +29,13 @@ export default function CostCalculatorForm() {
     const [showDiningRoomSize, setShowDiningRoomSize] = useState(false);
     const [showKitchenSize, setShowKitchenSize] = useState(false);
     const [showMainBedroomSize, setShowMainBedroomSize] = useState(false);
+    const [showHomeOfficeSize, setHomeOfficeSize] = useState(false);
+    const [showOutdoorSize, setOutdoorSize] = useState(false);
+    const [propertyType, setPropertyType] = useState('');
+
+    const handlePropertyTypeChange = (event) => {
+        setPropertyType(event.target.value);
+    };
 
     return (
         <div data-testid="cost-calculator-form">
@@ -106,85 +113,77 @@ export default function CostCalculatorForm() {
                         </div>
                     </div>)}
                 <div>
-                    <label style={{ display: 'flex', alignItems: 'center' }}>
-                        <span style={{ marginRight: '10px' }}>Kitchen</span>
-                        <input type="checkbox" id="checkbox" />
-                    </label>
-                </div>
-                <div style={labelStyle}>
-                    <div>
-                        <input type="radio" id="small" name="kitchenSize" value="small" />
-                        <label htmlFor="small">Small</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="medium" name="kitchenSize" value="medium" />
-                        <label htmlFor="medium">Medium</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="large" name="kitchenSize" value="large" />
-                        <label htmlFor="large">Large</label>
-                    </div>
-                </div>
+                    <label htmlFor="kitchen">Kitchen</label>
+                    <input type="checkbox" id="kitchen" name="kitchen" style={{ marginLeft: '10px' }} onChange={() => setShowKitchenSize(!showKitchenSize)} />
+                </div>{showKitchenSize && (
+                    <div style={labelStyle}>
+                        <div>
+                            <input type="radio" id="small" name="kitchenSize" value="small" />
+                            <label for="small">Small</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="medium" name="kitchenSize" value="medium" />
+                            <label for="medium">Medium</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="large" name="kitchenSize" value="large" />
+                            <label for="large">Large</label>
+                        </div>
+                    </div>)}
                 <div>
-                    <label style={{ display: 'flex', alignItems: 'center' }}>
-                        <span style={{ marginRight: '10px' }}>Main bedroom</span>
-                        <input type="checkbox" id="checkbox" />
-                    </label>
-                </div>
-                <div style={labelStyle}>
-                    <div>
-                        <input type="radio" id="small" name="bedroomSize" value="small" />
-                        <label htmlFor="small">Small</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="medium" name="bedroomSize" value="medium" />
-                        <label htmlFor="medium">Medium</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="large" name="bedroomSize" value="large" />
-                        <label htmlFor="large">Large</label>
-                    </div>
-                </div>
+                    <label htmlFor="mainBedroom">Main bedroom</label>
+                    <input type="checkbox" id="mainBedroom" name="mainBedroom" style={{ marginLeft: '10px' }} onChange={() => setShowMainBedroomSize(!showMainBedroomSize)} />
+                </div>{showMainBedroomSize && (
+                    <div style={labelStyle}>
+                        <div>
+                            <input type="radio" id="small" name="bedroomSize" value="small" />
+                            <label for="small">Small</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="medium" name="bedroomSize" value="medium" />
+                            <label for="medium">Medium</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="large" name="bedroomSize" value="large" />
+                            <label for="large">Large</label>
+                        </div>
+                    </div>)}
                 <div>
-                    <label style={{ display: 'flex', alignItems: 'center' }}>
-                        <span style={{ marginRight: '10px' }}>Home office</span>
-                        <input type="checkbox" id="checkbox" />
-                    </label>
-                </div>
-                <div style={labelStyle}>
-                    <div>
-                        <input type="radio" id="small" name="homeOfficeSize" value="small" />
-                        <label htmlFor="small">Small</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="medium" name="homeOfficeSize" value="medium" />
-                        <label htmlFor="medium">Medium</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="large" name="homeOfficeSize" value="large" />
-                        <label htmlFor="large">Large</label>
-                    </div>
-                </div>
+                    <label htmlFor="homeoffice">Home Office</label>
+                    <input type="checkbox" id="homeoffice" name="homeoffice" style={{ marginLeft: '10px' }} onChange={() => setHomeOfficeSize(!showHomeOfficeSize)} />
+                </div>{showHomeOfficeSize && (
+                    <div style={labelStyle}>
+                        <div>
+                            <input type="radio" id="small" name="homeOfficeSize" value="small" />
+                            <label for="small">Small</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="medium" name="homeOfficeSize" value="medium" />
+                            <label for="medium">Medium</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="large" name="homeOfficeSize" value="large" />
+                            <label for="large">Large</label>
+                        </div>
+                    </div>)}
                 <div>
-                    <label style={{ display: 'flex', alignItems: 'center' }}>
-                        <span style={{ marginRight: '10px' }}>Outdoor space</span>
-                        <input type="checkbox" id="checkbox" />
-                    </label>
-                </div>
-                <div style={labelStyle}>
-                    <div>
-                        <input type="radio" id="small" name="outdoorSize" value="small" />
-                        <label htmlFor="small">Small</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="medium" name="outdoorSize" value="medium" />
-                        <label htmlFor="medium">Medium</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="large" name="outdoorSize" value="large" />
-                        <label htmlFor="large">Large</label>
-                    </div>
-                </div>
+                    <label htmlFor="outdoorSpace">Outdoor space</label>
+                    <input type="checkbox" id="outdoorSpace" name="outdoorSpace" style={{ marginLeft: '10px' }} onChange={() => setOutdoorSize(!showOutdoorSize)} />
+                </div>{showOutdoorSize && (
+                    <div style={labelStyle}>
+                        <div>
+                            <input type="radio" id="small" name="outdoorSize" value="small" />
+                            <label for="small">Small</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="medium" name="outdoorSize" value="medium" />
+                            <label for="medium">Medium</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="large" name="outdoorSize" value="large" />
+                            <label for="large">Large</label>
+                        </div>
+                    </div>)}
                 <div>
                     <hr />
 
