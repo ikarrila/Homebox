@@ -26,6 +26,7 @@ export default function Navbar() {
           <Link href="/FAAS/rental_services/">FAAS</Link>
           <Link href="/for_businesses">For Businesses</Link>
         </div>
+
       </div>
       <div className="dropdown">
         <a href="#">How it works</a>
@@ -34,7 +35,7 @@ export default function Navbar() {
           <Link href="/about_us">About us</Link>
         </div>
       </div>
-      <a href="#">Portfolio</a>
+      <Link href="/portfolio">Portfolio</Link>
       <a href="#">Contact</a>
       <Link href="/blog">Blog</Link>
       {isChecked && <div> ASDASDASD </div>}
