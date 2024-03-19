@@ -28,10 +28,11 @@
     margin-top: -37px !important;
     transition: opacity 1.3s;
   }
+  /* secret dropdown */
   .secret-dropdown {
     display: flex !important;
-
   }
+  /* content of secret dropdown menu*/
   .secret-content {
     display: flex !important;
     flex-direction: column; 
@@ -46,6 +47,7 @@
     border-radius: 5%;
     
   }
+  /* opacity transition of secret dropdown */
   .dropdown:hover > .alternative {
     opacity: 1;
     pointer-events: auto;
@@ -79,16 +81,15 @@
     flex-shrink: 0;
     align-self: center;
   }
-  
-  .dropdown, a, .burger-menu, .burger-text {
+  /* dropdown holds the div which has the dropdown content */
+  /* a are temporary links */
+  .dropdown, a {
     display: flex;
     text-align: center;
     justify-content: space-evenly;
     align-items: center; 
-    padding:2vw;
-  }
-  a {    
-    text-decoration: none;
+    padding:2vw;   
+     text-decoration: none;
     color: black;
   }
   /* Dropdown menu items have this, changed to visible when active */
@@ -104,6 +105,9 @@
   .dropdown:hover .dropdown-content {
     display: block;
   }
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
 
   .dropdown-content a {
     display: block;
@@ -112,54 +116,44 @@
     background-color: grey;
   }
   
-  .dropdown-content a:hover {
-    background-color: #ddd;
-  }
 
     /**
     Hamburger
   **/
-  .burger-menu{
-    display: none;
-  }
-
   #toggle {
     display: none;
   }
 
   .hamburger {
     display: none;
-    
-    position: relative;
-    margin-top: 50%;
+    margin-top: 16px;
     margin-left: auto;
     margin-bottom: auto;
     z-index: 5;
   }
   
-  .hamburger div {
-    
-    position: relative;
+  .hamburger  div {
     width: 3em;
     height: 7px;
     border-radius: 3px;
     background-color: darkgrey;
     margin-top: 8px;
-    transition: all 0.3s ease-in-out;
   }
-  
+  .top-bun, .meat, .bottom-bun {
+    transition: all 0.2s ease-in-out;
+  }
   /**
   Animations for burger
   **/
-  #toggle:checked + .hamburger .top-bun {
-    margin-top: 40px;
+  #toggle:checked ~ .hamburger .top-bun {
     transform: rotate(-45deg);
+    margin-top: 24px;
   }
-  #toggle:checked + .hamburger .bottom-bun {
+  #toggle:checked ~ .hamburger .bottom-bun {
     opacity: 0;
     transform: rotate(45deg);
   }
-  #toggle:checked + .hamburger .meat {
+  #toggle:checked ~ .hamburger .meat {
     transform: rotate(45deg);
     margin-top: -6px;
   }

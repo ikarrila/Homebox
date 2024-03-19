@@ -59,7 +59,7 @@ export default function Navbar() {
         </div>
       </div>}
       {/* BELOW IS THE BURGERMENU BUTTON */}
-      <NavbarButton key={isChecked ? 'checked' : 'unchecked'} handleCheckboxChange={handleCheckboxChange} isChecked={isChecked} />
+      <NavbarButton handleCheckboxChange={handleCheckboxChange} isChecked={isChecked} />
 
     </nav >
   );
