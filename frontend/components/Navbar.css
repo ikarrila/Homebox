@@ -1,7 +1,4 @@
 @media (max-width: 666px) {
-  .dropdown, a {
-    display: none !important;
-  }
   .navbar {
     padding-right: 4vw !important;
     padding-left: 4vw !important;
@@ -11,8 +8,56 @@
   .hamburger {
     display: block !important;
   }
+  .hidden {
+    display: none !important;
+  }
+  .dropdown > * > * {
+    border-bottom: 0.5px solid lightgray;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+  .secret-content > * {
+    border-bottom: 0.5px solid lightgray;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+  .dropdown > .alternative {
+    opacity: 0;
+    margin-right: 100vw !important;
+    padding-right: 0 !important;
+    margin-top: -37px !important;
+    transition: opacity 1.3s;
+  }
+  .secret-dropdown {
+    display: flex !important;
+
+  }
+  .secret-content {
+    display: flex !important;
+    flex-direction: column; 
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 100;
+    top: 88px;
+    padding-right: auto !important;
+    min-width: 50vw !important;
+    max-height: 50vh !important;
+    border-radius: 5%;
+    
+  }
+  .dropdown:hover > .alternative {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0s;
+  }
+
+  .secret-content > * {
+    height: 50px;
+  }
 }
 
+/* main container */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -24,7 +69,7 @@
     padding-right: 14%;
     padding-left: 14%;
   }
-  
+  /* logo */
   .placeholder-logo {
     width: 50px;
     height: 50px;
@@ -46,7 +91,7 @@
     text-decoration: none;
     color: black;
   }
-  
+  /* Dropdown menu items have this, changed to visible when active */
   .dropdown-content {
     display: none;
     position: absolute;
@@ -55,7 +100,7 @@
     z-index: 1;
     top: 88px;
   }
-  
+  /* Shows the dropdown menu items when hovered over */
   .dropdown:hover .dropdown-content {
     display: block;
   }
@@ -71,18 +116,17 @@
     background-color: #ddd;
   }
 
+    /**
+    Hamburger
+  **/
   .burger-menu{
     display: none;
   }
 
-  
   #toggle {
     display: none;
   }
-  
-  /**
-    Hamburger
-  **/
+
   .hamburger {
     display: none;
     
@@ -105,7 +149,7 @@
   }
   
   /**
-  Animations
+  Animations for burger
   **/
   #toggle:checked + .hamburger .top-bun {
     margin-top: 40px;
@@ -120,3 +164,15 @@
     margin-top: -6px;
   }
   
+  /* secret dropdown  on mobile */
+.secret-dropdown {
+  display: none;
+
+}
+
+/*button animations*/
+@keyframes flash {
+  0% { background-color: initial; }
+  50% { background-color: grey; }
+  100% { background-color: initial; }
+}
