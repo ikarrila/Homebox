@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: "lightgray", padding: "1rem" }}>
+    <footer className="footer" >
 
       <div>
         <ul style={{ display: "flex", justifyContent: "space-around", listStyle: "none", padding: 0 }}>
