@@ -27,5 +27,8 @@
   },
   "scripts": {
     "test": "jest"
+  },
+  "dependencies": {
+    "react-device-detect": "^2.2.3"
   }
 }
