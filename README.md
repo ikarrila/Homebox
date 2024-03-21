@@ -12,7 +12,39 @@ Instructions for launching Next.js and NestJS within /frontend and /backend.
 
 ## Tests
 
-TODO  
+# Testing Guide
+
+This project uses [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) for unit testing.
+
+# Running Tests
+
+To run the tests, use the following command:
+
+```bash
+npm test
+```
+
+# Writing Tests
+
+Tests are located in test-folder. All tests have component names with .test.js extension.
+
+Basic structure of unit test file: 
+
+```bash
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import Component from './Component'; // replace with path to component
+
+describe('Component', () => {
+  test('renders Component component without crashing', () => {
+    render(<Component />);
+    // Add your assertions here
+  });
+
+  // Add more tests as needed
+});
+```
 
 | Requirement | Test file |  
 | ------ | ------ |  

@@ -2,10 +2,10 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <footer className="footer" >
+    <footer className="footer" data-testid="footer">
 
       <div>
-        <ul style={{ display: "flex", justifyContent: "space-around", listStyle: "none", padding: 0 }}>
+        <ul style={{ display: "flex", justifyContent: "space-around", listStyle: "none", padding: 0 }} data-testid="footer-list">
           <li><a href="#">Refund Policy</a></li>
           <li><a href="#">Privacy Policy</a></li>
           <li><a href="#">Terms of Service</a></li>
@@ -14,7 +14,7 @@ export default function Footer() {
         </ul>
       </div>
       <div style={{ textAlign: "center", marginTop: "1rem" }}>
-        <p>&copy; 2024</p>
+        <p data-testid="copyright-text">&copy; 2024</p>
       </div>
     </footer>
   );
