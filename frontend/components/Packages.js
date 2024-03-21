@@ -35,6 +35,160 @@ export default function Package() {
 
     };
 
+    const PackageDetails = ({ packageType }) => {
+        switch (packageType) {
+            case '1':
+                return (
+                    <>
+                        <h4><b>Bedroom</b></h4>
+                        <li>1x bed</li>
+                        <li>1x bedside table</li>
+                        <h4><b>Kitchen</b></h4>
+                        <li>1x dining table</li>
+                        <li>2x chairs</li>
+                        <h4><b>Living room</b></h4>
+                        <li>1x arm chair</li>
+                        <li>1x side table</li>
+                    </>
+                );
+            case '2':
+                return (
+                    <>
+                        <h4><b>Bedroom</b></h4>
+                        <li>1x bed</li>
+                        <li>2x bedside table</li>
+                        <h4><b>Kitchen</b></h4>
+                        <li>1x dining table</li>
+                        <li>2x chairs</li>
+                        <h4><b>Living room</b></h4>
+                        <li>1x two seater sofa</li>
+                        <li>1x arm chair</li>
+                        <li>1x coffee table</li>
+                    </>
+                );
+            case '3':
+                return (
+                    <>
+                        <h4><b>Bedroom</b></h4>
+                        <li>2x bed</li>
+                        <li>3x bedside table</li>
+                        <h4><b>Kitchen</b></h4>
+                        <li>1x dining table</li>
+                        <li>4x chairs</li>
+                        <h4><b>Living room</b></h4>
+                        <li>1x three seater sofa</li>
+                        <li>1x arm chair</li>
+                        <li>1x coffee table</li>
+                        <li>1x side table</li>
+                    </>
+                );
+            case '4':
+                return (
+                    <>
+                        <h4><b>Bedroom</b></h4>
+                        <li>3x bed</li>
+                        <li>5x bedside table</li>
+                        <h4><b>Kitchen</b></h4>
+                        <li>1x dining table</li>
+                        <li>6x chairs</li>
+                        <h4><b>Living room</b></h4>
+                        <li>1x three seater sofa</li>
+                        <li>1x two seater sofa</li>
+                        <li>1x arm chair</li>
+                        <li>1x coffee table</li>
+                        <li>2x side table</li>
+                    </>
+                );
+            default:
+                return null;
+        }
+    }
+
+    const PremiumPackageDetails = ({ packageType }) => {
+        switch (packageType) {
+            case '1':
+                return (
+                    <>
+                        <h4><b>Bedroom</b></h4>
+                        <li>1x bed with headboard</li>
+                        <li>1x bedside table</li>
+                        <h4><b>Kitchen</b></h4>
+                        <li>1x dining table</li>
+                        <li>2x chairs</li>
+                        <h4><b>Living room</b></h4>
+                        <li>1x arm chair</li>
+                        <li>1x side table</li>
+                        <h4><b>Other</b></h4>
+                        <li>curtains (depending on house design)</li>
+                        <li>carpets (depending on house design)</li>
+                        <li>home essentials kit (new beddings, new bathroom essentials, essential kitchen utensils)</li>
+                    </>
+                );
+            case '2':
+                return (
+                    <>
+                        <h4><b>Bedroom</b></h4>
+                        <li>1x bed with headboard</li>
+                        <li>2x bedside table</li>
+                        <h4><b>Kitchen</b></h4>
+                        <li>1x dining table</li>
+                        <li>4x chairs</li>
+                        <h4><b>Living room</b></h4>
+                        <li>1x  two seater sofa</li>
+                        <li>1x arm chair</li>
+                        <li>1x coffee table</li>
+                        <h4><b>Other</b></h4>
+                        <li>curtains (depending on house design)</li>
+                        <li>carpets (depending on house design)</li>
+                        <li>home essentials kit (new beddings, new bathroom essentials, essential kitchen utensils)</li>
+                    </>
+                );
+            case '3':
+                return (
+                    <>
+                        <h4><b>Bedroom</b></h4>
+                        <li>2x bed with headboard</li>
+                        <li>4x bedside table</li>
+                        <h4><b>Kitchen</b></h4>
+                        <li>1x dining table</li>
+                        <li>4x chairs</li>
+                        <h4><b>Living room</b></h4>
+                        <li>1x  three seater sofa</li>
+                        <li>1x arm chair</li>
+                        <li>1x coffee table</li>
+                        <li>2x side table</li>
+                        <h4><b>Other</b></h4>
+                        <li>curtains (depending on house design)</li>
+                        <li>carpets (depending on house design)</li>
+                        <li>home essentials kit (new beddings, new bathroom essentials, essential kitchen utensils)</li>
+                    </>
+                );
+            case '4':
+                return (
+                    <>
+                        <h4><b>Bedroom</b></h4>
+                        <li>3x bed with headboard</li>
+                        <li>5x bedside table</li>
+                        <h4><b>Kitchen</b></h4>
+                        <li>1x dining table</li>
+                        <li>6x chairs</li>
+                        <h4><b>Living room</b></h4>
+                        <li>1x  three seater sofa</li>
+                        <li>1x  two seater sofa</li>
+                        <li>1x arm chair</li>
+                        <li>1x coffee table</li>
+                        <li>2x side table</li>
+                        <h4><b>Other</b></h4>
+                        <li>curtains (depending on house design)</li>
+                        <li>carpets (depending on house design)</li>
+                        <li>home essentials kit (new beddings, new bathroom essentials, essential kitchen utensils)</li>
+                    </>
+                );
+            default:
+                return null;
+        }
+    }
+
     return (
         <div>
             <header style={{ padding: '10px', backgroundColor: '#f5f5f5', marginBottom: '20px' }}>
@@ -75,78 +229,15 @@ export default function Package() {
                             <option value="3">2 Bedroom package</option>
                             <option value="4">3 Bedroom package</option>
                         </select>
+
                         {selectedStandardPackage && (
-                            <button onClick={handleViewStandardPackage} className='button'>View Package</button>
-                        )}
-                        {showStandardPackage && buttonPressed && (
-                            <div>
+                            <>
                                 <hr />
                                 <p>List of items for selected package:</p>
-                                <ul>
-                                    {selectedStandardPackage === '1' && (
-                                        <>
-                                            <h4><b>Bedroom</b></h4>
-                                            <li>1x bed</li>
-                                            <li>1x bedside table</li>
-                                            <h4><b>Kitchen</b></h4>
-                                            <li>1x dining table</li>
-                                            <li>2x chairs</li>
-                                            <h4><b>Living room</b></h4>
-                                            <li>1x arm chair</li>
-                                            <li>1x side table</li>
-                                        </>
-                                    )}
-
-                                    {selectedStandardPackage === '2' && (
-                                        <>
-                                            <h4><b>Bedroom</b></h4>
-                                            <li>1x bed</li>
-                                            <li>2x bedside table</li>
-                                            <h4><b>Kitchen</b></h4>
-                                            <li>1x dining table</li>
-                                            <li>4x chairs</li>
-                                            <h4><b>Living room</b></h4>
-                                            <li>1x two seater sofa</li>
-                                            <li>1x arm chair</li>
-                                            <li>1x coffee table</li>
-                                        </>
-                                    )}
-
-                                    {selectedStandardPackage === '3' && (
-                                        <>
-                                            <h4><b>Bedroom</b></h4>
-                                            <li>2x bed</li>
-                                            <li>3x bedside table</li>
-                                            <h4><b>Kitchen</b></h4>
-                                            <li>1x dining table</li>
-                                            <li>4x chairs</li>
-                                            <h4><b>Living room</b></h4>
-                                            <li>1x three seater sofa</li>
-                                            <li>1x arm chair</li>
-                                            <li>1x coffee table</li>
-                                            <li>1x side table</li>
-                                        </>
-                                    )}
-
-                                    {selectedStandardPackage === '4' && (
-                                        <>
-                                            <h4><b>Bedroom</b></h4>
-                                            <li>3x bed</li>
-                                            <li>5x bedside table</li>
-                                            <h4><b>Kitchen</b></h4>
-                                            <li>1x dining table</li>
-                                            <li>6x chairs</li>
-                                            <h4><b>Living room</b></h4>
-                                            <li>1x three seater sofa</li>
-                                            <li>1x two seater sofa</li>
-                                            <li>1x arm chair</li>
-                                            <li>1x coffee table</li>
-                                            <li>2x side table</li>
-                                        </>
-                                    )}
-                                </ul>
-                            </div>
+                                <PackageDetails packageType={selectedStandardPackage} />
+                            </>
                         )}
+
                     </div>
                     <div id='premium'>
                         < Image class='image-container' src={img2} alt="img2" objectFit="contain" style={{ height: '250px', width: 'auto' }} />
@@ -160,93 +251,13 @@ export default function Package() {
                             <option value="4">3 Bedroom package</option>
                         </select>
                         {selectedPremiumPackage && (
-                            <button onClick={handleViewPremiumPackage} className='button'>View Package</button>
-                        )}
-                        {showPremiumPackage && buttonPressed && (
-                            <div>
+                            <>
                                 <hr />
-                                <p>List of items for selected package:</p>
-                                <ul>
-                                    {selectedPremiumPackage === '1' && (
-                                        <>
-                                            <h4><b>Bedroom</b></h4>
-                                            <li>1x bed with headboard</li>
-                                            <li>1x bedside table</li>
-                                            <h4><b>Kitchen</b></h4>
-                                            <li>1x dining table</li>
-                                            <li>2x chairs</li>
-                                            <h4><b>Living room</b></h4>
-                                            <li>1x arm chair</li>
-                                            <li>1x side table</li>
-                                            <h4><b>Other</b></h4>
-                                            <li>curtains (depending on house design)</li>
-                                            <li>carpets (depending on house design)</li>
-                                            <li>home essentials kit (new beddings, new bathroom essentials, essential kitchen utensils)</li>
-                                        </>
-                                    )}
-
-                                    {selectedPremiumPackage === '2' && (
-                                        <>
-                                            <h4><b>Bedroom</b></h4>
-                                            <li>1x bed with headboard</li>
-                                            <li>2x bedside table</li>
-                                            <h4><b>Kitchen</b></h4>
-                                            <li>1x dining table</li>
-                                            <li>4x chairs</li>
-                                            <h4><b>Living room</b></h4>
-                                            <li>1x  two seater sofa</li>
-                                            <li>1x arm chair</li>
-                                            <li>1x coffee table</li>
-                                            <h4><b>Other</b></h4>
-                                            <li>curtains (depending on house design)</li>
-                                            <li>carpets (depending on house design)</li>
-                                            <li>home essentials kit (new beddings, new bathroom essentials, essential kitchen utensils)</li>
-                                        </>
-                                    )}
-
-                                    {selectedPremiumPackage === '3' && (
-                                        <>
-                                            <h4><b>Bedroom</b></h4>
-                                            <li>2x bed with headboard</li>
-                                            <li>4x bedside table</li>
-                                            <h4><b>Kitchen</b></h4>
-                                            <li>1x dining table</li>
-                                            <li>4x chairs</li>
-                                            <h4><b>Living room</b></h4>
-                                            <li>1x  three seater sofa</li>
-                                            <li>1x arm chair</li>
-                                            <li>1x coffee table</li>
-                                            <li>2x side table</li>
-                                            <h4><b>Other</b></h4>
-                                            <li>curtains (depending on house design)</li>
-                                            <li>carpets (depending on house design)</li>
-                                            <li>home essentials kit (new beddings, new bathroom essentials, essential kitchen utensils)</li>
-                                        </>
-                                    )}
-
-                                    {selectedPremiumPackage === '4' && (
-                                        <>
-                                            <h4><b>Bedroom</b></h4>
-                                            <li>3x bed with headboard</li>
-                                            <li>5x bedside table</li>
-                                            <h4><b>Kitchen</b></h4>
-                                            <li>1x dining table</li>
-                                            <li>6x chairs</li>
-                                            <h4><b>Living room</b></h4>
-                                            <li>1x  three seater sofa</li>
-                                            <li>1x  two seater sofa</li>
-                                            <li>1x arm chair</li>
-                                            <li>1x coffee table</li>
-                                            <li>2x side table</li>
-                                            <h4><b>Other</b></h4>
-                                            <li>curtains (depending on house design)</li>
-                                            <li>carpets (depending on house design)</li>
-                                            <li>home essentials kit (new beddings, new bathroom essentials, essential kitchen utensils)</li>
-                                        </>
-                                    )}
-                                </ul>
-                            </div>
+                                <p>List of items for selected premium package:</p>
+                                <PremiumPackageDetails packageType={selectedPremiumPackage} />
+                            </>
                         )}
+
                     </div>
                 </div>
                 <hr />
