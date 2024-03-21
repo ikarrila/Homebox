@@ -7,22 +7,6 @@ import img1 from "../../pictures/francesca-tosolini-DmOhItSo49k-unsplash.jpg";
 import img2 from "../../pictures/kara-eads-L7EwHkq1B2s-unsplash.jpg";
 import Image from 'next/image';
 
-const roomStyle = {
-    marginLeft: '20px',
-    borderBottom: '1px solid #ccc',
-    paddingBottom: '10px',
-    marginBottom: '10px',
-};
-
-const stepStyle = {
-    backgroundColor: 'black',
-    color: 'white',
-    padding: '10px',
-    margin: '10px 0',
-    maxWidth: '95%',
-    width: '100%',
-};
-
 export default function Package() {
     const [selectedStandardPackage, setSelectedStandardPackage] = useState('');
     const [selectedPremiumPackage, setSelectedPremiumPackage] = useState('');
@@ -57,9 +41,9 @@ export default function Package() {
                 <h1>Short-term packages</h1>
             </header>
 
-            <div style={roomStyle}>
+            <div className="roomStyle">
                 <hr />
-                <div style={stepStyle}>Step 1: Select the rental period </div>
+                <div className="stepStyle">Step 1: Select the rental period </div>
                 <div style={{ display: 'flex' }}>
                     <div>
                         <div>
@@ -79,7 +63,7 @@ export default function Package() {
                     </div>
                 </div>
                 <hr />
-                <div style={stepStyle}>Step 2: Select the package</div>
+                <div className="stepStyle">Step 2: Select the package</div>
                 <div style={{ display: 'flex' }}>
                     <div id='standard'>
                         < Image class='image-container' src={img1} alt="img1" objectFit="contain" style={{ height: '250px', width: 'auto' }} />
@@ -266,7 +250,7 @@ export default function Package() {
                     </div>
                 </div>
                 <hr />
-                <div style={stepStyle}>Step 3: Submit your request to short term rental</div>
+                <div className="stepStyle">Step 3: Submit your request to short term rental</div>
 
                 <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
                     <div style={{ marginRight: '20px' }}>
