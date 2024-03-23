@@ -1,0 +1,4 @@
+/* Darker background for divs and other elements */
+.dark {
+    @apply bg-dark;
+}

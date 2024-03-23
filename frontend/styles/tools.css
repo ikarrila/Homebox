@@ -1,0 +1,20 @@
+/* For titles of each step of cost calculator and short-term package tool */
+.stepTitle {
+    @apply font-bold font-secondary w-full px-52 pt-5;
+
+  }
+
+/* For content of each step of cost calculator and short-term package tool */
+.step {
+    @apply flex items-center py-10 w-full px-52;
+}
+
+/* Align step contents against the container's start (column) */
+.startCol {
+    @apply flex-col items-start;
+}
+
+/* Align step contents against the container's start (row) */
+.startRow {
+    @apply items-start;
+}

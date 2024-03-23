@@ -1,0 +1,74 @@
+/* PAGE STRUCTURE */
+/* Main container for pages */
+.container {
+    @apply max-h-screen overflow-y-auto w-full;
+}
+
+/* Row flexbox, use as second class e.g. className='container row' */
+.row {
+    @apply flex flex-row justify-center;
+}
+
+/* Column flexbox, use as second class e.g. className='container col' */
+.col {
+    @apply flex flex-col items-center;
+}
+
+/* For dividing the space equally between two row elements */
+.left {
+    @apply mr-2 w-1/2;
+}
+
+/* For dividing the space equally between two row elements */
+.right {
+    @apply ml-2 w-1/2;
+}
+
+.section {
+    @apply w-full py-10 px-52 items-center;
+}
+
+/* only in layout.js */
+body .main-container {
+    @apply flex-col min-h-screen flex;
+}
+
+/* FOOTER */
+.footer {
+    @apply bg-body w-screen p-4 mt-auto;
+}
+
+/* OTHER CONTAINERS */
+.image-container {
+    @apply rounded-3xl inline-block;
+}
+
+/* Container for several links on a row */
+.link-container {
+    @apply flex justify-start;
+}
+/* Adding margin between the links */
+.link-container > .btn-secondary {
+    @apply ml-4;
+}
+
+/* ELEMENT STYLES */
+/* Drop-down menus */
+.selector {
+    @apply bg-white px-10 py-4 mb-2 rounded-md border h-14 w-full;
+}
+
+/* Input fields */
+.input {
+    @apply bg-white px-10 py-4 mb-2 rounded-md border h-14 w-full;
+}
+
+/* Checkboxes */
+input[type="checkbox"] {
+    @apply ml-3;
+}
+
+/* Radio buttons */
+input[type="radio"] {
+    @apply mr-3;
+}

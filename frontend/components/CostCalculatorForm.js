@@ -23,103 +23,36 @@ export default function CostCalculatorForm() {
     };
 
     return (
-        <div data-testid="cost-calculator-form">
-            <header style={{ padding: '10px', backgroundColor: '#f5f5f5', marginBottom: '20px' }}>
-                <h1 data-testid="cost-calculator-header">Cost calculator</h1>
-            </header>
-            <div className="room">
-                <div className="stepStyle">Step 1: Select your property type & location </div>
-                {/* Step content goes here */}
+        <div data-testid="cost-calculator-form" className='container col'>
+            <h1 data-testid="cost-calculator-header">Cost calculator</h1>
 
+            <div className="stepTitle">1. Select your property type & location </div>
+            <div className='step'>
+                <div className='left'>
+                    <select className='selector' defaultValue="" onChange={handlePropertyTypeChange}>
+                        <option value="" disabled>Select property type...</option>
+                        <option value="1">Studio Apartment</option>
+                        <option value="2">One Bedroom</option>
+                        <option value="3">Two Bedroom</option>
+                        <option value="4">Three Bedroom</option>
+                        <option value="5">Four Bedroom</option>
+                        <option value="6">Five Bedroom</option>
+                        <option value="7">Six Bedroom</option>
+                    </select>
+                </div>
+                <div className='right'>
+                    <input type="text" placeholder='Location' name="location" className='input' />
+                </div>
             </div>
 
-            <div className="room">
-                <hr />
-                <div style={{ display: 'flex' }}>
-                    <div>
-                        <div>
-                            <label style={{ margin: '10px' }}>Property:</label>
-                        </div>
-                        <select style={{ margin: '10px' }} defaultValue="" onChange={handlePropertyTypeChange}>
-                            <option value="" disabled>Select property type...</option>
-                            <option value="1">Studio Apartment</option>
-                            <option value="2">One Bedroom</option>
-                            <option value="3">Two Bedroom</option>
-                            <option value="4">Three Bedroom</option>
-                            <option value="5">Four Bedroom</option>
-                            <option value="6">Five Bedroom</option>
-                            <option value="7">Six Bedroom</option>
-                        </select>
-                    </div>
-                    <div>
-
-                        <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '10px' }}>
-                            <label htmlFor="location">Location:</label>
-                            <input type="text" id="location" name="location" style={{ border: '1px solid grey' }} />
-                        </div>
-                    </div>
-                </div>
-                <hr />
-                <div className="stepStyle">Step 2: Select your rooms to furnish & room size </div>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <label htmlFor="livingRoom">Living Room  </label>
-                    <input type="checkbox" id="livingRoom" name="livingRoom" style={{ marginLeft: '10px' }} onChange={() => setShowLivingRoomSize(!showLivingRoomSize)} />                </div>
-                {showLivingRoomSize && (
-                    <div className="labelStyle">
-                        <div>
-                            <input type="radio" id="small" name="livingRoomSize" value="small" />
-                            <label for="small">Small</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="medium" name="livingRoomSize" value="medium" />
-                            <label for="medium">Medium</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="large" name="livingRoomSize" value="large" />
-                            <label for="large">Large</label>
-                        </div>
-                    </div>)}
-                <div>
-                    <label htmlFor="diningRoom">Dining Room</label>
-                    <input type="checkbox" id="diningRoom" name="diningRoom" style={{ marginLeft: '10px' }} onChange={() => setShowDiningRoomSize(!showDiningRoomSize)} />
-                </div>{showDiningRoomSize && (
-                    <div className="labelStyle">
-                        <div>
-                            <input type="radio" id="small" name="diningRoomSize" value="small" />
-                            <label for="small">Small</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="medium" name="diningRoomSize" value="medium" />
-                            <label for="medium">Medium</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="large" name="diningRoomSize" value="large" />
-                            <label for="large">Large</label>
-                        </div>
-                    </div>)}
-                <div>
-                    <label htmlFor="kitchen">Kitchen</label>
-                    <input type="checkbox" id="kitchen" name="kitchen" style={{ marginLeft: '10px' }} onChange={() => setShowKitchenSize(!showKitchenSize)} />
-                </div>{showKitchenSize && (
-                    <div className="labelStyle">
-                        <div>
-                            <input type="radio" id="small" name="kitchenSize" value="small" />
-                            <label for="small">Small</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="medium" name="kitchenSize" value="medium" />
-                            <label for="medium">Medium</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="large" name="kitchenSize" value="large" />
-                            <label for="large">Large</label>
-                        </div>
-                    </div>)}
+            <div className="stepTitle">2. Select your rooms to furnish & room size </div>
+            <div className='step startCol'>
                 <div>
                     <label htmlFor="mainBedroom">Main bedroom</label>
-                    <input type="checkbox" id="mainBedroom" name="mainBedroom" style={{ marginLeft: '10px' }} onChange={() => setShowMainBedroomSize(!showMainBedroomSize)} />
-                </div>{showMainBedroomSize && (
-                    <div className="labelStyle">
+                    <input type="checkbox" id="mainBedroom" name="mainBedroom" className='roomCheckbox' onChange={() => setShowMainBedroomSize(!showMainBedroomSize)} />
+                </div>
+                {showMainBedroomSize && (
+                    <div>
                         <div>
                             <input type="radio" id="small" name="bedroomSize" value="small" />
                             <label for="small">Small</label>
@@ -137,9 +70,9 @@ export default function CostCalculatorForm() {
                 {propertyType >= "3" && (
                     <div>
                         <label htmlFor="bedroom4">Bedroom 2</label>
-                        <input type="checkbox" id="bedroom2" name="bedroom2" style={{ marginLeft: '10px' }} onChange={() => setBedroom2Size(!showBedroom2Size)} />
+                        <input type="checkbox" id="bedroom2" name="bedroom2" className='roomCheckbox' onChange={() => setBedroom2Size(!showBedroom2Size)} />
                         {showBedroom2Size && (
-                            <div className="labelStyle">
+                            <div>
                                 <div>
                                     <input type="radio" id="small" name="bedroom2Size" value="small" />
                                     <label for="small">Small</label>
@@ -157,13 +90,12 @@ export default function CostCalculatorForm() {
                     </div>
                 )}
 
-
                 {propertyType >= "4" && (
                     <div>
                         <label htmlFor="bedroom4">Bedroom 3</label>
-                        <input type="checkbox" id="bedroom3" name="bedroom3" style={{ marginLeft: '10px' }} onChange={() => setBedroom3Size(!showBedroom3Size)} />
+                        <input type="checkbox" id="bedroom3" name="bedroom3" className='roomCheckbox' onChange={() => setBedroom3Size(!showBedroom3Size)} />
                         {showBedroom3Size && (
-                            <div className="labelStyle">
+                            <div>
                                 <div>
                                     <input type="radio" id="small" name="bedroom3Size" value="small" />
                                     <label for="small">Small</label>
@@ -184,9 +116,9 @@ export default function CostCalculatorForm() {
                 {propertyType >= "5" && (
                     <div>
                         <label htmlFor="bedroom4">Bedroom 4</label>
-                        <input type="checkbox" id="bedroom4" name="bedroom4" style={{ marginLeft: '10px' }} onChange={() => setBedroom4Size(!showBedroom4Size)} />
+                        <input type="checkbox" id="bedroom4" name="bedroom4" className='roomCheckbox' onChange={() => setBedroom4Size(!showBedroom4Size)} />
                         {showBedroom4Size && (
-                            <div className="labelStyle">
+                            <div>
                                 <div>
                                     <input type="radio" id="small" name="bedroom4Size" value="small" />
                                     <label for="small">Small</label>
@@ -207,9 +139,9 @@ export default function CostCalculatorForm() {
                 {propertyType >= "6" && (
                     <div>
                         <label htmlFor="bedroom5">Bedroom 5</label>
-                        <input type="checkbox" id="bedroom5" name="bedroom5" style={{ marginLeft: '10px' }} onChange={() => setBedroom5Size(!showBedroom4Size)} />
+                        <input type="checkbox" id="bedroom5" name="bedroom5" className='roomCheckbox' onChange={() => setBedroom5Size(!showBedroom4Size)} />
                         {showBedroom5Size && (
-                            <div className="labelStyle">
+                            <div>
                                 <div>
                                     <input type="radio" id="small" name="bedroom5Size" value="small" />
                                     <label for="small">Small</label>
@@ -230,9 +162,9 @@ export default function CostCalculatorForm() {
                 {propertyType >= "7" && (
                     <div>
                         <label htmlFor="bedroom6">Bedroom 6</label>
-                        <input type="checkbox" id="bedroom6" name="bedroom6" style={{ marginLeft: '10px' }} onChange={() => setBedroom6Size(!showBedroom6Size)} />
+                        <input type="checkbox" id="bedroom6" name="bedroom6" className='roomCheckbox' onChange={() => setBedroom6Size(!showBedroom6Size)} />
                         {showBedroom6Size && (
-                            <div className="labelStyle">
+                            <div>
                                 <div>
                                     <input type="radio" id="small" name="bedroom6Size" value="small" />
                                     <label for="small">Small</label>
@@ -249,12 +181,69 @@ export default function CostCalculatorForm() {
                         )}
                     </div>
                 )}
+                <div>
+                    <label htmlFor="livingRoom">Living Room</label>
+                    <input type="checkbox" id="livingRoom" name="livingRoom" className='roomCheckbox' onChange={() => setShowLivingRoomSize(!showLivingRoomSize)} />                </div>
+                {showLivingRoomSize && (
+                    <div>
+                        <div>
+                            <input type="radio" id="small" name="livingRoomSize" value="small" />
+                            <label for="small">Small</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="medium" name="livingRoomSize" value="medium" />
+                            <label for="medium">Medium</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="large" name="livingRoomSize" value="large" />
+                            <label for="large">Large</label>
+                        </div>
+                    </div>)}
 
                 <div>
+                    <label htmlFor="diningRoom">Dining Room</label>
+                    <input type="checkbox" id="diningRoom" name="diningRoom" className='roomCheckbox' onChange={() => setShowDiningRoomSize(!showDiningRoomSize)} />
+                </div>
+                {showDiningRoomSize && (
+                    <div>
+                        <div>
+                            <input type="radio" id="small" name="diningRoomSize" value="small" />
+                            <label for="small">Small</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="medium" name="diningRoomSize" value="medium" />
+                            <label for="medium">Medium</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="large" name="diningRoomSize" value="large" />
+                            <label for="large">Large</label>
+                        </div>
+                    </div>)}
+
+                <div>
+                    <label htmlFor="kitchen">Kitchen</label>
+                    <input type="checkbox" id="kitchen" name="kitchen" className='roomCheckbox' onChange={() => setShowKitchenSize(!showKitchenSize)} />
+                </div>
+                {showKitchenSize && (
+                    <div>
+                        <div>
+                            <input type="radio" id="small" name="kitchenSize" value="small" />
+                            <label for="small">Small</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="medium" name="kitchenSize" value="medium" />
+                            <label for="medium">Medium</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="large" name="kitchenSize" value="large" />
+                            <label for="large">Large</label>
+                        </div>
+                    </div>)}
+                <div>
                     <label htmlFor="homeoffice">Home Office</label>
-                    <input type="checkbox" id="homeoffice" name="homeoffice" style={{ marginLeft: '10px' }} onChange={() => setHomeOfficeSize(!showHomeOfficeSize)} />
+                    <input type="checkbox" id="homeoffice" name="homeoffice" className='roomCheckbox' onChange={() => setHomeOfficeSize(!showHomeOfficeSize)} />
                 </div>{showHomeOfficeSize && (
-                    <div className="labelStyle">
+                    <div>
                         <div>
                             <input type="radio" id="small" name="homeOfficeSize" value="small" />
                             <label for="small">Small</label>
@@ -270,9 +259,9 @@ export default function CostCalculatorForm() {
                     </div>)}
                 <div>
                     <label htmlFor="outdoorSpace">Outdoor space</label>
-                    <input type="checkbox" id="outdoorSpace" name="outdoorSpace" style={{ marginLeft: '10px' }} onChange={() => setOutdoorSize(!showOutdoorSize)} />
+                    <input type="checkbox" id="outdoorSpace" name="outdoorSpace" className='roomCheckbox' onChange={() => setOutdoorSize(!showOutdoorSize)} />
                 </div>{showOutdoorSize && (
-                    <div className="labelStyle">
+                    <div>
                         <div>
                             <input type="radio" id="small" name="outdoorSize" value="small" />
                             <label for="small">Small</label>
@@ -285,40 +274,41 @@ export default function CostCalculatorForm() {
                             <input type="radio" id="large" name="outdoorSize" value="large" />
                             <label for="large">Large</label>
                         </div>
-                    </div>)}
-                <div>
-                    <hr />
+                    </div>)}</div>
 
-                    <div className="stepStyle">Step 3: Select your level of furnishing needs</div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '40px' }}>
-                        <select style={{ margin: '10px' }} defaultValue="">
-                            <option value="" disabled selected>Select...</option>
-                            <option value="1">Standard</option>
-                            <option value="2">Premium</option>
-                        </select>
-                        <div>
-                            <h3><b>Standard:</b></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod eros in enim cursus, a finibus lorem pretium.</p>
-                            <h3><b>Premium:</b></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod eros in enim cursus, a finibus lorem pretium.</p>
-                        </div>
-                    </div>
+
+            <div className="stepTitle dark">3. Select your level of furnishing needs</div>
+            <div className='step dark'>
+                <div className='left'>
+                    <select className='selector' defaultValue="" id='furnishingSelector'>
+                        <option value="" disabled selected>Select...</option>
+                        <option value="1">Standard</option>
+                        <option value="2">Premium</option>
+                    </select>
                 </div>
-                <div className="stepStyle">Step 4: Submit your results to view your budget</div>
-
-                <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
-                    <div style={{ marginRight: '20px' }}>
-                        <label htmlFor="name">Name:   </label>
-                        <input type="text" id="name" data-testid="name-input" name="name" style={{ border: '1px solid grey' }} />
-                    </div>
-                    <div>
-                        <label htmlFor="email">Email:   </label>
-                        <input type="text" id="email" data-testid="email-input" name="email" style={{ border: '1px solid grey' }} />
-
-                    </div>
+                <div className='right'>
+                    <h3>Standard:</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod eros in enim cursus, a finibus lorem pretium.</p>
+                    <h3>Premium:</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod eros in enim cursus, a finibus lorem pretium.</p>
                 </div>
-                <Postbutton />
             </div>
-        </div>
+
+            <div className="stepTitle">4. Submit your results to view your budget</div>
+
+            <div className='step startCol'>
+
+                <input type="text" id="name" data-testid="name-input" name="name" placeholder='Name' className='input' />
+
+                <input type="text" id="email" data-testid="email-input" name="email" placeholder='Email' className='input' />
+
+                <input type="text" id="phone" name="phone" placeholder='Phone' className='input' />
+
+                <input type="text" id="message" name="message" placeholder='Message' className='input' />
+            </div>
+
+            <div><Postbutton /></div>
+
+        </div >
     );
 };

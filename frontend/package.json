@@ -6,7 +6,8 @@
     "dev": "set PORT=3200 && next dev",
     "build": "next build",
     "start": "react-scripts start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build-css": "tailwindcss -i ./styles/styles.css -o ./public/styles.css --watch"
   },
   "dependencies": {
     "next": "14.1.0",
@@ -19,7 +20,7 @@
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
-    "postcss": "^8",
+    "postcss": "^8.4.38",
     "tailwindcss": "^3.3.0"
   }
 }
