@@ -62,6 +62,7 @@ TODO
 ## Wireframe illustrations
 
 [The first wireframes](navgraphs/Wireframes.pdf) 
+[Wireframes for cost calculator](https://www.figma.com/file/8lIQboSjwVDg92p4fYcRmp/Untitled?type=design&node-id=0%3A1&mode=design&t=L9L6uzjHahvbiYqo-1)
 
 ## People
 
