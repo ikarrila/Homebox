@@ -1,0 +1,23 @@
+html {
+    @apply h-full
+}
+
+body {
+    @apply bg-body h-full;
+}
+
+* {
+    @apply font-primary text-base;
+}
+
+div h1 {
+    @apply font-bold font-secondary mt-6 text-xl;
+}
+
+div h2 {
+    @apply font-bold font-secondary text-lg;
+}
+
+div h3 {
+    @apply font-bold font-secondary text-base;
+}

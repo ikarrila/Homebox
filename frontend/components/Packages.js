@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import '../styles/styles.css';
+import '/styles/styles.css';
 import Postbutton from './Postbutton';
 import img1 from "../../pictures/francesca-tosolini-DmOhItSo49k-unsplash.jpg";
 import img2 from "../../pictures/kara-eads-L7EwHkq1B2s-unsplash.jpg";
@@ -190,39 +190,32 @@ export default function Package() {
     }
 
     return (
-        <div>
-            <header style={{ padding: '10px', backgroundColor: '#f5f5f5', marginBottom: '20px' }}>
-                <h1>Short-term packages</h1>
-            </header>
+        <div className='container col'>
+            <h1>Short-term packages</h1>
 
             <div className="roomStyle">
-                <hr />
-                <div className="stepStyle">Step 1: Select the rental period </div>
-                <div style={{ display: 'flex' }}>
-                    <div>
-                        <div>
-                            <label style={{ margin: '10px' }}>Rental period (months)</label>
-                        </div>
-                        <select style={{ margin: '10px' }}>
-                            <option value="" disabled selected>Select rental period...</option>
-                            <option value="3">3 month hire period</option>
-                            <option value="4">4 month hire period</option>
-                            <option value="5">5 month hire period</option>
-                            <option value="6">6 month hire period</option>
-                            <option value="7">7 month hire period</option>
-                            <option value="8">8 month hire period</option>
-                            <option value="9">9 month hire period</option>
-                            <option value="10">10 month hire period</option>
-                        </select>
-                    </div>
+                <div className='stepTitle'>1. Select the rental period </div>
+                <div className='step startCol'>
+                    <label>Rental period (months)</label>
+                    <select className='selector'>
+                        <option value="" disabled selected>Select rental period...</option>
+                        <option value="3">3 month hire period</option>
+                        <option value="4">4 month hire period</option>
+                        <option value="5">5 month hire period</option>
+                        <option value="6">6 month hire period</option>
+                        <option value="7">7 month hire period</option>
+                        <option value="8">8 month hire period</option>
+                        <option value="9">9 month hire period</option>
+                        <option value="10">10 month hire period</option>
+                    </select>
                 </div>
-                <hr />
-                <div className="stepStyle">Step 2: Select the package</div>
-                <div style={{ display: 'flex' }}>
-                    <div id='standard'>
-                        < Image class='image-container' src={img1} alt="img1" objectFit="contain" style={{ height: '250px', width: 'auto' }} />
-                        <h3><b>Standard</b></h3>
-                        <select style={{ margin: '10px' }} onChange={handleStandardPackageChange}>
+
+                <div className='stepTitle'>Step 2: Select the package</div>
+                <div className='step startRow'>
+                    <div id='standard' className='left'>
+                        < Image class='image-container' src={img1} alt="img1" />
+                        <h3>Standard</h3>
+                        <select className='selector' onChange={handleStandardPackageChange}>
                             <option value="" disabled selected>Select package size</option>
                             <option value="1">Studio Package</option>
                             <option value="2">1 Bedroom package</option>
@@ -239,11 +232,11 @@ export default function Package() {
                         )}
 
                     </div>
-                    <div id='premium'>
-                        < Image class='image-container' src={img2} alt="img2" objectFit="contain" style={{ height: '250px', width: 'auto' }} />
-                        <h3><b>Premium</b></h3>
+                    <div id='premium' className='right'>
+                        < Image class='image-container' src={img2} alt="img2" />
+                        <h3>Premium</h3>
 
-                        <select style={{ margin: '10px' }} onChange={handlePremiumPackageChange}>
+                        <select className='selector' onChange={handlePremiumPackageChange}>
                             <option value="" disabled selected>Select package size</option>
                             <option value="1">Studio Package</option>
                             <option value="2">1 Bedroom package</option>
@@ -261,25 +254,16 @@ export default function Package() {
                     </div>
                 </div>
                 <hr />
-                <div className="stepStyle">Step 3: Submit your request to short term rental</div>
+                <div className='stepTitle dark'>3. Submit your request to short term rental</div>
+                <div className='step dark startCol'>
 
-                <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
-                    <div style={{ marginRight: '20px' }}>
-                        <label htmlFor="name">Name:   </label>
-                        <input type="text" id="name" name="name" style={{ border: '1px solid grey' }} />
-                    </div>
-                    <div style={{ marginRight: '20px' }}>
-                        <label htmlFor="email">Email:   </label>
-                        <input type="text" id="email" name="email" style={{ border: '1px solid grey' }} />
-                    </div>
-                    <div style={{ marginRight: '20px' }}>
-                        <label htmlFor="phone">Phone:   </label>
-                        <input type="phone" id="phone" name="phone" style={{ border: '1px solid grey' }} />
-                    </div>
-                    <div>
-                        <label htmlFor="message">Message:  </label>
-                        <input type="text" id="message" name="message" style={{ border: '1px solid grey' }} />
-                    </div>
+                    <input type="text" id="name" data-testid="name-input" name="name" placeholder='Name' className='input' />
+
+                    <input type="text" id="email" data-testid="email-input" name="email" placeholder='Email' className='input' />
+
+                    <input type="text" id="phone" name="phone" placeholder='Phone' className='input' />
+
+                    <input type="text" id="message" name="message" placeholder='Message' className='input' />
                 </div>
                 <Postbutton />
             </div>
