@@ -1,9 +1,9 @@
-import ShortTermForm from '../../../../../components/ShortTermForm';
+import ShortTermLanding from '../../../../../components/ShortTermLanding';
 
 export default function shortTerm() {
   return (
     <div>
-      <ShortTermForm />
+      <ShortTermLanding />
     </div>
   );
 }
