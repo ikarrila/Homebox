@@ -4,14 +4,9 @@ export default function Rental() {
   return (
     <div>
       <h1>Rental services</h1>
-      <Link href="/FAAS/rental_services/short_term">
-        <button className="btn-primary">
-          Short Term Rental
-        </button>
-      </Link>
       <Link href="/FAAS/rental_services/long_term">
         <button className="btn-primary">
-          Long Term Rental
+          Long-Term Rental - learn more
         </button>
       </Link>
       <Link href="/FAAS/cost_calculator">
@@ -19,9 +14,9 @@ export default function Rental() {
           Instant Quote
         </button>
       </Link>
-      <Link href="/FAAS/packages">
+      <Link href="/FAAS/rental_services/short_term">
         <button className="btn-primary">
-          Short-term packages
+          Short-Term Rental - learn more
         </button>
       </Link>
     </div>

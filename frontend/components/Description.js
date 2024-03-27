@@ -17,10 +17,10 @@ export default function Description() {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
             officia deserunt mollit anim id est laborum</p>
           <div className="link-container">
-            <Link href="/FAAS/rental_services" className='btn-primary'>
-              Rental Services
+            <Link href="" className='btn-primary'>
+              Furnishing
             </Link>
-            <Link href="/FAAS/cost_calculator" className='btn-secondary'>Cost Calculator</Link>
+            <Link href="/FAAS/rental_services" className='btn-secondary'>FAAS</Link>
           </div></div>
         <div className='right'>        <div>
           <Image

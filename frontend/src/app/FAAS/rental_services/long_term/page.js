@@ -1,4 +1,8 @@
+
+import LongTermLanding from "../../../../../components/LongTermLanding";
+
 export default function longTerm() {
-  return (<h1>Long-term</h1>
+  return (
+    <LongTermLanding></LongTermLanding>
   );
 }
