@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 
 export default function Postbutton(content) {
     const consolelognewproduct = async () => {
-        const res = await fetch('http://localhost:4000/products').then(res => res.json());
+        const res = await fetch('http://localhost:4000/emails').then(res => res.json());
         console.log(res);
     };
     const postprod = async (content) => {
@@ -13,7 +13,7 @@ export default function Postbutton(content) {
             name: 'Example Product',
             price: 100
         };
-        const res = await fetch('http://localhost:4000/products', {
+        const res = await fetch('http://localhost:4000/emails', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

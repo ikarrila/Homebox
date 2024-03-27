@@ -2,11 +2,10 @@ import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { logger } from './common/middleware/logger.middleware';
-import { ProductsModule } from './products/products.module';
-import { ProductsController } from './products/products.controller';
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { EmailsModule } from './emails/emails.module';
+import { EmailsController } from './emails/emails.controller';
 
 @Module({
   imports: [
@@ -16,13 +15,13 @@ import { EmailsModule } from './emails/emails.module';
       isGlobal: true,
     }),
     MongooseModule.forRoot(process.env.DB_URI),
-    //----- productsmodule on oma moduulinsa
-    ProductsModule,
+    //----- Emailsmodule on oma moduulinsa
+    EmailsModule,
     EmailsModule,
   ],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer.apply(logger).forRoutes(ProductsController);
+    consumer.apply(logger).forRoutes(EmailsController);
   }
 }

@@ -11,20 +11,32 @@ export class Email {
   @Prop({ required: true })
   source: string;
 
-  @Prop({ required: true })
-  textField: string;
-
-  @Prop({ required: true })
+  @Prop()
   furnishingLevel: string;
+
+  @Prop()
+  location: string;
 
   @Prop({ required: true, type: Object })
   roomChoices: any;
+
+  @Prop()
+  rentalStart: string;
+
+  @Prop()
+  rentalLength: string;
 
   @Prop({ required: true })
   name: string;
 
   @Prop({ required: true })
   email: string;
+
+  @Prop()
+  textField: string;
+
+  @Prop({ required: true })
+  phone: number;
 }
 
 export const EmailSchema = SchemaFactory.createForClass(Email);
