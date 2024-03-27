@@ -3,20 +3,40 @@
 import React, { useState } from 'react';
 import '/styles/styles.css';
 import Postbutton from './Postbutton';
+import SmallMedLar from './SmallMedLar';
 
 export default function CostCalculatorForm() {
     const [showLivingRoomSize, setShowLivingRoomSize] = useState(false);
     const [showDiningRoomSize, setShowDiningRoomSize] = useState(false);
     const [showKitchenSize, setShowKitchenSize] = useState(false);
     const [showMainBedroomSize, setShowMainBedroomSize] = useState(false);
-    const [showHomeOfficeSize, setHomeOfficeSize] = useState(false);
-    const [showOutdoorSize, setOutdoorSize] = useState(false);
+    const [showHomeOfficeSize, setShowHomeOfficeSize] = useState(false);
+    const [showOutdoorSize, setShowOutdoorSize] = useState(false);
     const [showBedroom2Size, setBedroom2Size] = useState(false);
     const [showBedroom3Size, setBedroom3Size] = useState(false);
     const [showBedroom4Size, setBedroom4Size] = useState(false);
     const [showBedroom5Size, setBedroom5Size] = useState(false);
     const [showBedroom6Size, setBedroom6Size] = useState(false);
     const [propertyType, setPropertyType] = useState('');
+
+    const [bedSize, setBedSize] = useState('');
+    const [bed2Size, setBed2Size] = useState('');
+    const [bed3Size, setBed3Size] = useState('');
+    const [bed4Size, setBed4Size] = useState('');
+    const [bed5Size, setBed5Size] = useState('');
+    const [bed6Size, setBed6Size] = useState('');
+    const [livingRoomSize, setLivingRoomSize] = useState('');
+    const [diningRoomSize, setDiningRoomSize] = useState('');
+    const [kitchenSize, setKitchenSize] = useState('');
+    const [homeOfficeSize, setHomeOfficeSize] = useState('');
+    const [outdoorSize, setOutdoorSize] = useState('');
+
+    console.log(livingRoomSize, "livingRoomSize")
+    console.log(diningRoomSize, "diningRoomSize")
+    console.log(kitchenSize, "kitchenSize")
+    console.log(homeOfficeSize, "homeOfficeSize")
+    console.log(outdoorSize, "outdoorSize")
+    console.log(bedSize, "bedSize")
 
     const handlePropertyTypeChange = (event) => {
         setPropertyType(event.target.value);
@@ -52,132 +72,65 @@ export default function CostCalculatorForm() {
                     <input type="checkbox" id="mainBedroom" name="mainBedroom" className='roomCheckbox' onChange={() => setShowMainBedroomSize(!showMainBedroomSize)} />
                 </div>
                 {showMainBedroomSize && (
-                    <div>
-                        <div>
-                            <input type="radio" id="small" name="bedroomSize" value="small" />
-                            <label for="small">Small</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="medium" name="bedroomSize" value="medium" />
-                            <label for="medium">Medium</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="large" name="bedroomSize" value="large" />
-                            <label for="large">Large</label>
-                        </div>
-                    </div>)}
+                    <SmallMedLar name={"mainBedroomSize"} onSizeSelect={setBedSize} />
+                )}
 
                 {propertyType >= "3" && (
                     <div>
-                        <label htmlFor="bedroom4">Bedroom 2</label>
-                        <input type="checkbox" id="bedroom2" name="bedroom2" className='roomCheckbox' onChange={() => setBedroom2Size(!showBedroom2Size)} />
+                        <div>
+                            <label htmlFor="bedroom2">Bedroom 2</label>
+                            <input type="checkbox" id="bedroom2" name="bedroom2" className='roomCheckbox' onChange={() => setBedroom2Size(!showBedroom2Size)} />
+                        </div>
                         {showBedroom2Size && (
-                            <div>
-                                <div>
-                                    <input type="radio" id="small" name="bedroom2Size" value="small" />
-                                    <label for="small">Small</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="medium" name="bedroom2Size" value="medium" />
-                                    <label for="medium">Medium</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="large" name="bedroom2Size" value="large" />
-                                    <label for="large">Large</label>
-                                </div>
-                            </div>
+                            <SmallMedLar name={"bedroom2Size"} onSizeSelect={setBed2Size} />
                         )}
                     </div>
                 )}
 
                 {propertyType >= "4" && (
                     <div>
-                        <label htmlFor="bedroom4">Bedroom 3</label>
-                        <input type="checkbox" id="bedroom3" name="bedroom3" className='roomCheckbox' onChange={() => setBedroom3Size(!showBedroom3Size)} />
+                        <div>
+                            <label htmlFor="bedroom3">Bedroom 3</label>
+                            <input type="checkbox" id="bedroom3" name="bedroom3" className='roomCheckbox' onChange={() => setBedroom3Size(!showBedroom3Size)} />
+                        </div>
                         {showBedroom3Size && (
-                            <div>
-                                <div>
-                                    <input type="radio" id="small" name="bedroom3Size" value="small" />
-                                    <label for="small">Small</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="medium" name="bedroom3Size" value="medium" />
-                                    <label for="medium">Medium</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="large" name="bedroom3Size" value="large" />
-                                    <label for="large">Large</label>
-                                </div>
-                            </div>
+                            <SmallMedLar name={"bedroom3Size"} onSizeSelect={setBed3Size} />
                         )}
                     </div>
                 )}
 
                 {propertyType >= "5" && (
                     <div>
-                        <label htmlFor="bedroom4">Bedroom 4</label>
-                        <input type="checkbox" id="bedroom4" name="bedroom4" className='roomCheckbox' onChange={() => setBedroom4Size(!showBedroom4Size)} />
+                        <div>
+                            <label htmlFor="bedroom4">Bedroom 4</label>
+                            <input type="checkbox" id="bedroom4" name="bedroom4" className='roomCheckbox' onChange={() => setBedroom4Size(!showBedroom4Size)} />
+                        </div>
                         {showBedroom4Size && (
-                            <div>
-                                <div>
-                                    <input type="radio" id="small" name="bedroom4Size" value="small" />
-                                    <label for="small">Small</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="medium" name="bedroom4Size" value="medium" />
-                                    <label for="medium">Medium</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="large" name="bedroom4Size" value="large" />
-                                    <label for="large">Large</label>
-                                </div>
-                            </div>
+                            <SmallMedLar name={"bedroom4Size"} onSizeSelect={setBed4Size} />
                         )}
                     </div>
                 )}
 
                 {propertyType >= "6" && (
                     <div>
-                        <label htmlFor="bedroom5">Bedroom 5</label>
-                        <input type="checkbox" id="bedroom5" name="bedroom5" className='roomCheckbox' onChange={() => setBedroom5Size(!showBedroom4Size)} />
+                        <div>
+                            <label htmlFor="bedroom5">Bedroom 5</label>
+                            <input type="checkbox" id="bedroom5" name="bedroom5" className='roomCheckbox' onChange={() => setBedroom5Size(!showBedroom5Size)} />
+                        </div>
                         {showBedroom5Size && (
-                            <div>
-                                <div>
-                                    <input type="radio" id="small" name="bedroom5Size" value="small" />
-                                    <label for="small">Small</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="medium" name="bedroom5Size" value="medium" />
-                                    <label for="medium">Medium</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="large" name="bedroom5Size" value="large" />
-                                    <label for="large">Large</label>
-                                </div>
-                            </div>
+                            <SmallMedLar name={"bedroom5Size"} onSizeSelect={setBed5Size} />
                         )}
                     </div>
                 )}
 
                 {propertyType >= "7" && (
                     <div>
-                        <label htmlFor="bedroom6">Bedroom 6</label>
-                        <input type="checkbox" id="bedroom6" name="bedroom6" className='roomCheckbox' onChange={() => setBedroom6Size(!showBedroom6Size)} />
+                        <div>
+                            <label htmlFor="bedroom6">Bedroom 6</label>
+                            <input type="checkbox" id="bedroom6" name="bedroom6" className='roomCheckbox' onChange={() => setBedroom6Size(!showBedroom6Size)} />
+                        </div>
                         {showBedroom6Size && (
-                            <div>
-                                <div>
-                                    <input type="radio" id="small" name="bedroom6Size" value="small" />
-                                    <label for="small">Small</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="medium" name="bedroom6Size" value="medium" />
-                                    <label for="medium">Medium</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="large" name="bedroom6Size" value="large" />
-                                    <label for="large">Large</label>
-                                </div>
-                            </div>
+                            <SmallMedLar name={"bedroom6Size"} onSizeSelect={setBed6Size} />
                         )}
                     </div>
                 )}
@@ -185,96 +138,36 @@ export default function CostCalculatorForm() {
                     <label htmlFor="livingRoom">Living Room</label>
                     <input type="checkbox" id="livingRoom" name="livingRoom" className='roomCheckbox' onChange={() => setShowLivingRoomSize(!showLivingRoomSize)} />                </div>
                 {showLivingRoomSize && (
-                    <div>
-                        <div>
-                            <input type="radio" id="small" name="livingRoomSize" value="small" />
-                            <label for="small">Small</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="medium" name="livingRoomSize" value="medium" />
-                            <label for="medium">Medium</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="large" name="livingRoomSize" value="large" />
-                            <label for="large">Large</label>
-                        </div>
-                    </div>)}
+                    <SmallMedLar name={"livingRoomSize"} onSizeSelect={setLivingRoomSize} />
+                )}
 
                 <div>
                     <label htmlFor="diningRoom">Dining Room</label>
                     <input type="checkbox" id="diningRoom" name="diningRoom" className='roomCheckbox' onChange={() => setShowDiningRoomSize(!showDiningRoomSize)} />
                 </div>
                 {showDiningRoomSize && (
-                    <div>
-                        <div>
-                            <input type="radio" id="small" name="diningRoomSize" value="small" />
-                            <label for="small">Small</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="medium" name="diningRoomSize" value="medium" />
-                            <label for="medium">Medium</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="large" name="diningRoomSize" value="large" />
-                            <label for="large">Large</label>
-                        </div>
-                    </div>)}
+                    <SmallMedLar name={"diningRoomSize"} onSizeSelect={setDiningRoomSize} />
+                )}
 
                 <div>
                     <label htmlFor="kitchen">Kitchen</label>
                     <input type="checkbox" id="kitchen" name="kitchen" className='roomCheckbox' onChange={() => setShowKitchenSize(!showKitchenSize)} />
                 </div>
                 {showKitchenSize && (
-                    <div>
-                        <div>
-                            <input type="radio" id="small" name="kitchenSize" value="small" />
-                            <label for="small">Small</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="medium" name="kitchenSize" value="medium" />
-                            <label for="medium">Medium</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="large" name="kitchenSize" value="large" />
-                            <label for="large">Large</label>
-                        </div>
-                    </div>)}
+                    <SmallMedLar name={"kitchenSize"} onSizeSelect={setKitchenSize} />
+                )}
                 <div>
                     <label htmlFor="homeoffice">Home Office</label>
-                    <input type="checkbox" id="homeoffice" name="homeoffice" className='roomCheckbox' onChange={() => setHomeOfficeSize(!showHomeOfficeSize)} />
+                    <input type="checkbox" id="homeoffice" name="homeoffice" className='roomCheckbox' onChange={() => setShowHomeOfficeSize(!showHomeOfficeSize)} />
                 </div>{showHomeOfficeSize && (
-                    <div>
-                        <div>
-                            <input type="radio" id="small" name="homeOfficeSize" value="small" />
-                            <label for="small">Small</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="medium" name="homeOfficeSize" value="medium" />
-                            <label for="medium">Medium</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="large" name="homeOfficeSize" value="large" />
-                            <label for="large">Large</label>
-                        </div>
-                    </div>)}
+                    <SmallMedLar name={"homeofficeSize"} onSizeSelect={setHomeOfficeSize} />
+                )}
                 <div>
                     <label htmlFor="outdoorSpace">Outdoor space</label>
-                    <input type="checkbox" id="outdoorSpace" name="outdoorSpace" className='roomCheckbox' onChange={() => setOutdoorSize(!showOutdoorSize)} />
+                    <input type="checkbox" id="outdoorSpace" name="outdoorSpace" className='roomCheckbox' onChange={() => setShowOutdoorSize(!showOutdoorSize)} />
                 </div>{showOutdoorSize && (
-                    <div>
-                        <div>
-                            <input type="radio" id="small" name="outdoorSize" value="small" />
-                            <label for="small">Small</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="medium" name="outdoorSize" value="medium" />
-                            <label for="medium">Medium</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="large" name="outdoorSize" value="large" />
-                            <label for="large">Large</label>
-                        </div>
-                    </div>)}</div>
+                    <SmallMedLar name={"outdoorSpaceSize"} onSizeSelect={setOutdoorSize} />
+                )}</div>
 
 
             <div className="stepTitle dark">3. Select your level of furnishing needs</div>

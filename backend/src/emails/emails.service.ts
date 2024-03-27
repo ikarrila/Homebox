@@ -34,15 +34,19 @@ export class EmailsService {
 
     const roomChoicesStr = Object.entries(newEmail.roomChoices)
       .filter(([key, value]) => value) // filter out properties that are not truthy
-      .map(([key, value]) => `${key}`)
-      .join(', ');
+      .map(([key, value]) => `${key} : ${value} <br>`);
 
     const htmlContent = `
     <div><b>Customer Name:</b><br> ${newEmail.name}</div><br>
+    <div><b>Email:</b><br> ${newEmail.email}</div><br>
+    <div><b>Phone:</b><br> ${newEmail.phone}</div><br>
     <div><b>Type of rental:</b><br>${newEmail.source}</div><br>
-    <div><b>Furnishing Level:</b><br> ${newEmail.furnishingLevel}</div><br>
+    ${newEmail.furnishingLevel ? `<div><b>Furnishing Level:</b><br>${newEmail.furnishingLevel}</div><br>` : ' '} 
     <div><b>Room Choices:</b><br> ${roomChoicesStr}</div><br>
-    <div><b>Additional info:</b><br>${newEmail.textField}</div>
+    ${newEmail.location ? `<div><b>Location:</b><br> ${newEmail.location}</div><br>` : ' '}
+    ${newEmail.textField ? `<div><b>Free textfield message:</b><br>${newEmail.textField}</div><br>` : ' '}
+    ${newEmail.rentalStart ? `<div><b>Rental Start:</b><br>${newEmail.rentalStart}</div><br>` : ' '}
+    ${newEmail.rentalLength ? `<div><b>Rental Length:</b><br>${newEmail.rentalLength}</div><br>` : ' '}
     `;
 
     const mailOptions = {
