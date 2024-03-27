@@ -33,6 +33,7 @@ export default function Navbar() {
         <div className="dropdown-content">
           <Link href="/how_it_works">How it works</Link>
           <Link href="/about_us">About us</Link>
+          <Link href="/how_it_works/FAQ">FAQ</Link>
         </div>
       </div>
       <Link className='hidden' href="/portfolio">Portfolio</Link>
