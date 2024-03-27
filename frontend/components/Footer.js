@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link'
 
 export default function Footer() {
   return (
@@ -6,11 +7,11 @@ export default function Footer() {
 
       <div>
         <ul style={{ display: "flex", justifyContent: "space-around", listStyle: "none", padding: 0 }} data-testid="footer-list">
-          <li><a href="#">Refund Policy</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">Shopping Policy</a></li>
-          <li><a href="#">Contact Us</a></li>
+          <li><Link href="/terms/refund_policy">Refund Policy</Link></li>
+          <li><Link href="/terms/privacypolicy">Privacy Policy</Link></li>
+          <li><Link href="/terms/terms_of_service">Terms of Service</Link></li>
+          <li><Link href="/terms/shopping_policy">Shopping Policy</Link></li>
+          <li><Link href="/contact">Contact Us</Link></li>
         </ul>
       </div>
       <div style={{ textAlign: "center", marginTop: "1rem" }}>
