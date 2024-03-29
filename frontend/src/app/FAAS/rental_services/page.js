@@ -11,7 +11,7 @@ export default function Rental() {
   };
 
   return (
-    <div>
+    <div className='section'>
       <h1>Rental services</h1>
       <div className="flex justify-between">
         <div className="w-1/2">
