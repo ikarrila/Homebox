@@ -1,14 +1,14 @@
 /* Primary button with black background */
 .btn-primary {
-    @apply bg-black text-white rounded-md px-5 py-3;
-  }
-  
+  @apply bg-black text-white rounded-md px-5 py-3;
+}
+
 /* Secondary button with transparent background */
 .btn-secondary {
-    @apply border-2 text-black rounded-md px-5 py-3;
-  }
+  @apply border-2 text-black rounded-md px-5 py-3;
+}
 
-  /* Tertiary button with white background*/
+/* Tertiary button with white background*/
 .btn-tertiary {
   @apply border-2 text-black bg-white rounded-md px-5 py-3 text-nowrap;
 }

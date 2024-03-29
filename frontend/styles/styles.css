@@ -1,6 +1,9 @@
-@tailwind base;  /* defaults for entire site */
-@tailwind components; /* more complicated classes */
-@tailwind utilities; /* custom utility classes */
+@tailwind base;
+/* defaults for entire site */
+@tailwind components;
+/* more complicated classes */
+@tailwind utilities;
+/* custom utility classes */
 
 @layer base {
   @import "base";
@@ -9,11 +12,23 @@
 @layer components {
   @import "components";
   @import "buttons";
-  @import "tools"; /* Cost calculator and short-term packages tool */
+  @import "tools";
+  /* Cost calculator and short-term packages tool */
 
 }
 
 @layer utilities {
   @import "utilities";
+
+  .max-w-xs {
+    max-width: 50rem;
+    margin: 0 auto;
+    text-align: left;
+    margin-left: 0;
+  }
+
+  .centered-image {
+    margin: 0 auto;
+  }
 
 }
