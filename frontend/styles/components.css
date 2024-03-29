@@ -35,7 +35,7 @@ body .main-container {
 
 /* FOOTER */
 .footer {
-    @apply bg-body w-screen p-4 mt-auto fixed bottom-0 z-50;
+    @apply bg-body w-screen p-4 mt-auto;
 }
 
 /* OTHER CONTAINERS */
