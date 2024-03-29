@@ -7,17 +7,21 @@ body {
 }
 
 * {
-    @apply font-primary text-base;
+    @apply font-primary text-lg;
 }
 
 div h1 {
-    @apply font-bold font-secondary mt-6 text-xl;
+    @apply font-bold font-secondary mt-6 text-3xl pb-6;
 }
 
 div h2 {
-    @apply font-bold font-secondary text-lg;
+    @apply font-bold font-secondary text-2xl;
 }
 
 div h3 {
-    @apply font-bold font-secondary text-base;
+    @apply font-bold font-secondary text-xl;
+}
+
+img {
+    @apply rounded-2xl; 
 }

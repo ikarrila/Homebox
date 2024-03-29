@@ -2,7 +2,7 @@ import Link from 'next/link';
 import '../../../../styles/styles.css';
 export default function Rental() {
   return (
-    <div>
+    <div className='section'>
       <h1>Rental services</h1>
       <Link href="/FAAS/rental_services/long_term">
         <button className="btn-primary">
@@ -11,7 +11,7 @@ export default function Rental() {
       </Link>
       <Link href="/FAAS/cost_calculator">
         <button className="btn-primary">
-          Instant Quote
+          Cost Calculator - learn more
         </button>
       </Link>
       <Link href="/FAAS/rental_services/short_term">
