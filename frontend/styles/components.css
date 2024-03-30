@@ -25,7 +25,7 @@
 }
 
 .section {
-    @apply w-full py-10 px-52 items-center;
+    @apply w-full py-10 px-12 items-center;
 }
 
 /* only in layout.js */
@@ -52,6 +52,30 @@ body .main-container {
     @apply ml-4;
 }
 
+.multi-step-form {
+    @apply h-200;
+}
+.step-container {
+    @apply flex flex-row items-start overflow-hidden;
+
+}
+
+/* These are for the card-pair in a landing page*/
+.card-container {
+    @apply relative w-full h-200 overflow-hidden flex row items-end;
+}
+.card-container img {
+    @apply w-200 h-110 object-cover;
+}
+.card-container img:nth-of-type(1) {
+    @apply z-10 absolute mb-60 ml-96;
+}
+.card-container img:nth-of-type(2) {
+    @apply z-30 absolute mr-96;
+}
+.textSide {
+    @apply text-nowrap items-start w-fit;
+}
 /* ELEMENT STYLES */
 /* Drop-down menus */
 .selector {
