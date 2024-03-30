@@ -27,6 +27,11 @@ module.exports = {
         'primary': ['Heebo', 'sans-serif'],
         'secondary': ['Signika', 'sans-serif'],
       },
+      transitionProperty: {
+        'maxHeight': 'max-height',
+        'opacity': 'opacity',
+        'transform': 'transform',
+      },
     },
     colors: {
       body: '#FFFAFA',
