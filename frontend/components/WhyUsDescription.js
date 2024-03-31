@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function WhyUsDescription() {
   return (
-    <div className='container col dark'>
+    <div className='container col accent'>
       <div className='section col'>
         <h2>Why us?</h2>
         <p>Information about...</p>

@@ -8,12 +8,12 @@ function FAQItem({ title, children }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="rounded-flex dark">
-      <div className="cursor-pointer bg-gray-400 flex justify-between items-center p-2" onClick={() => setIsOpen(!isOpen)}>
+    <div className="rounded-flex white">
+      <div className="cursor-pointer flex justify-between items-center p-2" onClick={() => setIsOpen(!isOpen)}>
         <h2>{title}</h2>
         <span>{isOpen ? "-" : "+"}</span>
       </div>
-      {isOpen && <div className="transition-all duration-700 ease-in-out">
+      {isOpen && <div className="transition-all duration-200 ease-in-out">
         {children}
       </div>}
     </div>
@@ -23,7 +23,7 @@ function FAQItem({ title, children }) {
 export default function FAQinfo() {
   return (
     <div>
-      <div className='container col dark'>
+      <div className='container col secondary'>
         <div className='section col'>
           <h2>FAQ</h2>
           <p>We value your complete satisfaction at KEJA. Enjoy the flexibility and peace of mind that come along with selecting an innovative, stress-free furnishing company. If you not completely satisfied with the products received, KEJA will make every effort to quickly resolve. We value the opinion of our clients and strive to provide the absolute highest possible level of customer service.</p>

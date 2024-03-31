@@ -4,161 +4,184 @@
     padding-left: 4vw !important;
     height: 88px;
     display: flex !important;
+    color: white;
   }
+
   .hamburger {
     display: block !important;
   }
+
   .hidden {
     display: none !important;
   }
-  .dropdown > * > * {
+
+  .dropdown>*>* {
+    border-bottom: 0.5px solid lightgray;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    color: white;
+  }
+
+  .secret-content>* {
     border-bottom: 0.5px solid lightgray;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
   }
-  .secret-content > * {
-    border-bottom: 0.5px solid lightgray;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
-  }
-  .dropdown > .alternative {
+
+  .dropdown>.alternative {
     opacity: 0;
     margin-right: 100vw !important;
     padding-right: 0 !important;
     margin-top: -37px !important;
     transition: opacity 1.3s;
   }
+
   /* secret dropdown */
   .secret-dropdown {
     display: flex !important;
   }
+
   /* content of secret dropdown menu*/
   .secret-content {
     display: flex !important;
-    flex-direction: column; 
+    flex-direction: column;
     position: absolute;
     background-color: #f9f9f9;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 100;
     top: 88px;
     padding-right: auto !important;
     min-width: 50vw !important;
     max-height: 50vh !important;
     border-radius: 5%;
-    
+
   }
+
   /* opacity transition of secret dropdown */
-  .dropdown:hover > .alternative {
+  .dropdown:hover>.alternative {
     opacity: 1;
     pointer-events: auto;
     transition: opacity 0s;
   }
 
-  .secret-content > * {
+  .secret-content>* {
     height: 50px;
   }
 }
 
 /* main container */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    background-color: lightgrey;
-    max-width: 100vw;
-    min-width: 100vw;
-    min-height: 88px;
-    max-height: 88px;
-    padding-right: 14%;
-    padding-left: 14%;
-  }
-  /* logo */
-  .placeholder-logo {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: grey;
-    display: flex;
-    flex-shrink: 0;
-    align-self: center;
-  }
-  /* dropdown holds the div which has the dropdown content */
-  /* a are temporary links */
-  .dropdown, a {
-    display: flex;
-    text-align: center;
-    justify-content: space-evenly;
-    align-items: center; 
-    padding:2vw;   
-     text-decoration: none;
-    color: black;
-  }
-  /* Dropdown menu items have this, changed to visible when active */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 40;
-    top: 88px;
-  }
-  /* Shows the dropdown menu items when hovered over */
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  .dropdown-content a:hover {
-    background-color: #ddd;
-  }
+  display: flex;
+  justify-content: space-between;
+  background-color: #001f3f;
+  max-width: 100vw;
+  min-width: 100vw;
+  min-height: 88px;
+  max-height: 88px;
+  padding-right: 14%;
+  padding-left: 14%;
+  color: white;
+}
 
-  .dropdown-content a {
-    display: block;
-    text-decoration: none;
-    color: white;
-    background-color: grey;
-  }
-  
+/* logo */
+.placeholder-logo {
+  width: 75px;
+  height: 50px;
+  display: flex;
+  flex-shrink: 0;
+  align-self: center;
+  background-color: white;
+  border-radius: 10px;
+}
 
-    /**
+/* dropdown holds the div which has the dropdown content */
+/* a are temporary links */
+.dropdown,
+a {
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 2vw;
+  text-decoration: none;
+  color: white;
+}
+
+/* Dropdown menu items have this, changed to visible when active */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 40;
+  top: 88px;
+}
+
+/* Shows the dropdown menu items when hovered over */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown-content a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  background-color: #89939E;
+}
+
+
+/**
     Hamburger
   **/
-  #toggle {
-    display: none;
-  }
+#toggle {
+  display: none;
+}
 
-  .hamburger {
-    display: none;
-    margin-top: 16px;
-    margin-left: auto;
-    margin-bottom: auto;
-    z-index: 5;
-  }
-  
-  .hamburger  div {
-    width: 3em;
-    height: 7px;
-    border-radius: 3px;
-    background-color: darkgrey;
-    margin-top: 8px;
-  }
-  .top-bun, .meat, .bottom-bun {
-    transition: all 0.2s ease-in-out;
-  }
-  /**
+.hamburger {
+  display: none;
+  margin-top: 16px;
+  margin-left: auto;
+  margin-bottom: auto;
+  z-index: 5;
+}
+
+.hamburger div {
+  width: 3em;
+  height: 7px;
+  border-radius: 3px;
+  background-color: darkgrey;
+  margin-top: 8px;
+}
+
+.top-bun,
+.meat,
+.bottom-bun {
+  transition: all 0.2s ease-in-out;
+}
+
+/**
   Animations for burger
   **/
-  #toggle:checked ~ .hamburger .top-bun {
-    transform: rotate(-45deg);
-    margin-top: 24px;
-  }
-  #toggle:checked ~ .hamburger .bottom-bun {
-    opacity: 0;
-    transform: rotate(45deg);
-  }
-  #toggle:checked ~ .hamburger .meat {
-    transform: rotate(45deg);
-    margin-top: -6px;
-  }
-  
-  /* secret dropdown  on mobile */
+#toggle:checked~.hamburger .top-bun {
+  transform: rotate(-45deg);
+  margin-top: 24px;
+}
+
+#toggle:checked~.hamburger .bottom-bun {
+  opacity: 0;
+  transform: rotate(45deg);
+}
+
+#toggle:checked~.hamburger .meat {
+  transform: rotate(45deg);
+  margin-top: -6px;
+}
+
+/* secret dropdown  on mobile */
 .secret-dropdown {
   display: none;
 
@@ -166,7 +189,15 @@
 
 /*button animations*/
 @keyframes flash {
-  0% { background-color: initial; }
-  50% { background-color: grey; }
-  100% { background-color: initial; }
+  0% {
+    background-color: initial;
+  }
+
+  50% {
+    background-color: grey;
+  }
+
+  100% {
+    background-color: initial;
+  }
 }
