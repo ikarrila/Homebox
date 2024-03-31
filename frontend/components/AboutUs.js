@@ -6,8 +6,8 @@ export default function AboutUs() {
         <div className='container col'>
             <h1>Bringing a sense of instant comfort and familiarity to make you feel right at home. </h1>
             <div className='section col'>
-                <h2>Our Story</h2>
-                <p>
+                <h2 data-testid="heading">Our Story</h2>
+                <p data-testid="text">
 
                     Karen Justice founded Northwest Realtors and Brokers in 2008 after her own homebuying experience. Even though she had her Realtor license, being on the \“other side,\” so to speak gave her better insight into her clients' experiences. She had a better understanding of the confusion, frustration, and stress that overwhelmed homebuyers and sellers experienced and decided it was time to create more positive experiences.
 
