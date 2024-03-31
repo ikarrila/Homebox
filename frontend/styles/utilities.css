@@ -6,3 +6,11 @@
 .white {
     @apply bg-white;
 }
+
+.secondary {
+    @apply bg-secondary;
+}
+
+.accent {
+    @apply bg-accent;
+}

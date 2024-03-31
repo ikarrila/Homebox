@@ -34,7 +34,9 @@ module.exports = {
       },
     },
     colors: {
-      body: '#FFFAFA',
+      body: '#FFFFFF',
+      secondary: '#89939E',
+      accent: '#89939E',
       dark: '#E2DDDD', /* darker div bg */
       black: '#000000',
       white: '#FFFFFF',
