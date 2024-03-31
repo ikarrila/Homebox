@@ -2,3 +2,7 @@
 .dark {
     @apply bg-dark;
 }
+
+.white {
+    @apply bg-white;
+}
