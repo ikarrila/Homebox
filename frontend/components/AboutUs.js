@@ -6,12 +6,9 @@ export default function AboutUs() {
         <div className='container col'>
             <h1>Bringing a sense of instant comfort and familiarity to make you feel right at home. </h1>
             <div className='section col'>
-                <h2>Our Story</h2>
-                <p>
-
-                    Karen Justice founded Northwest Realtors and Brokers in 2008 after her own homebuying experience. Even though she had her Realtor license, being on the \“other side,\” so to speak gave her better insight into her clients' experiences. She had a better understanding of the confusion, frustration, and stress that overwhelmed homebuyers and sellers experienced and decided it was time to create more positive experiences.
-
-                    At Northwest Realtors and Brokers, we go beyond helping you buy or sell a house. We sit down with you to help you understand and complete each step of the process, from understanding pre-approvals through closing so you are confident, empowered, and excited, rather than overwhelmed and worried. Our team is here when you need us, whether to ask a quick question or quell your concerns.
+                <h2 data-testid="heading">Our Story</h2>
+                <p data-testid="text">
+                    We make furnishing a property quick and easy. We can advise you on the perfect fittings for your house. We will also deliver, assemble and remove the packaging from the property. We save you the time and trouble of shopping, sourcing, organising deliveries and assembling the furniture. We take it all off your hands. You can trust us to provide a high level of service and create an interior look suitable to your requirements.
                 </p>
             </div>
 
