@@ -6,6 +6,7 @@ import ContactForm from './ContactForm';
 import RentingVsBuying from "./RentingVsBuying";
 import CustomerReviews from "./CustomerReviews";
 
+
 export default function LongTermLanding() {
     return (
         <><PictureBanner />
