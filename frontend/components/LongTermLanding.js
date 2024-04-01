@@ -1,6 +1,8 @@
 import React from 'react';
 import '/styles/styles.css';
 import Link from 'next/link';
+import CustomerReviews from './CustomerReviews';
+import RentingVsBuying from './RentingvsBuying';
 
 export default function LongTermLanding() {
     return (
@@ -14,7 +16,8 @@ export default function LongTermLanding() {
                     </button>
                 </Link>
             </div>
-
+            <CustomerReviews />
+            <RentingVsBuying />
         </div>
     );
 }

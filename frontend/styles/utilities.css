@@ -7,6 +7,11 @@
     @apply bg-white;
 }
 
+.primary {
+    @apply bg-primary;
+
+}
+
 .secondary {
     @apply bg-secondary;
 }
