@@ -1,4 +1,5 @@
 import React from 'react';
+import Postbutton from './Postbutton';
 //import '../styles/styles.css';
 
 const roomStyle = {
@@ -24,9 +25,6 @@ const stepStyle = {
 export default function ContactForm() {
     return (
         <div>
-            <header style={{ padding: '10px', backgroundColor: '#f5f5f5', marginBottom: '20px' }}>
-                <h1>Contact form (long-term only?)</h1>
-            </header>
             <div style={roomStyle}>
                 <div style={stepStyle}>Tell us about your needs </div>
                 <input type="text" placeholder="Write about your needs" data-testid="input"></input>
@@ -64,9 +62,7 @@ export default function ContactForm() {
                         <input type="text" id="email" name="email" />
                     </div>
                 </div>
-                <button className="button">
-                    Submit
-                </button>
+                <Postbutton></Postbutton>
             </div>
         </div>
     );
