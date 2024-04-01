@@ -22,7 +22,7 @@ export default function Navbar() {
       </div>
       <Link className='hidden' href="/">Home</Link>
       <div className="dropdown hidden">
-        <a href="#">Our Services</a>
+        <Link href="/FAAS/rental_services">Our Services</Link>
         <div className="dropdown-content">
           <a href="#">Furnishing</a>
           <Link href="/FAAS/rental_services/">FAAS</Link>
@@ -31,7 +31,7 @@ export default function Navbar() {
 
       </div>
       <div className="dropdown hidden">
-        <a href="#">How it works</a>
+        <Link href="/how_it_works">How it works</Link>
         <div className="dropdown-content">
           <Link href="/how_it_works">How it works</Link>
           <Link href="/about_us">About us</Link>
@@ -39,7 +39,7 @@ export default function Navbar() {
         </div>
       </div>
       <Link className='hidden' href="/portfolio">Portfolio</Link>
-      <a className='hidden' href="#">Contact</a>
+      <Link className='hidden' href="/contact">Contact</Link>
       <Link className='hidden' href="/blog">Blog</Link>
       {/* BELOW IS A SECRET DROPDOWN WHEN BURGERMENU IS CHECKED ON MOBILE LAYOUT */}
       {isChecked && <div className='secret-dropdown'>
@@ -49,7 +49,7 @@ export default function Navbar() {
           <div className="dropdown">
             <a href="#">Our Services</a>
             <div className="secret-content alternative" >
-              <a onClick={handleCheckboxChange} href="#">Furnishing</a>
+              <Link onClick={handleCheckboxChange} href="/404">Furnishing</Link>
               <Link onClick={handleCheckboxChange} href="/FAAS/rental_services/">FAAS</Link>
               <Link onClick={handleCheckboxChange} href="/for_businesses">For Businesses</Link>
             </div>

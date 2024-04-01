@@ -8,7 +8,7 @@ function FAQItem({ title, children }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="rounded-flex white">
+    <div className="rounded-flex white w-4/5 mx-auto justify-start">
       <div className="cursor-pointer flex justify-between items-center p-2" onClick={() => setIsOpen(!isOpen)}>
         <h2>{title}</h2>
         <span>{isOpen ? "-" : "+"}</span>
@@ -32,8 +32,8 @@ export default function FAQinfo() {
           </Link>
         </div>
       </div>
-      <div className="container col white">
-        <div className='section col'>
+      <div className="container col white justify-start text-left">
+        <div className='section col justify-start'>
           <div>
             <h1>Furniture as a Service </h1>
             <FAQItem title="How long does the entire process take?">

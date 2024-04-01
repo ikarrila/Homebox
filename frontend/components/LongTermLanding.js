@@ -4,7 +4,7 @@ import Link from 'next/link';
 import PictureBanner from './PictureBanner';
 import ContactForm from './ContactForm';
 import CustomerReviews from './CustomerReviews';
-import RentingVsBuying from './RentingvsBuying';
+import RentingVsBuying from './RentingVsBuying';
 
 
 export default function LongTermLanding() {
