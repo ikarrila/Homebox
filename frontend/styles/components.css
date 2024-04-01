@@ -96,3 +96,11 @@ input[type="checkbox"] {
 input[type="radio"] {
     @apply mr-3;
 }
+
+/* Tables */
+table th {
+@apply text-left;
+}
+table td {
+@apply p-1;
+}
