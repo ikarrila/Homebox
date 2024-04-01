@@ -40,6 +40,8 @@ export default function CostCalculatorForm() {
     console.log(outdoorSize, "outdoorSize")
     console.log(bedSize, "bedSize")
 
+
+
     const handlePropertyTypeChange = (event) => {
         setPropertyType(event.target.value);
     };
@@ -223,6 +225,22 @@ export default function CostCalculatorForm() {
 
                 <div><Postbutton /></div>
             </div>
-        </div >
+
+            <div className='submitPage' style={{ backgroundColor: "orange", display: "none" }}>
+                <div className="stepTitle">5. Your budget</div>
+                <div className='step'>
+                    <h2>Your budget is: </h2>
+                    <h1>£2000</h1>
+                </div>
+            </div>
+
+            <div className='formSent' style={{ backgroundColor: "pink", display: "none" }}>
+                <div className="stepTitle">Your form has been sent</div>
+                <div className='step'>
+                    <h2>Thank you for your submission</h2>
+                    <p>We will be in touch shortly</p>
+                </div>
+            </div>
+        </div>
     );
 };
