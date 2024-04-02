@@ -48,12 +48,16 @@ describe('Component', () => {
 
 | Requirement | Test file |  
 | ------ | ------ |  
-|  |  |  
-|  |  |  
+| Functional cost calculator |  |  
+| Short-term form |  |  
+| Long-term form |  |  
+| Rental services landing page |  |  
+| FAQ page |  |  
 
 ## Data objects
 
 TODO  
+[A short description of JSON sent by cost calculator]
 
 ## Navigation diagram
 
@@ -61,7 +65,9 @@ TODO
 
 ## Wireframe illustrations
 
-[The first wireframes](navgraphs/Wireframes.pdf) 
+Initial design  
+[The first wireframes](navgraphs/Wireframes.pdf)   
+Cost calculator multi-step design:    
 [Wireframes for cost calculator](https://www.figma.com/file/8lIQboSjwVDg92p4fYcRmp/Untitled?type=design&node-id=0%3A1&mode=design&t=L9L6uzjHahvbiYqo-1)
 
 ## People
