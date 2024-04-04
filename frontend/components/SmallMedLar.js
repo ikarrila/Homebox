@@ -1,3 +1,5 @@
+import React from "react";
+
 function SmallMedLar({ name, onSizeSelect }) {
     const handleSizeSelect = (event) => {
         onSizeSelect(event.target.value);
