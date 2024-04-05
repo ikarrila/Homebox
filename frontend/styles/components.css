@@ -1,7 +1,7 @@
 /* PAGE STRUCTURE */
 /* Main container for pages */
 .container {
-    @apply max-h-screen overflow-y-auto w-full;
+    @apply overflow-y-auto w-full;
 }
 
 /* Row flexbox, use as second class e.g. className='container row' */
@@ -35,7 +35,7 @@ body .main-container {
 
 /* FOOTER */
 .footer {
-    @apply bg-body w-screen  mt-auto bottom-0;
+    @apply bg-body w-screen  mt-auto bottom-0 max-w-full;
 }
 
 /* OTHER CONTAINERS */
@@ -52,9 +52,7 @@ body .main-container {
     @apply ml-4;
 }
 
-.multi-step-form {
-    @apply h-200;
-}
+
 .step-container {
     @apply flex flex-row items-start overflow-hidden;
 

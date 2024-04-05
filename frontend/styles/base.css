@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    @apply bg-body h-full min-h-screen flex-col;
+    @apply bg-body h-full min-h-full flex-col;
 }
 
 * {

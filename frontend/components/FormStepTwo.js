@@ -1,13 +1,7 @@
-"use client";
-
 import React, { useState } from 'react';
-import '/styles/styles.css';
-import Postbutton from './Postbutton';
 import SmallMedLar from './SmallMedLar';
-import { render } from '@testing-library/react';
 
-
-export default function CostCalculatorForm() {
+export default function FormStepTwo({ propertyType, changeStep }) {
     const [showLivingRoomSize, setShowLivingRoomSize] = useState(false);
     const [showDiningRoomSize, setShowDiningRoomSize] = useState(false);
     const [showKitchenSize, setShowKitchenSize] = useState(false);
@@ -19,7 +13,7 @@ export default function CostCalculatorForm() {
     const [showBedroom4Size, setBedroom4Size] = useState(false);
     const [showBedroom5Size, setBedroom5Size] = useState(false);
     const [showBedroom6Size, setBedroom6Size] = useState(false);
-    const [propertyType, setPropertyType] = useState('');
+
 
     const [bedSize, setBedSize] = useState('');
     const [bed2Size, setBed2Size] = useState('');
@@ -32,59 +26,10 @@ export default function CostCalculatorForm() {
     const [kitchenSize, setKitchenSize] = useState('');
     const [homeOfficeSize, setHomeOfficeSize] = useState('');
     const [outdoorSize, setOutdoorSize] = useState('');
-
-    console.log(livingRoomSize, "livingRoomSize")
-    console.log(diningRoomSize, "diningRoomSize")
-    console.log(kitchenSize, "kitchenSize")
-    console.log(homeOfficeSize, "homeOfficeSize")
-    console.log(outdoorSize, "outdoorSize")
-    console.log(bedSize, "bedSize")
-
-
-
-    const handlePropertyTypeChange = (event) => {
-        setPropertyType(event.target.value);
-    };
-
+    console.log(propertyType)
     return (
-        <div data-testid="cost-calculator-form" className='container multi-step-form'>
-
-            <div className='stepZero step-container row startRow'  >
-                <div className='textSide section'>
-                    <h1 data-testid="cost-calculator-header">Cost calculator</h1>
-                    <h2>How does it work?</h2>
-                    <p>Our calculator will evaluate the pricing step-by-step</p><br />
-                    <button className='btn-tertiary'>Get an evaluation</button>
-                </div>
-
-                <div className='card-container'>
-                    <img src="../../pictures/nathan-fertig-FBXuXp57eM0-unsplash.jpg" alt="image" />
-                    <img src="../../pictures/patrick-perkins-3wylDrjxH-E-unsplash.jpg" alt="image2" />
-                </div>
-            </div>
-
-            <div className='stepOne container col' style={{ backgroundColor: "green", display: "none" }}>
-                <div className="stepTitle">1. Select your property type & location </div>
-                <div className='step'>
-                    <div className='left'>
-                        <select className='selector' defaultValue="" onChange={handlePropertyTypeChange}>
-                            <option value="" disabled>Select property type...</option>
-                            <option value="1">Studio Apartment</option>
-                            <option value="2">One Bedroom</option>
-                            <option value="3">Two Bedroom</option>
-                            <option value="4">Three Bedroom</option>
-                            <option value="5">Four Bedroom</option>
-                            <option value="6">Five Bedroom</option>
-                            <option value="7">Six Bedroom</option>
-                        </select>
-                    </div>
-                    <div className='right'>
-                        <input type="text" placeholder='Location' name="location" className='input' />
-                    </div>
-                </div>
-            </div>
-
-            <div className='stepTwo' style={{ backgroundColor: "blue", display: "none" }}>
+        <div className="section">
+            <div className='stepTwo' style={{ backgroundColor: "blue" }}>
                 <div className="stepTitle">2. Select your rooms to furnish & room size </div>
                 <div className='step startCol'>
                     <div>
@@ -188,59 +133,11 @@ export default function CostCalculatorForm() {
                     </div>{showOutdoorSize && (
                         <SmallMedLar name={"outdoorSpaceSize"} onSizeSelect={setOutdoorSize} />
                     )}</div>
-            </div>
-
-            <div className='stepThree' style={{ backgroundColor: "red", display: "none" }}>
-                <div className="stepTitle dark">3. Select your level of furnishing needs</div>
-                <div className='step dark'>
-                    <div className='left'>
-                        <select className='selector' defaultValue="" id='furnishingSelector'>
-                            <option value="" disabled selected>Select...</option>
-                            <option value="1">Standard</option>
-                            <option value="2">Premium</option>
-                        </select>
-                    </div>
-                    <div className='right'>
-                        <h3>Standard:</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod eros in enim cursus, a finibus lorem pretium.</p>
-                        <h3>Premium:</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod eros in enim cursus, a finibus lorem pretium.</p>
-                    </div>
+                <div className='container row align-middle'>
+                    <button onClick={() => changeStep(3)} className='btn-tertiary'>Continue</button>
                 </div>
             </div>
 
-            <div className='stepFour' style={{ backgroundColor: "purple", display: "none" }}>
-                <div className="stepTitle">4. Submit your results to view your budget</div>
-
-                <div className='step startCol'>
-
-                    <input type="text" id="name" data-testid="name-input" name="name" placeholder='Name' className='input' />
-
-                    <input type="text" id="email" data-testid="email-input" name="email" placeholder='Email' className='input' />
-
-                    <input type="text" id="phone" name="phone" placeholder='Phone' className='input' />
-
-                    <input type="text" id="message" name="message" placeholder='Message' className='input' />
-                </div>
-
-                <div><Postbutton /></div>
-            </div>
-
-            <div className='submitPage' style={{ backgroundColor: "orange", display: "none" }}>
-                <div className="stepTitle">5. Your budget</div>
-                <div className='step'>
-                    <h2>Your budget is: </h2>
-                    <h1>£2000</h1>
-                </div>
-            </div>
-
-            <div className='formSent' style={{ backgroundColor: "pink", display: "none" }}>
-                <div className="stepTitle">Your form has been sent</div>
-                <div className='step'>
-                    <h2>Thank you for your submission</h2>
-                    <p>We will be in touch shortly</p>
-                </div>
-            </div>
-        </div>
-    );
-};
+        </div >
+    )
+}

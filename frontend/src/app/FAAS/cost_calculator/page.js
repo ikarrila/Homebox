@@ -1,9 +1,9 @@
-import CostCalculatorForm from '../../../../components/CostCalculatorForm';
+import FormUnified from '../../../../components/FormUnified';
 
 function App() {
   return (
     <div>
-      <CostCalculatorForm />
+      <FormUnified />
     </div>
   );
 }
