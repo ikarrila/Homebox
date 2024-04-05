@@ -12,8 +12,8 @@
 @layer components {
   @import "components";
   @import "buttons";
-  @import "tools";
-  /* Cost calculator and short-term packages tool */
+  @import "tools"; /* Cost calculator and short-term packages tool */
+  @import "faq";
 
 }
 

@@ -22,6 +22,10 @@ div h3 {
     @apply font-bold font-secondary text-xl;
 }
 
+div h4 {
+    @apply font-bold font-secondary text-lg;
+}
+
 img {
     @apply rounded-2xl; 
 }
