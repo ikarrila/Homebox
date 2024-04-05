@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import '../../../../styles/styles.css';
+import PictureBanner from '../../../../components/PictureBanner';
 
 export default function Rental() {
   const imageStyle = {
@@ -11,8 +12,17 @@ export default function Rental() {
   };
 
   return (
-    <div className='section'>
-      <h1>Rental services</h1>
+    <><PictureBanner />
+    <div className='section col'>
+    <h1 className= "absolute" 
+                style={{transform: 'translateY(-400%)',  
+                backgroundColor: 'rgb(0,31,63)',
+                color: 'rgb(255,255,255)',  
+                padding: '10px 20px',
+                borderRadius: '10px',
+                opacity: '0.86'}}>
+            Rental Services
+        </h1>
       <div className="flex justify-between">
         <div className="w-1/2">
           <div>
@@ -78,6 +88,6 @@ export default function Rental() {
           </div>
         </div>
       </div>
-    </div>
+    </div></>
   );
 }
