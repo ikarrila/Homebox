@@ -1,16 +1,9 @@
 import Link from 'next/link';
 import '../../../../styles/styles.css';
 import PictureBanner from '../../../../components/PictureBanner';
+import FAAS from "../../../../components/FAAS";
 
 export default function Rental() {
-  const imageStyle = {
-    width: '100%',
-    maxWidth: '300px',
-    height: 'auto',
-    display: 'block',
-    margin: '0 auto',
-  };
-
   return (
     <><PictureBanner />
     <div className='section col'>
@@ -88,6 +81,7 @@ export default function Rental() {
           </div>
         </div>
       </div>
-    </div></>
+    </div>
+    <FAAS /></>
   );
 }
