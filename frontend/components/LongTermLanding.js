@@ -47,27 +47,26 @@ export default function LongTermLanding() {
     return (
         <><PictureBanner />
         <div className='section col'>
-        <h1 className= "absolute" 
-                style={{transform: 'translateY(-400%)',  
-                backgroundColor: 'rgb(0,31,63)',
-                color: 'rgb(255,255,255)',  
-                padding: '10px 20px',
-                borderRadius: '10px',
-                opacity: '0.86'}}>
-            Long-term Rental
-        </h1>
-        </div>
+            <h1 className= "absolute" 
+                    style={{transform: 'translateY(-400%)',  
+                    backgroundColor: 'rgb(0,31,63)',
+                    color: 'rgb(255,255,255)',  
+                    padding: '10px 20px',
+                    borderRadius: '10px',
+                    opacity: '0.86'}}>
+                Long-term Rental
+            </h1>
             <div className='section col'>
-            <p> For longer periods, you can freely choose from a large selection of furniture and household items in our online catalogue. (link TBA) Create your dream home with the help of our interior designers!</p>
-            <div>
-                <button className="btn-primary" onClick={() => setPopupOpen(true)}>Contact us</button>
-                {popupOpen && <Popup onClose={() => setPopupOpen(false)} />}
+                <p> For longer periods, you can freely choose from a large selection of furniture and household items in our online catalogue. (link TBA) Create your dream home with the help of our interior designers!</p>
+                <div className='section row'>
+                    <button className="btn-primary" onClick={() => setPopupOpen(true)}>Contact us</button>
+                    {popupOpen && <Popup onClose={() => setPopupOpen(false)} />}
+                </div>
             </div>
         </div>
 
-        <div className='section col'>
-            <RentingVsBuying />
-            <CustomerReviews />
-        </div></>
+        <RentingVsBuying />
+        <CustomerReviews />
+    </>
     );
 }
