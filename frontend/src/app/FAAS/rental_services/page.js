@@ -3,7 +3,6 @@ import '../../../../styles/styles.css';
 import PictureBanner from '../../../../components/PictureBanner';
 import FAAS from "../../../../components/FAAS";
 
-export default function Rental() {
   const imageStyle = {
     width: '100%',
     maxWidth: '300px',
