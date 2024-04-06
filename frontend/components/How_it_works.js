@@ -4,6 +4,8 @@ import Kuva from "../../pictures/di_an_h-g_8MrEZAvyE-unsplash.jpg";
 import Kuva2 from "../../pictures/kam-idris-_HqHX3LBN18-unsplash.jpg";
 import Image from 'next/image';
 import Link from 'next/link';
+import WhyUsDescription from './WhyUsDescription';
+import CustomerReviews from './CustomerReviews';
 
 const pStyle = {
     fontSize: '20px',
@@ -64,6 +66,8 @@ export default function How_it_works() {
                     </div>
                 ))}
             </div>
+            <WhyUsDescription />
+            <CustomerReviews />
         </div>
     );
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import '/styles/styles.css';
 import Link from 'next/link';
+import CustomerReviews from './CustomerReviews';
+import RentingVsBuying from './RentingVsBuying';
 
 export default function ShortTermLanding() {
     return (
@@ -14,7 +16,8 @@ export default function ShortTermLanding() {
                     </button>
                 </Link>
             </div>
-
+            <CustomerReviews />
+            <RentingVsBuying />
         </div>
     );
-}
+};

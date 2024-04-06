@@ -8,34 +8,33 @@ function FAQItem({ title, children }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="rounded-flex white w-4/5 mx-auto justify-start">
-      <div className="cursor-pointer flex justify-between items-center p-2" onClick={() => setIsOpen(!isOpen)}>
-        <h2>{title}</h2>
-        <span>{isOpen ? "-" : "+"}</span>
+    <div className="faqItemContainer">
+      <div className="faqQuestion" onClick={() => setIsOpen(!isOpen)}>
+        <h4>{title}</h4>
+        <span className={isOpen ? 'minus' : 'plus'}>{isOpen ? "-" : "+"}</span>
       </div>
-      {isOpen && <div className="transition-all duration-200 ease-in-out">
+      <div className={`faqAnswer ${isOpen ? 'open' : ''}`}>
         {children}
-      </div>}
+      </div>
     </div>
   );
 }
-
 export default function FAQinfo() {
   return (
     <div>
       <div className='container col secondary'>
         <div className='section col'>
-          <h2>FAQ</h2>
+          <h1>FAQ</h1>
           <p>We value your complete satisfaction at KEJA. Enjoy the flexibility and peace of mind that come along with selecting an innovative, stress-free furnishing company. If you not completely satisfied with the products received, KEJA will make every effort to quickly resolve. We value the opinion of our clients and strive to provide the absolute highest possible level of customer service.</p>
           <Link href="/how_it_works">
             <button className='btn-tertiary'>Learn More</button>
           </Link>
         </div>
       </div>
-      <div className="container col white justify-start text-left">
+      <div className="container col justify-start text-left">
         <div className='section col justify-start'>
           <div>
-            <h1>Furniture as a Service </h1>
+            <h2>Furniture as a Service </h2>
             <FAQItem title="How long does the entire process take?">
               <p>For short terms it can take less than 24 hours! Though we prefer to be notified with a few days notice we are able to manage in most cases urgent requests. For longer rentals we usually need 2 weeks to get everything smoothly prepared for you. If you still need everything for yesterday, simply reach out to us as we always have a solution.</p>
             </FAQItem>
@@ -48,7 +47,8 @@ export default function FAQinfo() {
             <FAQItem title="How can I pay?">
               <p>However is best for you! We accept bank transfer and all major credit and debit cards.One month’s rental payment* plus the delivery and collection charge is due prior to your order being delivered. A dilapidation deposit is also required prior to delivery and this is held against any damage that may occur during the rental period, please note we accept signs of normal wear and tear. On-going monthly payments will conveniently be made by Direct Debit. *If the hire period is shorter than three months, all hire costs will be taken prior to delivery.</p>
             </FAQItem>
-            <h1>Furnishing Services </h1>
+            <br></br>
+            <h2>Furnishing Services </h2>
             <FAQItem title="How long does the entire process take?">
               <p>The design process usually varies depending on your wants and needs but usually delivery and assembly is within 2-4 weeks after order confirmation.</p>
             </FAQItem>
@@ -67,7 +67,8 @@ export default function FAQinfo() {
             <FAQItem title="What if I don't like the products?">
               <p>If you wish to return or exchange your products, please do so within 10 days after delivery. Our crew will pick up the pieces you no longer wish to keep and refund the partial price of the returned items. Returning the products will incur a 15% fee due to the additional delivery and disposal fees. Exchanges are free. *Please note that sales are final for special sales or made-to-order items.* Many quality steps are taken to ensure your products arrive to you in excellent condition. It is very important you inspect the purchase upon arrival. If an item is damaged in transit, please send us a photo with a description. We will request our supplier to send out a replacement or have our design team find new options for you. We will make sure you get what you need.</p>
             </FAQItem>
-            <h1>Delivery and assembly </h1>
+            <br></br>
+            <h2>Delivery and assembly </h2>
             <FAQItem title="Where do you deliver?">
               <p>We are currently based in Espoo, Finland and can easily service the Uusimaa region. KEJA relies on a fast and reliable supply chain network to ship products across the country. Your delivery lead time will range from 2 to 4 weeks after your order is placed.</p>
             </FAQItem>
