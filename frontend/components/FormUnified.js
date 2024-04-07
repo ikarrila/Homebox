@@ -5,12 +5,12 @@ import '/styles/styles.css';
 import Postbutton from './Postbutton';
 
 import { render } from '@testing-library/react';
-import FormStepZero from './FormStepZero';
-import FormStepOne from './FormStepOne';
-import FormStepTwo from './FormStepTwo';
-import FormStepThree from './FormStepThree';
-import FormStepFour from './FormStepFour';
-import FormStepFive from './FormStepFive';
+import FormStepZero from './FormSteps/FormStepZero';
+import FormStepOne from './FormSteps/FormStepOne';
+import FormStepTwo from './FormSteps/FormStepTwo';
+import FormStepThree from './FormSteps/FormStepThree';
+import FormStepFour from './FormSteps/FormStepFour';
+import FormStepFive from './FormSteps/FormStepFive';
 import FormSentMessage from './FormSentMessage';
 
 

@@ -19,7 +19,7 @@ describe('How_it_works', () => {
   test('renders the correct number of sections', () => {
     render(<How_it_works />);
     const sectionElements = screen.getAllByRole('heading', { level: 2 });
-    expect(sectionElements).toHaveLength(6);
+    expect(sectionElements).toHaveLength(8);
   });
 
   test('renders section headlines', () => {
