@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SmallMedLar from './SmallMedLar';
+import SmallMedLar from '../SmallMedLar';
 
 export default function FormStepTwo({ propertyType, changeStep }) {
     const [showLivingRoomSize, setShowLivingRoomSize] = useState(false);
@@ -136,6 +136,7 @@ export default function FormStepTwo({ propertyType, changeStep }) {
                 <div className='container row align-middle'>
                     <button onClick={() => changeStep(3)} className='btn-tertiary'>Continue</button>
                 </div>
+
             </div>
 
         </div >
