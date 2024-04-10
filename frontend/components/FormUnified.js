@@ -6,6 +6,7 @@ import Postbutton from './Postbutton';
 
 import { render } from '@testing-library/react';
 import FormStepZero from './FormSteps/FormStepZero';
+import FormStepRentalLength from './FormSteps/FormStepRentalLength';
 import FormStepOne from './FormSteps/FormStepOne';
 import FormStepTwo from './FormSteps/FormStepTwo';
 import FormStepThree from './FormSteps/FormStepThree';
@@ -34,6 +35,7 @@ export default function FormUnified() {
         <div data-testid="cost-calculator-form" className='container multi-step-form'>
             {step === 0 && <FormStepZero changeStep={changeStep} />}
 
+            <FormStepRentalLength changeStep={changeStep} />
             <FormStepOne changeStep={changeStep} handlePropertyTypeChange={handlePropertyTypeChange} />
             <FormStepTwo changeStep={changeStep} propertyType={propertyType} />
             <FormStepThree changeStep={changeStep} />
