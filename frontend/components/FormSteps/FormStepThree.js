@@ -4,7 +4,7 @@ export default function FormStepThree({ changeStep }) {
     return (
 
         <div className="section">
-            <div className='stepThree' style={{ backgroundColor: "red" }}>
+            <div className='stepThree' >
                 <div className="stepTitle dark">3. Select your level of furnishing needs</div>
                 <div className='step dark'>
                     <div className='left'>
@@ -22,6 +22,7 @@ export default function FormStepThree({ changeStep }) {
                     </div>
                 </div>
                 <div className='container row align-middle'>
+                    <button onClick={() => changeStep(2)} className='btn-tertiary'>Back</button>
                     <button onClick={() => changeStep(4)} className='btn-tertiary'>Continue</button>
                 </div>
             </div>

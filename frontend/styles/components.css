@@ -55,7 +55,7 @@ body .main-container {
 
 
 .step-container {
-    @apply flex flex-row items-start overflow-hidden;
+    @apply flex flex-row items-start overflow-hidden ;
 
 }
 
@@ -65,7 +65,7 @@ body .main-container {
 }
 
 .card-container img {
-    @apply w-200 h-110 object-cover;
+    @apply w-200 h-110 object-cover mb-20;
 }
 
 .card-container img:nth-of-type(1) {
