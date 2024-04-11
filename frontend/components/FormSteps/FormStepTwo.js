@@ -77,7 +77,7 @@ export default function FormStepTwo({ propertyType, changeStep }) {
     console.log(propertyType)
     return (
         <div className="section">
-            <div className='stepTwo' style={{ backgroundColor: "blue" }}>
+            <div className='stepTwo' >
                 <div className="stepTitle">2. Select your rooms to furnish & room size </div>
                 <div className='step startCol' style={{ display: 'flex', flexDirection: 'row' }}>
                     <div>
@@ -192,7 +192,8 @@ export default function FormStepTwo({ propertyType, changeStep }) {
                     </div>
                 </div>
                 <div className='container row align-middle'>
-                    <button onClick={() => changeStep(3)} className='btn-tertiary'>Continue</button>
+                    <button onClick={() => changeStep(1)} className='btn-tertiary'>Back</button>
+                    <button onClick={() => changeStep(3)} className='btn-tertiary ml-20'>Continue</button>
                 </div>
 
             </div>

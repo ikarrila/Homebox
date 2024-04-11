@@ -6,13 +6,12 @@ import Postbutton from './Postbutton';
 
 import { render } from '@testing-library/react';
 import FormStepZero from './FormSteps/FormStepZero';
-import FormStepRentalLength from './FormSteps/FormStepRentalLength';
 import FormStepOne from './FormSteps/FormStepOne';
 import FormStepTwo from './FormSteps/FormStepTwo';
 import FormStepThree from './FormSteps/FormStepThree';
 import FormStepFour from './FormSteps/FormStepFour';
 import FormStepFive from './FormSteps/FormStepFive';
-import FormSentMessage from './FormSentMessage';
+import FormSentMessage from './FormSteps/FormSentMessage';
 
 
 export default function FormUnified() {
@@ -21,7 +20,7 @@ export default function FormUnified() {
     const [roomInfoJSON, setRoomInfoJSON] = useState({})
 
     //FUNCTION TO HANDLE PROPERTY TYPE CHANGE FOR STEP 2
-    const handlePropertyTypeChange = (event) => {
+    const handleChange = (event) => {
         setPropertyType(event.target.value);
         console.log(propertyType, "TYPE OF PROPERTY")
     };
@@ -34,14 +33,12 @@ export default function FormUnified() {
     return (
         <div data-testid="cost-calculator-form" className='container multi-step-form'>
             {step === 0 && <FormStepZero changeStep={changeStep} />}
-
-            <FormStepRentalLength changeStep={changeStep} />
-            <FormStepOne changeStep={changeStep} handlePropertyTypeChange={handlePropertyTypeChange} />
-            <FormStepTwo changeStep={changeStep} propertyType={propertyType} />
-            <FormStepThree changeStep={changeStep} />
-            <FormStepFour changeStep={changeStep} />
-            <FormStepFive changeStep={changeStep} />
-            <FormSentMessage />
+            {step === 1 && <FormStepOne changeStep={changeStep} handleChange={handleChange} />}
+            {step === 2 && <FormStepTwo changeStep={changeStep} propertyType={propertyType} />}
+            {step === 3 && <FormStepThree changeStep={changeStep} />}
+            {step === 4 && <FormStepFour changeStep={changeStep} />}
+            {step === 5 && <FormStepFive changeStep={changeStep} />}
+            {step === 6 && <FormSentMessage />}
         </div>
     );
 };
