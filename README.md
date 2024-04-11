@@ -48,16 +48,37 @@ describe('Component', () => {
 
 | Requirement | Test file |  
 | ------ | ------ |  
-| Functional cost calculator |  |  
-| Short-term form |  |  
-| Long-term form |  |  
+| Functional cost calculator | [MERGED] |  
+| Short-term form | [MERGED] |  
+| Long-term form | [MERGED] |  
 | Rental services landing page |  |  
 | FAQ page |  |  
 
 ## Data objects
-
-TODO  
+  
 [A short description of JSON sent by cost calculator]
+
+This is Work In Progress, but something along the lines:  
+{
+source: "multi_step_order"
+furnishingLevel: "Standard",
+location: "place",
+roomChoices: {
+   -bedroom1: {
+      size: "small"
+},
+-livingroom: {
+     size: "medium
+}
+},
+-rentalStart: "timecontent",
+-rentalLength: "lengthcontent"
+name: "content",
+email: "content",
+textField: "content",
+phone: number,
+budget: number
+}
 
 ## Navigation diagram
 
