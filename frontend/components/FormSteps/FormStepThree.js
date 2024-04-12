@@ -16,9 +16,9 @@ export default function FormStepThree({ changeStep }) {
                     </div>
                     <div className='right'>
                         <h3>Standard:</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod eros in enim cursus, a finibus lorem pretium.</p>
+                        <p>This new home will be functional with essential furniture. Decor is minimal as this option focuses on functions primarily.</p>
                         <h3>Premium:</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod eros in enim cursus, a finibus lorem pretium.</p>
+                        <p>Your home will be fully decorated with accessories like throws, pillows and wall arts for all the rooms. Imagine the designs you see in a magazine.</p>
                     </div>
                 </div>
                 <div className='container row align-middle'>
