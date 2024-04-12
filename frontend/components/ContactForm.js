@@ -25,10 +25,14 @@ const stepStyle = {
 export default function ContactForm() {
     return (
         <div>
+            <div className="section"><p>
+
+                If you have a query, would like to find out more about our services or have a specific query that we can help you with, you can send us a message using the form and our team will get back to you as soon as possible by phone or email.
+            </p></div>
             <div style={roomStyle}>
                 <div style={stepStyle}>Tell us about your needs </div>
                 <input type="text" placeholder="Write about your needs" data-testid="input"></input>
-                {/* Step content goes here */}
+
             </div>
 
             <div style={roomStyle}>
@@ -63,6 +67,14 @@ export default function ContactForm() {
                     </div>
                 </div>
                 <Postbutton></Postbutton>
+                <hr />
+                <div className="contact-details mt-4 flex flex-col items-center text-center">
+                    <h2 className="text-lg font-bold">Contact Details</h2>
+                    <b className="font-semibold">Sales and General inquiries</b>
+                    <a href="mailto:info@keja.com" className="text-blue-500">info@keja.com</a>
+                    <b className="font-semibold">Customer service</b>
+                    <a href="mailto:customer-support@keja.com" className="text-blue-500">customer-support@keja.com</a>
+                </div>
             </div>
         </div>
     );
