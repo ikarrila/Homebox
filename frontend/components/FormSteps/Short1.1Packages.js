@@ -1,11 +1,11 @@
-
-
-export default function FormStepThree({ changeStep }) {
+export default function ShortPackages({ handleChange, changeStep, CommonLengthData }) {
     return (
 
-        <div className="section">
-            <div className='stepThree' >
-                <div className="stepTitle dark">3. Select your level of furnishing needs</div>
+
+        <div className='section'>
+
+            <div className='stepOne container col' >
+                <div className="stepTitle">2. Fill in how soon and for how long the rental services will be required </div>
                 <div className='step dark'>
                     <div className='left'>
                         <select className='selector' defaultValue="" id='furnishingSelector'>
@@ -22,13 +22,12 @@ export default function FormStepThree({ changeStep }) {
                     </div>
                 </div>
                 <div className='container row align-middle'>
-                    <button onClick={() => changeStep(2)} className='btn-tertiary'>Back</button>
-                    <button onClick={() => changeStep(4)} className='btn-tertiary'>Continue</button>
+                    <button onClick={() => changeStep('common-length')} className='btn-tertiary'>Back</button>
+                    <button onClick={() => changeStep('common-personal-info')} className='btn-tertiary'>Continue</button>
                 </div>
             </div>
         </div>
 
 
     )
-
 }
