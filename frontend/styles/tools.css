@@ -9,6 +9,12 @@
     @apply flex items-center py-10 w-full px-52;
 }
 
+/* Keeps the height fixed even if the visible content changes */
+.fixedHeight {
+    @apply h-800;
+
+}
+
 /* Align step contents against the container's start (column) */
 .startCol {
     @apply flex-col items-start;
