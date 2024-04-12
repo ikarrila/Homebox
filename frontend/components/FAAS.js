@@ -26,7 +26,7 @@ export default function FAAS() {
             <div className="section" style={{ display: 'flex', justifyContent: 'center' }}>
                 <div className="w-1/2">
                     <h2 style={{ textAlign: 'center' }}>Instant Quote</h2>
-                    <Link href="/FAAS/cost_calculator">
+                    <Link href="/FAAS/evaluation">
                         <div className="flex justify-start">
                             <button className="btn-primary">
                                 Instant Quote
