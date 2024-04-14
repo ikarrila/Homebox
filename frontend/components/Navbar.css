@@ -14,6 +14,10 @@
   .hidden {
     display: none !important;
   }
+  .secret-content, .secret-dropdown {
+    z-index: 20000 !important;
+    display: absolute !important;
+  }
 
   .dropdown>*>* {
     border-bottom: 0.5px solid lightgray;
@@ -26,10 +30,12 @@
     border-bottom: 0.5px solid lightgray;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
+    background-color: #89939E;
   }
 
   .secret-content>*:hover {
     background-color: #cad1d8;
+    
   }
 
   .dropdown>.alternative {
@@ -38,11 +44,13 @@
     padding-right: 0 !important;
     margin-top: -37px !important;
     transition: opacity 1.3s;
+    
   }
 
   /* secret dropdown */
   .secret-dropdown {
     display: flex !important;
+    background-color: #89939E;
   }
 
   /* content of secret dropdown menu*/
@@ -58,7 +66,6 @@
     min-width: 50vw !important;
     max-height: 50vh !important;
     border-radius: 5%;
-
   }
 
   /* opacity transition of secret dropdown */
@@ -122,7 +129,14 @@ a {
 
 /* Shows the dropdown menu items when hovered over */
 .dropdown:hover .dropdown-content {
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
   display: block;
+}
+/* supplement to round out corners of last div*/
+.dropdown:hover .dropdown-content :last-child{
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
 }
 
 
