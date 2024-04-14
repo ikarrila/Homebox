@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SmallMedLar from '../SmallMedLar';
 
-export default function FormStepTwo({ propertyType, changeStep }) {
+export default function LongProperty({ LongProperty, changeStep }) {
     const [showLivingRoomSize, setShowLivingRoomSize] = useState(false);
     const [showDiningRoomSize, setShowDiningRoomSize] = useState(false);
     const [showKitchenSize, setShowKitchenSize] = useState(false);
@@ -74,7 +74,7 @@ export default function FormStepTwo({ propertyType, changeStep }) {
         setCurrentOption((prevOption) => (prevOption + 1) % options.length);
     };
 
-    console.log(propertyType)
+    console.log(LongProperty)
     return (
         <div className="section">
             <div className='stepTwo' >
@@ -89,7 +89,7 @@ export default function FormStepTwo({ propertyType, changeStep }) {
                             <SmallMedLar name={"mainBedroomSize"} onSizeSelect={setBedSize} />
                         )}
 
-                        {propertyType >= "3" && (
+                        {LongProperty >= "3" && (
                             <div>
                                 <div>
                                     <label htmlFor="bedroom2">Bedroom 2</label>
@@ -101,7 +101,7 @@ export default function FormStepTwo({ propertyType, changeStep }) {
                             </div>
                         )}
 
-                        {propertyType >= "4" && (
+                        {LongProperty >= "4" && (
                             <div>
                                 <div>
                                     <label htmlFor="bedroom3">Bedroom 3</label>
@@ -113,7 +113,7 @@ export default function FormStepTwo({ propertyType, changeStep }) {
                             </div>
                         )}
 
-                        {propertyType >= "5" && (
+                        {LongProperty >= "5" && (
                             <div>
                                 <div>
                                     <label htmlFor="bedroom4">Bedroom 4</label>
@@ -125,7 +125,7 @@ export default function FormStepTwo({ propertyType, changeStep }) {
                             </div>
                         )}
 
-                        {propertyType >= "6" && (
+                        {LongProperty >= "6" && (
                             <div>
                                 <div>
                                     <label htmlFor="bedroom5">Bedroom 5</label>
@@ -137,7 +137,7 @@ export default function FormStepTwo({ propertyType, changeStep }) {
                             </div>
                         )}
 
-                        {propertyType >= "7" && (
+                        {LongProperty >= "7" && (
                             <div>
                                 <div>
                                     <label htmlFor="bedroom6">Bedroom 6</label>
@@ -192,8 +192,8 @@ export default function FormStepTwo({ propertyType, changeStep }) {
                     </div>
                 </div>
                 <div className='container row align-middle'>
-                    <button onClick={() => changeStep(1)} className='btn-tertiary'>Back</button>
-                    <button onClick={() => changeStep(3)} className='btn-tertiary ml-20'>Continue</button>
+                    <button onClick={() => changeStep('common-length')} className='btn-tertiary'>Back</button>
+                    <button onClick={() => changeStep('long-rooms')} className='btn-tertiary ml-20'>Continue</button>
                 </div>
 
             </div>

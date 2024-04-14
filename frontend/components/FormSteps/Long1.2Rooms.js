@@ -4,7 +4,7 @@ import PremiumImg from "../../../pictures/kenny-eliason-Wp7t4cWN-68-unsplash.jpg
 
 import Image from 'next/image';
 
-export default function FormStepThree({ changeStep }) {
+export default function LongRooms({ changeStep }) {
     // State to track the selected value from the dropdown
     const [selectedValue, setSelectedValue] = useState("");
 
@@ -28,10 +28,10 @@ export default function FormStepThree({ changeStep }) {
     };
 
     return (
-        <div className="section h-800">
-            <div className='stepThree'>
-                <div className="stepTitle">3. Select your level of furnishing needs</div>
-                <div className='step fixedHeight'>
+        <div className="section">
+            <div className='long-living-details' >
+                <div className="stepTitle dark">3. Select your level of furnishing needs</div>
+                <div className='step dark fixedHeight'>
                     <div className='left'>
                         {renderImage()}</div>
                     <div className='right'>
@@ -49,8 +49,8 @@ export default function FormStepThree({ changeStep }) {
                     </div>
                 </div>
                 <div className='container row align-middle'>
-                    <button onClick={() => changeStep(2)} className='btn-tertiary'>Back</button>
-                    <button onClick={() => changeStep(4)} className='btn-tertiary'>Continue</button>
+                    <button onClick={() => changeStep('long-property')} className='btn-tertiary'>Back</button>
+                    <button onClick={() => changeStep('long-living-details')} className='btn-tertiary'>Continue</button>
                 </div>
             </div>
         </div>

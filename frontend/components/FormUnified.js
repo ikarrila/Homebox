@@ -5,40 +5,49 @@ import '/styles/styles.css';
 import Postbutton from './Postbutton';
 
 import { render } from '@testing-library/react';
-import FormStepZero from './FormSteps/FormStepZero';
-import FormStepOne from './FormSteps/FormStepOne';
-import FormStepTwo from './FormSteps/FormStepTwo';
-import FormStepThree from './FormSteps/FormStepThree';
-import FormStepFour from './FormSteps/FormStepFour';
-import FormStepFive from './FormSteps/FormStepFive';
-import FormSentMessage from './FormSteps/FormSentMessage';
+import CommonStart from './FormSteps/Common0Start';
+import CommonLength from './FormSteps/Common1Length';
+import ShortPackages from './FormSteps/Short1.1Packages';
+import LongProperty from './FormSteps/Long1.1Property';
+import LongRooms from './FormSteps/Long1.2Rooms';
+import LongLivingDetails from './FormSteps/Long1.3LivingDetails';
+import CommonPersonalInfo from './FormSteps/Common2PersonalInfo';
+import CommonSubmit from './FormSteps/Common3Submit';
+import CommonThanks from './FormSteps/Common4Thanks';
 
 
 export default function FormUnified() {
-    const [step, setStep] = useState(0);
-    const [propertyType, setPropertyType] = useState('');
-    const [roomInfoJSON, setRoomInfoJSON] = useState({})
+    const [step, setStep] = useState('common-start');
+    //CommonLength has 2 states, CommonLengthData.length and CommonLengthData.message
+    const [CommonLengthData, setCommonLengthData] = useState({});
 
-    //FUNCTION TO HANDLE PROPERTY TYPE CHANGE FOR STEP 2
-    const handleChange = (event) => {
-        setPropertyType(event.target.value);
-        console.log(propertyType, "TYPE OF PROPERTY")
-    };
+    const [ShortPackagesData, setShortPackagesData] = useState({});
+    const [LongPropertyData, setLongPropertyData] = useState({});
+    const [LongRoomsData, setLongRoomsData] = useState({});
+    const [LongLivingDetailsData, setLongLivingDetailsData] = useState({});
+
+    const [CommonPersonalInfoData, setCommonPersonalInfoData] = useState({});
+
     //FUNCTION TO CHANGE FORM STEP
     const changeStep = (step) => {
         console.log(step, "FORM STEP")
         setStep(step);
     };
-
+    //FormUnified should hold an unique state for each of the steps
+    //At the end of the form, all the states should be combined into one JSON object
     return (
         <div data-testid="cost-calculator-form" className='container multi-step-form'>
-            {step === 0 && <FormStepZero changeStep={changeStep} />}
-            {step === 1 && <FormStepOne changeStep={changeStep} handleChange={handleChange} />}
-            {step === 2 && <FormStepTwo changeStep={changeStep} propertyType={propertyType} />}
-            {step === 3 && <FormStepThree changeStep={changeStep} />}
-            {step === 4 && <FormStepFour changeStep={changeStep} />}
-            {step === 5 && <FormStepFive changeStep={changeStep} />}
-            {step === 6 && <FormSentMessage />}
+            {step === 'common-start' && <CommonStart changeStep={changeStep} />}
+            {step === 'common-length' && <CommonLength changeStep={changeStep} setCommonLengthData={setCommonLengthData} CommonLengthData={CommonLengthData} />}
+            {/*if length of rental 10> then show long form */}
+            {step === 'short-packages' && <ShortPackages changeStep={changeStep} setShortPackagesData={setShortPackagesData} ShortPackagesData={ShortPackagesData} />}
+            {step === 'long-property' && <LongProperty changeStep={changeStep} />}
+            {step === 'long-rooms' && <LongRooms changeStep={changeStep} />}
+            {step === 'long-living-details' && <LongLivingDetails changeStep={changeStep} />}
+            {/*continue common form*/}
+            {step === 'common-personal-info' && <CommonPersonalInfo changeStep={changeStep} CommonLengthData={CommonLengthData} />}
+            {step === 'common-submit' && <CommonSubmit changeStep={changeStep} CommonLengthData={CommonLengthData} />}
+            {step === 'common-thanks' && <CommonThanks />}
         </div>
     );
 };

@@ -7,22 +7,19 @@ import img1 from "../../pictures/francesca-tosolini-DmOhItSo49k-unsplash.jpg";
 import img2 from "../../pictures/kara-eads-L7EwHkq1B2s-unsplash.jpg";
 import Image from 'next/image';
 
-export default function Package() {
-    const [selectedStandardPackage, setSelectedStandardPackage] = useState('');
-    const [selectedPremiumPackage, setSelectedPremiumPackage] = useState('');
+export default function Package({ setShortPackagesData, ShortPackagesData }) {
     const [showStandardPackage, setShowStandardPackage] = useState(false);
     const [showPremiumPackage, setShowPremiumPackage] = useState(false);
     const [buttonPressed, setButtonPressed] = useState(false);
 
-    const handleStandardPackageChange = (event) => {
-        setSelectedStandardPackage(event.target.value);
+    const handleChange = (e) => {
+        //Updates the state depending on name with the value in the value field
+        const updatedState = {
+            [e.target.name]: e.target.value
+        };
+        setShortPackagesData(updatedState);
         setButtonPressed(false);
-    };
-
-    const handlePremiumPackageChange = (event) => {
-        setSelectedPremiumPackage(event.target.value);
-        setButtonPressed(false);
-    };
+    }
 
     const handleViewStandardPackage = () => {
         setShowStandardPackage(true);
@@ -37,7 +34,7 @@ export default function Package() {
 
     const PackageDetails = ({ packageType }) => {
         switch (packageType) {
-            case '1':
+            case 'standardStudio':
                 return (
                     <>
                         <h4><b>Bedroom</b></h4>
@@ -51,7 +48,7 @@ export default function Package() {
                         <li>1x side table</li>
                     </>
                 );
-            case '2':
+            case 'standard1bedroom':
                 return (
                     <>
                         <h4><b>Bedroom</b></h4>
@@ -66,7 +63,7 @@ export default function Package() {
                         <li>1x coffee table</li>
                     </>
                 );
-            case '3':
+            case 'standard2bedroom':
                 return (
                     <>
                         <h4><b>Bedroom</b></h4>
@@ -82,7 +79,7 @@ export default function Package() {
                         <li>1x side table</li>
                     </>
                 );
-            case '4':
+            case 'standard3bedroom':
                 return (
                     <>
                         <h4><b>Bedroom</b></h4>
@@ -106,7 +103,7 @@ export default function Package() {
 
     const PremiumPackageDetails = ({ packageType }) => {
         switch (packageType) {
-            case '1':
+            case 'premiumStudio':
                 return (
                     <>
                         <h4><b>Bedroom</b></h4>
@@ -124,7 +121,7 @@ export default function Package() {
                         <li>home essentials kit (new beddings, new bathroom essentials, essential kitchen utensils)</li>
                     </>
                 );
-            case '2':
+            case 'premium1Bedroom':
                 return (
                     <>
                         <h4><b>Bedroom</b></h4>
@@ -143,7 +140,7 @@ export default function Package() {
                         <li>home essentials kit (new beddings, new bathroom essentials, essential kitchen utensils)</li>
                     </>
                 );
-            case '3':
+            case 'premium2Bedroom':
                 return (
                     <>
                         <h4><b>Bedroom</b></h4>
@@ -163,7 +160,7 @@ export default function Package() {
                         <li>home essentials kit (new beddings, new bathroom essentials, essential kitchen utensils)</li>
                     </>
                 );
-            case '4':
+            case 'premium3Bedroom':
                 return (
                     <>
                         <h4><b>Bedroom</b></h4>
@@ -190,51 +187,34 @@ export default function Package() {
     };
 
     return (
-        <div className='container col'>
-            <h1>Short-term packages</h1>
-            <div className='section'>
-                <h2>From 3 to 10 months</h2>
+        <div className='container'>
+            <div className='stepTitle'>Step 2: Choose the package</div>
+            <div className='step startCol'>
+                <h3>From 3 to 10 months</h3>
                 <p>Fully furnish a home in less than 48 hours for short term rentals with our pre-made furniture packages</p> <br></br>
-                <h2>Best curated furniture packages</h2>
+                <h3>Best curated furniture packages</h3>
                 <p>For short term rentals we have ready-to-move-in packages that we will customize to your house.</p>
                 <p>All is prepared to make sure it is comfortable and complete, including household items and comfy mattresses.</p>
-                <p>If you wish specific items and designs, reach out to our team and have a look at our long term rental offers.</p></div>
-
-
-            <div className='stepTitle'>1. Select the rental period </div>
-            <div className='step startCol'>
-                <label>Rental period (months)</label>
-                <select className='selector'>
-                    <option value="" disabled selected>Select rental period...</option>
-                    <option value="3">3 month hire period</option>
-                    <option value="4">4 month hire period</option>
-                    <option value="5">5 month hire period</option>
-                    <option value="6">6 month hire period</option>
-                    <option value="7">7 month hire period</option>
-                    <option value="8">8 month hire period</option>
-                    <option value="9">9 month hire period</option>
-                    <option value="10">10 month hire period</option>
-                </select>
+                <p>If you wish specific items and designs, reach out to our team and have a look at our long term rental offers.</p>
             </div>
-
             <div className='stepTitle'>Step 2: Select the package</div>
-            <div className='step startRow'>
+            <div className='step startRow '>
                 <div id='standard' className='left'>
                     < Image class='image-container' src={img1} alt="img1" />
                     <h3>Standard</h3>
-                    <select className='selector' onChange={handleStandardPackageChange}>
+                    <select className='selector' onChange={handleChange} name="standard" value={ShortPackagesData.standard || ""}>
                         <option value="" disabled selected>Select package size</option>
-                        <option value="1">Studio Package</option>
-                        <option value="2">1 Bedroom package</option>
-                        <option value="3">2 Bedroom package</option>
-                        <option value="4">3 Bedroom package</option>
+                        <option value="standardStudio">Studio Package</option>
+                        <option value="standard1bedroom">1 Bedroom package</option>
+                        <option value="standard2bedroom">2 Bedroom package</option>
+                        <option value="standard3bedroom">3 Bedroom package</option>
                     </select>
 
-                    {selectedStandardPackage && (
+                    {ShortPackagesData.standard && (
                         <>
                             <hr />
                             <p>List of items for selected package:</p>
-                            <PackageDetails packageType={selectedStandardPackage} />
+                            <PackageDetails packageType={ShortPackagesData.standard} />
                         </>
                     )}
 
@@ -243,40 +223,24 @@ export default function Package() {
                     < Image class='image-container' src={img2} alt="img2" />
                     <h3>Premium</h3>
 
-                    <select className='selector' onChange={handlePremiumPackageChange}>
+                    <select className='selector' onChange={handleChange} name="premium" value={ShortPackagesData.premium || ""}>
                         <option value="" disabled selected>Select package size</option>
-                        <option value="1">Studio Package</option>
-                        <option value="2">1 Bedroom package</option>
-                        <option value="3">2 Bedroom package</option>
-                        <option value="4">3 Bedroom package</option>
+                        <option value="premiumStudio">Studio Package</option>
+                        <option value="premium1Bedroom">1 Bedroom package</option>
+                        <option value="premium2Bedroom">2 Bedroom package</option>
+                        <option value="premium3Bedroom">3 Bedroom package</option>
                     </select>
-                    {selectedPremiumPackage && (
+                    {ShortPackagesData.premium && (
                         <>
                             <hr />
                             <p>List of items for selected premium package:</p>
-                            <PremiumPackageDetails packageType={selectedPremiumPackage} />
+                            <PremiumPackageDetails packageType={ShortPackagesData.premium} />
                         </>
                     )}
 
                 </div>
             </div>
             <hr />
-            <div className='stepTitle dark'>3. Submit your request to short term rental</div>
-            <div className='step dark startCol'>
-
-                <input type="text" id="name" data-testid="name-input" name="name" placeholder='Name' className='input' />
-
-                <input type="text" id="email" data-testid="email-input" name="email" placeholder='Email' className='input' />
-
-                <input type="text" id="phone" name="phone" placeholder='Phone' className='input' />
-
-                <input type="text" id="message" name="message" placeholder='Message' className='input' />
-            </div>
-            <Postbutton />
-
-            <div className='section'>
-                renting with us, rent vs buying sections
-            </div>
         </div>
 
     );
