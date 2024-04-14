@@ -1,5 +1,6 @@
 import Package from "../Packages"
 export default function ShortPackages({ handleChange, changeStep, setShortPackagesData, ShortPackagesData }) {
+
     return (
         <div className='section col' >
             <Package setShortPackagesData={setShortPackagesData} ShortPackagesData={ShortPackagesData} />

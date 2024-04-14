@@ -43,7 +43,7 @@ export default function CommonLength({ changeStep, setCommonLengthData, CommonLe
                         </label>
                         <div className="container row ">
                             <select id="rentalLength" className="input " name="length" value={CommonLengthData.length} onChange={handleChange}
-                                style={unSelected ? { backgroundColor: "#cad1d8" } : {}} >
+                                style={unSelected ? { backgroundColor: "#f5f5f5" } : {}} >
                                 <option value={0} disabled selected>Select rental length</option>
                                 <option value={1}>1 month</option>
                                 <option value={2}>2 months</option>
