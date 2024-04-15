@@ -45,9 +45,7 @@ export default function FormUnified() {
             {step === 'long-rooms' && <LongRooms changeStep={changeStep} />}
             {step === 'long-living-details' && <LongLivingDetails changeStep={changeStep} />}
             {/*continue common form*/}
-            {step === 'common-personal-info' && <CommonPersonalInfo changeStep={changeStep}
-                CommonLengthData={CommonLengthData} CommonPersonalInfoData={CommonPersonalInfoData}
-                setCommonPersonalInfoData={setCommonPersonalInfoData} />}
+            {step === 'common-personal-info' && <CommonPersonalInfo changeStep={changeStep} CommonLengthData={CommonLengthData} CommonPersonalInfoData={CommonPersonalInfoData} setCommonPersonalInfoData={setCommonPersonalInfoData} />}
             {step === 'common-submit' && <CommonSubmit changeStep={changeStep} CommonLengthData={CommonLengthData} />}
             {step === 'common-thanks' && <CommonThanks />}
         </div>
