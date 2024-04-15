@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '/styles/styles.css';
 import Postbutton from './Postbutton';
 import img1 from "../../pictures/francesca-tosolini-DmOhItSo49k-unsplash.jpg";
@@ -8,29 +8,32 @@ import img2 from "../../pictures/kara-eads-L7EwHkq1B2s-unsplash.jpg";
 import Image from 'next/image';
 
 export default function Package({ setShortPackagesData, ShortPackagesData }) {
-    const [showStandardPackage, setShowStandardPackage] = useState(false);
-    const [showPremiumPackage, setShowPremiumPackage] = useState(false);
+    const [showStandardPackage, setShowStandardPackage] = useState(1);
+    const [showPremiumPackage, setShowPremiumPackage] = useState(1);
     const [buttonPressed, setButtonPressed] = useState(false);
 
     const handleChange = (e) => {
         //Updates the state depending on name with the value in the value field
         const updatedState = {
             [e.target.name]: e.target.value
+
         };
         setShortPackagesData(updatedState);
         setButtonPressed(false);
     }
 
-    const handleViewStandardPackage = () => {
-        setShowStandardPackage(true);
-        setButtonPressed(true);
-    };
 
-    const handleViewPremiumPackage = () => {
-        setShowPremiumPackage(true);
-        setButtonPressed(true);
+    useEffect(() => {
+        if (ShortPackagesData.standard) {
+            setShowStandardPackage(1);
+            setShowPremiumPackage(0.5);
+            console.log(showPremiumPackage, showStandardPackage);
+        } else if (ShortPackagesData.premium) {
+            setShowStandardPackage(0.5);
+            setShowPremiumPackage(1);
+        }
+    }, [handleChange]);
 
-    };
 
     const PackageDetails = ({ packageType }) => {
         switch (packageType) {
@@ -187,8 +190,8 @@ export default function Package({ setShortPackagesData, ShortPackagesData }) {
     };
 
     return (
-        <div className='container'>
-            <div className='stepTitle'>Step 2: Choose the package</div>
+        <div className='container '>
+            <div className='stepTitle'>Step 2: Select the package</div>
             <div className='step startCol'>
                 <h3>From 3 to 10 months</h3>
                 <p>Fully furnish a home in less than 48 hours for short term rentals with our pre-made furniture packages</p> <br></br>
@@ -197,10 +200,9 @@ export default function Package({ setShortPackagesData, ShortPackagesData }) {
                 <p>All is prepared to make sure it is comfortable and complete, including household items and comfy mattresses.</p>
                 <p>If you wish specific items and designs, reach out to our team and have a look at our long term rental offers.</p>
             </div>
-            <div className='stepTitle'>Step 2: Select the package</div>
             <div className='step startRow '>
-                <div id='standard' className='left'>
-                    < Image class='image-container' src={img1} alt="img1" />
+                <div id='standard' className='left ' >
+                    < Image class='image-container' src={img1} alt="img1" style={{ transition: 'opacity 1s', opacity: showStandardPackage }} />
                     <h3>Standard</h3>
                     <select className='selector' onChange={handleChange} name="standard" value={ShortPackagesData.standard || ""}>
                         <option value="" disabled selected>Select package size</option>
@@ -220,7 +222,7 @@ export default function Package({ setShortPackagesData, ShortPackagesData }) {
 
                 </div>
                 <div id='premium' className='right'>
-                    < Image class='image-container' src={img2} alt="img2" />
+                    < Image class='image-container' src={img2} alt="img2" style={{ transition: 'opacity 1s', opacity: showPremiumPackage }} />
                     <h3>Premium</h3>
 
                     <select className='selector' onChange={handleChange} name="premium" value={ShortPackagesData.premium || ""}>
