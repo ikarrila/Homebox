@@ -17,12 +17,12 @@ export default function Navbar() {
 
   return (
     <nav className='navbar'>
-      <div className='placeholder-logo'>
-        <img src={'../pictures/logo/png/logo-no-background.png'} alt="Logo" />
-      </div>
-      <Link className='hidden' href="/">Home</Link>
+      <Link className='hidden' href="/"> <div className='placeholder-logo'>
+        <img className='logo-link' src={'../pictures/logo/png/logo-no-background.png'} alt="Logo" />
+      </div></Link>
+      <Link className='nav-link' href="/">Home</Link>
       <div className="dropdown hidden">
-        <Link href="/FAAS/rental_services">Our Services</Link>
+        <Link className='nav-link' href="/FAAS/rental_services">Our Services</Link>
         <div className="dropdown-content">
           <a href="#">Furnishing</a>
           <Link href="/FAAS/rental_services/">FAAS</Link>
@@ -31,16 +31,16 @@ export default function Navbar() {
 
       </div>
       <div className="dropdown hidden">
-        <Link href="/how_it_works">How it works</Link>
+        <Link className='nav-link' href="/how_it_works">How it works</Link>
         <div className="dropdown-content">
           <Link href="/how_it_works">How it works</Link>
           <Link href="/about_us">About us</Link>
           <Link href="/how_it_works/FAQ">FAQ</Link>
         </div>
       </div>
-      <Link className='hidden' href="/portfolio">Portfolio</Link>
-      <Link className='hidden' href="/contact">Contact</Link>
-      <Link className='hidden' href="/blog">Blog</Link>
+      <Link className='nav-link' href="/portfolio">Portfolio</Link>
+      <Link className='nav-link' href="/contact">Contact</Link>
+      <Link className='nav-link' href="/blog">Blog</Link>
       {/* BELOW IS A SECRET DROPDOWN WHEN BURGERMENU IS CHECKED ON MOBILE LAYOUT */}
       {isChecked && <div className='secret-dropdown'>
         <div className="secret-content">

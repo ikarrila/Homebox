@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      translate: {
+        '35': '35%',
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -15,7 +18,8 @@ module.exports = {
       height: {
         '200': '40rem',
         '110': '23rem',
-        '800': '800px'
+        '800': '800px',
+        '30vh': '30vh',
       },
       width: {
         '200': '40rem',
@@ -42,6 +46,8 @@ module.exports = {
       dark: '#E2DDDD', /* darker div bg */
       black: '#000000',
       white: '#FFFFFF',
+      lightGrey: '#F5F5F5',
+      partner: '#f5f8fa',
     }
   },
   plugins: [],

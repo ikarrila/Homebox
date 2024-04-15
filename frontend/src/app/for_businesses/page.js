@@ -1,10 +1,9 @@
-import CustomerReviews from "../../../components/CustomerReviews";
+import ForBusinesses from "../../../components/ForBusinesses";
 
 export default function forBusinesses() {
     return (
         <>
-            <h1>For Businesses</h1>
-            <CustomerReviews />
+            <ForBusinesses />
         </>
     );
 }
