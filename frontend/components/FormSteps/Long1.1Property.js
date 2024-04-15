@@ -72,7 +72,7 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
             setKitchenSize((LongPropertyData.kitchenSize && LongPropertyData.showKitchenSize) ? LongPropertyData.kitchenSize : '')
             setHomeOfficeSize((LongPropertyData.homeOfficeSize && LongPropertyData.showHomeOfficeSize) ? LongPropertyData.homeOfficeSize : '');
             setOutdoorSize((LongPropertyData.outdoorSize && LongPropertyData.showOutdoorSize) ? LongPropertyData.outdoorSize : '')
-            setHowMany(LongPropertyData.HowMany ? LongPropertyData.HowMany : '')
+            setHowMany((LongPropertyData.HowMany >= 0) ? (LongPropertyData.HowMany) : '')
         }
     }, [])
 
