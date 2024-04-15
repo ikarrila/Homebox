@@ -8,6 +8,19 @@ export default function LongRooms({ changeStep }) {
     // State to track the selected value from the dropdown
     const [selectedValue, setSelectedValue] = useState("");
 
+    //State to determine if the user may pass to the next step
+    const [unSelected, setUnSelected] = useState(false);
+
+    const determineContinue = () => {
+        if (selectedValue === "") {
+            setUnSelected(true);
+        }
+        else {
+            setUnSelected(false);
+            changeStep('long-living-details');
+        }
+    };
+
     // Function to handle change in the dropdown value
     const handleSelectChange = (event) => {
         setSelectedValue(event.target.value);
@@ -30,13 +43,13 @@ export default function LongRooms({ changeStep }) {
     return (
         <div className="section">
             <div className='long-living-details' >
-                <div className="stepTitle dark">3. Select your level of furnishing needs</div>
-                <div className='step dark fixedHeight'>
+                <div className="stepTitle">3. Select your level of furnishing needs</div>
+                <div className='step fixedHeight'>
                     <div className='left'>
                         {renderImage()}</div>
                     <div className='right'>
                         <div>
-                            <select className='selector' defaultValue="" id='furnishingSelector' onChange={handleSelectChange}>
+                            <select className='selector' defaultValue="" id='furnishingSelector' onChange={handleSelectChange} style={unSelected ? { backgroundColor: '#cad1d8' } : {}}>
                                 <option value="" disabled>Select...</option>
                                 <option value="1">Standard</option>
                                 <option value="2">Premium</option>
@@ -50,7 +63,7 @@ export default function LongRooms({ changeStep }) {
                 </div>
                 <div className='container row align-middle'>
                     <button onClick={() => changeStep('long-property')} className='btn-tertiary'>Back</button>
-                    <button onClick={() => changeStep('long-living-details')} className='btn-tertiary'>Continue</button>
+                    <button onClick={() => determineContinue()} className='btn-tertiary'>Continue</button>
                 </div>
             </div>
         </div>
