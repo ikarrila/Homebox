@@ -55,7 +55,7 @@ export default function LongTermLanding() {
                         padding: '10px 20px',
                         borderRadius: '10px',
                         opacity: '0.86'
-                    }}>
+                      }}>
                     Long-term Rental
                 </h1>
                 <div className='section col'>

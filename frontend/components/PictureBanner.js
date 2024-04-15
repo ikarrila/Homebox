@@ -24,13 +24,12 @@ const PictureBanner = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         width: '100%',
-        height: '50vh', // Half of the viewport height
+        height: window.innerHeight * 0.5,
     };
 
     const buttonStyle = {
         position: 'absolute',
-        top: '40%',
-        transform: 'translateY(-50%)',
+        top: window.innerHeight * 0.38,
         backgroundColor: 'rgba(0, 0, 0, 0.5)',
         color: 'white',
         padding: '8px 16px',
@@ -42,7 +41,7 @@ const PictureBanner = () => {
 
     const buttonContainerStyle = {
         position: 'relative',
-        padding: '10px', // Padding outside the buttons (adjust as needed)
+        padding: '10px', 
     };
   
     return (
@@ -51,7 +50,7 @@ const PictureBanner = () => {
                 <IoIosArrowBack />
             </button>
         <div className="container mx-auto max-w-xl px-4 py-8 relative overflow-hidden h-1/2vh" style={backgroundImageStyle}>
-            {/* Content */}
+            {}
         </div>
             <button className="absolute bg-gray-300" style={{ ...buttonStyle, right: '10px' }} onClick={prevImage}>
                 <IoIosArrowForward />
