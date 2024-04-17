@@ -14,6 +14,8 @@ module.exports = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        'faq': "url('/pictures/eugene-chystiakov-3neSwyntbQ8-unsplash.jpg')",
+
       },
       height: {
         '200': '40rem',
@@ -42,8 +44,7 @@ module.exports = {
       body: '#FFFFFF',
       primary: '#001f3f',
       secondary: '#89939E',
-      accent: '#89939E',
-      dark: '#E2DDDD', /* darker div bg */
+      accent: '#f5f5f5',
       black: '#000000',
       white: '#FFFFFF',
       lightGrey: '#F5F5F5',
@@ -51,4 +52,5 @@ module.exports = {
     }
   },
   plugins: [],
+  important: true,
 };

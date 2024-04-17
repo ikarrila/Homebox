@@ -28,6 +28,11 @@
     @apply w-full py-10 px-12 items-center;
 }
 
+/* For aligning titles and paragraphs */
+.aligned {
+    @apply px-0 max-w-5xl items-start;
+}
+
 /* only in layout.js */
 body .main-container {
     @apply flex-col min-h-screen flex;
@@ -112,3 +117,8 @@ table th {
 table td {
     @apply p-1;
 }
+
+/* SUSTAINABILITY */
+.sustainabilityText p {
+    @apply py-2 max-w-3xl;
+  }

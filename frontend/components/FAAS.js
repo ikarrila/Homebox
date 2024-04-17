@@ -10,14 +10,16 @@ import Sustainability from './Sustainability';
 
 export default function FAAS() {
     return (
-        <div className='section'>
-            <h1>Rental services</h1>
-            <div className="row">
-                <div className="col-md-6">
-                    <ShortTermFaas />
-                </div>
-                <div className="col-md-6">
-                    <LongTermFaas />
+        <div>
+            <div className='section'>
+                <h1>Rental services</h1>
+                <div className="row">
+                    <div className="col-md-6">
+                        <ShortTermFaas />
+                    </div>
+                    <div className="col-md-6">
+                        <LongTermFaas />
+                    </div>
                 </div>
             </div>
             <div className="section col">
@@ -41,9 +43,10 @@ export default function FAAS() {
             <div className="section col">
                 <RentVsBuying />
             </div>
-            <div className="section col">
+            <div>
                 <Sustainability />
             </div>
+
         </div>
     );
 }
