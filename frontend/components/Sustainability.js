@@ -3,16 +3,13 @@ import '/styles/styles.css';
 
 export default function Sustainability() {
     return (
-        <div className="section col" style={{ textAlign: 'center' }}>
-            <h2 className="font-bold">Sustainability</h2>
-            <div className="container flex">
-                <div className="w-1/2">
-                    <p className="text-left mx-auto max-w-xs">
-                        At our company, we are committed to sustainability and environmental responsibility. We are proud to power our operations with 100% renewable energy sources, reducing our carbon footprint and contributing to a cleaner, greener future. By choosing our services, you are supporting eco-friendly practices and helping to preserve our planet for future generations.
-                    </p>
-                </div>
-                <div className="w-1/2" style={{ marginRight: '50px', marginBottom: '20px' }}>
-                    <img style={{ objectFit: 'cover', maxWidth: '150px', maxHeight: '150px' }} src="../../pictures/planet-7014517_1280.jpg" alt="IMAGE" />
+        <div className="section col" style={{ backgroundImage: `url(/pictures/patrick-perkins-3wylDrjxH-E-unsplash.jpg)` }}>
+            <div>
+                <h2>Sustainable furniture</h2>
+                <div className='sustainabilityText'>
+                    <p>By opting to rent furniture, you're helping divert tons of items from ending up in landfills.</p>
+                    <p>Additionally, renting significantly reduces the release of metric tons of CO2 into the environment.</p>
+                    <p>Providing furniture with second chances at life not only benefits the planet but also cuts down on the time spent on assembly and packing.</p>
                 </div>
             </div>
         </div>
