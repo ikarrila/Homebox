@@ -22,17 +22,19 @@ function FAQItem({ title, children }) {
 export default function FAQinfo() {
   return (
     <div>
-      <div className='container col secondary'>
-        <div className='section col'>
-          <h1>FAQ</h1>
-          <p>We value your complete satisfaction at KEJA. Enjoy the flexibility and peace of mind that come along with selecting an innovative, stress-free furnishing company. If you not completely satisfied with the products received, KEJA will make every effort to quickly resolve. We value the opinion of our clients and strive to provide the absolute highest possible level of customer service.</p>
-          <Link href="/how_it_works">
-            <button className='btn-tertiary'>Learn More</button>
-          </Link>
+      <div className='container col faqBg'>
+        <div className='section col faqIntro'>
+          <div className='w-1/2'>
+            <h1>FAQ</h1>
+            <p>We value your complete satisfaction at KEJA. Enjoy the flexibility and peace of mind that come along with selecting an innovative, stress-free furnishing company. If you not completely satisfied with the products received, KEJA will make every effort to quickly resolve. We value the opinion of our clients and strive to provide the absolute highest possible level of customer service.</p>
+            <Link href="/how_it_works">
+              <button className='btn-secondary'>Learn More</button>
+            </Link>
+          </div>
         </div>
       </div>
-      <div className="container col justify-start text-left">
-        <div className='section col justify-start'>
+      <div className="container col">
+        <div className='section col'>
           <div>
             <h2>Furniture as a Service </h2>
             <FAQItem title="How long does the entire process take?">

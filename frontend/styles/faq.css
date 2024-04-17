@@ -1,5 +1,5 @@
 .faqItemContainer {
-    @apply rounded-sm justify-start bg-secondary m-2 px-5 py-5 max-w-5xl mx-0;
+    @apply rounded-sm justify-start bg-accent my-2 px-5 py-5 max-w-5xl;
 }
 
 .faqQuestion {
@@ -7,7 +7,7 @@
 }
 
 .plus, .minus {
-    @apply text-white font-bold text-2xl;
+    @apply text-primary font-bold text-2xl;
 }
   
 .faqAnswer.open {
@@ -18,4 +18,10 @@
     @apply max-h-0 overflow-hidden transition-all duration-1000 ease-out px-1;
 }
 
-  
+.faqBg {
+    @apply bg-center bg-cover bg-faq;
+}
+
+.faqIntro {
+    @apply px-0 max-w-5xl items-start;
+}
