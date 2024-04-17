@@ -27,11 +27,11 @@ export default function FAAS() {
             </div>
             <div className="section" style={{ display: 'flex', justifyContent: 'center' }}>
                 <div className="w-1/2">
-                    <h2 style={{ textAlign: 'center' }}>Instant Quote</h2>
+                    <h2 style={{ textAlign: 'center' }}>Get An Evaluation</h2>
                     <Link href="/FAAS/evaluation">
                         <div className="flex justify-start">
                             <button className="btn-primary">
-                                Instant Quote
+                                Get An Evaluation
                             </button>
                         </div>
                     </Link>
