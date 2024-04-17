@@ -21,7 +21,3 @@
 .faqBg {
     @apply bg-center bg-cover bg-faq;
 }
-
-.faqIntro {
-    @apply px-0 max-w-5xl items-start;
-}
