@@ -5,6 +5,9 @@ export default function CommonPersonalInfo({ changeStep, CommonLengthData, Commo
 
     const [pressed, setPressed] = useState(false)
     const [buttonGlow, setButtonGlow] = useState(false)
+    const [emailIsValid, setEmailIsValid] = useState(false)
+    const [phoneIsValid, setPhoneIsValid] = useState(false)
+    const [colorInputs, setColorInputs] = useState(false)
     const [values, setValues] = useState({
         name: "",
         email: "",
@@ -14,6 +17,14 @@ export default function CommonPersonalInfo({ changeStep, CommonLengthData, Commo
     useEffect(() => {
         setValues(CommonPersonalInfoData)
     }, [CommonPersonalInfoData])
+    useEffect(() => {
+        var validRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+        if (values.email && values.email.match(validRegex)) {
+            setEmailIsValid(true);
+        } else {
+            setEmailIsValid(false);
+        }
+    }, [values.email]);
 
     useEffect(() => {
         if (validate("name") && validate("email") && validate("phone") && validate("message")) {
@@ -44,7 +55,9 @@ export default function CommonPersonalInfo({ changeStep, CommonLengthData, Commo
             setCommonPersonalInfoData(values)
             changeStep('common-submit')
         }
-        else { setPressed(true) }
+        else {
+            setPressed(true)
+        }
     }
     const handleChange = (e) => {
         //Updates the state depending on name with the value in the value field
@@ -53,8 +66,6 @@ export default function CommonPersonalInfo({ changeStep, CommonLengthData, Commo
             [e.target.name]: e.target.value
         };
         setValues(updatedState);
-        console.log(values)
-
     }
     return (
         <div className="section">
@@ -62,15 +73,14 @@ export default function CommonPersonalInfo({ changeStep, CommonLengthData, Commo
                 <div className="stepTitle">{CommonLengthData.length < 10 ? "Step 3" : "Step 5"}</div>
 
                 <div className='step startCol'>
-
                     <p>Name:</p>
                     <input style={!validate("name") && pressed ? { backgroundColor: "#f5f5f5" } : {}} type="text" id="name" data-testid="name-input" name="name" value={values.name} placeholder='Name' className='input' onChange={handleChange} />
                     <p>Email:</p>
                     <input style={!validate("email") && pressed ? { backgroundColor: "#f5f5f5" } : {}} type="text" id="email" data-testid="email-input" name="email" value={values.email} placeholder='Email' className='input' onChange={handleChange} />
                     <p>Phone:</p>
-                    <input style={!validate("phone") && pressed ? { backgroundColor: "#f5f5f5" } : {}} type="text" id="phone" name="phone" placeholder='Phone' value={values.phone} className='input' onChange={handleChange} />
+                    <input style={!validate("phone") && pressed ? { backgroundColor: "#f5f5f5" } : {}} type="text" id="phone" data-testid="phone-input" name="phone" placeholder='Phone' value={values.phone} className='input' onChange={handleChange} />
                     <p>Message:</p>
-                    <input style={!validate("message") && pressed ? { backgroundColor: "#f5f5f5" } : {}} type="text" id="message" name="message" placeholder='Message' value={values.message} className='input' onChange={handleChange} />
+                    <input style={!validate("message") && pressed ? { backgroundColor: "#f5f5f5" } : {}} type="text" id="message" data-testid="message-input" name="message" placeholder='Message' value={values.message} className='input' onChange={handleChange} />
                 </div>
                 <div className='container row align-middle'>
                     <button onClick={() => LongOrShortForm()} className='btn-tertiary'>Back</button>
