@@ -14,7 +14,7 @@ module.exports = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        'faq': "url('/pictures/eugene-chystiakov-3neSwyntbQ8-unsplash.jpg')",
+        'faq': "url('../../frontend/public/pictures/faqImg.png')",
 
       },
       height: {
