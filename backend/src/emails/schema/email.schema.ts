@@ -17,7 +17,7 @@ export class Email {
   @Prop()
   location: string;
 
-  @Prop({ required: true, type: Object })
+  @Prop({ type: Object })
   roomChoices: any;
 
   @Prop()
@@ -35,8 +35,14 @@ export class Email {
   @Prop()
   textField: string;
 
+  @Prop()
+  message: string;
+
   @Prop({ required: true })
-  phone: number;
+  phone: string;
+
+  @Prop()
+  budget: string;
 }
 
 export const EmailSchema = SchemaFactory.createForClass(Email);

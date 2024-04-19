@@ -1,7 +1,12 @@
 
 
-export default function CommonSubmit({ changeStep, CommonLengthData }) {
+export default function CommonSubmit({ changeStep, CommonLengthData, submitForm }) {
     const lengthParse = CommonLengthData.length > 12 ? '12+ months' : `${CommonLengthData.length} months`
+
+    const submitAndMove = () => {
+        submitForm()
+        changeStep('common-thanks')
+    }
 
     return (
         <div className='section'>
@@ -19,7 +24,7 @@ export default function CommonSubmit({ changeStep, CommonLengthData }) {
 
                 <div className='container row align-middle'>
                     <button onClick={() => changeStep('common-personal-info')} className='btn-tertiary'>Back</button>
-                    <button onClick={() => changeStep('common-thanks')} className='btn-tertiary'>Send</button>
+                    <button onClick={() => submitAndMove()} className='btn-tertiary'>Send</button>
                 </div>
             </div>
         </div>
