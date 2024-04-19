@@ -122,3 +122,8 @@ table td {
 .sustainabilityText p {
     @apply py-2 max-w-3xl;
   }
+
+  /* FAQ */
+  .leftAligned {
+    @apply max-w-lg;
+  }

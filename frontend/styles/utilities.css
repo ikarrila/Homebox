@@ -1,6 +1,9 @@
-
 .white {
     @apply bg-white;
+}
+
+.white-transparent {
+    @apply bg-white bg-opacity-50;
 }
 
 .primary {

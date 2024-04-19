@@ -24,7 +24,7 @@ export default function FAQinfo() {
     <div>
       <div className='container col faqBg'>
         <div className='section col aligned'>
-          <div className='w-1/2'>
+          <div className='leftAligned'>
             <h1>FAQ</h1>
             <p>We value your complete satisfaction at KEJA. Enjoy the flexibility and peace of mind that come along with selecting an innovative, stress-free furnishing company. If you not completely satisfied with the products received, KEJA will make every effort to quickly resolve. We value the opinion of our clients and strive to provide the absolute highest possible level of customer service.</p>
             <Link href="/how_it_works">
@@ -36,6 +36,7 @@ export default function FAQinfo() {
       <div className="container col">
         <div className='section col'>
           <div>
+            <br></br>
             <h2>Furniture as a Service </h2>
             <FAQItem title="How long does the entire process take?">
               <p>For short terms it can take less than 24 hours! Though we prefer to be notified with a few days notice we are able to manage in most cases urgent requests. For longer rentals we usually need 2 weeks to get everything smoothly prepared for you. If you still need everything for yesterday, simply reach out to us as we always have a solution.</p>
