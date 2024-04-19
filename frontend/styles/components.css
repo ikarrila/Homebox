@@ -81,6 +81,10 @@ body .main-container {
     @apply z-30 absolute mr-96;
 }
 
+.roomCheckbox {
+    @apply mr-4;
+}
+
 .textSide {
     @apply text-nowrap items-start w-fit;
 }

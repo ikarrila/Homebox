@@ -7,7 +7,10 @@ export default function CommonPersonalInfo({ changeStep, CommonLengthData, Commo
     const [buttonGlow, setButtonGlow] = useState(false)
     const [emailIsValid, setEmailIsValid] = useState(false)
     const [phoneIsValid, setPhoneIsValid] = useState(false)
-    const [colorInputs, setColorInputs] = useState(false)
+    const [isEmailBeingEdited, setIsEmailBeingEdited] = useState(false);
+    const [allowContinue, setAllowContinue] = useState(false)
+    const [emailColor, setEmailColor] = useState({})
+    const [trackState, setTrackState] = useState(false)
     const [values, setValues] = useState({
         name: "",
         email: "",
@@ -17,22 +20,35 @@ export default function CommonPersonalInfo({ changeStep, CommonLengthData, Commo
     useEffect(() => {
         setValues(CommonPersonalInfoData)
     }, [CommonPersonalInfoData])
-    useEffect(() => {
-        var validRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-        if (values.email && values.email.match(validRegex)) {
-            setEmailIsValid(true);
-        } else {
-            setEmailIsValid(false);
-        }
-    }, [values.email]);
+
 
     useEffect(() => {
-        if (validate("name") && validate("email") && validate("phone") && validate("message")) {
+        var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if (validate("name") && validate("email") && validate("phone") && validate("message") && (values.email && values.email.match(validRegex))) {
+            setAllowContinue(true)
             setButtonGlow(true)
-        } else {
+            setEmailColor({})
+        } else if (!values.email && pressed) {
+            setAllowContinue(false)
+            setButtonGlow(false)
+            setEmailColor({ backgroundColor: "#f5f5f5" })
+        } else if (!validate("email") && !isEmailBeingEdited && pressed) {
+            setAllowContinue(false)
+            setButtonGlow(false)
+            setEmailColor({ backgroundColor: "#f5f5f5" })
+        } else if (isEmailBeingEdited) {
+            setAllowContinue(false)
+            setButtonGlow(false)
+            setEmailColor({})
+        } else if (validate("email") && !isEmailBeingEdited && pressed && !(values.email && values.email.match(validRegex))) {
+            setAllowContinue(false)
+            setEmailColor({ borderColor: "red" })
             setButtonGlow(false)
         }
-    }, [values])
+
+        console.log(isEmailBeingEdited, validate("email"))
+    }, [values, isEmailBeingEdited, trackState])
+
     const LongOrShortForm = () => {
         setCommonPersonalInfoData(values)
         if (CommonLengthData.length > 10) {
@@ -49,13 +65,13 @@ export default function CommonPersonalInfo({ changeStep, CommonLengthData, Commo
         }
         return false;
     }
-
     const determineContinue = () => {
-        if (validate("name") && validate("email") && validate("phone") && validate("message")) {
+
+        if (allowContinue) {
             setCommonPersonalInfoData(values)
             changeStep('common-submit')
-        }
-        else {
+        } else {
+            setIsEmailBeingEdited(false);
             setPressed(true)
         }
     }
@@ -66,6 +82,11 @@ export default function CommonPersonalInfo({ changeStep, CommonLengthData, Commo
             [e.target.name]: e.target.value
         };
         setValues(updatedState);
+        console.log(values.email)
+        console.log(emailIsValid)
+        setIsEmailBeingEdited(true);
+        setTrackState(!trackState)
+
     }
     return (
         <div className="section">
@@ -76,7 +97,8 @@ export default function CommonPersonalInfo({ changeStep, CommonLengthData, Commo
                     <p>Name:</p>
                     <input style={!validate("name") && pressed ? { backgroundColor: "#f5f5f5" } : {}} type="text" id="name" data-testid="name-input" name="name" value={values.name} placeholder='Name' className='input' onChange={handleChange} />
                     <p>Email:</p>
-                    <input style={!validate("email") && pressed ? { backgroundColor: "#f5f5f5" } : {}} type="text" id="email" data-testid="email-input" name="email" value={values.email} placeholder='Email' className='input' onChange={handleChange} />
+                    <input style={emailColor}
+                        type="text" id="email" data-testid="email-input" name="email" value={values.email} placeholder='Email' className='input' onChange={handleChange} />
                     <p>Phone:</p>
                     <input style={!validate("phone") && pressed ? { backgroundColor: "#f5f5f5" } : {}} type="text" id="phone" data-testid="phone-input" name="phone" placeholder='Phone' value={values.phone} className='input' onChange={handleChange} />
                     <p>Message:</p>

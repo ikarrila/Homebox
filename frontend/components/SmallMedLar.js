@@ -6,8 +6,8 @@ function SmallMedLar({ name, onSizeSelect, value }) {
     };
 
     return (
-        <div>
-            <div>
+        <div style={{ paddingLeft: "35px" }}>
+            <div x>
                 <input type="radio" id="small" name={name} value="small" onChange={handleSizeSelect} checked={value === 'small'} />
                 <label htmlFor="small">Small</label>
             </div>
