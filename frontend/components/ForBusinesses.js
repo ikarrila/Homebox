@@ -1,6 +1,8 @@
 import React from 'react';
 import '/styles/styles.css';
 import CustomerReviews from './CustomerReviews';
+import Link from 'next/link';
+
 
 
 export default function ForBusinesses() {
@@ -58,6 +60,17 @@ export default function ForBusinesses() {
             </div>
             <div className="section">
                 <h2 className="font-bold">Sustainability</h2>
+            </div>
+            <div style={{ backgroundColor: '#f5f8fa' }} className="container col section">
+                <h2 className="text-2xl font-bold text-center py-4">Our Blog</h2>
+                <div className="justify-items-center text-center">
+                    <Link href="/blog">
+                        <p className="text-blue-500 cursor-pointer">For more information and insights, visit our blog.</p>
+                    </Link>
+                </div>
+            </div>
+            <div className="section">
+                <h2 className='font-bold'>Contact us</h2>
             </div>
         </div>
     );
