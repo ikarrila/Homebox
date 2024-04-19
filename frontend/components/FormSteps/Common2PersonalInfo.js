@@ -7,7 +7,7 @@ export default function CommonPersonalInfo({ changeStep, CommonLengthData, Commo
     const [buttonGlow, setButtonGlow] = useState(false)
     const [emailIsValid, setEmailIsValid] = useState(false)
     const [phoneIsValid, setPhoneIsValid] = useState(false)
-    const [isEmailBeingEdited, setIsEmailBeingEdited] = useState(false);
+    const [isEmailBeingEdited, setIsEmailBeingEdited] = useState(true);
     const [allowContinue, setAllowContinue] = useState(false)
     const [emailColor, setEmailColor] = useState({})
     const [trackState, setTrackState] = useState(false)
@@ -28,10 +28,6 @@ export default function CommonPersonalInfo({ changeStep, CommonLengthData, Commo
             setAllowContinue(true)
             setButtonGlow(true)
             setEmailColor({})
-        } else if (!values.email && pressed) {
-            setAllowContinue(false)
-            setButtonGlow(false)
-            setEmailColor({ backgroundColor: "#f5f5f5" })
         } else if (!validate("email") && !isEmailBeingEdited && pressed) {
             setAllowContinue(false)
             setButtonGlow(false)
@@ -44,6 +40,11 @@ export default function CommonPersonalInfo({ changeStep, CommonLengthData, Commo
             setAllowContinue(false)
             setEmailColor({ borderColor: "red" })
             setButtonGlow(false)
+        }
+        if (!values.email && pressed) {
+            setAllowContinue(false)
+            setButtonGlow(false)
+            setEmailColor({ backgroundColor: "#f5f5f5" })
         }
 
         console.log(isEmailBeingEdited, validate("email"))
