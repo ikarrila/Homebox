@@ -42,7 +42,7 @@ export class EmailsService {
     <div><b>Phone:</b><br> ${newEmail.phone}</div><br>
     <div><b>Type of rental:</b><br>${newEmail.source}</div><br>
     ${newEmail.furnishingLevel ? `<div><b>Furnishing Level:</b><br>${newEmail.furnishingLevel}</div><br>` : ' '} 
-    <div><b>Room Choices:</b><br> ${roomChoicesStr}</div><br>
+    ${newEmail.roomChoices.noDataSent ? ' ' : `<div><b>Room Choices:</b><br> ${roomChoicesStr}</div><br>`} 
     ${newEmail.location ? `<div><b>Location:</b><br> ${newEmail.location}</div><br>` : ' '}
     ${newEmail.textField ? `<div><b>Free textfield message:</b><br>${newEmail.textField}</div><br>` : ' '}
     ${newEmail.rentalStart ? `<div><b>Rental Start:</b><br>${newEmail.rentalStart}</div><br>` : ' '}
