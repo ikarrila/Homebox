@@ -2,8 +2,7 @@ import { Inter } from "next/font/google";
 // import "./globals.css";
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
-import Description from '../../components/Description';
-import WhyUsDescription from "../../components/WhyUsDescription";
+import CookiePopup from '../../components/CookiePopup';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +20,7 @@ export default function RootLayout({ children }) {
           <div className="flex-grow">
             {children}
           </div>
-
+          <CookiePopup />
           <Footer /> {/* use Footer component */}
         </div>
       </body>
