@@ -43,6 +43,12 @@ export class Email {
 
   @Prop()
   budget: string;
+
+  @Prop()
+  homeLink: string;
+
+  @Prop()
+  livingDetails: string;
 }
 
 export const EmailSchema = SchemaFactory.createForClass(Email);
