@@ -44,9 +44,9 @@ export class EmailsService {
     ${newEmail.furnishingLevel ? `<div><b>Furnishing Level:</b><br>${newEmail.furnishingLevel}</div><br>` : ' '} 
     ${newEmail.roomChoices.noDataSent ? ' ' : `<div><b>Room Choices:</b><br> ${roomChoicesStr}</div><br>`} 
     ${newEmail.location ? `<div><b>Location:</b><br> ${newEmail.location}</div><br>` : ' '}
-    ${newEmail.textField ? `<div><b>Free textfield message:</b><br>${newEmail.textField}</div><br>` : ' '}
     ${newEmail.rentalStart ? `<div><b>Rental Start:</b><br>${newEmail.rentalStart}</div><br>` : ' '}
     ${newEmail.rentalLength ? `<div><b>Rental Length:</b><br>${newEmail.rentalLength}</div><br>` : ' '}
+    ${newEmail.textField ? `<div><b>Free textfield message:</b><br>${newEmail.textField}</div><br>` : ' '}
     `;
 
     const mailOptions = {

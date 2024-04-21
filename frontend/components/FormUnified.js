@@ -82,7 +82,7 @@ export default function FormUnified() {
             {/*if length of rental 10> then show long form */}
             {step === 'short-packages' && <ShortPackages changeStep={changeStep} setShortPackagesData={setShortPackagesData} ShortPackagesData={ShortPackagesData} />}
             {step === 'long-property' && <LongProperty changeStep={changeStep} LongPropertyData={LongPropertyData} setLongPropertyData={setLongPropertyData} />}
-            {step === 'long-rooms' && <LongRooms changeStep={changeStep} />}
+            {step === 'long-rooms' && <LongRooms changeStep={changeStep} LongRoomsData={LongRoomsData} setLongRoomsData={setLongRoomsData} />}
             {step === 'long-living-details' && <LongLivingDetails changeStep={changeStep} />}
             {/*continue common form*/}
             {step === 'common-personal-info' && <CommonPersonalInfo changeStep={changeStep} CommonLengthData={CommonLengthData} CommonPersonalInfoData={CommonPersonalInfoData} setCommonPersonalInfoData={setCommonPersonalInfoData} />}
