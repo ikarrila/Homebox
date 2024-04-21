@@ -2,7 +2,7 @@
 .stepTitle {
     @apply font-bold font-secondary w-full px-52 pt-5;
 
-  }
+}
 
 /* For content of each step of cost calculator and short-term package tool */
 .step {
@@ -23,4 +23,8 @@
 /* Align step contents against the container's start (row) */
 .startRow {
     @apply items-start;
+}
+
+.text-color-white {
+    @apply text-white;
 }
