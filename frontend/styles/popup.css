@@ -3,10 +3,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.9); /* Clear window */
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
-    z-index: 9999;
-    border: 2px solid #333; /* Add border style */
+    z-index: 400;
+    border: 2px solid #333;
     border-radius: 8px;
     width: 80%;
     height: 80%;
@@ -31,4 +31,9 @@
     border: none;
     cursor: pointer;
     z-index: 1;
+  }
+
+  .popup-container .popup.show {
+    display: block;
+    opacity: 1;
   }
