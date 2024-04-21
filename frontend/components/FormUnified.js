@@ -14,6 +14,7 @@ import LongLivingDetails from './FormSteps/Long1.3LivingDetails';
 import CommonPersonalInfo from './FormSteps/Common2PersonalInfo';
 import CommonSubmit from './FormSteps/Common3Submit';
 import CommonThanks from './FormSteps/Common4Thanks';
+import { data } from 'autoprefixer';
 
 
 export default function FormUnified() {
@@ -23,16 +24,92 @@ export default function FormUnified() {
 
     const [ShortPackagesData, setShortPackagesData] = useState({});
     const [LongPropertyData, setLongPropertyData] = useState({});
-    const [LongRoomsData, setLongRoomsData] = useState({});
+    const [LongRoomsData, setLongRoomsData] = useState("");
     const [LongLivingDetailsData, setLongLivingDetailsData] = useState({});
-
     const [CommonPersonalInfoData, setCommonPersonalInfoData] = useState({});
+
 
     //FUNCTION TO CHANGE FORM STEP
     const changeStep = (step) => {
         console.log(step, "FORM STEP")
         setStep(step);
     };
+    //send data to backend for email forwarding
+    const send = async (data) => {
+        const response = await fetch('http://localhost:4000/emails', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+        return response.json();
+    };
+
+    console.log(LongPropertyData, "LONG PROPERTY DATA")
+    console.log(LongRoomsData, "LONG ROOMS DATA")
+    console.log(LongLivingDetailsData, "LONG LIVING DETAILS DATA")
+    console.log(CommonLengthData)
+    const submitForm = async () => {
+        //base data, modify with long/short data
+        const basicInfo =
+        {   //From first common step
+            rentalLength: CommonLengthData.length,
+            textField: CommonLengthData.message,
+            //From personal common step 
+            name: CommonPersonalInfoData.name,
+            email: CommonPersonalInfoData.email,
+            phone: CommonPersonalInfoData.phone,
+            message: CommonPersonalInfoData.message,
+
+            roomChoices: {}
+        }
+        if (CommonLengthData.length > 10) {
+            //long form data added
+            const data = {
+                ...basicInfo,
+                source: "long-term rental",
+                furnishingLevel: ShortPackagesData.premium || ShortPackagesData.standard,
+                roomChoices: {
+                    bedSize: LongPropertyData.bedSize,
+                    bed2Size: LongPropertyData.bed2Size,
+                    bed3Size: LongPropertyData.bed3Size,
+                    bed4Size: LongPropertyData.bed4Size,
+                    bed5Size: LongPropertyData.bed5Size,
+                    bed6Size: LongPropertyData.bed6Size,
+                    livingRoomSize: LongPropertyData.livingRoomSize,
+                    diningRoomSize: LongPropertyData.diningRoomSize,
+                    kitchenSize: LongPropertyData.kitchenSize,
+                    homeOfficeSize: LongPropertyData.homeOfficeSize,
+                    outdoorSize: LongPropertyData.outdoorSize,
+                },
+                furnishingLevel: LongRoomsData,
+                homeLink: LongLivingDetailsData.homeLink,
+                livingDetails: LongLivingDetailsData.livingDetails
+            }
+            try {
+                await send(data)
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        } if (CommonLengthData.length < 10) {
+            //short form data added
+            const data = {
+                ...basicInfo,
+                source: "short-term rental",
+                furnishingLevel: ShortPackagesData.premium || ShortPackagesData.standard,
+            }
+            console.log(data)
+            try {
+                await send(data)
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+    }
+
+
+
     //FormUnified should hold an unique state for each of the steps
     //At the end of the form, all the states should be combined into one JSON object
     return (
@@ -42,11 +119,11 @@ export default function FormUnified() {
             {/*if length of rental 10> then show long form */}
             {step === 'short-packages' && <ShortPackages changeStep={changeStep} setShortPackagesData={setShortPackagesData} ShortPackagesData={ShortPackagesData} />}
             {step === 'long-property' && <LongProperty changeStep={changeStep} LongPropertyData={LongPropertyData} setLongPropertyData={setLongPropertyData} />}
-            {step === 'long-rooms' && <LongRooms changeStep={changeStep} />}
-            {step === 'long-living-details' && <LongLivingDetails changeStep={changeStep} />}
+            {step === 'long-rooms' && <LongRooms changeStep={changeStep} LongRoomsData={LongRoomsData} setLongRoomsData={setLongRoomsData} />}
+            {step === 'long-living-details' && <LongLivingDetails changeStep={changeStep} LongLivingDetailsData={LongLivingDetailsData} setLongLivingDetailsData={setLongLivingDetailsData} />}
             {/*continue common form*/}
             {step === 'common-personal-info' && <CommonPersonalInfo changeStep={changeStep} CommonLengthData={CommonLengthData} CommonPersonalInfoData={CommonPersonalInfoData} setCommonPersonalInfoData={setCommonPersonalInfoData} />}
-            {step === 'common-submit' && <CommonSubmit changeStep={changeStep} CommonLengthData={CommonLengthData} />}
+            {step === 'common-submit' && <CommonSubmit changeStep={changeStep} CommonLengthData={CommonLengthData} submitForm={submitForm} />}
             {step === 'common-thanks' && <CommonThanks />}
         </div>
     );

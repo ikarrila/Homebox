@@ -34,19 +34,26 @@ export class EmailsService {
 
     const roomChoicesStr = Object.entries(newEmail.roomChoices)
       .filter(([key, value]) => value) // filter out properties that are not truthy
-      .map(([key, value]) => `${key} : ${value} <br>`);
+      .map(([key, value]) => `${key} : ${value} <br>`)
+      .join('');
 
+    const monthField =
+      newEmail.rentalLength === '13'
+        ? 'over a year'
+        : `${newEmail.rentalLength} months`;
     const htmlContent = `
     <div><b>Customer Name:</b><br> ${newEmail.name}</div><br>
     <div><b>Email:</b><br> ${newEmail.email}</div><br>
     <div><b>Phone:</b><br> ${newEmail.phone}</div><br>
     <div><b>Type of rental:</b><br>${newEmail.source}</div><br>
     ${newEmail.furnishingLevel ? `<div><b>Furnishing Level:</b><br>${newEmail.furnishingLevel}</div><br>` : ' '} 
-    <div><b>Room Choices:</b><br> ${roomChoicesStr}</div><br>
+    ${newEmail.roomChoices.noDataSent ? ' ' : `<div><b>Room Choices:</b><br> ${roomChoicesStr}</div><br>`} 
     ${newEmail.location ? `<div><b>Location:</b><br> ${newEmail.location}</div><br>` : ' '}
-    ${newEmail.textField ? `<div><b>Free textfield message:</b><br>${newEmail.textField}</div><br>` : ' '}
     ${newEmail.rentalStart ? `<div><b>Rental Start:</b><br>${newEmail.rentalStart}</div><br>` : ' '}
-    ${newEmail.rentalLength ? `<div><b>Rental Length:</b><br>${newEmail.rentalLength}</div><br>` : ' '}
+    ${newEmail.rentalLength ? `<div><b>Rental Length:</b><br>${monthField} </div><br>` : ' '}
+    ${newEmail.textField ? `<div><b>Free textfield message:</b><br>${newEmail.textField}</div><br>` : ' '}
+    ${newEmail.homeLink ? `<div><b>Link to home:</b><br>${newEmail.homeLink}</div><br>` : ' '}
+    ${newEmail.livingDetails ? `<div><b>Living Details:</b><br>${newEmail.livingDetails}</div><br>` : ' '}
     `;
 
     const mailOptions = {
