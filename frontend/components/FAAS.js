@@ -11,15 +11,26 @@ import Sustainability from './Sustainability';
 export default function FAAS() {
     return (
         <div>
+            <div className="banner" style={{ backgroundImage: "url(/pictures/behzad-ghaffarian-nhWgZNV85LQ-unsplash.jpg)" }}>
+                <div className="banner-text white-transparent">
+                    <h2>Furniture Rental that Suits You</h2>
+                    <p>From <b>3 months</b> to <b>3 years</b> on a monthly subscription</p>
+                    <p>Fully furnish a home in less than 48 hours for short term rentals.</p>
+                    <p>Or get your home professionally designed for long term rentals.</p>
+                </div>
+            </div>
             <div className='section'>
                 <h1>Rental services</h1>
-                <div className="row">
-                    <div className="col-md-6">
+                <div className="container row flex">
+                    <div className="faas-spacer-2"> </div>
+                    <div className="container col">
                         <ShortTermFaas />
                     </div>
-                    <div className="col-md-6">
+                    <div className="faas-spacer-1"> </div>
+                    <div className="container col">
                         <LongTermFaas />
                     </div>
+                    <div className="faas-spacer-2"> </div>
                 </div>
             </div>
             <div className="section col">

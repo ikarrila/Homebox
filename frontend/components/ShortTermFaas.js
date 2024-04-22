@@ -9,7 +9,11 @@ export default function ShortTermFaas() {
                 <h2>Short-Term Rental</h2>
                 <div className="max-w-xs">
                     <p className="text-center" style={{ textAlign: 'left' }}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        From 3 to 10 months
+                    </p>
+                    <p className="text-center for-bp-textbox" style={{ textAlign: 'left' }}>
+                        Our ready-to-move-in packages contain all the furniture that you could possibly need. From mattresses to household items.
+                        You will feel right at home from the moment you enter your new space.
                     </p>
                 </div>
                 <Link href="/FAAS/rental_services/short_term">
