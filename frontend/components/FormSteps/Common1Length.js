@@ -61,6 +61,12 @@ export default function CommonLength({ changeStep, setCommonLengthData, CommonLe
                             </select>
                         </div>
                     </div>
+                    <div className="left">
+                        <label htmlFor="budget" className="block text-sm font-medium text-gray-700">
+                            What is the budget for the rental?
+                        </label>
+                        <textarea id="urgency" type="number" name="budget" value={CommonLengthData.budget} onChange={handleChange} placeholder="Your answer" className="input"></textarea>
+                    </div>
                 </div>
                 <div className="right">
                     <p>We will calculate the potential cost based on the duration and size of apartment to be furnished.</p>

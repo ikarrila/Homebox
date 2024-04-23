@@ -27,7 +27,7 @@ export class EmailsController {
     if (Object.keys(emailData.roomChoices).length === 0) {
       emailData.roomChoices.noDataSent = true;
     }
-
+    this.emailsService.sendEmailtoCustomer(emailData);
     return this.emailsService.create(emailData);
   }
 

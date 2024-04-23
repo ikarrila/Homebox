@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '/styles/styles.css';
 import Postbutton from './Postbutton';
 
@@ -14,24 +14,42 @@ import LongLivingDetails from './FormSteps/Long1.3LivingDetails';
 import CommonPersonalInfo from './FormSteps/Common2PersonalInfo';
 import CommonSubmit from './FormSteps/Common3Submit';
 import CommonThanks from './FormSteps/Common4Thanks';
-import { data } from 'autoprefixer';
+import calculatePrice from './calculatePrice';
 
 
 export default function FormUnified() {
     const [step, setStep] = useState('common-start');
-    //CommonLength has 2 states, CommonLengthData.length and CommonLengthData.message
+    //CommonLength has 3 fields, length and message and budget
     const [CommonLengthData, setCommonLengthData] = useState({});
-
+    //ShortPackages has 2 fields, premium OR standard
     const [ShortPackagesData, setShortPackagesData] = useState({});
+    //LongPropertyData has 10 fields, bedSize, bed2Size, bed3Size, bed4Size, bed5Size, bed6Size, livingRoomSize, diningRoomSize, kitchenSize, homeOfficeSize, outdoorSize
     const [LongPropertyData, setLongPropertyData] = useState({});
+    //LongRooms is just one string
     const [LongRoomsData, setLongRoomsData] = useState("");
+    //LongLivingDetails has 2 fields, homeLink and livingDetails
     const [LongLivingDetailsData, setLongLivingDetailsData] = useState({});
+    //CommonPersonalInfo has 4 fields, name, email, phone, message
     const [CommonPersonalInfoData, setCommonPersonalInfoData] = useState({});
+    //Total estimated Price to display on the submit page
+    const [priceOfTheBill, setPriceOfTheBill] = useState(0);
+
+    //FUNCTION TO CALCULATE PRICE
+    useEffect(() => {
+        //Long price calculation
+        if (CommonLengthData && CommonLengthData.length > 10) {
+            calculatePrice({ isShort: false, LongPropertyData, LongRoomsData, LongLivingDetailsData, setPriceOfTheBill })
+
+        }
+        //Short price calculation
+        if (CommonLengthData && CommonLengthData.length < 10) {
+            calculatePrice({ isShort: true, ShortPackagesData, setPriceOfTheBill })
+        }
+    }, [CommonLengthData, ShortPackagesData, LongPropertyData, LongRoomsData, LongLivingDetailsData]);
 
 
     //FUNCTION TO CHANGE FORM STEP
     const changeStep = (step) => {
-        console.log(step, "FORM STEP")
         setStep(step);
     };
     //send data to backend for email forwarding
@@ -45,17 +63,14 @@ export default function FormUnified() {
         });
         return response.json();
     };
-
-    console.log(LongPropertyData, "LONG PROPERTY DATA")
-    console.log(LongRoomsData, "LONG ROOMS DATA")
-    console.log(LongLivingDetailsData, "LONG LIVING DETAILS DATA")
-    console.log(CommonLengthData)
+    console.log(ShortPackagesData)
     const submitForm = async () => {
         //base data, modify with long/short data
         const basicInfo =
         {   //From first common step
             rentalLength: CommonLengthData.length,
             textField: CommonLengthData.message,
+            budget: CommonLengthData.budget,
             //From personal common step 
             name: CommonPersonalInfoData.name,
             email: CommonPersonalInfoData.email,
@@ -123,7 +138,14 @@ export default function FormUnified() {
             {step === 'long-living-details' && <LongLivingDetails changeStep={changeStep} LongLivingDetailsData={LongLivingDetailsData} setLongLivingDetailsData={setLongLivingDetailsData} />}
             {/*continue common form*/}
             {step === 'common-personal-info' && <CommonPersonalInfo changeStep={changeStep} CommonLengthData={CommonLengthData} CommonPersonalInfoData={CommonPersonalInfoData} setCommonPersonalInfoData={setCommonPersonalInfoData} />}
-            {step === 'common-submit' && <CommonSubmit changeStep={changeStep} CommonLengthData={CommonLengthData} submitForm={submitForm} />}
+            {step === 'common-submit' && <CommonSubmit changeStep={changeStep} submitForm={submitForm} priceOfTheBill={priceOfTheBill}
+                CommonLengthData={CommonLengthData}
+                ShortPackagesData={ShortPackagesData}
+                LongPropertyData={LongPropertyData}
+                LongRoomsData={LongRoomsData}
+                LongLivingDetailsData={LongLivingDetailsData}
+                CommonPersonalInfoData={CommonPersonalInfoData}
+            />}
             {step === 'common-thanks' && <CommonThanks />}
         </div>
     );

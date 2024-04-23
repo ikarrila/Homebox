@@ -36,9 +36,9 @@ export default function LongRooms({ changeStep, setLongRoomsData, LongRoomsData 
 
     // Conditional rendering based on selected value
     const renderImage = () => {
-        if (selectedValue === "standard") {
+        if (selectedValue === "Standard") {
             return <Image src={StandardImg} alt="Standard" className='image-container' />;
-        } else if (selectedValue === "premium") {
+        } else if (selectedValue === "Premium") {
             return <Image src={PremiumImg} alt="Premium" className='image-container' />;
         } else {
             return <div className='card-container'>
@@ -59,8 +59,8 @@ export default function LongRooms({ changeStep, setLongRoomsData, LongRoomsData 
                         <div>
                             <select className='selector' value={LongRoomsData} defaultValue="" id='furnishingSelector' onChange={handleSelectChange} style={unSelected ? { backgroundColor: '#cad1d8' } : {}}>
                                 <option value="" disabled>Select...</option>
-                                <option value="standard">Standard</option>
-                                <option value="premium">Premium</option>
+                                <option value="Standard">Standard</option>
+                                <option value="Premium">Premium</option>
                             </select></div>
                         <div>
                             <h3>Standard:</h3>
