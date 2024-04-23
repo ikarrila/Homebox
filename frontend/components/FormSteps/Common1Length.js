@@ -41,7 +41,7 @@ export default function CommonLength({ changeStep, setCommonLengthData, CommonLe
                         <label htmlFor="rentalLength" className="block text-sm font-medium text-gray-700">
                             Rental Length
                         </label>
-                        <div className="container row ">
+                        <div className="container col ">
                             <select id="rentalLength" className="input " name="length" value={CommonLengthData.length} onChange={handleChange}
                                 style={unSelected ? { backgroundColor: "#f5f5f5" } : {}} >
                                 <option value={0} disabled selected>Select rental length</option>
@@ -59,15 +59,21 @@ export default function CommonLength({ changeStep, setCommonLengthData, CommonLe
                                 <option value={12}>12 months</option>
                                 <option value={13}>More than a year</option>
                             </select>
+
                         </div>
+
                     </div>
-                    <div className="left">
-                        <label htmlFor="budget" className="block text-sm font-medium text-gray-700">
-                            What is the budget for the rental?
-                        </label>
-                        <textarea id="urgency" type="number" name="budget" value={CommonLengthData.budget} onChange={handleChange} placeholder="Your answer" className="input"></textarea>
-                    </div>
+                    {(CommonLengthData.length > 10) &&
+                        <div className="left" >
+                            <label htmlFor="budget" className="block text-sm font-medium text-gray-700">
+                                What is the budget for the rental?
+                            </label>
+                            <textarea id="budget" type="number" name="budget" value={CommonLengthData.budget} onChange={handleChange} placeholder="Your answer" className="input" >
+                            </textarea>
+                        </div>
+                    }
                 </div>
+
                 <div className="right">
                     <p>We will calculate the potential cost based on the duration and size of apartment to be furnished.</p>
                     <p>Give us more information to get an even more accurate evaluation!</p>
