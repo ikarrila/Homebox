@@ -70,7 +70,7 @@ export default function FormUnified() {
         {   //From first common step
             rentalLength: CommonLengthData.length,
             textField: CommonLengthData.message,
-            budget: CommonLengthData.budget,
+
             //From personal common step 
             name: CommonPersonalInfoData.name,
             email: CommonPersonalInfoData.email,
@@ -84,6 +84,7 @@ export default function FormUnified() {
             const data = {
                 ...basicInfo,
                 source: "long-term rental",
+                budget: CommonLengthData.budget,
                 furnishingLevel: ShortPackagesData.premium || ShortPackagesData.standard,
                 roomChoices: {
                     bedSize: LongPropertyData.bedSize,

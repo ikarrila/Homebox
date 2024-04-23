@@ -9,6 +9,8 @@ import PictureBanner from './PictureBanner';
 import ContactForm from './ContactForm';
 import RentingVsBuying from "./RentingVsBuying";
 import CustomerReviews from "./CustomerReviews";
+import Link from 'next/link';
+
 
 /* Pitää viel lisätä sessiotallentaja et lomakkeen vastaukset pysyy.
  */
@@ -55,14 +57,17 @@ export default function LongTermLanding() {
                         padding: '10px 20px',
                         borderRadius: '10px',
                         opacity: '0.86'
-                      }}>
+                    }}>
                     Long-term Rental
                 </h1>
                 <div className='section col'>
                     <p> For longer periods, you can freely choose from a large selection of furniture and household items in our online catalogue. (link TBA) Create your dream home with the help of our interior designers!</p>
                     <div className='section row'>
-                        <button className="btn-primary" onClick={() => setPopupOpen(true)}>Contact us</button>
-                        {popupOpen && <Popup onClose={() => setPopupOpen(false)} />}
+                        <Link href="/FAAS/evaluation">
+                            <button className="btn-primary">
+                                Rent
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>
