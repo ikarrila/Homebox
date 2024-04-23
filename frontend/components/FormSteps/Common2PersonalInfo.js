@@ -101,7 +101,7 @@ export default function CommonPersonalInfo({ changeStep, CommonLengthData, Commo
                     <input style={emailColor}
                         type="text" id="email" data-testid="email-input" name="email" value={values.email} placeholder='Email' className='input' onChange={handleChange} />
                     <p>Phone:</p>
-                    <input style={!validate("phone") && pressed ? { backgroundColor: "#f5f5f5" } : {}} type="text" id="phone" data-testid="phone-input" name="phone" placeholder='Phone' value={values.phone} className='input' onChange={handleChange} />
+                    <input style={!validate("phone") && pressed ? { backgroundColor: "#f5f5f5" } : {}} type="number" id="phone" data-testid="phone-input" name="phone" placeholder='Phone' value={values.phone} className='input' onChange={handleChange} />
                     <p>Message:</p>
                     <input style={!validate("message") && pressed ? { backgroundColor: "#f5f5f5" } : {}} type="text" id="message" data-testid="message-input" name="message" placeholder='Message' value={values.message} className='input' onChange={handleChange} />
                 </div>
