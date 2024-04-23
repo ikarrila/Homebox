@@ -330,142 +330,157 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
         <div className="section" >
             <div className='stepTwo' >
                 <div className="stepTitle">2. Select your rooms to furnish & room size </div>
-                <div className='step startCol' style={{ display: 'flex', flexDirection: 'row' }}>
-                    <div style={colorField && (HowMany === '' || HowMany === 0) && !allowContinue ? { backgroundColor: "#f5f5f5" } : {}} >
-                        <div>
-                            <label htmlFor="howMany">Number of Bedrooms  </label><br></br>
-                            <select value={HowMany} style={colorField && HowMany === '' ? { backgroundColor: "#f5f5f5" } : {}} id="howMany" name="howMany" className='miniselector' onChange={(event) => handleHowMany(event.target.value)}>
-                                <option value="" disabled selected>Select Value</option>
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                            </select>
+                <div className='step' style={{ display: 'flex', flexDirection: 'row' }}>
+                    <div className='left'>
+                        <div style={colorField && (HowMany === '' || HowMany === 0) && !allowContinue ? { backgroundColor: "#f5f5f5" } : {}} >
+                            <div>
+                                <label htmlFor="howMany">Number of Bedrooms  </label><br></br>
+                                <select value={HowMany} style={colorField && HowMany === '' ? { backgroundColor: "#f5f5f5" } : {}} id="howMany" name="howMany" className='miniselector' onChange={(event) => handleHowMany(event.target.value)}>
+                                    <option value="" disabled selected>Select Value</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                            </div>
                         </div>
                         <br />
                         {HowMany >= "1" && (
                             <div style={colorField && (bedSize === '' && showMainBedroomSize) || colorField && (HowMany >= 1 && !showMainBedroomSize) ? { backgroundColor: "#f5f5f5" } : {}}>
                                 <div >
-                                    <label htmlFor="mainBedroom" >Main bedroom</label>
                                     <input type="checkbox" checked={showMainBedroomSize} id="mainBedroom" name="mainBedroom" className='roomCheckbox' onChange={() => setShowMainBedroomSize(!showMainBedroomSize)} />
+                                    <label htmlFor="mainBedroom" > Main bedroom</label>
                                 </div>
                                 {showMainBedroomSize && (
                                     <SmallMedLar value={bedSize} name={"mainBedroomSize"} onSizeSelect={setBedSize} />
                                 )}
+                                <br />
                             </div>
                         )}
 
                         {HowMany >= "2" && (
                             <div style={colorField && (bed2Size === '' && showBedroom2Size) || colorField && (HowMany >= 2 && !showBedroom2Size) ? { backgroundColor: "#f5f5f5" } : {}}>
                                 <div>
-                                    <label htmlFor="bedroom2">Bedroom 2</label>
                                     <input type="checkbox" checked={showBedroom2Size} id="bedroom2" name="bedroom2" className='roomCheckbox' onChange={() => setBedroom2Size(!showBedroom2Size)} />
+                                    <label htmlFor="bedroom2"> Bedroom 2</label>
                                 </div>
                                 {showBedroom2Size && (
                                     <SmallMedLar value={bed2Size} name={"bedroom2Size"} onSizeSelect={setBed2Size} />
                                 )}
+                                <br />
                             </div>
                         )}
 
                         {HowMany >= "3" && (
                             <div style={colorField && (bed3Size === '' && showBedroom3Size) || colorField && (HowMany >= 3 && !showBedroom3Size) ? { backgroundColor: "#f5f5f5" } : {}}>
                                 <div>
-                                    <label htmlFor="bedroom3">Bedroom 3</label>
                                     <input type="checkbox" checked={showBedroom3Size} id="bedroom3" name="bedroom3" className='roomCheckbox' onChange={() => setBedroom3Size(!showBedroom3Size)} />
+                                    <label htmlFor="bedroom3"> Bedroom 3</label>
                                 </div>
                                 {showBedroom3Size && (
                                     <SmallMedLar value={bed3Size} name={"bedroom3Size"} onSizeSelect={setBed3Size} />
                                 )}
+                                <br />
                             </div>
                         )}
 
                         {HowMany >= "4" && (
                             <div style={colorField && (bed4Size === '' && showBedroom4Size) || colorField && (HowMany >= 4 && !showBedroom4Size) ? { backgroundColor: "#f5f5f5" } : {}}>
                                 <div>
-                                    <label htmlFor="bedroom4">Bedroom 4</label>
                                     <input type="checkbox" checked={showBedroom4Size} id="bedroom4" name="bedroom4" className='roomCheckbox' onChange={() => setBedroom4Size(!showBedroom4Size)} />
+                                    <label htmlFor="bedroom4"> Bedroom 4</label>
                                 </div>
                                 {showBedroom4Size && (
                                     <SmallMedLar value={bed4Size} name={"bedroom4Size"} onSizeSelect={setBed4Size} />
                                 )}
+                                <br />
                             </div>
                         )}
 
                         {HowMany >= "5" && (
                             <div style={colorField && (bed5Size === '' && showBedroom5Size) || colorField && (HowMany >= 5 && !showBedroom5Size) ? { backgroundColor: "#f5f5f5" } : {}}>
                                 <div>
-                                    <label htmlFor="bedroom5">Bedroom 5</label>
                                     <input type="checkbox" checked={showBedroom5Size} id="bedroom5" name="bedroom5" className='roomCheckbox' onChange={() => setBedroom5Size(!showBedroom5Size)} />
+                                    <label htmlFor="bedroom5"> Bedroom 5</label>
                                 </div>
                                 {showBedroom5Size && (
                                     <SmallMedLar value={bed5Size} name={"bedroom5Size"} onSizeSelect={setBed5Size} />
                                 )}
+                                <br />
                             </div>
                         )}
 
                         {HowMany >= "6" && (
                             <div style={colorField && (bed6Size === '' && showBedroom6Size) || colorField && (HowMany >= 6 && !showBedroom6Size) ? { backgroundColor: "#f5f5f5" } : {}}>
                                 <div>
-                                    <label htmlFor="bedroom6">Bedroom 6</label>
                                     <input type="checkbox" checked={showBedroom6Size} id="bedroom6" name="bedroom6" className='roomCheckbox' onChange={() => setBedroom6Size(!showBedroom6Size)} />
+                                    <label htmlFor="bedroom6"> Bedroom 6</label>
                                 </div>
                                 {showBedroom6Size && (
                                     <SmallMedLar value={bed6Size} name={"bedroom6Size"} onSizeSelect={setBed6Size} />
                                 )}
+                                <br />
                             </div>
                         )}
                         <div style={colorField && livingRoomSize === '' && showLivingRoomSize ? { backgroundColor: "#f5f5f5" } : {}}>
                             <div>
-                                <label htmlFor="livingRoom" >Living Room</label>
-                                <input type="checkbox" id="livingRoom" checked={showLivingRoomSize} name="livingRoom" className='roomCheckbox' onChange={() => setShowLivingRoomSize(!showLivingRoomSize)} />                </div>
+                                <input type="checkbox" id="livingRoom" checked={showLivingRoomSize} name="livingRoom" className='roomCheckbox' onChange={() => setShowLivingRoomSize(!showLivingRoomSize)} />
+                                <label htmlFor="livingRoom" > Living Room</label>
                             {showLivingRoomSize && (
                                 <SmallMedLar value={livingRoomSize} name={"livingRoomSize"} onSizeSelect={setLivingRoomSize} />
                             )}
+                            </div>
                         </div>
+                        <br />
                         <div style={colorField && diningRoomSize === '' && showDiningRoomSize ? { backgroundColor: "#f5f5f5" } : {}}>
                             <div>
-                                <label htmlFor="diningRoom">Dining Room</label>
                                 <input type="checkbox" id="diningRoom" checked={showDiningRoomSize} name="diningRoom" className='roomCheckbox' onChange={() => setShowDiningRoomSize(!showDiningRoomSize)} />
+                                <label htmlFor="diningRoom"> Dining Room</label>
                             </div>
                             {showDiningRoomSize && (
                                 <SmallMedLar value={diningRoomSize} name={"diningRoomSize"} onSizeSelect={setDiningRoomSize} />
                             )}
                         </div>
+                        <br />
                         <div style={colorField && kitchenSize === '' && showKitchenSize ? { backgroundColor: "#f5f5f5" } : {}}>
                             <div>
-                                <label htmlFor="kitchen">Kitchen</label>
                                 <input type="checkbox" id="kitchen" checked={showKitchenSize} name="kitchen" className='roomCheckbox' onChange={() => setShowKitchenSize(!showKitchenSize)} />
+                                <label htmlFor="kitchen"> Kitchen</label>
                             </div>
                             {showKitchenSize && (
                                 <SmallMedLar value={kitchenSize} name={"kitchenSize"} onSizeSelect={setKitchenSize} />
                             )}
                         </div>
+                        <br />
                         <div style={colorField && homeOfficeSize === '' && showHomeOfficeSize ? { backgroundColor: "#f5f5f5" } : {}}>
                             <div>
-                                <label htmlFor="homeoffice">Home Office</label>
                                 <input type="checkbox" id="homeoffice" checked={showHomeOfficeSize} name="homeoffice" className='roomCheckbox' onChange={() => setShowHomeOfficeSize(!showHomeOfficeSize)} />
+                                <label htmlFor="homeoffice"> Home Office</label>
                             </div>{showHomeOfficeSize && (
                                 <SmallMedLar value={homeOfficeSize} name={"homeofficeSize"} onSizeSelect={setHomeOfficeSize} />
                             )}
                         </div>
+                        <br />
                         <div style={colorField && outdoorSize === '' && showOutdoorSize ? { backgroundColor: "#f5f5f5" } : {}}>
                             <div>
-                                <label htmlFor="outdoorSpace">Outdoor space</label>
                                 <input type="checkbox" id="outdoorSpace" checked={showOutdoorSize} name="outdoorSpace" className='roomCheckbox' onChange={() => setShowOutdoorSize(!showOutdoorSize)} />
+                                <label htmlFor="outdoorSpace"> Outdoor space</label>
                             </div>{showOutdoorSize && (
                                 <SmallMedLar value={outdoorSize} name={"outdoorSpaceSize"} onSizeSelect={setOutdoorSize} />
                             )}
                         </div>
+                        <br />
                     </div>
-                    <div className='optionBox right'>
+                    <div className="left"></div>
+                    <div className='right'>
                         <h2>Room Size Description</h2>
-
                         <div dangerouslySetInnerHTML={{ __html: options[currentOption] }} />
-                        <button onClick={handlePrevious}>Previous</button> <br />
-                        <button onClick={handleNext}>Next</button>
+                            <button onClick={handlePrevious}>Previous</button> <br />
+                            <button onClick={handleNext}>Next</button>
+                        </div>
                     </div>
                 </div>
                 <div className='container row align-middle'>
@@ -475,6 +490,6 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
 
             </div>
 
-        </div >
+        
     )
 }
