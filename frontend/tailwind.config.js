@@ -7,6 +7,19 @@ module.exports = {
   ],
   theme: {
     extend: {
+      flexGrow: {
+        '1': '1',
+        '2': '2',
+      },
+      spacing: {
+        '8': '2rem',
+      },
+      borderWidth: {
+        '1': '1px',
+      },
+      borderRadius: {
+        'lg': '1rem',
+      },
       translate: {
         '35': '35%',
       },

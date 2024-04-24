@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="footer secondary bottom-0 w-full mt-auto" data-testid="footer">
+    <footer className="footer primary bottom-0 w-full mt-auto text-color-white" data-testid="footer">
 
       <div>
         <ul style={{ display: "flex", justifyContent: "space-around", listStyle: "none", padding: 0 }} data-testid="footer-list">

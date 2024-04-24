@@ -37,7 +37,7 @@ export default function Package({ setShortPackagesData, ShortPackagesData }) {
 
     const PackageDetails = ({ packageType }) => {
         switch (packageType) {
-            case 'standardStudio':
+            case 'Studio (standard)':
                 return (
                     <>
                         <h4><b>Bedroom</b></h4>
@@ -51,7 +51,7 @@ export default function Package({ setShortPackagesData, ShortPackagesData }) {
                         <li>1x side table</li>
                     </>
                 );
-            case 'standard1bedroom':
+            case '1 Bedroom (standard)':
                 return (
                     <>
                         <h4><b>Bedroom</b></h4>
@@ -66,7 +66,7 @@ export default function Package({ setShortPackagesData, ShortPackagesData }) {
                         <li>1x coffee table</li>
                     </>
                 );
-            case 'standard2bedroom':
+            case '2 Bedrooms (standard)':
                 return (
                     <>
                         <h4><b>Bedroom</b></h4>
@@ -82,7 +82,7 @@ export default function Package({ setShortPackagesData, ShortPackagesData }) {
                         <li>1x side table</li>
                     </>
                 );
-            case 'standard3bedroom':
+            case '3 Bedrooms (standard)':
                 return (
                     <>
                         <h4><b>Bedroom</b></h4>
@@ -106,7 +106,7 @@ export default function Package({ setShortPackagesData, ShortPackagesData }) {
 
     const PremiumPackageDetails = ({ packageType }) => {
         switch (packageType) {
-            case 'premiumStudio':
+            case 'Studio (premium)':
                 return (
                     <>
                         <h4><b>Bedroom</b></h4>
@@ -124,7 +124,7 @@ export default function Package({ setShortPackagesData, ShortPackagesData }) {
                         <li>home essentials kit (new beddings, new bathroom essentials, essential kitchen utensils)</li>
                     </>
                 );
-            case 'premium1Bedroom':
+            case '1 Bedroom (premium)':
                 return (
                     <>
                         <h4><b>Bedroom</b></h4>
@@ -143,7 +143,7 @@ export default function Package({ setShortPackagesData, ShortPackagesData }) {
                         <li>home essentials kit (new beddings, new bathroom essentials, essential kitchen utensils)</li>
                     </>
                 );
-            case 'premium2Bedroom':
+            case '2 Bedrooms (premium)':
                 return (
                     <>
                         <h4><b>Bedroom</b></h4>
@@ -163,7 +163,7 @@ export default function Package({ setShortPackagesData, ShortPackagesData }) {
                         <li>home essentials kit (new beddings, new bathroom essentials, essential kitchen utensils)</li>
                     </>
                 );
-            case 'premium3Bedroom':
+            case '3 Bedrooms (premium)':
                 return (
                     <>
                         <h4><b>Bedroom</b></h4>
@@ -206,10 +206,10 @@ export default function Package({ setShortPackagesData, ShortPackagesData }) {
                     <h3>Standard</h3>
                     <select className='selector' onChange={handleChange} name="standard" value={ShortPackagesData.standard || ""}>
                         <option value="" disabled selected>Select package size</option>
-                        <option value="standardStudio">Studio Package</option>
-                        <option value="standard1bedroom">1 Bedroom package</option>
-                        <option value="standard2bedroom">2 Bedroom package</option>
-                        <option value="standard3bedroom">3 Bedroom package</option>
+                        <option value="Studio (standard)">Studio Package</option>
+                        <option value="1 Bedroom (standard)">1 Bedroom package</option>
+                        <option value="2 Bedrooms (standard)">2 Bedroom package</option>
+                        <option value="3 Bedrooms (standard)">3 Bedroom package</option>
                     </select>
 
                     {ShortPackagesData.standard && (
@@ -227,10 +227,10 @@ export default function Package({ setShortPackagesData, ShortPackagesData }) {
 
                     <select className='selector' onChange={handleChange} name="premium" value={ShortPackagesData.premium || ""}>
                         <option value="" disabled selected>Select package size</option>
-                        <option value="premiumStudio">Studio Package</option>
-                        <option value="premium1Bedroom">1 Bedroom package</option>
-                        <option value="premium2Bedroom">2 Bedroom package</option>
-                        <option value="premium3Bedroom">3 Bedroom package</option>
+                        <option value="Studio (premium)">Studio Package</option>
+                        <option value="1 Bedroom (premium)">1 Bedroom package</option>
+                        <option value="2 Bedrooms (premium)">2 Bedroom package</option>
+                        <option value="3 Bedrooms (premium)">3 Bedroom package</option>
                     </select>
                     {ShortPackagesData.premium && (
                         <>

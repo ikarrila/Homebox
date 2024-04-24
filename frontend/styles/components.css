@@ -60,7 +60,7 @@ body .main-container {
 
 
 .step-container {
-    @apply flex flex-row items-start overflow-hidden ;
+    @apply flex flex-row items-start overflow-hidden;
 
 }
 
@@ -81,6 +81,10 @@ body .main-container {
     @apply z-30 absolute mr-96;
 }
 
+.roomCheckbox {
+    @apply mr-4;
+}
+
 .textSide {
     @apply text-nowrap items-start w-fit;
 }
@@ -90,6 +94,7 @@ body .main-container {
 .selector {
     @apply bg-white px-10 py-4 mb-2 rounded-md border h-14 w-full;
 }
+
 .miniselector {
     @apply bg-white px-2 py-4 rounded-md border h-14 w-full;
 }
@@ -121,9 +126,37 @@ table td {
 /* SUSTAINABILITY */
 .sustainabilityText p {
     @apply py-2 max-w-3xl;
-  }
+}
 
-  /* FAQ */
-  .leftAligned {
+/* FAQ */
+.leftAligned {
     @apply max-w-lg;
-  }
+}
+
+.for-business-process {
+    @apply ml-3 mr-3 text-center p-1 py-2 max-w-4xl;
+}
+
+.for-business-process-text {
+    @apply mb-2 text-xs;
+}
+
+.for-bp-textbox {
+    @apply text-center p-2 rounded-lg flex-grow overflow-auto w-auto;
+}
+
+.faas-spacer-2 {
+    @apply h-4 w-20 flex-grow-2 justify-start;
+}
+
+.faas-spacer-1 {
+    @apply h-4 w-10 flex-grow-1 justify-start;
+}
+
+.banner {
+    @apply mb-2 col relative h-[25vh] overflow-hidden bg-center bg-cover w-full p-10;
+}
+
+.banner-text {
+    @apply text-center rounded-lg p-4;
+}

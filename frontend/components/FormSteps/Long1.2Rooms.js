@@ -1,13 +1,19 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import StandardImg from "../../../pictures/di_an_h-g_8MrEZAvyE-unsplash.jpg";
 import PremiumImg from "../../../pictures/kenny-eliason-Wp7t4cWN-68-unsplash.jpg";
 
 import Image from 'next/image';
 
-export default function LongRooms({ changeStep }) {
+export default function LongRooms({ changeStep, setLongRoomsData, LongRoomsData }) {
     // State to track the selected value from the dropdown
     const [selectedValue, setSelectedValue] = useState("");
 
+    useEffect(() => {
+        if (LongRoomsData) {
+            setSelectedValue(LongRoomsData);
+        }
+    }
+        , []);
     //State to determine if the user may pass to the next step
     const [unSelected, setUnSelected] = useState(false);
 
@@ -23,14 +29,16 @@ export default function LongRooms({ changeStep }) {
 
     // Function to handle change in the dropdown value
     const handleSelectChange = (event) => {
+        setUnSelected(false);
         setSelectedValue(event.target.value);
+        setLongRoomsData(event.target.value);
     };
 
     // Conditional rendering based on selected value
     const renderImage = () => {
-        if (selectedValue === "1") {
+        if (selectedValue === "Standard") {
             return <Image src={StandardImg} alt="Standard" className='image-container' />;
-        } else if (selectedValue === "2") {
+        } else if (selectedValue === "Premium") {
             return <Image src={PremiumImg} alt="Premium" className='image-container' />;
         } else {
             return <div className='card-container'>
@@ -49,10 +57,10 @@ export default function LongRooms({ changeStep }) {
                         {renderImage()}</div>
                     <div className='right'>
                         <div>
-                            <select className='selector' defaultValue="" id='furnishingSelector' onChange={handleSelectChange} style={unSelected ? { backgroundColor: '#cad1d8' } : {}}>
+                            <select className='selector' value={LongRoomsData} defaultValue="" id='furnishingSelector' onChange={handleSelectChange} style={unSelected ? { backgroundColor: '#cad1d8' } : {}}>
                                 <option value="" disabled>Select...</option>
-                                <option value="1">Standard</option>
-                                <option value="2">Premium</option>
+                                <option value="Standard">Standard</option>
+                                <option value="Premium">Premium</option>
                             </select></div>
                         <div>
                             <h3>Standard:</h3>
@@ -63,9 +71,9 @@ export default function LongRooms({ changeStep }) {
                 </div>
                 <div className='container row align-middle'>
                     <button onClick={() => changeStep('long-property')} className='btn-tertiary'>Back</button>
-                    <button onClick={() => determineContinue()} className='btn-tertiary'>Continue</button>
+                    <button onClick={() => determineContinue()} className={selectedValue ? 'btn-primary' : 'btn-tertiary'}>Continue</button>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }

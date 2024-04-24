@@ -353,6 +353,7 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
                                 <div >
                                     <input type="checkbox" checked={showMainBedroomSize} id="mainBedroom" name="mainBedroom" className='roomCheckbox' onChange={() => setShowMainBedroomSize(!showMainBedroomSize)} />
                                     <label htmlFor="mainBedroom" > Main bedroom</label>
+
                                 </div>
                                 {showMainBedroomSize && (
                                     <SmallMedLar value={bedSize} name={"mainBedroomSize"} onSizeSelect={setBedSize} />
@@ -366,6 +367,7 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
                                 <div>
                                     <input type="checkbox" checked={showBedroom2Size} id="bedroom2" name="bedroom2" className='roomCheckbox' onChange={() => setBedroom2Size(!showBedroom2Size)} />
                                     <label htmlFor="bedroom2"> Bedroom 2</label>
+
                                 </div>
                                 {showBedroom2Size && (
                                     <SmallMedLar value={bed2Size} name={"bedroom2Size"} onSizeSelect={setBed2Size} />
@@ -403,6 +405,7 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
                         {HowMany >= "5" && (
                             <div style={colorField && (bed5Size === '' && showBedroom5Size) || colorField && (HowMany >= 5 && !showBedroom5Size) ? { backgroundColor: "#f5f5f5" } : {}}>
                                 <div>
+
                                     <input type="checkbox" checked={showBedroom5Size} id="bedroom5" name="bedroom5" className='roomCheckbox' onChange={() => setBedroom5Size(!showBedroom5Size)} />
                                     <label htmlFor="bedroom5"> Bedroom 5</label>
                                 </div>
@@ -428,7 +431,8 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
                         <div style={colorField && livingRoomSize === '' && showLivingRoomSize ? { backgroundColor: "#f5f5f5" } : {}}>
                             <div>
                                 <input type="checkbox" id="livingRoom" checked={showLivingRoomSize} name="livingRoom" className='roomCheckbox' onChange={() => setShowLivingRoomSize(!showLivingRoomSize)} />
-                                <label htmlFor="livingRoom" > Living Room</label>
+                                <label htmlFor="livingRoom" >Living Room</label>
+                            </div>
                             {showLivingRoomSize && (
                                 <SmallMedLar value={livingRoomSize} name={"livingRoomSize"} onSizeSelect={setLivingRoomSize} />
                             )}
