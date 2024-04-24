@@ -431,11 +431,10 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
                         <div style={colorField && livingRoomSize === '' && showLivingRoomSize ? { backgroundColor: "#f5f5f5" } : {}}>
                             <div>
                                 <input type="checkbox" id="livingRoom" checked={showLivingRoomSize} name="livingRoom" className='roomCheckbox' onChange={() => setShowLivingRoomSize(!showLivingRoomSize)} />
-                                <label htmlFor="livingRoom" >Living Room</label>
-                            </div>
-                            {showLivingRoomSize && (
-                                <SmallMedLar value={livingRoomSize} name={"livingRoomSize"} onSizeSelect={setLivingRoomSize} />
-                            )}
+                                <label htmlFor="livingRoom" > Living Room</label>
+                                {showLivingRoomSize && (
+                                    <SmallMedLar value={livingRoomSize} name={"livingRoomSize"} onSizeSelect={setLivingRoomSize} />
+                                )}
                             </div>
                         </div>
                         <br />
@@ -482,18 +481,18 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
                     <div className='right'>
                         <h2>Room Size Description</h2>
                         <div dangerouslySetInnerHTML={{ __html: options[currentOption] }} />
-                            <button onClick={handlePrevious}>Previous</button> <br />
-                            <button onClick={handleNext}>Next</button>
-                        </div>
+                        <button onClick={handlePrevious}>Previous</button> <br />
+                        <button onClick={handleNext}>Next</button>
                     </div>
                 </div>
-                <div className='container row align-middle'>
-                    <button onClick={() => returnToPrevious('common-length')} className='btn-tertiary'>Back</button>
-                    <button onClick={() => determineContinue('long-rooms')} className={allowContinue ? 'btn-primary' : 'btn-tertiary'}>Continue</button>
-                </div>
-
+            </div>
+            <div className='container row align-middle'>
+                <button onClick={() => returnToPrevious('common-length')} className='btn-tertiary'>Back</button>
+                <button onClick={() => determineContinue('long-rooms')} className={allowContinue ? 'btn-primary' : 'btn-tertiary'}>Continue</button>
             </div>
 
-        
+        </div>
+
+
     )
 }
