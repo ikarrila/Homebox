@@ -1,27 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 
 function SmallMedLar({ name, onSizeSelect, value }) {
+    const [selectedSize, setSelectedSize] = useState('');
+
     const handleSizeSelect = (event) => {
+        setSelectedSize(event.target.value);
         onSizeSelect(event.target.value);
     };
 
     return (
-        <div style={{ paddingLeft: "35px" }}>
-            <div x>
-                <input type="radio" id="small" name={name} value="small" onChange={handleSizeSelect} checked={value === 'small'} />
-                <label htmlFor="small">Small</label>
-            </div>
-            <div>
-                <input type="radio" id="medium" name={name} value="medium" onChange={handleSizeSelect} checked={value === 'medium'} />
-                <label htmlFor="medium">Medium</label>
-            </div>
-            <div>
-                <input type="radio" id="large" name={name} value="large" onChange={handleSizeSelect} checked={value === 'large'} />
-                <label htmlFor="large">Large</label>
-            </div>
+        <div>
+            <label style={{marginLeft: '40px'}} htmlFor={name}>Room size: </label>
+            <select id={name} value={selectedSize} onChange={handleSizeSelect}>
+                <option value="">Select</option>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
         </div>
     );
 }
-
 
 export default SmallMedLar;
