@@ -12,8 +12,8 @@ describe('SmallMedLar', () => {
   test('renders the main elements', () => {
     const mockOnSizeSelect = jest.fn();
     render(<SmallMedLar name="test" onSizeSelect={mockOnSizeSelect} />);
-    expect(screen.getByRole('radio', { name: /Small/i })).toBeInTheDocument();
-    expect(screen.getByRole('radio', { name: /Medium/i })).toBeInTheDocument();
-    expect(screen.getByRole('radio', { name: /Large/i })).toBeInTheDocument();
+    expect(screen.getByRole('option', { name: /Small/i })).toBeInTheDocument();
+    expect(screen.getByRole('option', { name: /Medium/i })).toBeInTheDocument();
+    expect(screen.getByRole('option', { name: /Large/i })).toBeInTheDocument();
   });
 });
