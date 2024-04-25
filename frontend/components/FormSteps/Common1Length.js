@@ -1,5 +1,6 @@
 import { useState } from "react"
-export default function CommonLength({ changeStep, setCommonLengthData, CommonLengthData }) {
+import CostEvaluationDiv from "../CostEvaluationDiv"
+export default function CommonLength({ changeStep, setCommonLengthData, CommonLengthData, priceOfTheBill }) {
     //State to determine if the user may pass to the next step
     const [unSelected, setUnSelected] = useState(false)
     //Determine which form to go to based on the length of the rental
@@ -75,14 +76,15 @@ export default function CommonLength({ changeStep, setCommonLengthData, CommonLe
                 </div>
 
                 <div className="right">
-                    <p>We will calculate the potential cost based on the duration and size of apartment to be furnished.</p>
-                    <p>Give us more information to get an even more accurate evaluation!</p>
+                    <CostEvaluationDiv cost={priceOfTheBill} />
+                    <br></br>
+                    <div className='right row'>
+                        <button onClick={() => changeStep('common-start')} style={{ width: "160px" }} className='btn-tertiary'> Back</button>
+                        <button onClick={() => determineContinue()} style={{ width: "160px" }} className={CommonLengthData.length ? 'btn-primary' : 'btn-tertiary'}>Continue</button>
+                    </div>
                 </div>
             </div>
-            <div className='container row align-middle'>
-                <button onClick={() => changeStep('common-start')} className='btn-tertiary'> Back</button>
-                <button onClick={() => determineContinue()} className={CommonLengthData.length ? 'btn-primary' : 'btn-tertiary'}>Continue</button>
-            </div>
+
         </div >
 
 

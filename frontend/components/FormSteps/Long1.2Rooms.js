@@ -4,7 +4,7 @@ import PremiumImg from "../../../pictures/kenny-eliason-Wp7t4cWN-68-unsplash.jpg
 
 import Image from 'next/image';
 
-export default function LongRooms({ changeStep, setLongRoomsData, LongRoomsData }) {
+export default function LongRooms({ changeStep, setLongRoomsData, LongRoomsData, priceOfTheBill }) {
     // State to track the selected value from the dropdown
     const [selectedValue, setSelectedValue] = useState("");
 
@@ -70,8 +70,8 @@ export default function LongRooms({ changeStep, setLongRoomsData, LongRoomsData 
                     </div>
                 </div>
                 <div className='container row align-middle'>
-                    <button onClick={() => changeStep('long-property')} className='btn-tertiary'>Back</button>
-                    <button onClick={() => determineContinue()} className={selectedValue ? 'btn-primary' : 'btn-tertiary'}>Continue</button>
+                    <button onClick={() => changeStep('long-property')} style={{ width: "160px" }} className='btn-tertiary'>Back</button>
+                    <button onClick={() => determineContinue()} style={{ width: "160px" }} className={selectedValue ? 'btn-primary' : 'btn-tertiary'}>Continue</button>
                 </div>
             </div>
         </div >
