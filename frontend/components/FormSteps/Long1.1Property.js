@@ -487,8 +487,8 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
                 </div>
             </div>
             <div className='container row align-middle'>
-                <button onClick={() => returnToPrevious('common-length')} className='btn-tertiary'>Back</button>
-                <button onClick={() => determineContinue('long-rooms')} className={allowContinue ? 'btn-primary' : 'btn-tertiary'}>Continue</button>
+                <button onClick={() => returnToPrevious('common-length')} style={{ width: "160px" }} className='btn-tertiary'>Back</button>
+                <button onClick={() => determineContinue('long-rooms')} style={{ width: "160px" }} className={allowContinue ? 'btn-primary' : 'btn-tertiary'}>Continue</button>
             </div>
 
         </div>

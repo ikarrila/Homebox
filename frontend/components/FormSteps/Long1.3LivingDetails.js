@@ -1,6 +1,6 @@
 import React, { useState, useEffect, use } from 'react';
 
-export default function LongLivingDetails({ changeStep, LongLivingDetailsData, setLongLivingDetailsData }) {
+export default function LongLivingDetails({ changeStep, LongLivingDetailsData, setLongLivingDetailsData, priceOfTheBill }) {
     const [url, setUrl] = useState("");
     const [info, setInfo] = useState("");
 
@@ -50,8 +50,8 @@ export default function LongLivingDetails({ changeStep, LongLivingDetailsData, s
                     </div>
                 </div>
                 <div className='container row align-middle'>
-                    <button onClick={() => changeStep('long-rooms')} className='btn-tertiary'>Back</button>
-                    <button onClick={() => changeStep('common-personal-info')} className='btn-primary'>Continue</button>
+                    <button onClick={() => changeStep('long-rooms')} style={{ width: "160px" }} className='btn-tertiary'>Back</button>
+                    <button onClick={() => changeStep('common-personal-info')} style={{ width: "160px" }} className='btn-primary'>Continue</button>
                 </div>
             </div>
         </div>);

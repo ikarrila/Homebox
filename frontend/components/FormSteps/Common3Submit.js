@@ -9,7 +9,7 @@ export default function CommonSubmit({ changeStep,
     LongPropertyData,
     LongRoomsData,
     LongLivingDetailsData,
-    CommonPersonalInfoData
+    CommonPersonalInfoData,
 }) {
     const lengthParse = CommonLengthData.length > 12 ? '12+ months' : `${CommonLengthData.length} months`
     const [short, setShort] = useState(CommonLengthData && CommonLengthData.length < 10 || false)
@@ -77,8 +77,8 @@ export default function CommonSubmit({ changeStep,
                 </div>
 
                 <div className='container row align-middle'>
-                    <button onClick={() => changeStep('common-personal-info')} className='btn-tertiary'>Back</button>
-                    <button onClick={() => submitAndMove()} className='btn-tertiary'>Send</button>
+                    <button onClick={() => changeStep('common-personal-info')} style={{ width: "160px" }} className='btn-tertiary'>Back</button>
+                    <button onClick={() => submitAndMove()} style={{ width: "160px" }} className='btn-tertiary'>Send</button>
                 </div>
             </div>
         </div>

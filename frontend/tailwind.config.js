@@ -39,9 +39,16 @@ module.exports = {
       width: {
         '200': '40rem',
         '110': '18rem',
+        '210': '1200px',
       },
       right: {
         'custom': '1rem',
+      },
+      maxWidth: {
+        '200': '50%',
+      },
+      padding: {
+        '200': '800px',
       },
       fontFamily: {
         'primary': ['Heebo', 'sans-serif'],

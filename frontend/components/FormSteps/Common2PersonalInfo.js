@@ -1,7 +1,7 @@
 
 import React, { use } from 'react';
 import { useState, useEffect } from "react"
-export default function CommonPersonalInfo({ changeStep, CommonLengthData, CommonPersonalInfoData, setCommonPersonalInfoData }) {
+export default function CommonPersonalInfo({ changeStep, CommonLengthData, CommonPersonalInfoData, setCommonPersonalInfoData, priceOfTheBill }) {
 
     const [pressed, setPressed] = useState(false)
     const [buttonGlow, setButtonGlow] = useState(false)
@@ -106,8 +106,8 @@ export default function CommonPersonalInfo({ changeStep, CommonLengthData, Commo
                     <input style={!validate("message") && pressed ? { backgroundColor: "#f5f5f5" } : {}} type="text" id="message" data-testid="message-input" name="message" placeholder='Message' value={values.message} className='input' onChange={handleChange} />
                 </div>
                 <div className='container row align-middle'>
-                    <button onClick={() => LongOrShortForm()} className='btn-tertiary'>Back</button>
-                    <button onClick={() => determineContinue()} className={buttonGlow ? 'btn-primary' : 'btn-tertiary'}>Continue</button>
+                    <button onClick={() => LongOrShortForm()} style={{ width: "160px" }} className='btn-tertiary'>Back</button>
+                    <button onClick={() => determineContinue()} style={{ width: "160px" }} className={buttonGlow ? 'btn-primary' : 'btn-tertiary'}>Continue</button>
                 </div>
             </div>
         </div>
