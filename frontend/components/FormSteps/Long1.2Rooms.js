@@ -57,17 +57,21 @@ export default function LongRooms({ changeStep, setLongRoomsData, LongRoomsData 
                         {renderImage()}</div>
                     <div className='right'>
                         <div>
-                            <select className='selector' value={LongRoomsData} defaultValue="" id='furnishingSelector' onChange={handleSelectChange} style={unSelected ? { backgroundColor: '#cad1d8' } : {}}>
+                            <select className={`selector ${unSelected ? 'alert' : ''}`} value={LongRoomsData} defaultValue="" id='furnishingSelector' onChange={handleSelectChange} style={unSelected ? { backgroundColor: '#f5f5f5' } : {}}>
                                 <option value="" disabled>Select...</option>
                                 <option value="Standard">Standard</option>
                                 <option value="Premium">Premium</option>
                             </select></div>
                         <div>
+                            {unSelected && <p>Please select rental length</p>}
                             <h3>Standard:</h3>
                             <p>This new home will be functional with essential furniture. Decor is minimal as this option focuses on functions primarily.</p>
                             <h3>Premium:</h3>
                             <p>Your home will be fully decorated with accessories like throws, pillows and wall arts for all the rooms. Imagine the designs you see in a magazine.</p>   </div>
+
+
                     </div>
+
                 </div>
                 <div className='container row align-middle'>
                     <button onClick={() => changeStep('long-property')} className='btn-tertiary'>Back</button>

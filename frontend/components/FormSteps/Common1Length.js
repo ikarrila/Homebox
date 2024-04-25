@@ -1,19 +1,20 @@
-import { useState } from "react"
+import { useState } from "react";
 export default function CommonLength({ changeStep, setCommonLengthData, CommonLengthData }) {
     //State to determine if the user may pass to the next step
-    const [unSelected, setUnSelected] = useState(false)
+    const [unSelected, setUnSelected] = useState(false);
     //Determine which form to go to based on the length of the rental
-    const LongOrShortForm = () => { CommonLengthData.length > 10 ? changeStep('long-property') : changeStep('short-packages') }
+    const LongOrShortForm = () => { CommonLengthData.length > 10 ? changeStep('long-property') : changeStep('short-packages'); };
 
     //If the length is not selected, the user cannot continue
     const determineContinue = () => {
         if (!CommonLengthData.length || CommonLengthData.length === 0) {
-            setUnSelected(true)
+            setUnSelected(true);
+            setHasClickedContinue(true);
         }
         else {
-            LongOrShortForm()
+            LongOrShortForm();
         }
-    }
+    };
 
     //FUNCTION TO HANDLE INPUT CHANGE. in input field put name and value such as name="length" value={CommonLengthData.length}
     const handleChange = (e) => {
@@ -23,7 +24,11 @@ export default function CommonLength({ changeStep, setCommonLengthData, CommonLe
             [e.target.name]: e.target.value
         };
         setCommonLengthData(updatedState);
-    }
+        setHasClickedContinue(false);
+    };
+
+
+    const [hasClickedContinue, setHasClickedContinue] = useState(false);
 
 
     return (
@@ -42,8 +47,8 @@ export default function CommonLength({ changeStep, setCommonLengthData, CommonLe
                             Rental Length
                         </label>
                         <div className="container col ">
-                            <select id="rentalLength" className="input " name="length" value={CommonLengthData.length} onChange={handleChange}
-                                style={unSelected ? { backgroundColor: "#f5f5f5" } : {}} >
+                            <select id="rentalLength" className={`input ${unSelected ? 'alert' : ''}`} name="length" value={CommonLengthData.length} onChange={handleChange}
+                                style={unSelected && hasClickedContinue ? { backgroundColor: "#f5f5f5" } : {}} >
                                 <option value={0} disabled selected>Select rental length</option>
                                 <option value={1}>1 month</option>
                                 <option value={2}>2 months</option>
@@ -60,8 +65,9 @@ export default function CommonLength({ changeStep, setCommonLengthData, CommonLe
                                 <option value={13}>More than a year</option>
                             </select>
 
-                        </div>
 
+                        </div>
+                        {unSelected && <p>Please select rental length</p>}
                     </div>
                     {(CommonLengthData.length > 10) &&
                         <div className="left" >
@@ -86,6 +92,6 @@ export default function CommonLength({ changeStep, setCommonLengthData, CommonLe
         </div >
 
 
-    )
+    );
 
 }

@@ -7,7 +7,7 @@ import img1 from "../../pictures/francesca-tosolini-DmOhItSo49k-unsplash.jpg";
 import img2 from "../../pictures/kara-eads-L7EwHkq1B2s-unsplash.jpg";
 import Image from 'next/image';
 
-export default function Package({ setShortPackagesData, ShortPackagesData }) {
+export default function Package({ setShortPackagesData, ShortPackagesData, clicked, selectedValue }) {
     const [showStandardPackage, setShowStandardPackage] = useState(1);
     const [showPremiumPackage, setShowPremiumPackage] = useState(1);
     const [buttonPressed, setButtonPressed] = useState(false);
@@ -20,7 +20,7 @@ export default function Package({ setShortPackagesData, ShortPackagesData }) {
         };
         setShortPackagesData(updatedState);
         setButtonPressed(false);
-    }
+    };
 
 
     useEffect(() => {
@@ -204,7 +204,7 @@ export default function Package({ setShortPackagesData, ShortPackagesData }) {
                 <div id='standard' className='left ' >
                     < Image class='image-container' src={img1} alt="img1" style={{ transition: 'opacity 1s', opacity: showStandardPackage }} />
                     <h3>Standard</h3>
-                    <select className='selector' onChange={handleChange} name="standard" value={ShortPackagesData.standard || ""}>
+                    <select className={`input ${clicked && !selectedValue ? 'alert' : ''}`} onChange={handleChange} name="standard" value={ShortPackagesData.standard || ""} style={clicked && !selectedValue ? { backgroundColor: "#f5f5f5" } : {}}>
                         <option value="" disabled selected>Select package size</option>
                         <option value="Studio (standard)">Studio Package</option>
                         <option value="1 Bedroom (standard)">1 Bedroom package</option>
@@ -225,7 +225,13 @@ export default function Package({ setShortPackagesData, ShortPackagesData }) {
                     < Image class='image-container' src={img2} alt="img2" style={{ transition: 'opacity 1s', opacity: showPremiumPackage }} />
                     <h3>Premium</h3>
 
-                    <select className='selector' onChange={handleChange} name="premium" value={ShortPackagesData.premium || ""}>
+                    <select
+                        className={`input ${clicked && !selectedValue ? 'alert' : ''}`} style={clicked && !selectedValue ? { backgroundColor: "#f5f5f5" } : {}}
+                        onChange={handleChange}
+                        name="premium"
+                        value={ShortPackagesData.premium || ""}
+                    >
+
                         <option value="" disabled selected>Select package size</option>
                         <option value="Studio (premium)">Studio Package</option>
                         <option value="1 Bedroom (premium)">1 Bedroom package</option>
@@ -246,4 +252,4 @@ export default function Package({ setShortPackagesData, ShortPackagesData }) {
         </div>
 
     );
-}
+};
