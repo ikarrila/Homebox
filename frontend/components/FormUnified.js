@@ -63,7 +63,7 @@ export default function FormUnified() {
         });
         return response.json();
     };
-    console.log(ShortPackagesData)
+    // console.log(ShortPackagesData)
     const submitForm = async () => {
         //base data, modify with long/short data
         const basicInfo =
@@ -115,7 +115,7 @@ export default function FormUnified() {
                 source: "short-term rental",
                 furnishingLevel: ShortPackagesData.premium || ShortPackagesData.standard,
             }
-            console.log(data)
+            //console.log(data)
             try {
                 await send(data)
             } catch (error) {
