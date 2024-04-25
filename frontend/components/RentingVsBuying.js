@@ -5,6 +5,7 @@ export default function RentingVsBuying() {
     return (
         <div className='container col' style={{ maxWidth: '50%', borderRadius: '10px', padding: '10px' }}>
             <div className='section col' style={{ borderRadius: '10px', overflow: 'hidden' }}>
+                <h2>Rent vs. Buying</h2>
                 <table style={{ borderCollapse: 'collapse', width: '100%' }}>
                     <thead>
                         <tr>
