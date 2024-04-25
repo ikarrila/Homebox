@@ -77,12 +77,14 @@ export default function CommonLength({ changeStep, setCommonLengthData, CommonLe
 
                 <div className="right">
                     <CostEvaluationDiv cost={priceOfTheBill} />
+                    <br></br>
+                    <div className='right row'>
+                        <button onClick={() => changeStep('common-start')} style={{ width: "160px" }} className='btn-tertiary'> Back</button>
+                        <button onClick={() => determineContinue()} style={{ width: "160px" }} className={CommonLengthData.length ? 'btn-primary' : 'btn-tertiary'}>Continue</button>
+                    </div>
                 </div>
             </div>
-            <div className='container row align-middle left'>
-                <button onClick={() => changeStep('common-start')} style={{ width: "160px" }} className='btn-tertiary'> Back</button>
-                <button onClick={() => determineContinue()} style={{ width: "160px" }} className={CommonLengthData.length ? 'btn-primary' : 'btn-tertiary'}>Continue</button>
-            </div>
+
         </div >
 
 

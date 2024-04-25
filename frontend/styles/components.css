@@ -1,7 +1,7 @@
 /* PAGE STRUCTURE */
 /* Main container for pages */
 .container {
-    @apply overflow-y-auto w-full;
+    @apply  w-full;
 }
 
 /* Row flexbox, use as second class e.g. className='container row' */

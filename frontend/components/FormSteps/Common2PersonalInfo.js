@@ -1,6 +1,7 @@
 
 import React, { use } from 'react';
 import { useState, useEffect } from "react"
+import CostEvaluationDiv from '../CostEvaluationDiv';
 export default function CommonPersonalInfo({ changeStep, CommonLengthData, CommonPersonalInfoData, setCommonPersonalInfoData, priceOfTheBill }) {
 
     const [pressed, setPressed] = useState(false)
@@ -91,24 +92,31 @@ export default function CommonPersonalInfo({ changeStep, CommonLengthData, Commo
     }
     return (
         <div className="section">
-            <div className='stepFour' >
-                <div className="stepTitle">{CommonLengthData.length < 10 ? "Step 3" : "Step 5"}</div>
+            <div className='row section flex-row' >
+                <div className='container'>
+                    <div className="stepTitle">{CommonLengthData.length < 10 ? "Step 3" : "Step 5"}</div>
+                    <div className='step startCol'>
 
-                <div className='step startCol'>
-                    <p>Name:</p>
-                    <input style={!validate("name") && pressed ? { backgroundColor: "#f5f5f5" } : {}} type="text" id="name" data-testid="name-input" name="name" value={values.name} placeholder='Name' className='input' onChange={handleChange} />
-                    <p>Email:</p>
-                    <input style={emailColor}
-                        type="text" id="email" data-testid="email-input" name="email" value={values.email} placeholder='Email' className='input' onChange={handleChange} />
-                    <p>Phone:</p>
-                    <input style={!validate("phone") && pressed ? { backgroundColor: "#f5f5f5" } : {}} type="number" id="phone" data-testid="phone-input" name="phone" placeholder='Phone' value={values.phone} className='input' onChange={handleChange} />
-                    <p>Message:</p>
-                    <input style={!validate("message") && pressed ? { backgroundColor: "#f5f5f5" } : {}} type="text" id="message" data-testid="message-input" name="message" placeholder='Message' value={values.message} className='input' onChange={handleChange} />
+                        <p>Name:</p>
+                        <input style={!validate("name") && pressed ? { backgroundColor: "#f5f5f5" } : {}} type="text" id="name" data-testid="name-input" name="name" value={values.name} placeholder='Name' className='input' onChange={handleChange} />
+                        <p>Email:</p>
+                        <input style={emailColor}
+                            type="text" id="email" data-testid="email-input" name="email" value={values.email} placeholder='Email' className='input' onChange={handleChange} />
+                        <p>Phone:</p>
+                        <input style={!validate("phone") && pressed ? { backgroundColor: "#f5f5f5" } : {}} type="number" id="phone" data-testid="phone-input" name="phone" placeholder='Phone' value={values.phone} className='input' onChange={handleChange} />
+                        <p>Message:</p>
+                        <textarea style={!validate("message") && pressed ? { backgroundColor: "#f5f5f5" } : {}} type="text" id="message" data-testid="message-input" name="message" placeholder='Message' value={values.message} className='input' onChange={handleChange} />
+                    </div>
                 </div>
-                <div className='container row align-middle'>
-                    <button onClick={() => LongOrShortForm()} style={{ width: "160px" }} className='btn-tertiary'>Back</button>
-                    <button onClick={() => determineContinue()} style={{ width: "160px" }} className={buttonGlow ? 'btn-primary' : 'btn-tertiary'}>Continue</button>
+                <div className='right col container'>
+                    <CostEvaluationDiv cost={priceOfTheBill} />
+                    <br></br>
+                    <div className='container row align-middle'>
+                        <button onClick={() => LongOrShortForm()} style={{ width: "160px" }} className='btn-tertiary'>Back</button>
+                        <button onClick={() => determineContinue()} style={{ width: "160px" }} className={buttonGlow ? 'btn-primary' : 'btn-tertiary'}>Continue</button>
+                    </div>
                 </div>
+
             </div>
         </div>
 
