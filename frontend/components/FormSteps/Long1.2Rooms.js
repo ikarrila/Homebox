@@ -52,7 +52,7 @@ export default function LongRooms({ changeStep, setLongRoomsData, LongRoomsData,
         <div className="section">
             <div className='long-living-details' >
                 <div className="stepTitle">3. Select your level of furnishing needs</div>
-                <div className='step fixedHeight'>
+                <div className='step fixedHeight container row'>
                     <div className='left'>
                         {renderImage()}</div>
                     <div className='right'>

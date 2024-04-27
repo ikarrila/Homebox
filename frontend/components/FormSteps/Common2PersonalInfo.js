@@ -88,7 +88,6 @@ export default function CommonPersonalInfo({ changeStep, CommonLengthData, Commo
         console.log(emailIsValid);
         setIsEmailBeingEdited(true);
         setTrackState(!trackState);
-
     };
     return (
         <div className="section">
@@ -96,33 +95,32 @@ export default function CommonPersonalInfo({ changeStep, CommonLengthData, Commo
                 <div className='container'>
                     <div className="stepTitle">{CommonLengthData.length < 10 ? "Step 3" : "Step 5"}</div>
                     <div className='step startCol'>
-                <div className='step startCol'>
-                    <p>Name:</p>
-                    <input style={!validate("name") && pressed ? { backgroundColor: "#f5f5f5" } : {}} type="text" id="name" data-testid="name-input" name="name" value={values.name} placeholder='Name' className={`input ${pressed && !validate("name") ? 'alert' : ''}`} onChange={handleChange} />
-                    {!validate("name") && pressed && <p>Please fill in your name</p>}
-                    <p>Email:</p>
-                    <input style={emailColor}
-                        type="text" id="email" data-testid="email-input" name="email" value={values.email} placeholder='Email' className={`input ${pressed && !validate("email") ? 'alert' : ''}`} onChange={handleChange} />
-                    {!validate("email") && pressed && <p>Please fill in your email</p>}
-                    <p>Phone:</p>
-                    <input style={!validate("phone") && pressed ? { backgroundColor: "#f5f5f5" } : {}} type="number" id="phone" data-testid="phone-input" name="phone" placeholder='Phone' value={values.phone} className={`input ${pressed && !validate("phone") ? 'alert' : ''}`} onChange={handleChange} />
-                    {!validate("phone") && pressed && <p>Please fill in your phone</p>}
-                    <p>Message:</p>
-                    <input type="text" id="message" data-testid="message-input" name="message" placeholder='Message' value={values.message} className='input' onChange={handleChange} />
-
-                </div>
-                <div className='right col container'>
-                    <CostEvaluationDiv cost={priceOfTheBill} />
-                    <br></br>
-                    <div className='container row align-middle'>
-                        <button onClick={() => LongOrShortForm()} style={{ width: "160px" }} className='btn-tertiary'>Back</button>
-                        <button onClick={() => determineContinue()} style={{ width: "160px" }} className={buttonGlow ? 'btn-primary' : 'btn-tertiary'}>Continue</button>
+                        <div className='step startCol'>
+                            <p>Name:</p>
+                            <input style={!validate("name") && pressed ? { backgroundColor: "#f5f5f5" } : {}} type="text" id="name" data-testid="name-input" name="name" value={values.name} placeholder='Name' className={`input ${pressed && !validate("name") ? 'alert' : ''}`} onChange={handleChange} />
+                            {!validate("name") && pressed && <p>Please fill in your name</p>}
+                            <p>Email:</p>
+                            <input style={emailColor}
+                                type="text" id="email" data-testid="email-input" name="email" value={values.email} placeholder='Email' className={`input ${pressed && !validate("email") ? 'alert' : ''}`} onChange={handleChange} />
+                            {!validate("email") && pressed && <p>Please fill in your email</p>}
+                            <p>Phone:</p>
+                            <input style={!validate("phone") && pressed ? { backgroundColor: "#f5f5f5" } : {}} type="number" id="phone" data-testid="phone-input" name="phone" placeholder='Phone' value={values.phone} className={`input ${pressed && !validate("phone") ? 'alert' : ''}`} onChange={handleChange} />
+                            {!validate("phone") && pressed && <p>Please fill in your phone</p>}
+                            <p>Message:</p>
+                            <input type="text" id="message" data-testid="message-input" name="message" placeholder='Message' value={values.message} className='input' onChange={handleChange} />
+                        </div>
+                    </div>
+                    <div className='right col container'>
+                        <CostEvaluationDiv cost={priceOfTheBill} />
+                        <br></br>
+                        <div className='container row align-middle'>
+                            <button onClick={() => LongOrShortForm()} style={{ width: "160px" }} className='btn-tertiary'>Back</button>
+                            <button onClick={() => determineContinue()} style={{ width: "160px" }} className={buttonGlow ? 'btn-primary' : 'btn-tertiary'}>Continue</button>
+                        </div>
                     </div>
                 </div>
-
             </div>
         </div >
-
     );
 
 }
