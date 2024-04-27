@@ -46,3 +46,5 @@ export default function ShortPackages({ handleChange, changeStep, setShortPackag
             {/* floating bar on right*/}
 
         </div >
+    )
+}

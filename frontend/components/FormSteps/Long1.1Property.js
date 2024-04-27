@@ -332,77 +332,42 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
     console.log(HowMany);
     return (
         <div className="section" >
-            <div className='stepTwo' >
-                <div className="stepTitle">2. Select your rooms to furnish & room size </div>
-                <div className='step' style={{ display: 'flex', flexDirection: 'row' }}>
+            <div className="stepTitle">2. Select your rooms to furnish & room size </div>
+            <div className='step'>
+                <div className='left'>
                     <div className='left'>
-                        <div style={colorField && (HowMany === '' || HowMany === 0) && !allowContinue ? { backgroundColor: "#f5f5f5" } : {}} >
+                        <label htmlFor="howMany">Number of Bedrooms  </label><br></br>
+                        <select value={HowMany} id="howMany" name="howMany" className={`input ${HowMany === '' && hasClickedContinue ? 'alert' : ''}`} onChange={(event) => { handleHowMany(event.target.value); }}>
+                            <option value="" disabled selected>Select Value</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                        {HowMany === '' && hasClickedContinue && <p style={{ maxWidth: '100%' }}>Please select the number of bedrooms</p>}
+                    </div>
+
+                    <br />
+
+                    {HowMany >= "1" && (
+                        <div className={`left roomList ${(!showMainBedroomSize &&
+                            !showBedroom2Size &&
+                            !showBedroom3Size &&
+                            !showBedroom4Size &&
+                            !showBedroom5Size &&
+                            !showBedroom6Size &&
+                            !showDiningRoomSize &&
+                            !showHomeOfficeSize &&
+                            !showKitchenSize &&
+                            !showLivingRoomSize &&
+                            !showOutdoorSize && hasClickedContinue) || hasClickedContinue && (bedSize === '' && showMainBedroomSize) || hasClickedContinue && (bedSize === '' && showMainBedroomSize) || hasClickedContinue && (HowMany >= 1 && !showMainBedroomSize) ? 'alert' : ''}`}>
                             <div>
-                                <label htmlFor="howMany">Number of Bedrooms  </label><br></br>
-                                <select value={HowMany} style={colorField && HowMany === '' ? { backgroundColor: "#f5f5f5" } : {}} id="howMany" name="howMany" className='miniselector' onChange={(event) => handleHowMany(event.target.value)}>
-                                    <option value="" disabled selected>Select Value</option>
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                </select>
-                            </div>
-                        </div>
-                        <br />
-                        {HowMany >= "1" && (
-                            <div style={colorField && (bedSize === '' && showMainBedroomSize) || colorField && (HowMany >= 1 && !showMainBedroomSize) ? { backgroundColor: "#f5f5f5" } : {}}>
-                                <div >
-                                    <input type="checkbox" checked={showMainBedroomSize} id="mainBedroom" name="mainBedroom" className='roomCheckbox' onChange={() => setShowMainBedroomSize(!showMainBedroomSize)} />
-                                    <label htmlFor="mainBedroom" > Main bedroom</label>
 
-                                </div>
-                                {showMainBedroomSize && (
-                                    <SmallMedLar value={bedSize} name={"mainBedroomSize"} onSizeSelect={setBedSize} />
-                                )}
-                                <br />
-                            </div>
-                        )}
-
-                        {HowMany >= "2" && (
-                            <div style={colorField && (bed2Size === '' && showBedroom2Size) || colorField && (HowMany >= 2 && !showBedroom2Size) ? { backgroundColor: "#f5f5f5" } : {}}>
-                                <div>
-                                    <input type="checkbox" checked={showBedroom2Size} id="bedroom2" name="bedroom2" className='roomCheckbox' onChange={() => setBedroom2Size(!showBedroom2Size)} />
-                                    <label htmlFor="bedroom2"> Bedroom 2</label>
-
-                                </div>
-                                {showBedroom2Size && (
-                                    <SmallMedLar value={bed2Size} name={"bedroom2Size"} onSizeSelect={setBed2Size} />
-                                )}
-                                <br />
-                            </div>
-                        )}
-
-                        {HowMany >= "3" && (
-                            <div style={colorField && (bed3Size === '' && showBedroom3Size) || colorField && (HowMany >= 3 && !showBedroom3Size) ? { backgroundColor: "#f5f5f5" } : {}}>
-                                <div>
-                                    <input type="checkbox" checked={showBedroom3Size} id="bedroom3" name="bedroom3" className='roomCheckbox' onChange={() => setBedroom3Size(!showBedroom3Size)} />
-                                    <label htmlFor="bedroom3"> Bedroom 3</label>
-                                </div>
-                                {showBedroom3Size && (
-                                    <SmallMedLar value={bed3Size} name={"bedroom3Size"} onSizeSelect={setBed3Size} />
-                                )}
-                                <br />
-                            </div>
-                        )}
-
-                        {HowMany >= "4" && (
-                            <div style={colorField && (bed4Size === '' && showBedroom4Size) || colorField && (HowMany >= 4 && !showBedroom4Size) ? { backgroundColor: "#f5f5f5" } : {}}>
-                                <div>
-                                    <input type="checkbox" checked={showBedroom4Size} id="bedroom4" name="bedroom4" className='roomCheckbox' onChange={() => setBedroom4Size(!showBedroom4Size)} />
-                                    <label htmlFor="bedroom4"> Bedroom 4</label>
-                                </div>
-                                {showBedroom4Size && (
-                                    <SmallMedLar value={bed4Size} name={"bedroom4Size"} onSizeSelect={setBed4Size} />
-                                )}
-                                <br />
+                                <input type="checkbox" checked={showMainBedroomSize} id="mainBedroom" name="mainBedroom" className='roomCheckbox' onChange={() => { setShowMainBedroomSize(!showMainBedroomSize); }} />
+                                <label htmlFor="mainBedroom" >Main bedroom</label>
                             </div>
                             {showMainBedroomSize && (
                                 <SmallMedLar value={bedSize} name={"mainBedroomSize"} onSizeSelect={setBedSize} />
@@ -424,14 +389,8 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
                             !showOutdoorSize && hasClickedContinue) || hasClickedContinue && (bed2Size === '' && showBedroom2Size) || hasClickedContinue && (HowMany >= 2 && !showBedroom2Size) ? 'alert' : ''}`}>
                             <div>
 
-
-                                    <input type="checkbox" checked={showBedroom5Size} id="bedroom5" name="bedroom5" className='roomCheckbox' onChange={() => setBedroom5Size(!showBedroom5Size)} />
-                                    <label htmlFor="bedroom5"> Bedroom 5</label>
-                                </div>
-                                {showBedroom5Size && (
-                                    <SmallMedLar value={bed5Size} name={"bedroom5Size"} onSizeSelect={setBed5Size} />
-                                )}
-                                <br />
+                                <input type="checkbox" checked={showBedroom2Size} id="bedroom2" name="bedroom2" className='roomCheckbox' onChange={() => { setBedroom2Size(!showBedroom2Size); }} />
+                                <label htmlFor="bedroom2">Bedroom 2</label>
                             </div>
                             {showBedroom2Size && (
                                 <SmallMedLar value={bed2Size} name={"bedroom2Size"} onSizeSelect={setBed2Size} />
@@ -453,16 +412,9 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
                             !showOutdoorSize && hasClickedContinue) || hasClickedContinue && (bed3Size === '' && showBedroom3Size) || hasClickedContinue && (bed3Size === '' && showBedroom3Size) || hasClickedContinue && (HowMany >= 3 && !showBedroom3Size) ? 'alert' : ''}`}>
                             <div>
 
-                        {HowMany >= "6" && (
-                            <div style={colorField && (bed6Size === '' && showBedroom6Size) || colorField && (HowMany >= 6 && !showBedroom6Size) ? { backgroundColor: "#f5f5f5" } : {}}>
-                                <div>
-                                    <input type="checkbox" checked={showBedroom6Size} id="bedroom6" name="bedroom6" className='roomCheckbox' onChange={() => setBedroom6Size(!showBedroom6Size)} />
-                                    <label htmlFor="bedroom6"> Bedroom 6</label>
-                                </div>
-                                {showBedroom6Size && (
-                                    <SmallMedLar value={bed6Size} name={"bedroom6Size"} onSizeSelect={setBed6Size} />
-                                )}
-                                <br />
+
+                                <input type="checkbox" checked={showBedroom3Size} id="bedroom3" name="bedroom3" className='roomCheckbox' onChange={() => { setBedroom3Size(!showBedroom3Size); }} />
+                                <label htmlFor="bedroom3">Bedroom 3</label>
                             </div>
                             {showBedroom3Size && (
                                 <SmallMedLar value={bed3Size} name={"bedroom3Size"} onSizeSelect={setBed3Size} />
@@ -483,59 +435,121 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
                             !showLivingRoomSize &&
                             !showOutdoorSize && hasClickedContinue) || hasClickedContinue && (bed4Size === '' && showBedroom4Size) || hasClickedContinue && (bed4Size === '' && showBedroom4Size) || hasClickedContinue && (HowMany >= 4 && !showBedroom4Size) ? 'alert' : ''}`}>
                             <div>
-                                <input type="checkbox" id="livingRoom" checked={showLivingRoomSize} name="livingRoom" className='roomCheckbox' onChange={() => setShowLivingRoomSize(!showLivingRoomSize)} />
-                                <label htmlFor="livingRoom" > Living Room</label>
-                                {showLivingRoomSize && (
-                                    <SmallMedLar value={livingRoomSize} name={"livingRoomSize"} onSizeSelect={setLivingRoomSize} />
-                                )}
+
+                                <input type="checkbox" checked={showBedroom4Size} id="bedroom4" name="bedroom4" className='roomCheckbox' onChange={() => { setBedroom4Size(!showBedroom4Size); }} />
+                                <label htmlFor="bedroom4">Bedroom 4</label>
                             </div>
+                            {showBedroom4Size && (
+                                <SmallMedLar value={bed4Size} name={"bedroom4Size"} onSizeSelect={setBed4Size} />
+                            )}
                         </div>
-                        <br />
-                        <div style={colorField && diningRoomSize === '' && showDiningRoomSize ? { backgroundColor: "#f5f5f5" } : {}}>
+                    )}
+
+                    {HowMany >= "5" && (
+                        <div className={`left roomList ${(!showMainBedroomSize &&
+                            !showBedroom2Size &&
+                            !showBedroom3Size &&
+                            !showBedroom4Size &&
+                            !showBedroom5Size &&
+                            !showBedroom6Size &&
+                            !showDiningRoomSize &&
+                            !showHomeOfficeSize &&
+                            !showKitchenSize &&
+                            !showLivingRoomSize &&
+                            !showOutdoorSize && hasClickedContinue) || hasClickedContinue && (bed5Size === '' && showBedroom5Size) || hasClickedContinue && (bed5Size === '' && showBedroom5Size) || hasClickedContinue && (HowMany >= 5 && !showBedroom5Size) ? 'alert' : ''}`}>
                             <div>
-                                <input type="checkbox" id="diningRoom" checked={showDiningRoomSize} name="diningRoom" className='roomCheckbox' onChange={() => setShowDiningRoomSize(!showDiningRoomSize)} />
-                                <label htmlFor="diningRoom"> Dining Room</label>
+
+                                <input type="checkbox" checked={showBedroom5Size} id="bedroom5" name="bedroom5" className='roomCheckbox' onChange={() => { setBedroom5Size(!showBedroom5Size); }} />
+                                <label htmlFor="bedroom5">Bedroom 5</label>
                             </div>
                             {showBedroom5Size && (
                                 <SmallMedLar value={bed5Size} name={"bedroom5Size"} onSizeSelect={setBed5Size} />
                             )}
                         </div>
-                        <br />
-                        <div style={colorField && kitchenSize === '' && showKitchenSize ? { backgroundColor: "#f5f5f5" } : {}}>
+                    )}
+
+                    {HowMany >= "6" && (
+                        <div className={`left roomList ${(!showMainBedroomSize &&
+                            !showBedroom2Size &&
+                            !showBedroom3Size &&
+                            !showBedroom4Size &&
+                            !showBedroom5Size &&
+                            !showBedroom6Size &&
+                            !showDiningRoomSize &&
+                            !showHomeOfficeSize &&
+                            !showKitchenSize &&
+                            !showLivingRoomSize &&
+                            !showOutdoorSize && hasClickedContinue) || hasClickedContinue && (bed6Size === '' && showBedroom6Size) || hasClickedContinue && (HowMany >= 6 && !showBedroom6Size) ? 'alert' : ''}`}>
                             <div>
-                                <input type="checkbox" id="kitchen" checked={showKitchenSize} name="kitchen" className='roomCheckbox' onChange={() => setShowKitchenSize(!showKitchenSize)} />
-                                <label htmlFor="kitchen"> Kitchen</label>
+
+                                <input type="checkbox" checked={showBedroom6Size} id="bedroom6" name="bedroom6" className='roomCheckbox' onChange={() => { setBedroom6Size(!showBedroom6Size); }} />
+                                <label htmlFor="bedroom6">Bedroom 6</label>
                             </div>
                             {showBedroom6Size && (
                                 <SmallMedLar value={bed6Size} name={"bedroom6Size"} onSizeSelect={setBed6Size} />
                             )}
                         </div>
-                        <br />
-                        <div style={colorField && homeOfficeSize === '' && showHomeOfficeSize ? { backgroundColor: "#f5f5f5" } : {}}>
-                            <div>
-                                <input type="checkbox" id="homeoffice" checked={showHomeOfficeSize} name="homeoffice" className='roomCheckbox' onChange={() => setShowHomeOfficeSize(!showHomeOfficeSize)} />
-                                <label htmlFor="homeoffice"> Home Office</label>
-                            </div>{showHomeOfficeSize && (
-                                <SmallMedLar value={homeOfficeSize} name={"homeofficeSize"} onSizeSelect={setHomeOfficeSize} />
-                            )}
+                    )}
+
+                    <div className={`left roomList ${(!showMainBedroomSize &&
+                        !showBedroom2Size &&
+                        !showBedroom3Size &&
+                        !showBedroom4Size &&
+                        !showBedroom5Size &&
+                        !showBedroom6Size &&
+                        !showDiningRoomSize &&
+                        !showHomeOfficeSize &&
+                        !showKitchenSize &&
+                        !showLivingRoomSize &&
+                        !showOutdoorSize && hasClickedContinue && HowMany === '' || HowMany === 0) || hasClickedContinue && livingRoomSize === '' && showLivingRoomSize ? 'alert' : ''}`}>
+                        <div>
+
+                            <input type="checkbox" id="livingRoom" checked={showLivingRoomSize} name="livingRoom" className='roomCheckbox' onChange={() => { setShowLivingRoomSize(!showLivingRoomSize); }} />
+                            <label htmlFor="livingRoom" >Living Room</label>
                         </div>
-                        <br />
-                        <div style={colorField && outdoorSize === '' && showOutdoorSize ? { backgroundColor: "#f5f5f5" } : {}}>
-                            <div>
-                                <input type="checkbox" id="outdoorSpace" checked={showOutdoorSize} name="outdoorSpace" className='roomCheckbox' onChange={() => setShowOutdoorSize(!showOutdoorSize)} />
-                                <label htmlFor="outdoorSpace"> Outdoor space</label>
-                            </div>{showOutdoorSize && (
-                                <SmallMedLar value={outdoorSize} name={"outdoorSpaceSize"} onSizeSelect={setOutdoorSize} />
-                            )}
-                        </div>
-                        <br />
+                        {showLivingRoomSize && (
+                            <SmallMedLar value={livingRoomSize} name={"livingRoomSize"} onSizeSelect={setLivingRoomSize} />
+                        )}
                     </div>
-                    <div className="left"></div>
-                    <div className='right'>
-                        <h2>Room Size Description</h2>
-                        <div dangerouslySetInnerHTML={{ __html: options[currentOption] }} />
-                        <button onClick={handlePrevious}>Previous</button> <br />
-                        <button onClick={handleNext}>Next</button>
+                    <div className={`left roomList ${(!showMainBedroomSize &&
+                        !showBedroom2Size &&
+                        !showBedroom3Size &&
+                        !showBedroom4Size &&
+                        !showBedroom5Size &&
+                        !showBedroom6Size &&
+                        !showDiningRoomSize &&
+                        !showHomeOfficeSize &&
+                        !showKitchenSize &&
+                        !showLivingRoomSize &&
+                        !showOutdoorSize && hasClickedContinue && HowMany === '' || HowMany === 0) || hasClickedContinue && diningRoomSize === '' && showDiningRoomSize ? 'alert' : ''}`}>
+                        <div>
+
+                            <input type="checkbox" id="diningRoom" checked={showDiningRoomSize} name="diningRoom" className='roomCheckbox' onChange={() => { setShowDiningRoomSize(!showDiningRoomSize); }} />
+                            <label htmlFor="diningRoom">Dining Room</label>
+                        </div>
+                        {showDiningRoomSize && (
+                            <SmallMedLar value={diningRoomSize} name={"diningRoomSize"} onSizeSelect={setDiningRoomSize} />
+                        )}
+                    </div>
+                    <div className={`left roomList ${(!showMainBedroomSize &&
+                        !showBedroom2Size &&
+                        !showBedroom3Size &&
+                        !showBedroom4Size &&
+                        !showBedroom5Size &&
+                        !showBedroom6Size &&
+                        !showDiningRoomSize &&
+                        !showHomeOfficeSize &&
+                        !showKitchenSize &&
+                        !showLivingRoomSize &&
+                        !showOutdoorSize && hasClickedContinue && HowMany === '' || HowMany === 0) || hasClickedContinue && kitchenSize === '' && showKitchenSize ? 'alert' : ''}`}>
+                        <div>
+
+                            <input type="checkbox" id="kitchen" checked={showKitchenSize} name="kitchen" className='roomCheckbox' onChange={() => { setShowKitchenSize(!showKitchenSize); }} />
+                            <label htmlFor="kitchen">Kitchen</label>
+                        </div>
+                        {showKitchenSize && (
+                            <SmallMedLar value={kitchenSize} name={"kitchenSize"} onSizeSelect={setKitchenSize} />
+                        )}
                     </div>
                     <div className={`left roomList ${(!showMainBedroomSize &&
                         !showBedroom2Size &&
@@ -622,12 +636,19 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
 
 
                 </div>
+                <div className='optionBox right'>
+                    <h2>Room Size Description</h2>
+
+                    <div dangerouslySetInnerHTML={{ __html: options[currentOption] }} />
+                    <button onClick={handlePrevious}>Previous</button> <br />
+                    <button onClick={handleNext}>Next</button>
+                </div>
             </div>
             <div className='container row align-middle'>
-                <button onClick={() => returnToPrevious('common-length')} style={{ width: "160px" }} className='btn-tertiary'>Back</button>
-                <button onClick={() => determineContinue('long-rooms')} style={{ width: "160px" }} className={allowContinue ? 'btn-primary' : 'btn-tertiary'}>Continue</button>
+                <button onClick={() => returnToPrevious('common-length')} className='btn-tertiary'>Back</button>
+                <button onClick={() => determineContinue('long-rooms')} className={allowContinue ? 'btn-primary' : 'btn-tertiary'}>Continue</button>
             </div>
 
         </div>
-    )
-}
+    );
+};
