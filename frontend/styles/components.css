@@ -66,7 +66,7 @@ body .main-container {
 
 /* These are for the card-pair in a landing page*/
 .card-container {
-    @apply relative w-full h-200 overflow-hidden flex row items-end;
+    @apply relative w-full h-200 overflow-hidden flex row items-end w-210 -right-16;
 }
 
 .card-container img {
@@ -90,7 +90,7 @@ body .main-container {
 }
 
 .textSide {
-    @apply text-nowrap items-start w-fit;
+    @apply whitespace-normal items-start w-200;
 }
 
 /* ELEMENT STYLES */

@@ -27,7 +27,7 @@ export default function Package({ setShortPackagesData, ShortPackagesData, click
         if (ShortPackagesData.standard) {
             setShowStandardPackage(1);
             setShowPremiumPackage(0.5);
-            console.log(showPremiumPackage, showStandardPackage);
+
         } else if (ShortPackagesData.premium) {
             setShowStandardPackage(0.5);
             setShowPremiumPackage(1);

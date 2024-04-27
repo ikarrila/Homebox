@@ -1,10 +1,10 @@
-
+import React from 'react'
 
 export default function CommonStart({ changeStep }) {
     return (
         <div className="section">
             <div className='stepZero step-container row startRow'  >
-                <div className='textSide section'>
+                <div className='textSide'>
                     <h1 data-testid="cost-calculator-header">Cost calculator</h1>
                     <h2>How does it work?</h2>
                     <p>Our calculator will evaluate the pricing step-by-step</p><br />
@@ -13,6 +13,7 @@ export default function CommonStart({ changeStep }) {
                     <p>However since every property is unique, the costs will range widely depending on your property size, furnishing quality, and timeline.</p>
                     <p>To get an accurate and custom quotation for furnishing your home, get a one-on-one consultation with our in-house designers</p>
                     <p>by submitting a design request.</p>
+                    <br></br>
                     <button onClick={() => changeStep('common-length')} className='btn-tertiary'>Get an evaluation</button>
                 </div>
 

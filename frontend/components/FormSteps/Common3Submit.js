@@ -9,7 +9,7 @@ export default function CommonSubmit({ changeStep,
     LongPropertyData,
     LongRoomsData,
     LongLivingDetailsData,
-    CommonPersonalInfoData
+    CommonPersonalInfoData,
 }) {
     const lengthParse = CommonLengthData.length > 12 ? '12+ months' : `${CommonLengthData.length} months`
     const [short, setShort] = useState(CommonLengthData && CommonLengthData.length < 10 || false)
@@ -19,12 +19,15 @@ export default function CommonSubmit({ changeStep,
     }
     console.log(ShortPackagesData);
     return (
-        <div className='section'>
-            <div className='submitPage' >
-                <div className="stepTitle ">{CommonLengthData.length < 10 ? "Step 4" : "Step 6"}</div>
+        <div className='section row'>
+            <div className='container'>
+                <div className="stepTitle container">{CommonLengthData.length < 10 ? "Step 4" : "Step 6"}</div>
                 <div className='stepRow section '>
-                    <div className="col left">
-                        <div className='step startCol' >
+
+                    <div style={{ paddingLeft: "30%" }} className="col left ">
+
+                        <div className='startCol' >
+
                             <p>Length of rental: {lengthParse}</p>
                             {
                                 short ? <p>Package: {ShortPackagesData && ShortPackagesData.standard ? ShortPackagesData.standard : ShortPackagesData.premium}</p>
@@ -32,7 +35,7 @@ export default function CommonSubmit({ changeStep,
                             }
                             <br />
                             {
-                                !short && <div className=' startCol'>
+                                !short && <div className='container startCol'>
 
                                     {LongPropertyData.bedSize && <p>Bedroom 1: {LongPropertyData.bedSize}</p>}
                                     {LongPropertyData.bed2Size && <p>Bedroom 2: {LongPropertyData.bed2Size}</p>}
@@ -52,14 +55,14 @@ export default function CommonSubmit({ changeStep,
                             {!short &&
                                 <div>
                                     <br />
-                                    <div className="startCol">
+                                    <div className="container startCol">
                                         <p>Link to home: {LongLivingDetailsData.homeLink}</p>
                                         <p>Details regarding home: {LongLivingDetailsData.livingDetails}</p>
                                     </div>
                                 </div>
                             }
                             <br />
-                            <div className="startCol">
+                            <div className="startCol container">
                                 <p>Name: {CommonPersonalInfoData.name}</p>
                                 <p>Email: {CommonPersonalInfoData.email}</p>
                                 <p>Phone: {CommonPersonalInfoData.phone}</p>
@@ -69,16 +72,22 @@ export default function CommonSubmit({ changeStep,
                     </div>
 
                 </div>
+            </div>
 
+
+
+
+            <div style={{ paddingRight: "400px" }} className="right col container ">
                 <div className='step startCol'>
                     <h2>Your budget is: </h2>
                     <h1>Estimated price</h1>
                     <h3>{priceOfTheBill} € / month</h3>
                 </div>
 
-                <div className='container row align-middle'>
-                    <button onClick={() => changeStep('common-personal-info')} className='btn-tertiary'>Back</button>
-                    <button onClick={() => submitAndMove()} className='btn-tertiary'>Send</button>
+                <br></br>
+                <div className='left row container'>
+                    <button onClick={() => changeStep('common-personal-info')} style={{ width: "160px" }} className='btn-tertiary'> Back</button>
+                    <button onClick={() => submitAndMove()} style={{ width: "160px" }} className={"btn-primary"}>Continue</button>
                 </div>
             </div>
         </div>

@@ -33,10 +33,7 @@
       "\\.(jpg|jpeg|png|gif|webp|svg)$": "<rootDir>/fileMock.js"
     },
     "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/test/Footer.test.js",
-      "/test/Portfolio.test.js",
-      "/test/CostCalculatorForm.test.js"
+      "/node_modules/"
     ]
   },
   "scripts": {

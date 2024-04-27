@@ -46,13 +46,22 @@ describe('Component', () => {
 });
 ```
 
+# Requirements
+
+1) To implement a cost-calculator form for short-term rental to calculate rental costs. It asks for rental duration, package choice (Standard or Premium), apartment size, and contact info. Then, it gives an estimated price and allows ordering. Short-term form is used for rentals from 3 to 10 months.
+
+2) To implement a cost-calculator form for long-term rental to calculate rental costs. It asks how long you want to rent, your budget, how many bedrooms you need, and their sizes (small/medium/large). You can choose a package level (Standard/Premium) and provide more details about the apartment if needed. After that, it gives you an estimated price right away and lets you place an order." 
+
+3) To implement a page for businesses packages. It should explain services for businesses, the process that is offered, and include a contact form for inquiries.
+
+4) To implement a contact page with contact form.
+
 | Requirement | Test file |  
 | ------ | ------ |  
 | Functional cost calculator | [MERGED] |  
 | Short-term form | [MERGED] |  
 | Long-term form | [MERGED] |  
-| Rental services landing page |  |  
-| FAQ page |  |  
+| Contact page | [MERGED]  | 
 
 ## Data objects
   
