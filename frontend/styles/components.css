@@ -85,6 +85,10 @@ body .main-container {
     @apply mr-4;
 }
 
+.roomList {
+    @apply rounded-md;
+}
+
 .textSide {
     @apply whitespace-normal items-start w-200;
 }
@@ -159,4 +163,9 @@ table td {
 
 .banner-text {
     @apply text-center rounded-lg p-4;
+}
+
+/* Multi-step form: if mandatory fiels are not answered and user tries to continue */
+.alert {
+    @apply border-red-500 border-1 bg-accent;
 }

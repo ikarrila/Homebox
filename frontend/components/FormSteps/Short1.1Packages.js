@@ -6,16 +6,16 @@ export default function ShortPackages({ handleChange, changeStep, setShortPackag
     const [clicked, setClicked] = useState(false);
     useEffect(() => {
         if (ShortPackagesData.standard || ShortPackagesData.premium) {
-            setSelectedValue(true)
+            setSelectedValue(true);
         }
     }, [ShortPackagesData, setShortPackagesData, priceOfTheBill])
 
     const continueForm = () => {
         if (selectedValue) {
-            changeStep('common-personal-info')
+            changeStep('common-personal-info');
         }
         else {
-            setClicked(true)
+            setClicked(true);
         }
     }
     const goBackAndReset = () => {
@@ -46,8 +46,3 @@ export default function ShortPackages({ handleChange, changeStep, setShortPackag
             {/* floating bar on right*/}
 
         </div >
-
-
-
-    )
-}
