@@ -1,6 +1,7 @@
-import Package from "../Packages"
-import { useState, useEffect, use } from "react"
-import CostEvaluationDiv from "../CostEvaluationDiv"
+import Package from "../Packages";
+import { useState, useEffect, use } from "react";
+import CostEvaluationDiv from "../CostEvaluationDiv";
+
 export default function ShortPackages({ handleChange, changeStep, setShortPackagesData, ShortPackagesData, setPriceOfTheBill, priceOfTheBill }) {
     const [selectedValue, setSelectedValue] = useState(false);
     const [clicked, setClicked] = useState(false);
@@ -8,7 +9,7 @@ export default function ShortPackages({ handleChange, changeStep, setShortPackag
         if (ShortPackagesData.standard || ShortPackagesData.premium) {
             setSelectedValue(true);
         }
-    }, [ShortPackagesData, setShortPackagesData, priceOfTheBill])
+    }, [ShortPackagesData, setShortPackagesData, priceOfTheBill]);
 
     const continueForm = () => {
         if (selectedValue) {
@@ -17,34 +18,31 @@ export default function ShortPackages({ handleChange, changeStep, setShortPackag
         else {
             setClicked(true);
         }
-    }
+    };
     const goBackAndReset = () => {
-        setShortPackagesData({})
-        setPriceOfTheBill(0)
-        changeStep('common-length')
-    }
+        setShortPackagesData({});
+        setPriceOfTheBill(0);
+        changeStep('common-length');
+    };
     return (
-        <div className='section row max-w-full' >
-            <div style={{ width: "300%" }} className="container ">
-                <Package setShortPackagesData={setShortPackagesData} ShortPackagesData={ShortPackagesData} />
-                {clicked && !selectedValue && <p className='error'>Please select a package</p>}
+        <div className='section row' >
+            <div className="container w-300">
+                <Package setShortPackagesData={setShortPackagesData} ShortPackagesData={ShortPackagesData} clicked={clicked} selectedValue={selectedValue} />
+                {clicked && !selectedValue && <p className='error center-text'>Please select a package</p>}
             </div>
 
-            {/* empty for spacing*/}
             <div className="container">
-                <div style={{ position: "fixed", alignContent: "right", left: "70%", top: "50%" }} className='col flex  '>
-                    <div className='col fixed w-24'>
+                <div className='col flex sideContainer'>
+                    <div className='col'>
                         <CostEvaluationDiv cost={priceOfTheBill} />
                         <br></br>
                     </div>
                     <div className="row">
-                        <button onClick={() => goBackAndReset()} style={{ width: "160px" }} className='btn-tertiary'>Back</button>
-                        <button onClick={() => continueForm()} style={{ width: "160px" }} className={ShortPackagesData.standard || ShortPackagesData.premium ? 'btn-primary' : 'btn-tertiary'}>Continue</button>
+                        <button onClick={() => goBackAndReset()} className='btn-tertiary w-160'>Back</button>
+                        <button onClick={() => continueForm()} className={ShortPackagesData.standard || ShortPackagesData.premium ? 'btn-primary' : 'btn-tertiary w-160'}>Continue</button>
                     </div>
                 </div>
             </div>
-            {/* floating bar on right*/}
-
         </div >
-    )
+    );
 }

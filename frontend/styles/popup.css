@@ -12,6 +12,8 @@
     height: 30%;
     overflow-y: none;
     border-radius: 10px;
+    width: 1/4;
+    height: 1/4;
   }
   
   .overlay {

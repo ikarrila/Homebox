@@ -2,7 +2,6 @@ import React from 'react';
 import Kuva from "../../pictures/toa-heftiba-FV3GConVSss-unsplash.jpg";
 import Image from 'next/image';
 import Link from 'next/link';
-import '/styles/styles.css';
 
 export default function Description() {
   return (

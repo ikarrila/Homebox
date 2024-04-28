@@ -40,7 +40,16 @@ body .main-container {
 
 /* FOOTER */
 .footer {
-    @apply bg-body w-screen mt-auto bottom-0 max-w-full;
+    @apply bg-primary mt-auto bottom-0 w-full text-white;
+
+}
+
+.footer-list {
+    @apply flex justify-around list-none p-0;
+}
+
+.copyright {
+    @apply text-center mt-4;
 }
 
 /* OTHER CONTAINERS */
@@ -108,10 +117,6 @@ body .main-container {
     @apply bg-white px-10 py-4 mb-2 rounded-md border h-14 w-full;
 }
 
-/* Checkboxes */
-input[type="checkbox"] {
-    @apply ml-3;
-}
 
 /* Radio buttons */
 input[type="radio"] {
@@ -138,7 +143,7 @@ table td {
 }
 
 .for-business-process {
-    @apply ml-3 mr-3 text-center p-1 py-2 max-w-4xl;
+    @apply ml-3 mr-3 text-center p-1 py-2 max-w-4xl flex justify-center;
 }
 
 .for-business-process-text {
@@ -168,4 +173,127 @@ table td {
 /* Multi-step form: if mandatory fiels are not answered and user tries to continue */
 .alert {
     @apply border-red-500 border-1 bg-accent;
+}
+
+.faas-bg {
+    @apply bg-rental;
+}
+
+.evaluation {
+    @apply flex justify-center
+}
+
+.center-text {
+    @apply text-center;
+}
+
+.furnishingSelector {
+    @apply flex items-center gap-10
+}
+
+.contactDetails {
+    @apply mt-4 flex flex-col items-center text-center
+}
+
+.contactAddress {
+    @apply text-primary font-bold;
+}
+
+
+.w-160 {
+    @apply w-40;
+}
+
+.pr-400 {
+    @apply pr-96;
+}
+
+.bgBusiness {
+    @apply bg-business;
+}
+
+.bgPartner {
+    @apply bg-partner;
+}
+
+.partnerLogo {
+    @apply w-48 h-24;
+}
+
+.textLink {
+    @apply text-primary font-semibold p-0;
+}
+
+.agreeTerms {
+    @apply mr-4;
+}
+
+.w-300 {
+    @apply w-[300%];
+}
+
+.sideContainer {
+    @apply fixed left-[70%] top-1/2
+}
+
+.processImg {
+    @apply object-cover max-w-52 max-h-52;
+}
+
+.textLeft {
+    @apply text-left
+}
+
+.titleBg {
+    @apply translate-y-[-400%] bg-primary text-white p-2.5 px-5 rounded-md opacity-85;
+
+}
+
+.sustainableBg {
+    @apply bg-sustainable;
+}
+
+.portfolio-structure {
+    @apply justify-between w-4/5
+}
+
+.case-study {
+    @apply flex flex-col items-center
+}
+
+.portfolioStyle {
+    @apply ml-5 border-b-1 pb-10 mb-10; 
+}
+
+.portfolioImgContainer{
+@apply flex justify-between items-center max-w-96 mr-12 flex-col;
+}
+
+.caseStudyImg {
+    @apply w-200
+}
+
+.portfolioPopup {
+    @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-5 flex flex-col items-center justify-center w-5/6 h-5/6;
+}
+
+.popupClose {
+    @apply self-end
+}
+
+.popupContainer {
+@apply flex max-h-[90%] w-full overflow-auto mt-5
+}
+
+.popupContent {
+    @apply flex-1 mr-5;
+}
+
+.popupImgContainer {
+    @apply flex-[2] flex items-center justify-center;
+}
+
+.popupImage {
+    @apply max-w-full max-h-full object-contain
+    
 }

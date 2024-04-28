@@ -2,7 +2,7 @@
 export default function CommonThanks(props) {
     return (
         <div className='section'>
-            <div className='submitPage col' >
+            <div className='col' >
                 <div className="stepTitle ">Thank you for submitting the request
                 </div>
                 <div className='step '>
@@ -10,6 +10,6 @@ export default function CommonThanks(props) {
                 </div>
             </div>
         </div>
-    )
+    );
 
 }

@@ -24,7 +24,3 @@
 .startRow {
     @apply items-start;
 }
-
-.text-color-white {
-    @apply text-white;
-}

@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 export default function CommonStart({ changeStep }) {
     return (
         <div className="section">
-            <div className='stepZero step-container row startRow'  >
+            <div className='step-container row startRow'  >
                 <div className='textSide'>
                     <h1 data-testid="cost-calculator-header">Cost calculator</h1>
                     <h2>How does it work?</h2>
@@ -25,5 +25,5 @@ export default function CommonStart({ changeStep }) {
             </div>
         </div>
 
-    )
+    );
 }

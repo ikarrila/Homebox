@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import '/styles/styles.css';
 import RentVsBuying from './RentingVsBuying';
 import CustomerReviews from './CustomerReviews';
 import RentingWithUs from './RentingWithUs';
@@ -11,7 +10,7 @@ import Sustainability from './Sustainability';
 export default function FAAS() {
     return (
         <div>
-            <div className="banner" style={{ backgroundImage: "url(/pictures/behzad-ghaffarian-nhWgZNV85LQ-unsplash.jpg)" }}>
+            <div className="banner faas-bg">
                 <div className="banner-text white-transparent">
                     <h2>Furniture Rental that Suits You</h2>
                     <p>From <b>3 months</b> to <b>3 years</b> on a monthly subscription</p>
@@ -36,9 +35,9 @@ export default function FAAS() {
             <div className="section col">
                 <RentingWithUs />
             </div>
-            <div className="section" style={{ display: 'flex', justifyContent: 'center' }}>
-                <div className="w-1/2">
-                    <h2 style={{ textAlign: 'center' }}>Get An Evaluation</h2>
+            <div className="section evaluation">
+                <div>
+                    <h2 className='center-text'>Get An Evaluation</h2>
                     <Link href="/FAAS/evaluation">
                         <div className="flex justify-start">
                             <button className="btn-primary">

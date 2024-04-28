@@ -63,7 +63,7 @@ export default function LongRooms({ changeStep, setLongRoomsData, LongRoomsData,
                                 <option value="Premium">Premium</option>
                             </select></div>
                         <div>
-                            {unSelected && <p>Please select rental length</p>}
+                            {unSelected && <p>Please select the level of furnishing needs</p>}
                             <h3>Standard:</h3>
                             <p>This new home will be functional with essential furniture. Decor is minimal as this option focuses on functions primarily.</p>
                             <h3>Premium:</h3>
@@ -73,9 +73,9 @@ export default function LongRooms({ changeStep, setLongRoomsData, LongRoomsData,
                     </div>
 
                 </div>
-                <div className='container row align-middle'>
-                    <button onClick={() => changeStep('long-property')} style={{ width: "160px" }} className='btn-tertiary'>Back</button>
-                    <button onClick={() => determineContinue()} style={{ width: "160px" }} className={selectedValue ? 'btn-primary' : 'btn-tertiary'}>Continue</button>
+                <div className='container row'>
+                    <button onClick={() => changeStep('long-property')} className='btn-tertiary w-160'>Back</button>
+                    <button onClick={() => determineContinue()} className={selectedValue ? 'btn-primary w-160' : 'btn-tertiary w-160'}>Continue</button>
                 </div>
             </div>
         </div >

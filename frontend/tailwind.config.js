@@ -33,7 +33,9 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         'faq': "url('../../frontend/public/pictures/faqImg.png')",
-
+        'rental': "url('/pictures/behzad-ghaffarian-nhWgZNV85LQ-unsplash.jpg')",
+        'business': "url('/pictures/patrick-perkins-3wylDrjxH-E-unsplash.jpg')",
+        'sustainable': "url('/pictures/patrick-perkins-3wylDrjxH-E-unsplash.jpg')",
       },
       height: {
         '200': '40rem',

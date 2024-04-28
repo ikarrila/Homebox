@@ -1,6 +1,7 @@
 
-import { useState } from "react"
-import CostEvaluationDiv from "../CostEvaluationDiv"
+import { useState } from "react";
+import CostEvaluationDiv from "../CostEvaluationDiv";
+
 export default function CommonLength({ changeStep, setCommonLengthData, CommonLengthData, priceOfTheBill }) {
     //State to determine if the user may pass to the next step
     const [unSelected, setUnSelected] = useState(false);
@@ -39,18 +40,18 @@ export default function CommonLength({ changeStep, setCommonLengthData, CommonLe
             <div className='step'>
                 <div className='left'>
                     <div className="left">
-                        <label htmlFor="urgency" className="block text-sm font-medium text-gray-700">
+                        <label htmlFor="urgency">
                             How soon would the rental services be required?
                         </label>
                         <textarea id="urgency" name="message" value={CommonLengthData.message} onChange={handleChange} placeholder="Your answer" className="input"></textarea>
                     </div>
                     <div className="left">
-                        <label htmlFor="rentalLength" className="block text-sm font-medium text-gray-700">
+                        <label htmlFor="rentalLength">
                             Rental Length
                         </label>
                         <div className="container col ">
                             <select id="rentalLength" className={`input ${unSelected ? 'alert' : ''}`} name="length" value={CommonLengthData.length} onChange={handleChange}
-                                style={unSelected && hasClickedContinue ? { backgroundColor: "#f5f5f5" } : {}} >
+                                style={unSelected ? { backgroundColor: "#f5f5f5" } : {}} >
                                 <option value={0} disabled selected>Select rental length</option>
                                 <option value={1}>1 month</option>
                                 <option value={2}>2 months</option>
@@ -66,14 +67,14 @@ export default function CommonLength({ changeStep, setCommonLengthData, CommonLe
                                 <option value={12}>12 months</option>
                                 <option value={13}>More than a year</option>
                             </select>
-
-
+                        </div>
+                        {unSelected && <p>Please select rental length</p>}
                         </div>
                         {unSelected && <p>Please select rental length</p>}
                     </div>
                     {(CommonLengthData.length > 10) &&
                         <div className="left" >
-                            <label htmlFor="budget" className="block text-sm font-medium text-gray-700">
+                            <label htmlFor="budget">
                                 What is the budget for the rental?
                             </label>
                             <textarea id="budget" type="number" name="budget" value={CommonLengthData.budget} onChange={handleChange} placeholder="Your answer" className="input" >
@@ -86,8 +87,8 @@ export default function CommonLength({ changeStep, setCommonLengthData, CommonLe
                     <CostEvaluationDiv cost={priceOfTheBill} />
                     <br></br>
                     <div className='right row'>
-                        <button onClick={() => changeStep('common-start')} style={{ width: "160px" }} className='btn-tertiary'> Back</button>
-                        <button onClick={() => determineContinue()} style={{ width: "160px" }} className={CommonLengthData.length ? 'btn-primary' : 'btn-tertiary'}>Continue</button>
+                        <button onClick={() => changeStep('common-start')} className='btn-tertiary w-160'> Back</button>
+                        <button onClick={() => determineContinue()} className={`${CommonLengthData.length ? 'btn-primary' : 'btn-tertiary'} w-160`}>Continue</button>
                     </div>
                 </div>
             </div>

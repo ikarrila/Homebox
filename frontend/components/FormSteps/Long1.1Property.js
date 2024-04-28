@@ -347,7 +347,7 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
                             <option value="5">5</option>
                             <option value="6">6</option>
                         </select>
-                        {HowMany === '' && hasClickedContinue && <p style={{ maxWidth: '100%' }}>Please select the number of bedrooms</p>}
+                        {HowMany === '' && hasClickedContinue && <p>Please select the number of bedrooms</p>}
                     </div>
 
                     <br />
@@ -636,7 +636,7 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
 
 
                 </div>
-                <div className='optionBox right'>
+                <div className='right'>
                     <h2>Room Size Description</h2>
 
                     <div dangerouslySetInnerHTML={{ __html: options[currentOption] }} />
@@ -644,7 +644,7 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
                     <button onClick={handleNext}>Next</button>
                 </div>
             </div>
-            <div className='container row align-middle'>
+            <div className='container row'>
                 <button onClick={() => returnToPrevious('common-length')} className='btn-tertiary'>Back</button>
                 <button onClick={() => determineContinue('long-rooms')} className={allowContinue ? 'btn-primary' : 'btn-tertiary'}>Continue</button>
             </div>
