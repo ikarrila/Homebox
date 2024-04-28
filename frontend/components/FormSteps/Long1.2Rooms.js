@@ -52,26 +52,30 @@ export default function LongRooms({ changeStep, setLongRoomsData, LongRoomsData,
         <div className="section">
             <div className='long-living-details' >
                 <div className="stepTitle">3. Select your level of furnishing needs</div>
-                <div className='step fixedHeight'>
+                <div className='step fixedHeight container row'>
                     <div className='left'>
                         {renderImage()}</div>
                     <div className='right'>
                         <div>
-                            <select className='selector' value={LongRoomsData} defaultValue="" id='furnishingSelector' onChange={handleSelectChange} style={unSelected ? { backgroundColor: '#cad1d8' } : {}}>
+                            <select className={`selector ${unSelected ? 'alert' : ''}`} value={LongRoomsData} defaultValue="" id='furnishingSelector' onChange={handleSelectChange} style={unSelected ? { backgroundColor: '#f5f5f5' } : {}}>
                                 <option value="" disabled>Select...</option>
                                 <option value="Standard">Standard</option>
                                 <option value="Premium">Premium</option>
                             </select></div>
                         <div>
+                            {unSelected && <p>Please select the level of furnishing needs</p>}
                             <h3>Standard:</h3>
                             <p>This new home will be functional with essential furniture. Decor is minimal as this option focuses on functions primarily.</p>
                             <h3>Premium:</h3>
                             <p>Your home will be fully decorated with accessories like throws, pillows and wall arts for all the rooms. Imagine the designs you see in a magazine.</p>   </div>
+
+
                     </div>
+
                 </div>
-                <div className='container row align-middle'>
-                    <button onClick={() => changeStep('long-property')} style={{ width: "160px" }} className='btn-tertiary'>Back</button>
-                    <button onClick={() => determineContinue()} style={{ width: "160px" }} className={selectedValue ? 'btn-primary' : 'btn-tertiary'}>Continue</button>
+                <div className='container row'>
+                    <button onClick={() => changeStep('long-property')} className='btn-tertiary w-160'>Back</button>
+                    <button onClick={() => determineContinue()} className={selectedValue ? 'btn-primary w-160' : 'btn-tertiary w-160'}>Continue</button>
                 </div>
             </div>
         </div >
