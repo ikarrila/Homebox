@@ -69,31 +69,31 @@ export default function CommonLength({ changeStep, setCommonLengthData, CommonLe
                             </select>
                         </div>
                         {unSelected && <p>Please select rental length</p>}
-                        </div>
-                        {unSelected && <p>Please select rental length</p>}
                     </div>
-                    {(CommonLengthData.length > 10) &&
-                        <div className="left" >
-                            <label htmlFor="budget">
-                                What is the budget for the rental?
-                            </label>
-                            <textarea id="budget" type="number" name="budget" value={CommonLengthData.budget} onChange={handleChange} placeholder="Your answer" className="input" >
-                            </textarea>
-                        </div>
-                    }
+                    {unSelected && <p>Please select rental length</p>}
                 </div>
-
-                <div className="right">
-                    <CostEvaluationDiv cost={priceOfTheBill} />
-                    <br></br>
-                    <div className='right row'>
-                        <button onClick={() => changeStep('common-start')} className='btn-tertiary w-160'> Back</button>
-                        <button onClick={() => determineContinue()} className={`${CommonLengthData.length ? 'btn-primary' : 'btn-tertiary'} w-160`}>Continue</button>
+                {(CommonLengthData.length > 10) &&
+                    <div className="left" >
+                        <label htmlFor="budget">
+                            What is the budget for the rental?
+                        </label>
+                        <textarea id="budget" type="number" name="budget" value={CommonLengthData.budget} onChange={handleChange} placeholder="Your answer" className="input" >
+                        </textarea>
                     </div>
-                </div>
+                }
             </div>
 
-        </div >
+            <div className="right">
+                <CostEvaluationDiv cost={priceOfTheBill} />
+                <br></br>
+                <div className='right row'>
+                    <button onClick={() => changeStep('common-start')} className='btn-tertiary w-160'> Back</button>
+                    <button onClick={() => determineContinue()} className={`${CommonLengthData.length ? 'btn-primary' : 'btn-tertiary'} w-160`}>Continue</button>
+                </div>
+            </div>
+        </div>
+
+
 
 
     );
