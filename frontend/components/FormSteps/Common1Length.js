@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import CostEvaluationDiv from "../CostEvaluationDiv";
+
 export default function CommonLength({ changeStep, setCommonLengthData, CommonLengthData, priceOfTheBill }) {
     //State to determine if the user may pass to the next step
     const [unSelected, setUnSelected] = useState(false);
@@ -66,12 +67,10 @@ export default function CommonLength({ changeStep, setCommonLengthData, CommonLe
                                 <option value={12}>12 months</option>
                                 <option value={13}>More than a year</option>
                             </select>
-
-
-
                         </div>
                         {unSelected && <p>Please select rental length</p>}
-
+                        </div>
+                        {unSelected && <p>Please select rental length</p>}
                     </div>
                     {(CommonLengthData.length > 10) &&
                         <div className="left" >

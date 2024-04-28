@@ -96,7 +96,6 @@ export default function CommonPersonalInfo({ changeStep, CommonLengthData, Commo
                 <div className='container'>
                     <div className="stepTitle">{CommonLengthData.length < 10 ? "Step 3" : "Step 5"}</div>
                     <div className='step startCol'>
-
                         <p>Name:</p>
                         <input style={!validate("name") && pressed ? { backgroundColor: "#f5f5f5" } : {}} type="text" id="name" data-testid="name-input" name="name" value={values.name} placeholder='Name' className={`input ${pressed && !validate("name") ? 'alert' : ''}`} onChange={handleChange} />
                         {!validate("name") && pressed && <p>Please fill in your name</p>}
@@ -121,10 +120,8 @@ export default function CommonPersonalInfo({ changeStep, CommonLengthData, Commo
                         <button onClick={() => determineContinue()} className={buttonGlow ? 'btn-primary w-160' : 'btn-tertiary w-160'}>Continue</button>
                     </div>
                 </div>
-
             </div>
         </div >
-
     );
 
 }
