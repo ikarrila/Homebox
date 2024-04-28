@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from 'react';
-import '/styles/styles.css';
 import Link from 'next/link';
 
 function FAQItem({ title, children }) {

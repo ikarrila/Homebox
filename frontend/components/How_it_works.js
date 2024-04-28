@@ -1,22 +1,8 @@
 'use client';
 import React from 'react';
-import Kuva from "../../pictures/di_an_h-g_8MrEZAvyE-unsplash.jpg";
-import Kuva2 from "../../pictures/kam-idris-_HqHX3LBN18-unsplash.jpg";
-import Image from 'next/image';
-import Link from 'next/link';
 import WhyUsDescription from './WhyUsDescription';
 import CustomerReviews from './CustomerReviews';
 
-const pStyle = {
-    fontSize: '20px',
-    whiteSpace: 'normal',
-    overflow: 'hidden'
-
-};
-const bStyle = {
-    fontSize: '30px',
-    whiteSpace: 'nowrap',
-};
 
 export default function How_it_works() {
     const sections = [
@@ -47,21 +33,21 @@ export default function How_it_works() {
     return (
         <div className='container col'>
             <h1 data-testid="heading">End to End Furnishing Services</h1>
-            <p className="text-center">From modern and sleek designs to cozy and comfortable pieces, we have everything you need to create the perfect atmosphere for your home or office. Let us help you bring your vision to life with our wide selection of high-quality furniture and expert design guidance. </p>
+            <p className="center-text">From modern and sleek designs to cozy and comfortable pieces, we have everything you need to create the perfect atmosphere for your home or office. Let us help you bring your vision to life with our wide selection of high-quality furniture and expert design guidance. </p>
             <div className='section col'>
                 <h2>The Process</h2>
                 {sections.map((section, i) => (
-                    <div key={i} className='container flex justify-between'>
-                        <div className='w-3/4'>
+                    <div key={i} className='container flex'>
+                        <div>
                             <h2>{section.headline}</h2>
-                            <ul style={{ listStyleType: 'disc' }}>
+                            <ul>
                                 {section.bulletPoints.map((point, j) => (
                                     <li key={j}>{point}</li>
                                 ))}
                             </ul>
                         </div>
-                        <div className='w-1/4' style={{ marginRight: '50px', marginBottom: '20px' }}>
-                            <img style={{ objectFit: 'cover', maxWidth: '200px', maxHeight: '200px' }} src="../../pictures/di_an_h-g_8MrEZAvyE-unsplash.jpg" alt="Description" />
+                        <div>
+                            <img className='processImg' src="../../pictures/di_an_h-g_8MrEZAvyE-unsplash.jpg" alt="Description" />
                         </div>
                     </div>
                 ))}

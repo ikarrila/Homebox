@@ -38,12 +38,12 @@ export default function FormUnified() {
     useEffect(() => {
         //Long price calculation
         if (CommonLengthData && CommonLengthData.length > 10) {
-            calculatePrice({ isShort: false, LongPropertyData, LongRoomsData, LongLivingDetailsData, setPriceOfTheBill })
+            calculatePrice({ isShort: false, LongPropertyData, LongRoomsData, LongLivingDetailsData, setPriceOfTheBill });
 
         }
         //Short price calculation
         if (CommonLengthData && CommonLengthData.length < 10) {
-            calculatePrice({ isShort: true, ShortPackagesData, setPriceOfTheBill })
+            calculatePrice({ isShort: true, ShortPackagesData, setPriceOfTheBill });
         }
     }, [CommonLengthData, ShortPackagesData, LongPropertyData, LongRoomsData, LongLivingDetailsData]);
 
@@ -78,7 +78,7 @@ export default function FormUnified() {
             message: CommonPersonalInfoData.message,
 
             roomChoices: {}
-        }
+        };
         if (CommonLengthData.length > 10) {
             //long form data added
             const data = {
@@ -102,9 +102,9 @@ export default function FormUnified() {
                 furnishingLevel: LongRoomsData,
                 homeLink: LongLivingDetailsData.homeLink,
                 livingDetails: LongLivingDetailsData.livingDetails
-            }
+            };
             try {
-                await send(data)
+                await send(data);
             } catch (error) {
                 console.error('Error:', error);
             }
@@ -114,15 +114,15 @@ export default function FormUnified() {
                 ...basicInfo,
                 source: "short-term rental",
                 furnishingLevel: ShortPackagesData.premium || ShortPackagesData.standard,
-            }
+            };
             //console.log(data)
             try {
-                await send(data)
+                await send(data);
             } catch (error) {
                 console.error('Error:', error);
             }
         }
-    }
+    };
 
 
 
