@@ -1,10 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useRef } from 'react';
-import '/styles/styles.css';
-import '/styles/popup.css';
-import { IoMdClose } from "react-icons/io";
+
 
 function Popup({ onClose }) {
 
@@ -16,8 +14,8 @@ function Popup({ onClose }) {
     };
 
     return (
-        <div className="popup  w-1/4 h-1/4" ref={popupRef}>
-            <div className="popup-content section col">
+        <div className="popup" ref={popupRef}>
+            <div className="section col">
                 <p>This is a Cookie Popup.</p>
                 <div className="section row">
                     <button className="btn-primary" onClick={handleAccept}>
