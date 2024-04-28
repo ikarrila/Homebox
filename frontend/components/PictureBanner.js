@@ -10,15 +10,15 @@ const PictureBanner = () => {
         '../../pictures/di_an_h-g_8MrEZAvyE-unsplash.jpg',
         '../../pictures/francesca-tosolini-DmOhItSo49k-unsplash.jpg'
     ];
-  
+
     const nextImage = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     };
-  
+
     const prevImage = () => {
         setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
     };
-  
+
     const backgroundImageStyle = {
         backgroundImage: `url(${images[currentIndex]})`,
         backgroundSize: 'cover',
@@ -37,27 +37,23 @@ const PictureBanner = () => {
         border: 'none',
         cursor: 'pointer',
         zIndex: 1,
-    }
-
-    const buttonContainerStyle = {
-        position: 'relative',
-        padding: '10px', 
     };
-  
+
+
+
     return (
-        <div className="flex justify-center items-center h-screen relative">
-            <button className="absolute bg-gray-300" style={{ ...buttonStyle, left: '10px' }} onClick={prevImage}>
+        <div>
+            <button style={{ ...buttonStyle, left: '10px' }} onClick={prevImage}>
                 <IoIosArrowBack />
             </button>
-        <div className="container mx-auto max-w-xl px-4 py-8 relative overflow-hidden h-1/2vh" style={backgroundImageStyle}>
-            {}
-        </div>
-            <button className="absolute bg-gray-300" style={{ ...buttonStyle, right: '10px' }} onClick={prevImage}>
+            <div className="container" style={backgroundImageStyle}>
+                { }
+            </div>
+            <button style={{ ...buttonStyle, right: '10px' }} onClick={prevImage}>
                 <IoIosArrowForward />
             </button>
         </div>
-    );    
-  };
-  
-  export default PictureBanner;
-  
+    );
+};
+
+export default PictureBanner;
