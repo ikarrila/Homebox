@@ -12,23 +12,14 @@
 @layer components {
   @import "components";
   @import "buttons";
-  @import "tools"; /* Cost calculator and short-term packages tool */
+  @import "tools";
   @import "faq";
+  @import "popup";
+  @import "portfolio";
 
 }
 
 @layer utilities {
   @import "utilities";
-
-  .max-w-xs {
-    max-width: 50rem;
-    margin: 0 auto;
-    text-align: left;
-    margin-left: 0;
-  }
-
-  .centered-image {
-    margin: 0 auto;
-  }
 
 }

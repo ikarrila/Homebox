@@ -24,3 +24,28 @@
 .startRow {
     @apply items-start;
 }
+
+.sideContainer {
+    @apply fixed left-[70%] top-1/2
+}
+
+.roomCheckbox {
+    @apply mr-4;
+}
+
+.roomList {
+    @apply rounded-md;
+}
+
+.textSide {
+    @apply whitespace-normal items-start w-200;
+}
+
+/* Multi-step form: if mandatory fiels are not answered and user tries to continue */
+.alert {
+    @apply border-red-500 border-1 bg-accent;
+}
+
+.smallmedlar {
+    @apply ml-10;
+}
