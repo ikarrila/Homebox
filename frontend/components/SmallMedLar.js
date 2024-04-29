@@ -10,7 +10,7 @@ function SmallMedLar({ name, onSizeSelect, value }) {
 
     return (
         <div>
-            <label style={{marginLeft: '40px'}} htmlFor={name}>Room size: </label>
+            <label className="smallmedlar" htmlFor={name}>Room size: </label>
             <select id={name} value={selectedSize} onChange={handleSizeSelect}>
                 <option value="">Select</option>
                 <option value="small">Small</option>
