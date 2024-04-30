@@ -48,3 +48,7 @@
 .pr-400 {
     @apply pr-96;
 }
+
+.centered {
+    @apply flex items-center justify-center;
+}
