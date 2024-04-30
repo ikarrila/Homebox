@@ -229,7 +229,14 @@ table td {
 /* HOW IT WORKS PAGE */
 
 .processImg {
-    @apply object-cover max-w-52 max-h-52;
+    @apply object-cover max-w-60 max-h-60;
 }
 
+.processMargin {
+    @apply mt-5 mb-5;
+}
+
+.processContainer {
+    @apply w-4/5 mt-4;
+}
 /* ------------------------------- */

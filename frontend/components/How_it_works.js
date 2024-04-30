@@ -32,13 +32,14 @@ export default function How_it_works() {
 
     return (
         <div className='container col'>
-            <h1 data-testid="heading">End to End Furnishing Services</h1>
-            <p className="center-text">From modern and sleek designs to cozy and comfortable pieces, we have everything you need to create the perfect atmosphere for your home or office. Let us help you bring your vision to life with our wide selection of high-quality furniture and expert design guidance. </p>
             <div className='section col'>
+                <h1 data-testid="heading">End to End Furnishing Services</h1>
+                <p className="center-text">From modern and sleek designs to cozy and comfortable pieces, we have everything you need to create the perfect atmosphere for your home or office. Let us help you bring your vision to life with our wide selection of high-quality furniture and expert design guidance. </p> </div>
+            <div className='processContainer'>
                 <h2>The Process</h2>
                 {sections.map((section, i) => (
-                    <div key={i} className='container flex'>
-                        <div>
+                    <div key={i} className='container flex processMargin'>
+                        <div className='left'>
                             <h2>{section.headline}</h2>
                             <ul>
                                 {section.bulletPoints.map((point, j) => (
@@ -46,7 +47,7 @@ export default function How_it_works() {
                                 ))}
                             </ul>
                         </div>
-                        <div>
+                        <div className='right centered'>
                             <img className='processImg' src="../../pictures/di_an_h-g_8MrEZAvyE-unsplash.jpg" alt="Description" />
                         </div>
                     </div>
