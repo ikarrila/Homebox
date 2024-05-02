@@ -13,7 +13,7 @@ export default function GetAnEvaluation() {
                             Transform your commercial or rental space effortlessly with our comprehensive turnkey furnishing solutions
                         </p>
                     </div>
-                    <Link href="/evaluation">
+                    <Link href="/FAAS/evaluation">
                         <div className="flex justify-start">
                             <button className="btn-primary">
                                 Get started
