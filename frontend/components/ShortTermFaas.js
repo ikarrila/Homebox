@@ -5,7 +5,7 @@ import '/styles/styles.css';
 export default function ShortTermFaas() {
     return (
         <div className="col-md-6">
-            <div>
+            <div style={{ backgroundColor: '#f2f2f2', padding: '10px', borderRadius: '10px', width: '95%', maxHeight: '320px', overflow: 'hidden' }}>
                 <h2>Short-Term Rental</h2>
                 <div className="max-w-xs">
                     <p className="text-center" style={{ textAlign: 'left' }}>
