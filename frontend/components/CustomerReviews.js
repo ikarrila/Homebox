@@ -7,7 +7,7 @@ export default function CustomerReviews() {
             <h2 style={{ textAlign: 'left' }}>Customer Reviews</h2>
             <div className="row">
                 <div className="col-md-4 px-4" style={{ marginBottom: '20px', overflow: 'hidden' }}>
-                    <div className="review-box" style={{ backgroundColor: '#f2f2f2', padding: '20px', borderRadius: '5px', width: '90%', height: '100%' }}>
+                    <div className="review-box" style={{ backgroundColor: '#f2f2f2', padding: '20px', borderRadius: '10px', width: '90%', height: '100%' }}>
                         <div style={{ textAlign: 'left' }}>
                             <p style={{ fontSize: '2.0em', maxWidth: '100%', overflowWrap: 'break-word' }}>"</p>
                         </div>
@@ -20,7 +20,7 @@ export default function CustomerReviews() {
                     </div>
                 </div>
                 <div className="col-md-4 px-4" style={{ marginBottom: '20px', overflow: 'hidden' }}>
-                    <div className="review-box" style={{ backgroundColor: '#f2f2f2', padding: '20px', borderRadius: '5px', width: '90%', height: '100%' }}>
+                    <div className="review-box" style={{ backgroundColor: '#f2f2f2', padding: '20px', borderRadius: '10px', width: '90%', height: '100%' }}>
                         <div style={{ textAlign: 'left' }}>
                             <p style={{ fontSize: '2.0em', maxWidth: '100%', overflowWrap: 'break-word' }}>"</p>
                         </div>
@@ -33,7 +33,7 @@ export default function CustomerReviews() {
                     </div>
                 </div>
                 <div className="col-md-4 px-4" style={{ marginBottom: '20px', overflow: 'hidden' }}>
-                    <div className="review-box" style={{ backgroundColor: '#f2f2f2', padding: '20px', borderRadius: '5px', width: '90%', height: '100%' }}>
+                    <div className="review-box" style={{ backgroundColor: '#f2f2f2', padding: '20px', borderRadius: '10px', width: '90%', height: '100%' }}>
                         <div style={{ textAlign: 'left' }}>
                             <p style={{ fontSize: '2.0em', maxWidth: '100%', overflowWrap: 'break-word' }}>"</p>
                         </div>
