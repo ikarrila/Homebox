@@ -7,6 +7,7 @@ import RentingWithUs from './RentingWithUs';
 import ShortTermFaas from './ShortTermFaas';
 import LongTermFaas from './LongTermFaas';
 import Sustainability from './Sustainability';
+import GetAnEvaluation from './GetAnEvaluation';
 
 export default function FAAS() {
     return (
@@ -36,17 +37,8 @@ export default function FAAS() {
             <div className="section col">
                 <RentingWithUs />
             </div>
-            <div className="section" style={{ display: 'flex', justifyContent: 'center' }}>
-                <div className="w-1/2">
-                    <h2 style={{ textAlign: 'center' }}>Get An Evaluation</h2>
-                    <Link href="/FAAS/evaluation">
-                        <div className="flex justify-start">
-                            <button className="btn-primary">
-                                Get An Evaluation
-                            </button>
-                        </div>
-                    </Link>
-                </div>
+            <div className="section col">
+                <GetAnEvaluation />
             </div>
             <div className="section col">
                 <CustomerReviews />
@@ -57,7 +49,6 @@ export default function FAAS() {
             <div>
                 <Sustainability />
             </div>
-
         </div>
     );
 }
