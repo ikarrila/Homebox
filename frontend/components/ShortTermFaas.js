@@ -4,8 +4,8 @@ import '/styles/styles.css';
 
 export default function ShortTermFaas() {
     return (
-        <div>
-            <div>
+        <div className="col-md-6">
+            <div style={{ backgroundColor: '#f2f2f2', padding: '10px', borderRadius: '10px', width: '95%', maxHeight: '320px', overflow: 'hidden' }}>
                 <h2>Short-Term Rental</h2>
                 <div>
                     <p>
