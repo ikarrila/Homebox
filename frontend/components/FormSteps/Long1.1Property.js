@@ -147,6 +147,16 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
         
         A <b>large-sized</b> outdoor space can fit a dining table with 6 chairs, 2 accent chairs and side table.<br>`
     ];
+
+    const roomNames = {
+        0: 'Living room',
+        1: 'Dining room',
+        2: 'Kitchen',
+        3: 'Bedroom',
+        4: 'Home office',
+        5: 'Outdoor space'
+    };
+
     console.log(bedSize, bed2Size, bed3Size, bed4Size, bed5Size, bed6Size, livingRoomSize, diningRoomSize, kitchenSize, homeOfficeSize, outdoorSize);
 
     const handlePrevious = () => {
@@ -163,20 +173,20 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
     const validate = () => {
         //if the choice is opened but not chosen then return false
         if ((showMainBedroomSize && bedSize === '') ||
-        (showBedroom2Size && bed2Size === '') ||
-        (showBedroom3Size && bed3Size === '') ||
-        (showBedroom4Size && bed4Size === '') ||
-        (showBedroom5Size && bed5Size === '') ||
-        (showBedroom6Size && bed6Size === '') ||
-        (showLivingRoomSize && livingRoomSize === '') ||
-        (showDiningRoomSize && diningRoomSize === '') ||
-        (showKitchenSize && kitchenSize === '') ||
-        (showHomeOfficeSize && homeOfficeSize === '') ||
-        (showOutdoorSize && outdoorSize === '') ||
-        (HowMany === '')
-    ) {
-        return false;
-    }
+            (showBedroom2Size && bed2Size === '') ||
+            (showBedroom3Size && bed3Size === '') ||
+            (showBedroom4Size && bed4Size === '') ||
+            (showBedroom5Size && bed5Size === '') ||
+            (showBedroom6Size && bed6Size === '') ||
+            (showLivingRoomSize && livingRoomSize === '') ||
+            (showDiningRoomSize && diningRoomSize === '') ||
+            (showKitchenSize && kitchenSize === '') ||
+            (showHomeOfficeSize && homeOfficeSize === '') ||
+            (showOutdoorSize && outdoorSize === '') ||
+            (HowMany === '')
+        ) {
+            return false;
+        }
         //checking whether all bedrooms are chosen according to the amount of bedrooms
         if (HowMany === 6) {
             if (!showBedroom6Size || bed6Size === '' ||
@@ -616,7 +626,7 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
 
                 </div>
                 <div className='right'>
-                    <h2>Room Size Description</h2>
+                    <h2>{roomNames[currentOption]} - Room Size Description</h2>
 
                     <div dangerouslySetInnerHTML={{ __html: options[currentOption] }} />
                     <button onClick={handlePrevious}>Previous</button> <br />
