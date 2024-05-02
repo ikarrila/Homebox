@@ -3,34 +3,46 @@ import '/styles/styles.css';
 
 export default function CustomerReviews() {
     return (
-        <div className='section'>
-            <h2 style={{ textAlign: 'center' }}>Customer Reviews</h2>
+        <div className='section' style={{ overflow: 'hidden' }}>
+            <h2 style={{ textAlign: 'left' }}>Customer Reviews</h2>
             <div className="row">
-                <div className="col-md-4">
-                    <div style={{ textAlign: 'center' }}>
-                        <p>*****</p>
-                    </div>
-                    <div className='review-left' style={{ textAlign: 'center' }}>
-                        <p>The service provided was exceptional! Their professionalism and product range exceeded my expectations. The equipment was top-notch and their customer service outstanding. Highly recommend!</p>
-                        <p>- James</p>
-                    </div>
-                </div>
-                <div className="col-md-4">
-                    <div style={{ textAlign: 'center' }}>
-                        <p>*****</p>
-                    </div>
-                    <div className='review-center' style={{ textAlign: 'center' }}>
-                        <p>Had an amazing experience! Their promptness and attention to detail were impressive. The equipment quality was top-notch, and their staff was friendly and helpful. Will definitely use them again!</p>
-                        <p>- Anna</p>
+                <div className="col-md-4 px-4" style={{ marginBottom: '20px', overflow: 'hidden' }}>
+                    <div className="review-box" style={{ backgroundColor: '#f2f2f2', padding: '20px', borderRadius: '5px', width: '90%', height: '100%' }}>
+                        <div style={{ textAlign: 'left' }}>
+                            <p style={{ fontSize: '2.0em', maxWidth: '100%', overflowWrap: 'break-word' }}>"</p>
+                        </div>
+                        <div className='review-left' style={{ textAlign: 'left' }}>
+                            <p style={{ whiteSpace: 'pre-line', marginBottom: '8px', maxWidth: '100%', overflowWrap: 'break-word' }}>The service provided was exceptional! Their professionalism and product range exceeded my expectations.</p>
+                            <p style={{ whiteSpace: 'pre-line', marginBottom: '8px', maxWidth: '100%', overflowWrap: 'break-word' }}>The equipment was top-notch and their customer service outstanding.</p>
+                            <p style={{ whiteSpace: 'pre-line', maxWidth: '100%', overflowWrap: 'break-word' }}>Highly recommend!</p>
+                            <p style={{ whiteSpace: 'pre-line', maxWidth: '100%', overflowWrap: 'break-word' }}>- Jenna</p>
+                        </div>
                     </div>
                 </div>
-                <div className="col-md-4">
-                    <div style={{ textAlign: 'center' }}>
-                        <p>*****</p>
+                <div className="col-md-4 px-4" style={{ marginBottom: '20px', overflow: 'hidden' }}>
+                    <div className="review-box" style={{ backgroundColor: '#f2f2f2', padding: '20px', borderRadius: '5px', width: '90%', height: '100%' }}>
+                        <div style={{ textAlign: 'left' }}>
+                            <p style={{ fontSize: '2.0em', maxWidth: '100%', overflowWrap: 'break-word' }}>"</p>
+                        </div>
+                        <div className='review-center' style={{ textAlign: 'left' }}>
+                            <p style={{ whiteSpace: 'pre-line', marginBottom: '8px', maxWidth: '100%', overflowWrap: 'break-word' }}>Had an amazing experience! Their promptness and attention to detail were impressive.</p>
+                            <p style={{ whiteSpace: 'pre-line', marginBottom: '8px', maxWidth: '100%', overflowWrap: 'break-word' }}>The equipment quality was top-notch, and their staff was friendly and helpful.</p>
+                            <p style={{ whiteSpace: 'pre-line', maxWidth: '100%', overflowWrap: 'break-word' }}>Will definitely use them again!</p>
+                            <p style={{ whiteSpace: 'pre-line', maxWidth: '100%', overflowWrap: 'break-word' }}>- Jack</p>
+                        </div>
                     </div>
-                    <div className='review-right' style={{ textAlign: 'center' }}>
-                        <p>The service went above and beyond! Their professionalism and dedication to customer satisfaction were remarkable. The equipment was in excellent condition, and their service was outstanding. Highly recommended!</p>
-                        <p>- Jack</p>
+                </div>
+                <div className="col-md-4 px-4" style={{ marginBottom: '20px', overflow: 'hidden' }}>
+                    <div className="review-box" style={{ backgroundColor: '#f2f2f2', padding: '20px', borderRadius: '5px', width: '90%', height: '100%' }}>
+                        <div style={{ textAlign: 'left' }}>
+                            <p style={{ fontSize: '2.0em', maxWidth: '100%', overflowWrap: 'break-word' }}>"</p>
+                        </div>
+                        <div className='review-right' style={{ textAlign: 'left' }}>
+                            <p style={{ whiteSpace: 'pre-line', marginBottom: '8px', maxWidth: '100%', overflowWrap: 'break-word' }}>The service went above and beyond! Their professionalism and dedication to customer satisfaction were remarkable.</p>
+                            <p style={{ whiteSpace: 'pre-line', marginBottom: '8px', maxWidth: '100%', overflowWrap: 'break-word' }}>The equipment was in excellent condition, and their service was outstanding.</p>
+                            <p style={{ whiteSpace: 'pre-line', maxWidth: '100%', overflowWrap: 'break-word' }}>Highly recommended!</p>
+                            <p style={{ whiteSpace: 'pre-line', maxWidth: '100%', overflowWrap: 'break-word' }}>- Will</p>
+                        </div>
                     </div>
                 </div>
             </div>
