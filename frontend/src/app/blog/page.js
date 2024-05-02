@@ -1,9 +1,9 @@
-import WhyUsDescription from "../../../components/WhyUsDescription";
+import RentingWithUs from "../../../components/RentingWithUs";
 export default function blog() {
     return (
         <div>
-            <h1>Blogi</h1>
-            <WhyUsDescription />
+            <h1>Blog</h1>
+            <RentingWithUs />
         </div>
     );
 }

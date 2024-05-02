@@ -53,7 +53,7 @@ export default function LongTermLanding() {
                     Long-term Rental
                 </h1>
                 <div className='section col'>
-                    <p> For longer periods, you can freely choose from a large selection of furniture and household items in our online catalogue. (link TBA) Create your dream home with the help of our interior designers!</p>
+                    <p> For longer periods, you can freely choose from a large selection of furniture and household items in our online catalogue. Create your dream home with the help of our interior designers!</p>
                     <div className='section row'>
                         <Link href="/FAAS/evaluation">
                             <button className="btn-primary">

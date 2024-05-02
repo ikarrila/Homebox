@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import WhyUsDescription from './WhyUsDescription';
+import RentingWithUs from './RentingWithUs';
 import CustomerReviews from './CustomerReviews';
 
 
@@ -53,7 +53,7 @@ export default function How_it_works() {
                     </div>
                 ))}
             </div>
-            <WhyUsDescription />
+            <RentingWithUs />
             <CustomerReviews />
         </div>
     );

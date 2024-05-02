@@ -32,7 +32,7 @@ export default function FAAS() {
                     <div className="faas-spacer-2"> </div>
                 </div>
             </div>
-            <div className="section col">
+            <div>
                 <RentingWithUs />
             </div>
             <div className="section evaluation">
