@@ -162,43 +162,21 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
     //Check if a value is chosen
     const validate = () => {
         //if the choice is opened but not chosen then return false
-        if (showMainBedroomSize && bedSize === '') {
-            return false;
-        }
-        if (showBedroom2Size && bed2Size === '') {
-            return false;
-        }
-        if (showBedroom3Size && bed3Size === '') {
-            return false;
-        }
-        if (showBedroom4Size && bed4Size === '') {
-            return false;
-        }
-        if (showBedroom5Size && bed5Size === '') {
-            return false;
-        }
-        if (showBedroom6Size && bed6Size === '') {
-            return false;
-        }
-        if (showLivingRoomSize && livingRoomSize === '') {
-            return false;
-        }
-        if (showDiningRoomSize && diningRoomSize === '') {
-            return false;
-        }
-        if (showKitchenSize && kitchenSize === '') {
-            return false;
-        }
-        if (showHomeOfficeSize && homeOfficeSize === '') {
-            return false;
-        }
-        if (showOutdoorSize && outdoorSize === '') {
-            return false;
-        }
-
-        if (HowMany === '') {
-            return false;
-        }
+        if ((showMainBedroomSize && bedSize === '') ||
+        (showBedroom2Size && bed2Size === '') ||
+        (showBedroom3Size && bed3Size === '') ||
+        (showBedroom4Size && bed4Size === '') ||
+        (showBedroom5Size && bed5Size === '') ||
+        (showBedroom6Size && bed6Size === '') ||
+        (showLivingRoomSize && livingRoomSize === '') ||
+        (showDiningRoomSize && diningRoomSize === '') ||
+        (showKitchenSize && kitchenSize === '') ||
+        (showHomeOfficeSize && homeOfficeSize === '') ||
+        (showOutdoorSize && outdoorSize === '') ||
+        (HowMany === '')
+    ) {
+        return false;
+    }
         //checking whether all bedrooms are chosen according to the amount of bedrooms
         if (HowMany === 6) {
             if (!showBedroom6Size || bed6Size === '' ||
@@ -393,7 +371,7 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
                                 <label htmlFor="bedroom2">Bedroom 2</label>
                             </div>
                             {showBedroom2Size && (
-                                <SmallMedLar value={bed2Size} name={"bedroom2Size"} onSizeSelect={setBed2Size} />
+                                <SmallMedLar DefaultValue={bed2Size} name={"bedroom2Size"} onSizeSelect={setBed2Size} />
                             )}
                         </div>
                     )}
@@ -566,7 +544,8 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
 
                             <input type="checkbox" id="homeoffice" checked={showHomeOfficeSize} name="homeoffice" className='roomCheckbox' onChange={() => { setHomeOfficeSize(!showHomeOfficeSize); }} />
                             <label htmlFor="homeoffice">Home Office</label>
-                        </div>{showHomeOfficeSize && (
+                        </div>
+                        {showHomeOfficeSize && (
                             <SmallMedLar value={homeOfficeSize} name={"homeofficeSize"} onSizeSelect={setHomeOfficeSize} />
                         )}
                     </div>
