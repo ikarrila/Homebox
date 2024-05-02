@@ -62,10 +62,10 @@ describe('calculatePrice', () => {
     expect(mockSetPriceOfTheBill).toHaveBeenCalledWith(399.99);
   });
   
-  it('sets the correct price for standard 2 Bedroom', () => {
+  it('sets the correct price for standard 2 Bedrooms', () => {
     const mockSetPriceOfTheBill = jest.fn();
     const ShortPackagesData = {
-      standard: "2 Bedroom (standard)"
+      standard: "2 Bedrooms (standard)"
     };
   
     calculatePrice({ isShort: true, setPriceOfTheBill: mockSetPriceOfTheBill, ShortPackagesData });
@@ -74,10 +74,10 @@ describe('calculatePrice', () => {
     expect(mockSetPriceOfTheBill).toHaveBeenCalledWith(499.99);
   });
   
-  it('sets the correct price for premium 2 Bedroom', () => {
+  it('sets the correct price for premium 2 Bedrooms', () => {
     const mockSetPriceOfTheBill = jest.fn();
     const ShortPackagesData = {
-      premium: "2 Bedroom (premium)"
+      premium: "2 Bedrooms (premium)"
     };
   
     calculatePrice({ isShort: true, setPriceOfTheBill: mockSetPriceOfTheBill, ShortPackagesData });
@@ -86,10 +86,10 @@ describe('calculatePrice', () => {
     expect(mockSetPriceOfTheBill).toHaveBeenCalledWith(599.99);
   });
   
-  it('sets the correct price for standard 3 Bedroom', () => {
+  it('sets the correct price for standard 3 Bedrooms', () => {
     const mockSetPriceOfTheBill = jest.fn();
     const ShortPackagesData = {
-      standard: "3 Bedroom (standard)"
+      standard: "3 Bedrooms (standard)"
     };
   
     calculatePrice({ isShort: true, setPriceOfTheBill: mockSetPriceOfTheBill, ShortPackagesData });
@@ -98,10 +98,10 @@ describe('calculatePrice', () => {
     expect(mockSetPriceOfTheBill).toHaveBeenCalledWith(699.99);
   });
   
-  it('sets the correct price for premium 3 Bedroom', () => {
+  it('sets the correct price for premium 3 Bedrooms', () => {
     const mockSetPriceOfTheBill = jest.fn();
     const ShortPackagesData = {
-      premium: "3 Bedroom (premium)"
+      premium: "3 Bedrooms (premium)"
     };
   
     calculatePrice({ isShort: true, setPriceOfTheBill: mockSetPriceOfTheBill, ShortPackagesData });
