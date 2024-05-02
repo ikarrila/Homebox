@@ -38,12 +38,12 @@ export default function FormUnified() {
     useEffect(() => {
         //Long price calculation
         if (CommonLengthData && CommonLengthData.length > 10) {
-            calculatePrice({ isShort: false, LongPropertyData, LongRoomsData, LongLivingDetailsData, setPriceOfTheBill })
+            calculatePrice({ isShort: false, LongPropertyData, LongRoomsData, LongLivingDetailsData, setPriceOfTheBill });
 
         }
         //Short price calculation
         if (CommonLengthData && CommonLengthData.length < 10) {
-            calculatePrice({ isShort: true, ShortPackagesData, setPriceOfTheBill })
+            calculatePrice({ isShort: true, ShortPackagesData, setPriceOfTheBill });
         }
     }, [CommonLengthData, ShortPackagesData, LongPropertyData, LongRoomsData, LongLivingDetailsData]);
 
@@ -63,7 +63,7 @@ export default function FormUnified() {
         });
         return response.json();
     };
-    console.log(ShortPackagesData)
+    // console.log(ShortPackagesData)
     const submitForm = async () => {
         //base data, modify with long/short data
         const basicInfo =
@@ -78,7 +78,7 @@ export default function FormUnified() {
             message: CommonPersonalInfoData.message,
 
             roomChoices: {}
-        }
+        };
         if (CommonLengthData.length > 10) {
             //long form data added
             const data = {
@@ -102,9 +102,9 @@ export default function FormUnified() {
                 furnishingLevel: LongRoomsData,
                 homeLink: LongLivingDetailsData.homeLink,
                 livingDetails: LongLivingDetailsData.livingDetails
-            }
+            };
             try {
-                await send(data)
+                await send(data);
             } catch (error) {
                 console.error('Error:', error);
             }
@@ -114,15 +114,15 @@ export default function FormUnified() {
                 ...basicInfo,
                 source: "short-term rental",
                 furnishingLevel: ShortPackagesData.premium || ShortPackagesData.standard,
-            }
-            console.log(data)
+            };
+            //console.log(data)
             try {
-                await send(data)
+                await send(data);
             } catch (error) {
                 console.error('Error:', error);
             }
         }
-    }
+    };
 
 
 
@@ -131,14 +131,14 @@ export default function FormUnified() {
     return (
         <div data-testid="cost-calculator-form" className='container multi-step-form'>
             {step === 'common-start' && <CommonStart changeStep={changeStep} />}
-            {step === 'common-length' && <CommonLength changeStep={changeStep} setCommonLengthData={setCommonLengthData} CommonLengthData={CommonLengthData} />}
+            {step === 'common-length' && <CommonLength changeStep={changeStep} setCommonLengthData={setCommonLengthData} CommonLengthData={CommonLengthData} priceOfTheBill={priceOfTheBill} />}
             {/*if length of rental 10> then show long form */}
-            {step === 'short-packages' && <ShortPackages changeStep={changeStep} setShortPackagesData={setShortPackagesData} ShortPackagesData={ShortPackagesData} />}
-            {step === 'long-property' && <LongProperty changeStep={changeStep} LongPropertyData={LongPropertyData} setLongPropertyData={setLongPropertyData} />}
-            {step === 'long-rooms' && <LongRooms changeStep={changeStep} LongRoomsData={LongRoomsData} setLongRoomsData={setLongRoomsData} />}
-            {step === 'long-living-details' && <LongLivingDetails changeStep={changeStep} LongLivingDetailsData={LongLivingDetailsData} setLongLivingDetailsData={setLongLivingDetailsData} />}
+            {step === 'short-packages' && <ShortPackages changeStep={changeStep} setShortPackagesData={setShortPackagesData} ShortPackagesData={ShortPackagesData} priceOfTheBill={priceOfTheBill} setPriceOfTheBill={setPriceOfTheBill} />}
+            {step === 'long-property' && <LongProperty changeStep={changeStep} LongPropertyData={LongPropertyData} setLongPropertyData={setLongPropertyData} priceOfTheBill={priceOfTheBill} />}
+            {step === 'long-rooms' && <LongRooms changeStep={changeStep} LongRoomsData={LongRoomsData} setLongRoomsData={setLongRoomsData} priceOfTheBill={priceOfTheBill} />}
+            {step === 'long-living-details' && <LongLivingDetails changeStep={changeStep} LongLivingDetailsData={LongLivingDetailsData} setLongLivingDetailsData={setLongLivingDetailsData} priceOfTheBill={priceOfTheBill} />}
             {/*continue common form*/}
-            {step === 'common-personal-info' && <CommonPersonalInfo changeStep={changeStep} CommonLengthData={CommonLengthData} CommonPersonalInfoData={CommonPersonalInfoData} setCommonPersonalInfoData={setCommonPersonalInfoData} />}
+            {step === 'common-personal-info' && <CommonPersonalInfo changeStep={changeStep} CommonLengthData={CommonLengthData} CommonPersonalInfoData={CommonPersonalInfoData} setCommonPersonalInfoData={setCommonPersonalInfoData} priceOfTheBill={priceOfTheBill} />}
             {step === 'common-submit' && <CommonSubmit changeStep={changeStep} submitForm={submitForm} priceOfTheBill={priceOfTheBill}
                 CommonLengthData={CommonLengthData}
                 ShortPackagesData={ShortPackagesData}

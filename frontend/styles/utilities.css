@@ -18,3 +18,37 @@
 .accent {
     @apply bg-accent;
 }
+
+.textLeft {
+    @apply text-left;
+}
+
+.textLink {
+    @apply text-primary font-semibold p-0;
+}
+
+.center-text {
+    @apply text-center;
+}
+
+/* For titles with primary colour bg */
+.titleBg {
+    @apply translate-y-[-400%] bg-primary text-white p-2.5 px-5 rounded-md opacity-85;
+
+}
+
+.w-300 {
+    @apply w-[300%];
+}
+
+.w-160 {
+    @apply w-40;
+}
+
+.pr-400 {
+    @apply pr-96;
+}
+
+.centered {
+    @apply flex items-center justify-center;
+}

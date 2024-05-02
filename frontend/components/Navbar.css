@@ -97,13 +97,13 @@
 
 /* logo */
 .placeholder-logo {
-  width: 75px;
-  height: 50px;
+  width: 160px;
+  height: 100px;
   display: flex;
   flex-shrink: 0;
   align-self: center;
-  background-color: white;
-  border-radius: 10px;
+  background-color: inherit;
+  border-radius: 0px;
 }
 
 /* dropdown holds the div which has the dropdown content */

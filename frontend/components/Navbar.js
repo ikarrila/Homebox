@@ -18,7 +18,7 @@ export default function Navbar() {
   return (
     <nav className='navbar'>
       <Link className='hidden' href="/"> <div className='placeholder-logo'>
-        <img className='logo-link' src={'../pictures/logo/png/logo-no-background.png'} alt="Logo" />
+        <img className='logo-link' src={'../pictures/logo/png/logo-white-transparent.png'} alt="Logo" />
       </div></Link>
       <Link className='nav-link' href="/">Home</Link>
       <div className="dropdown hidden">

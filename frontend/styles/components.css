@@ -33,15 +33,32 @@
     @apply px-0 max-w-5xl items-start;
 }
 
+/* ------------------------------- */
+
 /* only in layout.js */
 body .main-container {
     @apply flex-col min-h-screen flex;
 }
 
+
+/* ------------------------------- */
+
 /* FOOTER */
 .footer {
-    @apply bg-body w-screen mt-auto bottom-0 max-w-full;
+    @apply bg-primary mt-auto bottom-0 w-full text-white;
+
 }
+
+.footer-list {
+    @apply flex justify-around list-none p-0;
+}
+
+.copyright {
+    @apply text-center mt-4;
+}
+
+
+/* ------------------------------- */
 
 /* OTHER CONTAINERS */
 .image-container {
@@ -58,15 +75,16 @@ body .main-container {
     @apply ml-4;
 }
 
-
 .step-container {
     @apply flex flex-row items-start overflow-hidden;
 
 }
 
+/* ------------------------------- */
+
 /* These are for the card-pair in a landing page*/
 .card-container {
-    @apply relative w-full h-200 overflow-hidden flex row items-end;
+    @apply relative w-11/12 aspect-[1/1] overflow-hidden flex items-end p-20;
 }
 
 .card-container img {
@@ -81,15 +99,9 @@ body .main-container {
     @apply z-30 absolute mr-96;
 }
 
-.roomCheckbox {
-    @apply mr-4;
-}
 
-.textSide {
-    @apply text-nowrap items-start w-fit;
-}
+/* ------------------------------- */
 
-/* ELEMENT STYLES */
 /* Drop-down menus */
 .selector {
     @apply bg-white px-10 py-4 mb-2 rounded-md border h-14 w-full;
@@ -102,11 +114,6 @@ body .main-container {
 /* Input fields */
 .input {
     @apply bg-white px-10 py-4 mb-2 rounded-md border h-14 w-full;
-}
-
-/* Checkboxes */
-input[type="checkbox"] {
-    @apply ml-3;
 }
 
 /* Radio buttons */
@@ -123,27 +130,28 @@ table td {
     @apply p-1;
 }
 
-/* SUSTAINABILITY */
+/* ------------------------------- */
+
+/* SUSTAINABILITY COMPONENT */
 .sustainabilityText p {
     @apply py-2 max-w-3xl;
 }
 
-/* FAQ */
+.sustainableBg {
+    @apply bg-sustainable;
+}
+
+
+/* ------------------------------- */
+
+/* FAQ PAGE */
 .leftAligned {
     @apply max-w-lg;
 }
 
-.for-business-process {
-    @apply ml-3 mr-3 text-center p-1 py-2 max-w-4xl;
-}
+/* ------------------------------- */
 
-.for-business-process-text {
-    @apply mb-2 text-xs;
-}
-
-.for-bp-textbox {
-    @apply text-center p-2 rounded-lg flex-grow overflow-auto w-auto;
-}
+/* FAAS */
 
 .faas-spacer-2 {
     @apply h-4 w-20 flex-grow-2 justify-start;
@@ -160,3 +168,75 @@ table td {
 .banner-text {
     @apply text-center rounded-lg p-4;
 }
+
+.faas-bg {
+    @apply bg-rental;
+}
+
+.evaluation {
+    @apply flex justify-center
+}
+
+/* ------------------------------- */
+
+/* CONTACT FORM */
+
+.furnishingSelector {
+    @apply flex items-center gap-10
+}
+
+.contactDetails {
+    @apply mt-4 flex flex-col items-center text-center
+}
+
+.contactAddress {
+    @apply text-primary font-bold;
+}
+
+/* ------------------------------- */
+
+/* FOR BUSINESSES PAGE */
+
+.bgBusiness {
+    @apply bg-business;
+}
+
+.bgPartner {
+    @apply bg-partner;
+}
+
+.partnerLogo {
+    @apply w-48 h-24;
+}
+
+.agreeTerms {
+    @apply mr-4;
+}
+
+.for-business-process {
+    @apply ml-3 mr-3 text-center p-1 py-2 max-w-4xl flex justify-center;
+}
+
+.for-business-process-text {
+    @apply mb-2 text-xs;
+}
+
+.for-bp-textbox {
+    @apply text-center p-2 rounded-lg flex-grow overflow-auto w-auto;
+}
+
+/* ------------------------------- */
+/* HOW IT WORKS PAGE */
+
+.processImg {
+    @apply object-cover max-w-60 max-h-60;
+}
+
+.processMargin {
+    @apply mt-5 mb-5;
+}
+
+.processContainer {
+    @apply w-4/5 mt-4;
+}
+/* ------------------------------- */

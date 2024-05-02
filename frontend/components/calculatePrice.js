@@ -1,4 +1,5 @@
 const calculatePrice = ({ isShort, setPriceOfTheBill: setPriceOfTheBill, ShortPackagesData }) => {
+    if (!ShortPackagesData) return setPriceOfTheBill(0);
     if (isShort) {
         if (ShortPackagesData.standard) {
             if (ShortPackagesData.standard === "Studio (standard)") {
@@ -7,10 +8,10 @@ const calculatePrice = ({ isShort, setPriceOfTheBill: setPriceOfTheBill, ShortPa
             if (ShortPackagesData.standard === "1 Bedroom (standard)") {
                 setPriceOfTheBill(299.99);
             }
-            if (ShortPackagesData.standard === "2 Bedroom (standard)") {
+            if (ShortPackagesData.standard === "2 Bedrooms (standard)") {
                 setPriceOfTheBill(499.99);
             }
-            if (ShortPackagesData.standard === "3 Bedroom (standard)") {
+            if (ShortPackagesData.standard === "3 Bedrooms (standard)") {
                 setPriceOfTheBill(699.99);
             }
         }
@@ -21,10 +22,10 @@ const calculatePrice = ({ isShort, setPriceOfTheBill: setPriceOfTheBill, ShortPa
             if (ShortPackagesData.premium === "1 Bedroom (premium)") {
                 setPriceOfTheBill(399.99);
             }
-            if (ShortPackagesData.premium === "2 Bedroom (premium)") {
+            if (ShortPackagesData.premium === "2 Bedrooms (premium)") {
                 setPriceOfTheBill(599.99);
             }
-            if (ShortPackagesData.premium === "3 Bedroom (premium)") {
+            if (ShortPackagesData.premium === "3 Bedrooms (premium)") {
                 setPriceOfTheBill(799.99);
             }
         }

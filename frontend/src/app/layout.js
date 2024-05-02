@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
           <div className="flex-grow">
             {children}
           </div>
-          <CookiePopup />
+          {/*<CookiePopup /> */}  {/* To be added later if needed -Lotte */}
           <Footer /> {/* use Footer component */}
         </div>
       </body>

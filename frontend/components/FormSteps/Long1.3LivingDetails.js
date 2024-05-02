@@ -1,6 +1,6 @@
 import React, { useState, useEffect, use } from 'react';
 
-export default function LongLivingDetails({ changeStep, LongLivingDetailsData, setLongLivingDetailsData }) {
+export default function LongLivingDetails({ changeStep, LongLivingDetailsData, setLongLivingDetailsData, priceOfTheBill }) {
     const [url, setUrl] = useState("");
     const [info, setInfo] = useState("");
 
@@ -32,14 +32,14 @@ export default function LongLivingDetails({ changeStep, LongLivingDetailsData, s
                     <div className='left'>
                         <div className='left'>
                             <h4>Home details</h4>
-                            <label htmlFor="link" className="block text-sm font-medium text-gray-700">
+                            <label htmlFor="link">
                                 Link to a floor plan or house listing
                             </label>
                             <input type="url" name="homeLink" id="homeLink" placeholder="Enter link" className="input" value={url} onChange={handleChange} />
                         </div>
                         <div className='left'>
                             <h4>Living details</h4>
-                            <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+                            <label htmlFor="message">
                                 Give us any relevant additional information about your home and living situation.
                             </label>
                             <input type="text" name="livingDetails" id="livingDetails" placeholder="Enter information" className="input" value={info} onChange={handleChange} />
@@ -49,9 +49,9 @@ export default function LongLivingDetails({ changeStep, LongLivingDetailsData, s
                         <p>Give us more information to get an even more accurate evaluation!</p>
                     </div>
                 </div>
-                <div className='container row align-middle'>
-                    <button onClick={() => changeStep('long-rooms')} className='btn-tertiary'>Back</button>
-                    <button onClick={() => changeStep('common-personal-info')} className='btn-primary'>Continue</button>
+                <div className='container row'>
+                    <button onClick={() => changeStep('long-rooms')} className='btn-tertiary w-160'>Back</button>
+                    <button onClick={() => changeStep('common-personal-info')} className='btn-primary w-160'>Continue</button>
                 </div>
             </div>
         </div>);

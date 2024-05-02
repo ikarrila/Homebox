@@ -1,10 +1,15 @@
+const colors = require('tailwindcss/colors');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  purge: {
+    content: [
+      "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+      "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+      "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    ],
+  },
+  darkMode: false,
   theme: {
     extend: {
       flexGrow: {
@@ -28,7 +33,9 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         'faq': "url('../../frontend/public/pictures/faqImg.png')",
-
+        'rental': "url('/pictures/behzad-ghaffarian-nhWgZNV85LQ-unsplash.jpg')",
+        'business': "url('/pictures/patrick-perkins-3wylDrjxH-E-unsplash.jpg')",
+        'sustainable': "url('/pictures/patrick-perkins-3wylDrjxH-E-unsplash.jpg')",
       },
       height: {
         '200': '40rem',
@@ -39,9 +46,16 @@ module.exports = {
       width: {
         '200': '40rem',
         '110': '18rem',
+        '210': '1200px',
       },
       right: {
         'custom': '1rem',
+      },
+      maxWidth: {
+        '200': '50%',
+      },
+      padding: {
+        '200': '800px',
       },
       fontFamily: {
         'primary': ['Heebo', 'sans-serif'],
@@ -54,12 +68,11 @@ module.exports = {
       },
     },
     colors: {
+      ...colors,
       body: '#FFFFFF',
       primary: '#001f3f',
       secondary: '#89939E',
       accent: '#f5f5f5',
-      black: '#000000',
-      white: '#FFFFFF',
       lightGrey: '#F5F5F5',
       partner: '#f5f8fa',
     }

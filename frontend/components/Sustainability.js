@@ -3,7 +3,7 @@ import '/styles/styles.css';
 
 export default function Sustainability() {
     return (
-        <div className="section col" style={{ backgroundImage: `url(/pictures/patrick-perkins-3wylDrjxH-E-unsplash.jpg)` }}>
+        <div className="section col sustainableBg">
             <div>
                 <h2>Sustainable furniture</h2>
                 <div className='sustainabilityText'>

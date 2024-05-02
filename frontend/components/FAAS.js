@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import '/styles/styles.css';
 import RentVsBuying from './RentingVsBuying';
 import CustomerReviews from './CustomerReviews';
 import RentingWithUs from './RentingWithUs';
@@ -12,7 +11,7 @@ import GetAnEvaluation from './GetAnEvaluation';
 export default function FAAS() {
     return (
         <div>
-            <div className="banner" style={{ backgroundImage: "url(/pictures/behzad-ghaffarian-nhWgZNV85LQ-unsplash.jpg)" }}>
+            <div className="banner faas-bg">
                 <div className="banner-text white-transparent">
                     <h2>Furniture Rental that Suits You</h2>
                     <p>From <b>3 months</b> to <b>3 years</b> on a monthly subscription</p>
@@ -34,7 +33,7 @@ export default function FAAS() {
                     <div className="faas-spacer-2"> </div>
                 </div>
             </div>
-            <div className="section col">
+            <div>
                 <RentingWithUs />
             </div>
             <div className="section col">

@@ -1,19 +1,22 @@
-import { useState } from "react"
-export default function CommonLength({ changeStep, setCommonLengthData, CommonLengthData }) {
+
+import { useState } from "react";
+import CostEvaluationDiv from "../CostEvaluationDiv";
+export default function CommonLength({ changeStep, setCommonLengthData, CommonLengthData, priceOfTheBill }) {
     //State to determine if the user may pass to the next step
-    const [unSelected, setUnSelected] = useState(false)
+    const [unSelected, setUnSelected] = useState(false);
     //Determine which form to go to based on the length of the rental
-    const LongOrShortForm = () => { CommonLengthData.length > 10 ? changeStep('long-property') : changeStep('short-packages') }
+    const LongOrShortForm = () => { CommonLengthData.length > 10 ? changeStep('long-property') : changeStep('short-packages'); };
 
     //If the length is not selected, the user cannot continue
     const determineContinue = () => {
         if (!CommonLengthData.length || CommonLengthData.length === 0) {
-            setUnSelected(true)
+            setUnSelected(true);
+            setHasClickedContinue(true);
         }
         else {
-            LongOrShortForm()
+            LongOrShortForm();
         }
-    }
+    };
 
     //FUNCTION TO HANDLE INPUT CHANGE. in input field put name and value such as name="length" value={CommonLengthData.length}
     const handleChange = (e) => {
@@ -23,7 +26,11 @@ export default function CommonLength({ changeStep, setCommonLengthData, CommonLe
             [e.target.name]: e.target.value
         };
         setCommonLengthData(updatedState);
-    }
+        setHasClickedContinue(false);
+    };
+
+
+    const [hasClickedContinue, setHasClickedContinue] = useState(false);
 
 
     return (
@@ -32,17 +39,17 @@ export default function CommonLength({ changeStep, setCommonLengthData, CommonLe
             <div className='step'>
                 <div className='left'>
                     <div className="left">
-                        <label htmlFor="urgency" className="block text-sm font-medium text-gray-700">
+                        <label htmlFor="urgency">
                             How soon would the rental services be required?
                         </label>
                         <textarea id="urgency" name="message" value={CommonLengthData.message} onChange={handleChange} placeholder="Your answer" className="input"></textarea>
                     </div>
                     <div className="left">
-                        <label htmlFor="rentalLength" className="block text-sm font-medium text-gray-700">
+                        <label htmlFor="rentalLength">
                             Rental Length
                         </label>
                         <div className="container col ">
-                            <select id="rentalLength" className="input " name="length" value={CommonLengthData.length} onChange={handleChange}
+                            <select id="rentalLength" className={`input ${unSelected ? 'alert' : ''}`} name="length" value={CommonLengthData.length} onChange={handleChange}
                                 style={unSelected ? { backgroundColor: "#f5f5f5" } : {}} >
                                 <option value={0} disabled selected>Select rental length</option>
                                 <option value={1}>1 month</option>
@@ -60,12 +67,15 @@ export default function CommonLength({ changeStep, setCommonLengthData, CommonLe
                                 <option value={13}>More than a year</option>
                             </select>
 
+
+
                         </div>
+                        {unSelected && <p>Please select rental length</p>}
 
                     </div>
                     {(CommonLengthData.length > 10) &&
                         <div className="left" >
-                            <label htmlFor="budget" className="block text-sm font-medium text-gray-700">
+                            <label htmlFor="budget">
                                 What is the budget for the rental?
                             </label>
                             <textarea id="budget" type="number" name="budget" value={CommonLengthData.budget} onChange={handleChange} placeholder="Your answer" className="input" >
@@ -75,17 +85,18 @@ export default function CommonLength({ changeStep, setCommonLengthData, CommonLe
                 </div>
 
                 <div className="right">
-                    <p>We will calculate the potential cost based on the duration and size of apartment to be furnished.</p>
-                    <p>Give us more information to get an even more accurate evaluation!</p>
+                    <CostEvaluationDiv cost={priceOfTheBill} />
+                    <br></br>
+                    <div className='right row'>
+                        <button onClick={() => changeStep('common-start')} className='btn-tertiary w-160'> Back</button>
+                        <button onClick={() => determineContinue()} className={`${CommonLengthData.length ? 'btn-primary' : 'btn-tertiary'} w-160`}>Continue</button>
+                    </div>
                 </div>
             </div>
-            <div className='container row align-middle'>
-                <button onClick={() => changeStep('common-start')} className='btn-tertiary'> Back</button>
-                <button onClick={() => determineContinue()} className={CommonLengthData.length ? 'btn-primary' : 'btn-tertiary'}>Continue</button>
-            </div>
+
         </div >
 
 
-    )
+    );
 
 }

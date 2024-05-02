@@ -1,22 +1,25 @@
 "use client";
 
 import React, { useState } from 'react';
-import { useRef, useEffect } from 'react';
-import '/styles/styles.css';
-import '/styles/popup.css';
-import { IoMdClose } from "react-icons/io";
+import { useRef } from 'react';
+
 
 function Popup({ onClose }) {
 
     const popupRef = useRef(null);
 
+    const handleAccept = () => {
+        document.cookie = "cookiesAccepted=true; path=/; max-age=31536000";
+        onClose();
+    };
+
     return (
-        <div className="popup  w-1/2 h-1/2" ref={popupRef}>
-            <div className="popup-content section col">
+        <div className="popup" ref={popupRef}>
+            <div className="section col">
                 <p>This is a Cookie Popup.</p>
                 <div className="section row">
-                    <button className="btn-primary" onClick={onClose}>
-                    Accept Cookies & Go
+                    <button className="btn-primary" onClick={handleAccept}>
+                        Accept Cookies & Go
                     </button>
                 </div>
             </div>
@@ -24,8 +27,11 @@ function Popup({ onClose }) {
     );
 }
 
-export default function LongTermLanding() {
-    const [popupOpen, setPopupOpen] = useState(true);
+export default function CookiePopup() {
+    //check if cookie exists
+    const cookiesAccepted = document.cookie ? document.cookie.split('; ').find(row => row.startsWith('cookiesAccepted')).split('=')[1] : "false";
+    const [popupOpen, setPopupOpen] = useState(cookiesAccepted !== "true");
+
     return (
         <div className='section col'>
             {popupOpen && <Popup onClose={() => setPopupOpen(false)} />}

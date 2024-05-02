@@ -49,19 +49,11 @@ export default function LongTermLanding() {
     return (
         <><PictureBanner />
             <div className='section col'>
-                <h1 className="absolute"
-                    style={{
-                        transform: 'translateY(-400%)',
-                        backgroundColor: 'rgb(0,31,63)',
-                        color: 'rgb(255,255,255)',
-                        padding: '10px 20px',
-                        borderRadius: '10px',
-                        opacity: '0.86'
-                    }}>
+                <h1 className='titleBg'>
                     Long-term Rental
                 </h1>
                 <div className='section col'>
-                    <p> For longer periods, you can freely choose from a large selection of furniture and household items in our online catalogue. (link TBA) Create your dream home with the help of our interior designers!</p>
+                    <p> For longer periods, you can freely choose from a large selection of furniture and household items in our online catalogue. Create your dream home with the help of our interior designers!</p>
                     <div className='section row'>
                         <Link href="/FAAS/evaluation">
                             <button className="btn-primary">
@@ -70,7 +62,7 @@ export default function LongTermLanding() {
                         </Link>
                     </div>
                 </div>
-            </div>
+            </div >
             <CustomerReviews />
             <RentingVsBuying />
         </>
