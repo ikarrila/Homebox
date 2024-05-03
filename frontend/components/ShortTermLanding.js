@@ -7,6 +7,7 @@ import RentingVsBuying from './RentingVsBuying';
 export default function ShortTermLanding() {
     return (
         <div className='container col'>
+
             <div className="banner short-term-bg">
                 <div className="banner-text white-transparent">
                     <h2>Short-term Rental</h2>
@@ -24,4 +25,3 @@ export default function ShortTermLanding() {
         </div>
     );
 };
-

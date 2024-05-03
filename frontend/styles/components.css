@@ -77,14 +77,18 @@ body .main-container {
 
 .step-container {
     @apply flex flex-row items-start overflow-hidden;
-
 }
+.assistImg {
+    @apply row flex max-h-svh;
+}
+
+
 
 /* ------------------------------- */
 
 /* These are for the card-pair in a landing page*/
 .card-container {
-    @apply relative w-11/12 aspect-[1/1] overflow-hidden flex items-end p-20;
+    @apply relative w-11/12 aspect-[1/1] overflow-hidden flex items-end p-0 m-0 -top-40 ml-20;
 }
 
 .card-container img {
@@ -97,6 +101,21 @@ body .main-container {
 
 .card-container img:nth-of-type(2) {
     @apply z-30 absolute mr-96;
+}
+
+.card-container2 {
+    @apply relative min-h-96     overflow-hidden flex -left-8 top-1 p-20 m-0  ;
+}
+.card-container2 img {
+    @apply max-w-96 min-h-fit object-cover mb-20 overflow-x-hidden ;
+}
+
+.card-container2 img:nth-of-type(1) {
+    @apply z-10 absolute bottom-1 overflow-x-hidden;
+}
+
+.card-container2 img:nth-of-type(2) {
+    @apply z-30 absolute left-1 overflow-x-hidden;
 }
 
 

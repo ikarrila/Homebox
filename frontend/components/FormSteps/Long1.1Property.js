@@ -488,7 +488,7 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
                         !showHomeOfficeSize &&
                         !showKitchenSize &&
                         !showLivingRoomSize &&
-                        !showOutdoorSize && hasClickedContinue && HowMany === '' || HowMany === 0) || hasClickedContinue && livingRoomSize === '' && showLivingRoomSize ? 'alert' : ''}`}>
+                        !showOutdoorSize && hasClickedContinue && HowMany === '') || hasClickedContinue && livingRoomSize === '' && showLivingRoomSize ? 'alert' : ''}`}>
                         <div>
 
                             <input type="checkbox" id="livingRoom" checked={showLivingRoomSize} name="livingRoom" className='roomCheckbox' onChange={() => { setShowLivingRoomSize(!showLivingRoomSize); }} />
@@ -508,7 +508,7 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
                         !showHomeOfficeSize &&
                         !showKitchenSize &&
                         !showLivingRoomSize &&
-                        !showOutdoorSize && hasClickedContinue && HowMany === '' || HowMany === 0) || hasClickedContinue && diningRoomSize === '' && showDiningRoomSize ? 'alert' : ''}`}>
+                        !showOutdoorSize && hasClickedContinue && HowMany === '') || hasClickedContinue && diningRoomSize === '' && showDiningRoomSize ? 'alert' : ''}`}>
                         <div>
 
                             <input type="checkbox" id="diningRoom" checked={showDiningRoomSize} name="diningRoom" className='roomCheckbox' onChange={() => { setShowDiningRoomSize(!showDiningRoomSize); }} />
@@ -528,7 +528,7 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
                         !showHomeOfficeSize &&
                         !showKitchenSize &&
                         !showLivingRoomSize &&
-                        !showOutdoorSize && hasClickedContinue && HowMany === '' || HowMany === 0) || hasClickedContinue && kitchenSize === '' && showKitchenSize ? 'alert' : ''}`}>
+                        !showOutdoorSize && hasClickedContinue && HowMany === '') || hasClickedContinue && kitchenSize === '' && showKitchenSize ? 'alert' : ''}`}>
                         <div>
 
                             <input type="checkbox" id="kitchen" checked={showKitchenSize} name="kitchen" className='roomCheckbox' onChange={() => { setShowKitchenSize(!showKitchenSize); }} />
@@ -548,11 +548,11 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
                         !showHomeOfficeSize &&
                         !showKitchenSize &&
                         !showLivingRoomSize &&
-                        !showOutdoorSize && hasClickedContinue && HowMany === '' || HowMany === 0) || hasClickedContinue && homeOfficeSize === '' && showHomeOfficeSize ? 'alert' : ''}`}>
+                        !showOutdoorSize && hasClickedContinue && HowMany === '') || hasClickedContinue && homeOfficeSize === '' && showHomeOfficeSize ? 'alert' : ''}`}>
                         <div>
 
-                            <input type="checkbox" id="homeOffice" checked={showHomeOfficeSize} name="homeOffice" className='roomCheckbox' onChange={() => { setHomeOfficeSize(!showHomeOfficeSize); }} />
-                            <label htmlFor="homeOffice">Home Office</label>
+                            <input type="checkbox" id="homeoffice" checked={showHomeOfficeSize} name="homeoffice" className='roomCheckbox' onChange={() => { setShowHomeOfficeSize(!showHomeOfficeSize); }} />
+                            <label htmlFor="homeoffice">Home Office</label>
                         </div>
                         {showHomeOfficeSize && (
                             <SmallMedLar value={homeOfficeSize} name={"homeOfficeSize"} onSizeSelect={setHomeOfficeSize} />
@@ -568,14 +568,14 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
                         !showHomeOfficeSize &&
                         !showKitchenSize &&
                         !showLivingRoomSize &&
-                        !showOutdoorSize && hasClickedContinue && HowMany === '' || HowMany === 0) || hasClickedContinue && outdoorSize === '' && showOutdoorSize ? 'alert' : ''}`}>
+                        !showOutdoorSize && hasClickedContinue && HowMany === '') || hasClickedContinue && outdoorSize === '' && showOutdoorSize ? 'alert' : ''}`}>
                         <div>
 
-                            <input type="checkbox" id="outdoorSpace" checked={showOutdoorSize} name="outdoorSpace" className='roomCheckbox' onChange={() => { setOutdoorSize(!showOutdoorSize); }} />
-                            <label htmlFor="outdoorSpace">Outdoor space</label>
+                            <input type="checkbox" id="outdoorSize" checked={showOutdoorSize} name="outdoorSize" className='roomCheckbox' onChange={() => { setShowOutdoorSize(!showOutdoorSize); }} />
+                            <label htmlFor="outdoorSize">Outdoor space</label>
                         </div>
                         {showOutdoorSize && (
-                            <SmallMedLar value={outdoorSize} name={"outdoorSpaceSize"} onSizeSelect={setOutdoorSize} />
+                            <SmallMedLar value={outdoorSize} name={"outdoorSize"} onSizeSelect={setOutdoorSize} />
                         )}
 
                     </div>
