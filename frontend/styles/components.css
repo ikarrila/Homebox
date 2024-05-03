@@ -179,6 +179,14 @@ table td {
 
 /* ------------------------------- */
 
+/* SHORT-TERM LANDING */
+
+.short-term-bg {
+    @apply bg-short-term;
+}
+
+/* ------------------------------- */
+
 /* CONTACT FORM */
 
 .furnishingSelector {

@@ -25,7 +25,7 @@ export default function Navbar() {
         <Link className='nav-link' href="/FAAS/rental_services">Our Services</Link>
         <div className="dropdown-content">
           <a href="#">Furnishing</a>
-          <Link href="/FAAS/rental_services/">FAAS</Link>
+          <Link href="/FAAS/rental_services/">Furniture Rental</Link>
           <Link href="/for_businesses">For Businesses</Link>
         </div>
 
