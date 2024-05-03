@@ -12,9 +12,9 @@ export default function Description() {
             Our comprehensive furnishing solutions offer a tailored approach in enhancing the functionality and aesthetics of your home.</p>
           <div className="link-container">
             <Link href="" className='btn-primary'>
-              Furnishing
+              Furnishing Services
             </Link>
-            <Link href="/FAAS/rental_services" className='btn-secondary'>FAAS</Link>
+            <Link href="/FAAS/rental_services" className='btn-secondary'>Furniture Rental</Link>
           </div></div>
         <div className='right'>        <div>
           <Image
