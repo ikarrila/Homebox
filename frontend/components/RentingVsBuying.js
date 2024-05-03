@@ -3,7 +3,7 @@ import '/styles/styles.css';
 
 export default function RentVsBuying() {
     return (
-        <div style={{ maxWidth: '50%', borderRadius: '10px', padding: '10px', whiteSpace: 'nowrap', overflowX: 'auto' }}>
+        <div style={{ maxWidth: '60%', borderRadius: '10px', padding: '10px', whiteSpace: 'nowrap', overflowX: 'auto' }}>
             <div style={{ borderRadius: '10px', overflow: 'hidden' }}>
                 <h2>Rent vs. Buying</h2>
                 <table style={{ borderCollapse: 'collapse', width: '100%', border: '1px solid #314d63' }}>
