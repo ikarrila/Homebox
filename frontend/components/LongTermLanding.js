@@ -64,7 +64,7 @@ export default function LongTermLanding() {
                 </div>
             </div >
             <CustomerReviews />
-            <div className="section col">
+            <div className='section col'>
                 <RentingVsBuying />
             </div>
         </>
