@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import SmallMedLar from '../SmallMedLar';
-import { parse } from 'path';
-import { validateHeaderName } from 'http';
+import { IoIosArrowRoundBack, IoIosArrowRoundForward} from 'react-icons/io';
+import SmallMedLar from '../SmallMedLar';  
 
 export default function LongProperty({ changeStep, CommonLengthData, LongPropertyData, setLongPropertyData }) {
     const [showLivingRoomSize, setShowLivingRoomSize] = useState(false);
@@ -393,10 +392,10 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
                             !showBedroom4Size &&
                             !showBedroom5Size &&
                             !showBedroom6Size &&
-                            !showDiningRoomSize &&
-                            !showHomeOfficeSize &&
-                            !showKitchenSize &&
                             !showLivingRoomSize &&
+                            !showDiningRoomSize &&
+                            !showKitchenSize &&
+                            !showHomeOfficeSize &&
                             !showOutdoorSize && hasClickedContinue) || hasClickedContinue && (bed3Size === '' && showBedroom3Size) || hasClickedContinue && (bed3Size === '' && showBedroom3Size) || hasClickedContinue && (HowMany >= 3 && !showBedroom3Size) ? 'alert' : ''}`}>
                             <div>
 
@@ -552,11 +551,11 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
                         !showOutdoorSize && hasClickedContinue && HowMany === '' || HowMany === 0) || hasClickedContinue && homeOfficeSize === '' && showHomeOfficeSize ? 'alert' : ''}`}>
                         <div>
 
-                            <input type="checkbox" id="homeoffice" checked={showHomeOfficeSize} name="homeoffice" className='roomCheckbox' onChange={() => { setHomeOfficeSize(!showHomeOfficeSize); }} />
-                            <label htmlFor="homeoffice">Home Office</label>
+                            <input type="checkbox" id="homeOffice" checked={showHomeOfficeSize} name="homeOffice" className='roomCheckbox' onChange={() => { setHomeOfficeSize(!showHomeOfficeSize); }} />
+                            <label htmlFor="homeOffice">Home Office</label>
                         </div>
                         {showHomeOfficeSize && (
-                            <SmallMedLar value={homeOfficeSize} name={"homeofficeSize"} onSizeSelect={setHomeOfficeSize} />
+                            <SmallMedLar value={homeOfficeSize} name={"homeOfficeSize"} onSizeSelect={setHomeOfficeSize} />
                         )}
                     </div>
                     <div className={`left roomList ${(!showMainBedroomSize &&
@@ -607,7 +606,9 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
                             !(showLivingRoomSize && livingRoomSize === '') &&
                             !(showOutdoorSize && outdoorSize === '') &&
                             (outdoorSize === '' && homeOfficeSize === '' && kitchenSize === '' && diningRoomSize === '' && livingRoomSize === '' && bed6Size === '' && bed5Size === '' && bed4Size === '' && bed3Size === '' && bed2Size === '' && bedSize === '') &&
-                            hasClickedContinue && HowMany > 0 && <p>Please select at least the bedrooms and their sizes</p>}
+                            hasClickedContinue && HowMany > 0 && 
+                                <p>
+                                    Please select at least the bedrooms and their sizes</p>}
 
                         {((showMainBedroomSize && bedSize === '') ||
                             (showBedroom2Size && bed2Size === '') ||
@@ -626,11 +627,21 @@ export default function LongProperty({ changeStep, CommonLengthData, LongPropert
 
                 </div>
                 <div className='right'>
-                    <h2>{roomNames[currentOption]} - Room Size Description</h2>
-
-                    <div dangerouslySetInnerHTML={{ __html: options[currentOption] }} />
-                    <button onClick={handlePrevious}>Previous</button> <br />
-                    <button onClick={handleNext}>Next</button>
+                    <div className='container col'>
+                        <h2 style={{paddingBottom:'5px'}}>{roomNames[currentOption]}</h2>
+                        <div className='link-container' /*style={{paddingLeft:'20px'}}*/>
+                            <button style={{paddingRight:'15px'}} onClick={handlePrevious}><IoIosArrowRoundBack size={32}/></button>
+                            <button onClick={handleNext}><IoIosArrowRoundForward  size={32}/></button>
+                        </div>
+                    </div>
+                    <div className='container col'>
+                        <div className='container row'>
+                        <div className='left'>
+                            <p style={{paddingTop:'15px',paddingBottom:'5px'}}>Room Size Description:</p>
+                        </div>
+                        <div className='right'> </div></div>
+                        <div dangerouslySetInnerHTML={{ __html: options[currentOption] }} />
+                    </div>
                 </div>
             </div>
             <div className='container row'>
