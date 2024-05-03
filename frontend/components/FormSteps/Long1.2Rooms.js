@@ -41,7 +41,7 @@ export default function LongRooms({ changeStep, setLongRoomsData, LongRoomsData,
         } else if (selectedValue === "Premium") {
             return <Image src={PremiumImg} alt="Premium" className='image-container' />;
         } else {
-            return <div className='card-container'>
+            return <div className='card-container2'>
                 <img src="../../../pictures/di_an_h-g_8MrEZAvyE-unsplash.jpg" />
                 <img src="../../../pictures/kenny-eliason-Wp7t4cWN-68-unsplash.jpg" />
             </div>;
@@ -49,7 +49,7 @@ export default function LongRooms({ changeStep, setLongRoomsData, LongRoomsData,
     };
 
     return (
-        <div className="section">
+        <div className="section ">
             <div className='long-living-details' >
                 <div className="stepTitle">3. Select your level of furnishing needs</div>
                 <div className='step fixedHeight container row'>

@@ -3,7 +3,7 @@ import React from 'react';
 export default function CommonStart({ changeStep }) {
     return (
         <div className="section">
-            <div className='step-container row startRow'  >
+            <div className='assistImg'  >
                 <div className='textSide'>
                     <h1 data-testid="cost-calculator-header">Cost calculator</h1>
                     <h2>How does it work?</h2>
