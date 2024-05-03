@@ -7,9 +7,12 @@ import RentingVsBuying from './RentingVsBuying';
 export default function ShortTermLanding() {
     return (
         <div className='container col'>
-            <h1>Short-term rental</h1>
-            <div className='section col'>
-                <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse nemo similique, rerum culpa molestiae necessitatibus non magni itaque veniam nam adipisci vel animi sit aliquid eaque assumenda maiores asperiores nobis numquam! Ex non, doloribus ipsa et culpa tenetur ad, impedit quo soluta totam eligendi porro quae? Adipisci labore modi quidem voluptatem non hic voluptas quas rerum voluptates ipsam cumque impedit, incidunt repellat ea consectetur nihil corporis ratione ullam enim quo eaque. Soluta ipsa officia molestias. Nobis, esse aut! Ea aut dolore explicabo consequuntur est dolor quaerat suscipit qui ad quia maiores eos vel, aliquid facilis laborum? Minima iste neque odio.</p>
+            <div className="banner short-term-bg">
+                <div className="banner-text white-transparent">
+                    <h2>Short-term Rental</h2>
+                    <p>For short term rentals we have ready-to-move-in packages that we will customize to your house.</p>
+                    <p>All is prepared to make sure it is comfortable and complete, including household items and comfy mattresses. If you wish specific items and designs, reach out to our team and have a look at our long term rental offers.</p>
+                </div>
                 <Link href="/FAAS/evaluation">
                     <button className="btn-primary">
                         Rent
@@ -21,3 +24,4 @@ export default function ShortTermLanding() {
         </div>
     );
 };
+

@@ -36,6 +36,7 @@ module.exports = {
         'rental': "url('/pictures/behzad-ghaffarian-nhWgZNV85LQ-unsplash.jpg')",
         'business': "url('/pictures/patrick-perkins-3wylDrjxH-E-unsplash.jpg')",
         'sustainable': "url('/pictures/patrick-perkins-3wylDrjxH-E-unsplash.jpg')",
+        'short-term': "url('/pictures/trend-K9pU2u0Z5WU-unsplash.jpg')",
       },
       height: {
         '200': '40rem',
