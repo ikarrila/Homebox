@@ -20,7 +20,7 @@ export default function Description() {
               Furnishing Services
             </Link>
             <Link href="/FAAS/rental_services" className='btn-secondary'>
-              Rental Services
+              Furniture Rental
             </Link>
           </div></div>
         <div className='right'>        
