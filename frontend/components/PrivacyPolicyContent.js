@@ -10,18 +10,40 @@ export default function PrivacyPolicyContent() {
     <div className='container row'>
       <div className='section row'>
         <div className='left'>
-          <p>By accessing this website we assume you accept these terms and conditions. Do not continue to use Kiki's Homebox if you do not agree to take all of the terms and conditions stated on this page.</p>
+          <p>Effective Date: 1/5/2024 </p>
+          <p>KEJA  ("we", "our", or "us") is committed to protecting the privacy and security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, including any other media form, media channel, mobile website, or mobile application related or connected thereto (collectively, the "Site"). Please read this Privacy Policy carefully. If you do not agree with the terms of this Privacy Policy, please do not access the Site. </p>
 
-          <h3><strong>Cookies</strong></h3>
+          <h3><strong>Information We Collect </strong></h3>
 
-          <p>We employ the use of cookies. By accessing Kiki's Homebox, you agreed to use cookies in agreement with the Kiki's Homebox's Privacy Policy.</p>
+          <p>We may collect personal information from you when you visit our Site, including but not limited to your name, email address, phone number, and any other information you voluntarily provide to us. We may also automatically collect certain information about your device and browsing activities using cookies and similar technologies. </p>
 
-          <p>Most interactive websites use cookies to let us retrieve the user's details for each visit. Cookies are used by our website to enable the functionality of certain areas to make it easier for people visiting our website. Some of our affiliate/advertising partners may also use cookies.</p>
+          <h3><strong>How We Use Your Information  </strong></h3>
+          <p>We may use the information we collect from you for various purposes, including but not limited to:
 
-          <h3><strong>License</strong></h3>
+            Providing and personalizing our services;
 
-          <p>Unless otherwise stated, Kiki's Homebox and/or its licensors own the intellectual property rights for all material on Kiki's Homebox. All intellectual property rights are reserved. You may access this from Kiki's Homebox for your own personal use subjected to restrictions set in these terms and conditions.</p></div>
+            Communicating with you;
 
+            Analyzing and improving our Site;
+
+            Complying with legal obligations; and
+
+            Protecting our rights and interests. </p>
+
+          <h3><strong>Data Retention </strong></h3>
+
+          <p>We will retain your personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy unless a longer retention period is required or permitted by law. </p>
+
+          <h3><strong>Third party links </strong></h3>
+          <p>Our Site may contain links to third-party websites and services that are not owned or controlled by us. We are not responsible for the privacy practices or content of such third-party sites. </p>
+
+          <h3><strong>Your Rights  </strong></h3>
+          <p>You have the right to access, correct, or delete your personal information. You may also object to the processing of your personal data under certain circumstances. To exercise these rights, please contact us using the contact information provided below. </p>
+          <h3><strong>Changes to This Policy </strong></h3>
+          <p>We reserve the right to update or change our Privacy Policy at any time. Any changes will be effective immediately upon posting the revised Privacy Policy on the Site. </p>
+          <h3><strong>Contact Us </strong></h3>
+          <p>If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at info@keja.ccom. </p>
+        </div>
         <div>
 
         </div>

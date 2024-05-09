@@ -7,10 +7,8 @@ export default function Footer() {
 
       <div>
         <ul className='footer-list' data-testid="footer-list">
-          <li><Link href="/terms/refund_policy">Refund Policy</Link></li>
           <li><Link href="/terms/privacypolicy">Privacy Policy</Link></li>
           <li><Link href="/terms/terms_of_service">Terms of Service</Link></li>
-          <li><Link href="/terms/shopping_policy">Shopping Policy</Link></li>
           <li><Link href="/contact">Contact Us</Link></li>
         </ul>
       </div>
